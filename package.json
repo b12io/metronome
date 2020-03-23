@@ -102,7 +102,7 @@
     "bootstrap": "4.0.0",
     "classnames": "2.2.5",
     "css-box-model": "0.0.13",
-    "lodash": "4.17.11",
+    "lodash": "4.17.13",
     "moment": "2.22.1",
     "react-beautiful-dnd": "2.6.2",
     "react-color": "2.13.1",
