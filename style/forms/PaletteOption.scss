@@ -1,0 +1,49 @@
+.ds-palette-option {
+  display: flex;
+  width: calc((100% - 20px) / 3);
+  height: spacing(xsm) * 2;
+  margin: 0 spacing(xxxsm) spacing(xxxsm) 0;
+  padding: 1px;
+  background-color: $ds-ui-lightest-color;
+  border-radius: $ds-input-border-radius;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &--block {
+    width: 100%;
+    height: 60px;
+    margin: 0;
+  }
+
+  &--border {
+    border: 1px solid #ccc;
+  }
+
+  &--selected {
+    position: relative;
+    border: 2px solid $ds-input-border-focus-color;
+  }
+
+  &__selected-icon {
+    @include transform(translateX(50%) translateY(-50%));
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: $ds-ui-lightest-color;
+    border-radius: 50%;
+  }
+
+  &__color {
+    @include flex(1);
+
+    &:first-of-type {
+      border-radius: $ds-input-border-radius 0 0 $ds-input-border-radius;
+    }
+
+    &:last-of-type {
+      border-radius: 0 $ds-input-border-radius $ds-input-border-radius 0;
+    }
+  }
+}

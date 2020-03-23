@@ -1,0 +1,83 @@
+/* Spacing
+ */
+
+@function spacing($spacer) {
+  @return map-get($spacing, $spacer);
+}
+
+@each $util, $value in $spacing {
+  .dsu-mt-#{$util} {
+    margin-top: $value !important;
+  }
+
+  .dsu-mr-#{$util} {
+    margin-right: $value !important;
+  }
+
+  .dsu-mb-#{$util} {
+    margin-bottom: $value !important;
+  }
+
+  .dsu-ml-#{$util} {
+    margin-left: $value !important;
+  }
+
+  .dsu-mv-#{$util} {
+    margin-top: $value !important;
+    margin-bottom: $value !important;
+  }
+
+  .dsu-mh-#{$util} {
+    margin-left: $value !important;
+    margin-right: $value !important;
+  }
+
+  .dsu-ma-#{$util} {
+    margin: $value !important;
+  }
+
+  .dsu-pt-#{$util} {
+    padding-top: $value !important;
+  }
+
+  .dsu-pr-#{$util} {
+    padding-right: $value !important;
+  }
+
+  .dsu-pb-#{$util} {
+    padding-bottom: $value !important;
+  }
+
+  .dsu-pl-#{$util} {
+    padding-left: $value !important;
+  }
+
+  .dsu-pv-#{$util} {
+    padding-top: $value !important;
+    padding-bottom: $value !important;
+  }
+
+  .dsu-ph-#{$util} {
+    padding-left: $value !important;
+    padding-right: $value !important;
+  }
+
+  .dsu-pa-#{$util} {
+    padding: $value !important;
+  }
+}
+
+/* Visibility classes
+ */
+
+.dsu-hide {
+  display: none;
+}
+
+.dsu-block {
+  display: block;
+}
+
+.dsu-inline-block {
+  display: inline-block;
+}

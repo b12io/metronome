@@ -1,0 +1,136 @@
+.ds-badge {
+  display: inline-block;
+  color: $ds-display-regular-color;
+  line-height: 1;
+
+  &__remove-icon {
+    display: flex;
+    border-left: 1px solid rgba(0, 0, 0, .15);
+    cursor: pointer;
+  }
+
+  &--has-remove-icon {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &--uppercase {
+    text-transform: uppercase;
+  }
+
+  &--default {
+    color: $ds-body-light-color;
+  }
+
+  &--success {
+    color: $ds-success-regular-color;
+  }
+
+  &--warning {
+    color: $ds-error-regular-color;
+  }
+
+  &--primary {
+    color: $ds-brand-regular-color;
+  }
+
+  &--filled {
+    border-radius: $ds-border-radius-base;
+
+    &.ds-badge--default {
+      background-color: $ds-badge-background-color;
+      color: $ds-ui-lightest-color;
+
+      &.is-selected {
+        background-color: darken($ds-badge-background-color, 19%);
+      }
+    }
+
+    &.ds-badge--primary {
+      background-color: $ds-brand-regular-color;
+      color: $ds-ui-lightest-color;
+
+      &.is-selected {
+        background-color: darken($ds-brand-regular-color, 19%);
+      }
+    }
+
+    &.ds-badge--success {
+      background-color: $ds-success-regular-color;
+      color: $ds-ui-lightest-color;
+
+      &.is-selected {
+        background-color: darken($ds-success-regular-color, 19%);
+      }
+    }
+
+    &.ds-badge--warning {
+      background-color: $ds-error-regular-color;
+      color: $ds-ui-lightest-color;
+
+      &.is-selected {
+        background-color: darken($ds-error-regular-color, 19%);
+      }
+    }
+  }
+
+  &--size {
+    &-small {
+      font-size: $display-xxsmall-font-size;
+      line-height: $body-xsmall-font-size;
+
+      &:not(.ds-badge--filled) {
+        .ds-badge__remove-icon {
+          margin-left: -6px;
+          border-left: 0;
+        }
+      }
+
+      .ds-badge__label {
+        padding: 4px 8px;
+      }
+
+      .ds-badge__remove-icon {
+        padding: 6px;
+      }
+    }
+
+    &-medium {
+      font-size: $body-xsmall-font-size;
+
+      &:not(.ds-badge--filled) {
+        .ds-badge__remove-icon {
+          margin-left: -11px;
+          border-left: 0;
+        }
+      }
+
+      .ds-badge__label {
+        padding: 9px 10px;
+      }
+
+      .ds-badge__remove-icon {
+        padding: 11px 8px;
+      }
+    }
+
+    &-large {
+      font-size: $display-xsmall-font-size;
+
+      &:not(.ds-badge--filled) {
+        .ds-badge__remove-icon {
+          margin-left: -12px;
+          border-left: 0;
+        }
+      }
+
+      .ds-badge__label {
+        padding: 9px 10px;
+      }
+
+      .ds-badge__remove-icon {
+        padding: 12px 10px;
+      }
+    }
+  }
+}

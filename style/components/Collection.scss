@@ -1,0 +1,161 @@
+.collection {
+  border: $ds-input-border;
+  border-radius: $ds-border-radius-base;
+  box-shadow: 0 1px 2px 0 rgba(17, 15, 51, 0.1);
+  background: $ds-ui-lightest-color;
+
+  &__label {
+    font-family: $ds-font-family-base;
+    font-size: 12px;
+    line-height: 18px;
+    color: $ds-body-light-color;
+    display: block;
+    margin-bottom: 10px;
+    padding: 10px 10px 0;
+
+    &-options {
+      float: right;
+
+      &,
+      &:focus,
+      &:active {
+        color: $ds-body-light-color;
+      }
+
+      &:hover {
+        color: $ds-body-regular-color;
+      }
+    }
+  }
+
+  &__search {
+    display: flex;
+    border-radius: $ds-border-radius-base;
+    background: $ds-ui-regular-color;
+    margin: 0 10px 10px;
+
+    &--focused {
+      box-shadow: 0 0 0 2px $ds-input-border-focus-color;
+      outline: none;
+    }
+
+    svg {
+      height: $ds-input-height;
+      margin-left: $ds-input-padding-y;
+    }
+
+    input {
+      border: 0 none;
+      background: $ds-ui-lightest-color;
+      display: block;
+      height: $ds-input-height;
+      padding: $ds-input-padding-y $ds-input-padding-x;
+      font-size: 14px;
+      line-height: 20px;
+      color: $ds-input-color;
+      background-color: transparent;
+      background-image: none;
+      background-clip: padding-box;
+      transition: $ds-transition;
+      font-family: $ds-font-family-base;
+      flex-grow: 1;
+      box-sizing: border-box;
+
+      &:focus,
+      &:active {
+        outline: 0;
+      }
+    }
+  }
+
+  &__items {
+    padding: 0 0 10px;
+
+    &-empty {
+      text-align: center;
+      font-family: $ds-font-family-base;
+      @include body-font;
+      margin-top: $ds-gap-x;
+      margin-bottom: $ds-gap-x;
+      width: 100%;
+    }
+  }
+
+  &__actions {
+    display: flex;
+
+    .button {
+      flex: 1 1 50%;
+      margin: 0 -1px -1px;
+      border-radius: 0;
+
+      &:first-child {
+        border-bottom-left-radius: $ds-border-radius-base;
+      }
+
+      &:last-child {
+        border-bottom-right-radius: $ds-border-radius-base;
+      }
+    }
+  }
+}
+
+.collection-item {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  padding: 10px;
+  border-top: 1px solid $ds-ui-regular-color;
+
+  &:hover,
+  &:active {
+    background: $ds-brand-lightest-color;
+  }
+
+  &__handle {
+    flex: 0 0 16px;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    cursor: move;
+  }
+
+  &__name {
+    padding: 0 10px;
+    flex: 0 1 100%;
+    display: flex;
+    align-self: center;
+    color: $ds-display-regular-color;
+  }
+
+  &__action {
+    flex: 0 0 16px;
+    display: flex;
+    align-self: center;
+    cursor: pointer;
+
+    &:hover,
+    &:active {
+      svg path {
+        fill: $ds-brand-light-color;
+      }
+    }
+  }
+
+  &--draggable {
+    user-select: none;
+    user-select: none;
+    border-bottom: 1px solid $ds-ui-regular-color;
+    margin-bottom: -1px;
+  }
+
+  &--is-dragging {
+    background: $ds-brand-lightest-color;
+    border-bottom-color: transparent;
+    border-top-color: transparent;
+  }
+
+  &--clickable {
+    cursor: pointer;
+  }
+}

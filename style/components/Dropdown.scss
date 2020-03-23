@@ -1,0 +1,231 @@
+.ds-dropdown {
+  position: relative;
+  display: inline-block;
+
+  & + & {
+    margin-left: spacing('sm');
+  }
+
+  > button {
+    background: none;
+    border: none;
+  }
+
+  &__toggle {
+    color: $ds-display-light-color;
+    font-size: $header-small-font-size;
+    font-weight: normal;
+    line-height: 20px;
+    padding: 0 16px 0 26px;
+    position: relative;
+    cursor: pointer;
+
+    &--no-padding {
+      padding-left: 0;
+    }
+
+    svg {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translate(0,-50%);
+    }
+
+    @include breakpoint-tablet-portrait-up {
+      &::after {
+        display: block;
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translate(0,-48%);
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 5px 4px 0 4px;
+        border-color: $ds-display-light-color transparent transparent transparent;
+      }
+    }
+
+    &:focus,
+    &:active {
+      outline: 0;
+    }
+
+    &--has-button {
+      padding: 0;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  &__menu {
+    background: $ds-ui-lightest-color;
+    border-radius: $ds-border-radius-base;
+    box-shadow: $ds-box-shadow-base;
+    list-style-type: none;
+    margin: 0;
+    padding: spacing('xxxsm') 0;
+    position: absolute;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    text-align: left;
+    min-width: 260px;
+    display: none;
+
+    &-header {
+      text-transform: uppercase;
+      margin: 0;
+      padding: 0 spacing('xsm');
+      color: $ds-body-lighter-color;
+      font-size: 13px;
+      font-weight: $ds-font-weight-bold;
+      letter-spacing: 1px;
+      line-height: 40px;
+    }
+
+    &-item {
+      margin: 0;
+
+      > span {
+        color: $ds-display-regular-color;
+        font-size: 16px;
+        line-height: 20px;
+        padding: 10px spacing('xsm') 10px spacing('xxlg');
+        display: block;
+        position: relative;
+        cursor: pointer;
+
+        svg {
+          position: absolute;
+          left: spacing('xsm');
+          top: 50%;
+          transform: translate(0,-50%);
+        }
+
+        &:hover {
+          background: $ds-brand-lightest-color;
+        }
+      }
+
+      &--no-icon > span {
+        padding-left: spacing('xsm');
+      }
+
+      &--hidden {
+        display: none;
+      }
+
+      &--disabled {
+        opacity: 0.25;
+        > span {
+          cursor: not-allowed;
+        }
+      }
+    }
+
+    &-divider {
+      height: 1px;
+      background: $ds-brand-lightest-color;
+      margin: 10px spacing('xsm');
+    }
+
+    &-actions {
+      margin: spacing('xsm') (-(spacing('xsm'))) (-(spacing('xsm')));
+      display: flex;
+
+      .button {
+        flex: 1 1 50%;
+        margin: 0 -1px -1px;
+        border-radius: 0;
+  
+        &:first-child {
+          border-bottom-left-radius: $ds-border-radius-base;
+        }
+  
+        &:last-child {
+          border-bottom-right-radius: $ds-border-radius-base;
+        }
+      }
+    }
+
+    &--with-content {
+      padding: spacing('xsm');
+    }
+  }
+
+  &--right {
+    .ds-dropdown__menu {
+      left: auto;
+      right: 0;
+      top: -10px;
+    }
+  }
+
+  &--menu-visible {
+    .ds-dropdown__menu {
+      display: block;
+    }
+  }
+
+  &--open-at-bottom {
+    .ds-dropdown__menu {
+      top: 100%;
+      margin-top: 5px;
+    }
+  }
+
+  &--simple {
+    .ds-dropdown__menu {
+      left: 50%;
+      transform: translate(-50%,5px);
+      border: 1px solid #d7d7de;
+      box-shadow: 0 1px 7px 0 rgba(17,15,51,0.30);
+
+      &::before,
+      &::after {
+        display: block;
+        content: '';
+        width: 0;
+        height: 0;
+        position: absolute;
+        left: 50%;
+        bottom: 100%;
+        margin-left: -6px;
+        margin-bottom: -1px;
+        border-style: solid;
+        border-width: 0 6px 8px 6px;
+        border-color: transparent transparent #fff transparent;
+      }
+
+      &::before {
+        border-color: transparent transparent #d7d7de transparent;
+        margin-bottom: 1px;
+      }
+
+      &-header {
+        text-transform: none;
+        line-height: 20px;
+        opacity: .7;
+        padding: 5px spacing('xsm');
+      }
+
+      &-item {
+        span {
+          padding: 5px spacing('xsm');
+
+          svg {
+            display: none;
+          }
+        }
+      }
+
+      &-divider {
+        margin: 5px 0;
+      }
+    }
+  }
+}

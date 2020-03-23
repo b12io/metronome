@@ -1,0 +1,27 @@
+.ds-simple-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border: $ds-card-border;
+  border-radius: $ds-border-radius-base;
+  box-shadow: $ds-box-shadow-card;
+  padding: spacing('md');
+  position: relative;
+  width: 100%;
+  background: #fff;
+  margin-bottom: spacing('md');
+  transition: $ds-transition;
+
+
+  &--align-left {
+    align-items: flex-start;
+  }
+
+  &--align-center {
+    align-items: center;
+  }
+
+  &--align-right {
+    align-items: flex-end;
+  }
+}

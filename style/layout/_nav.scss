@@ -1,0 +1,154 @@
+.ds-nav {
+  position: relative;
+  border-radius: $ds-border-radius-base;
+
+  &--bordered {
+    border: $ds-input-border;
+    border-radius: $ds-border-radius-base;
+    box-shadow: $ds-box-shadow-sm;
+
+    .ds-nav__item {
+      margin-left: 0;
+      border-top: 1px solid $ds-ui-regular-color;
+      border-radius: 0;
+      padding-left: spacing('xsm');
+      padding-top: spacing('xxsm');
+      padding-bottom: spacing('xxsm');
+
+      &-label {
+        padding-left: 0;
+      }
+
+      &:first-child {
+        border-top: 0;
+        border-radius: $ds-border-radius-base $ds-border-radius-base 0 0;
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 10px;
+    margin-left: -10px; // design
+    font-size: 18px;
+    line-height: 24px;
+    border-radius: $ds-border-radius-base;
+    transition: $ds-transition;
+
+    &:hover {
+      cursor: pointer;
+      background: fade-out($ds-ui-background-dark-color, .96);
+
+      .ds-nav__item-label {
+        color: $ds-brand-regular-color;
+      }
+
+      .ds-nav__item-icon,
+      .ds-nav__item-arrow {
+        path,
+        rect,
+        circle,
+        polygon {
+          fill: $ds-brand-regular-color;
+        }
+      }
+    }
+
+    &--active {
+      .ds-nav__item-label {
+        color: $ds-brand-regular-color;
+      }
+
+      .ds-nav__item-icon,
+      .ds-nav__item-arrow {
+        path,
+        rect,
+        circle,
+        polygon {
+          fill: $ds-brand-regular-color;
+        }
+      }
+    }
+
+    &-label {
+      flex: 0 1 100%;
+      color: $ds-display-regular-color;
+      margin-right: spacing('xxxsm');
+      padding-left: spacing('md');
+    }
+
+    &-icon,
+    &-arrow,
+    &-action {
+      flex: 0 0 20px;
+      transition: $ds-transition;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+
+      path,
+      rect,
+      circle,
+      polygon {
+        fill: $ds-body-lighter-color;
+        transition: $ds-transition;
+      }
+    }
+
+    &-icon {
+      margin-right: spacing('xxxsm');
+
+      + .ds-nav__item-label {
+        padding-left: 0;
+      }
+    }
+
+    &-arrow {
+      svg {
+        width: 7px;
+      }
+    }
+
+    &-badge {
+      font-size: 12px;
+      line-height: 14px;
+      margin-right: 5px;
+      padding: spacing('xxxxsm') spacing('xxxsm');
+      color: $ds-ui-lightest-color;
+      background: $ds-body-lighter-color;
+      border-radius: $ds-border-radius-base*2;
+    }
+
+    &-action {
+      cursor: pointer;
+      margin-right: 5px;
+
+      &:hover {
+        path,
+        rect,
+        circle,
+        polygon {
+          fill: $ds-brand-regular-color;
+        }
+      }
+    }
+
+    &--disabled {
+      opacity: .5;
+
+      &:hover {
+        background: transparent;
+        cursor: not-allowed;
+
+        .ds-nav__item-label {
+          color: $ds-display-regular-color;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+.overlay-container {
+  position: relative;
+  height: 100%;
+}
+
+.ds-overlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: $ds-ui-background-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
+  overflow: scroll;
+
+  .card-list {
+    background: none;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 $ds-sidebar-header-height;
+    text-align: center;
+    position: relative;
+    padding: spacing('md');
+
+    @include breakpoint-tablet-portrait-up {
+      box-shadow: none;
+    }
+
+    &-title {
+      @include display-xl-font;
+      line-height: 36px;
+      font-weight: $ds-font-weight-bold;
+      color: $ds-display-regular-color;
+      flex: 0 0 auto;
+      margin-bottom: spacing('xxxsm');
+      margin-top: spacing('xxxlg');
+      width: 100%;
+      padding: 1em 0.5em 0 0.5em;
+    }
+
+    &-subtitle {
+      @include display-small-font;
+      color: $ds-display-light-color;
+      padding: 0 0.5em;
+      margin-bottom: 0;
+      @include breakpoint-tablet-portrait-up {
+        margin-bottom: spacing('xxxlg');
+      }
+    }
+
+    &-icon {
+      height: 20px;
+      position: absolute;
+      left: 30px;
+      top: 20px;
+    }
+  }
+}

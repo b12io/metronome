@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilterOptionItem component should display content 1`] = `
+<div
+  className="ds-filter-option__item"
+>
+  <div
+    className="ds-filter-option__item-toggle is-active"
+    onClick={[Function]}
+  >
+    Id
+  </div>
+  <div
+    className="ds-filter-option__item-content"
+  >
+    <div
+      className="ds-form-group"
+    >
+      <div
+        className="ds-form-group ds-form-group--select"
+      >
+        <div
+          className="ds-form-control-select"
+        >
+          <div
+            className="ds-form-control ds-form-control-select__toggle"
+            onClick={[Function]}
+          >
+            Id
+          </div>
+          <div
+            className="ds-form-control-select__dropdown"
+          >
+            <div
+              className="ds-form-control-select__dropdown-options"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="ds-form-group"
+    >
+      <div
+        className="ds-form-group ds-form-group--select"
+      >
+        <div
+          className="ds-form-control-select"
+        >
+          <div
+            className="ds-form-control ds-form-control-select__toggle"
+            onClick={[Function]}
+          >
+            Please select
+          </div>
+          <div
+            className="ds-form-control-select__dropdown"
+          >
+            <div
+              className="ds-form-control-select__dropdown-options"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="ds-form-group"
+    >
+      <div
+        className="ds-form-group"
+      >
+        <div
+          className="ds-form-control-wrap"
+        >
+          <input
+            className="ds-form-control"
+            disabled={false}
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder=""
+            type="text"
+            value={1}
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="ds-form-group"
+    >
+      <button
+        className="button button--danger button--sm button--block"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        Remove filter
+        
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FilterOptionItem component should not display content by default 1`] = `
+<div
+  className="ds-filter-option__item"
+>
+  <div
+    className="ds-filter-option__item-toggle"
+    onClick={[Function]}
+  >
+    Id
+  </div>
+</div>
+`;

@@ -1,0 +1,149 @@
+.ds-color-card {
+  width: 250px;
+  border-radius: $ds-border-radius-base;
+  box-shadow: $ds-box-shadow-base;
+  overflow: hidden;
+  display: inline-block;
+  margin-bottom: spacing('xxsm');
+  margin-right: spacing('xxsm');
+
+  &__color {
+    height: 80px;
+  }
+
+  &__body {
+    padding: spacing('xxsm');
+    background: #fff;
+
+    h5 {
+      margin: 0 0 5px;
+    }
+  }
+}
+
+.color-cards {
+  display: flex;
+  flex-direction: row;
+}
+
+.color-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: $ds-border-radius-base;
+  text-align: center;
+  background: $ds-ui-light-color;
+  border: 1px solid $ds-ui-light-color;
+  color: $ds-display-regular-color;
+  font-size: 10px;
+  line-height: 12px;
+  font-weight: 600;
+
+  & + & {
+    margin-left: 10px;
+  }
+
+  &--brand-lightest-color {
+    color: $ds-display-regular-color;
+    background: $ds-brand-lightest-color;
+    border-color: $ds-brand-lightest-color;
+  }
+
+  &--brand-light-color {
+    color: $ds-ui-lightest-color;
+    background: $ds-brand-light-color;
+    border-color: $ds-brand-light-color;
+  }
+
+  &--brand-regular-color {
+    color: $ds-ui-lightest-color;
+    background: $ds-brand-regular-color;
+    border-color: $ds-brand-regular-color;
+  }
+
+  &--brand-dark-color {
+    color: $ds-ui-lightest-color;
+    background: $ds-brand-dark-color;
+    border-color: $ds-brand-dark-color;
+  }
+
+  &--ui-lightest-color {
+    color: $ds-display-regular-color;
+    background: $ds-ui-lightest-color;
+    border-color: $ds-ui-regular-color;
+  }
+
+  &--ui-light-color {
+    color: $ds-display-regular-color;
+    background: $ds-ui-light-color;
+    border-color: $ds-ui-regular-color;
+  }
+
+  &--ui-regular-color {
+    color: $ds-display-regular-color;
+    background: $ds-ui-regular-color;
+    border-color: $ds-ui-regular-color;
+  }
+
+  &--ui-dark-color {
+    color: $ds-display-regular-color;
+    background: $ds-ui-dark-color;
+    border-color: $ds-ui-dark-color;
+  }
+
+  &--ui-darkest-color {
+    color: $ds-display-regular-color;
+    background: $ds-ui-darker-color;
+    border-color: $ds-ui-darker-color;
+  }
+
+  &--display-light-color {
+    color: $ds-ui-lightest-color;
+    background: $ds-display-light-color;
+    border-color: $ds-display-light-color;
+  }
+
+  &--display-regular-color {
+    color: $ds-ui-lightest-color;
+    background: $ds-display-regular-color;
+    border-color: $ds-display-regular-color;
+  }
+
+  &--body-light-color {
+    color: $ds-ui-lightest-color;
+    background: $ds-body-light-color;
+    border-color: $ds-body-light-color;
+  }
+
+  &--body-regular-color {
+    color: $ds-ui-lightest-color;
+    background: $ds-body-regular-color;
+    border-color: $ds-body-regular-color;
+  }
+
+  &--success-regular-color {
+    color: $ds-display-regular-color;
+    background: $ds-success-regular-color;
+    border-color: $ds-success-regular-color;
+  }
+
+  &--success-dark-color {
+    color: $ds-display-regular-color;
+    background: $ds-success-dark-color;
+    border-color: $ds-success-dark-color;
+  }
+
+  &--warning-regular-color {
+    color: $ds-display-regular-color;
+    background: $ds-error-regular-color;
+    border-color: $ds-error-regular-color;
+  }
+
+  &--warning-dark-color {
+    color: $ds-display-regular-color;
+    background: $ds-error-dark-color;
+    border-color: $ds-error-dark-color;
+  }
+}

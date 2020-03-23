@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`B12DatePicker component should render the react datepicker component using dropdown styles as a custom input 1`] = `
+<div
+  className="ds-form-control-select"
+>
+  <div
+    className="ds-control-label"
+  >
+    Date
+  </div>
+  <div>
+    <div
+      className="react-datepicker-wrapper"
+    >
+      <div
+        className="react-datepicker__input-container"
+      >
+        <div
+          className="ds-form-control-select"
+        >
+          <div
+            className="ds-form-control ds-form-control-select__toggle"
+            onBlur={[Function]}
+            onClick={[Function]}
+            tabIndex="-1"
+          >
+            March 29, 2018
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

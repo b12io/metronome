@@ -1,0 +1,121 @@
+html {
+  box-sizing: border-box;
+  -ms-overflow-style: scrollbar;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  position: relative;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: $ds-font-family-base;
+  @include body-font;
+  color: $ds-body-regular-color;
+  background-color: $ds-ui-lightest-color;
+}
+
+a,
+.link-brand {
+  &,
+  &:focus,
+  &:active {
+    text-decoration: underline;
+    color: $ds-brand-regular-color;
+    outline: 0;
+  }
+
+  &:hover {
+    color: $ds-brand-dark-color;
+    text-decoration: none;
+  }
+}
+
+.link-subdued {
+  &,
+  &:focus,
+  &:active {
+    color: $ds-body-light-color;
+  }
+
+  &:hover {
+    color: $ds-body-regular-color;
+  }
+}
+
+p {
+  @include body-font;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  color: $ds-display-regular-color;
+  font-family: $ds-font-family-base;
+  margin: 0;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  small {
+    opacity: .5;
+  }
+}
+
+h1,
+.display-xl-font {
+  @include display-xl-font;
+}
+
+h2,
+.display-large-font {
+  @include display-large-font;
+}
+
+h3,
+.display-font {
+  @include display-font;
+}
+
+h4,
+.display-small-font {
+  @include display-small-font;
+}
+
+h5,
+.display-xsmall-font {
+  @include display-xsmall-font;
+}
+
+.lead {
+  @include body-large-font;
+}
+
+.text-sm {
+  @include body-small-font;
+}
+
+.text-xs {
+  @include body-xsmall-font;
+}
+
+hr {
+  margin-top:    $ds-gap-y*2;
+  margin-bottom: $ds-gap-y*2;
+  border: 0;
+  border-top: 1px solid $ds-ui-darker-color;
+}

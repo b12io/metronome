@@ -1,0 +1,28 @@
+.ds-control-emulate-hover {
+  border-color: $ds-input-border-hover-color;
+
+  &::before,
+  &::after {
+    background: $ds-brand-regular-color;
+  }
+}
+
+.ds-control-emulate-focus {
+  &,
+  &:hover {
+    border-color: $ds-input-border-focus-color;
+    box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.1), inset 0px 0px 0px 1px $ds-input-border-focus-color;
+  }
+}
+
+.ds-select-emulate-height {
+  height: 270px;
+}
+
+.ds-select-emulate-height-search {
+  height: 320px;
+}
+
+.ds-select-emulate-height-media {
+  height: 570px;
+}

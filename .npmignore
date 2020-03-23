@@ -1,0 +1,14 @@
+static/
+jest/
+src/
+flow-typed/
+.flowconfig
+yarn.lock
+webpack.config.js
+__test__
+__snapshots__
+*.test.es6.js
+styleguide/
+styleguide.config.js
+styleguide.md
+*.example.md

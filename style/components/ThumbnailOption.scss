@@ -1,0 +1,53 @@
+.ds-thumbnail-option {
+  @include transition(transform .2s);
+  @include transform(none);
+  border: $ds-input-border;
+  margin-bottom: spacing(xxsm);
+  position: relative;
+
+  &:hover {
+    @include transform(scale(1.05));
+    cursor: pointer;
+  }
+
+  &__thumbnail-container {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__thumbnail {
+    width: 100%;
+
+    &--cover {
+      @include object-fit(cover);
+      height: 135px;
+    }
+  }
+
+  &--selected {
+    border: 2px solid $ds-input-border-focus-color;
+  }
+
+  &--rounded {
+    border-radius: $ds-border-radius-base;
+  }
+
+  &--shadowed {
+    box-shadow: $ds-box-shadow-card;
+  }
+
+  &__selected-icon {
+    @include transform(translateX(50%) translateY(-50%));
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: $ds-ui-lightest-color;
+    border-radius: 50%;
+  }
+
+  &__text {
+    font-size: $header-small-font-size;
+    color: $ds-display-light-color;
+  }
+}

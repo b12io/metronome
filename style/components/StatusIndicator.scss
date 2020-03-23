@@ -1,0 +1,42 @@
+.ds-status-indicator {
+  display: inline-flex;
+  align-items: center;
+
+  &__dot {
+    height: 8px;
+    width: 8px;
+    background-color: $ds-ui-darkest-color;
+    border-radius: 4px;
+    margin-right: 8px;
+  }
+
+  &__label {
+    font-size: $header-small-font-size;
+    color: $ds-display-light-color;
+    line-height: $display-large-font-size;
+  }
+
+  &--success {
+    .ds-status-indicator__dot {
+      background-color: $ds-success-regular-color;
+    }
+  }
+
+  &--default {
+    .ds-status-indicator__dot {
+      background-color: $ds-ui-darkest-color;
+    }
+  }
+
+  &--warning {
+    .ds-status-indicator__dot {
+      background-color: $ds-warning-regular-color;
+    }
+  }
+
+  &--error {
+    .ds-status-indicator__dot {
+      background-color: $ds-error-regular-color;
+    }
+  }
+}

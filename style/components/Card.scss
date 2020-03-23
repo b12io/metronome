@@ -1,0 +1,125 @@
+.ds-card {
+  border: $ds-input-border;
+  border-radius: $ds-border-radius-base;
+  box-shadow: 0 1px 2px 0 rgba(17, 15, 51, 0.1);
+  padding: 8px 36px 8px 10px;
+  position: relative;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  background: #fff;
+  text-align: left;
+  transition: $ds-transition;
+
+  + .ds-card {
+    margin-top: 10px;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+
+    svg,
+    path {
+      transition: $ds-transition;
+    }
+  }
+
+  &__label {
+    font-family: $ds-font-family-base;
+    font-size: 12px;
+    line-height: 18px;
+    color: $ds-body-light-color;
+  }
+
+  &__value {
+    font-size: 14px;
+    color: $ds-display-regular-color;
+  }
+
+  &--add {
+    .ds-card__icon {
+      top: 50%;
+      transform: translate(0,-50%);
+      height: unset;
+    }
+
+    .ds-card__value {
+      opacity: .2
+    }
+  }
+
+  &:hover {
+    border-color: $ds-ui-darkest-color;
+
+    .ds-card__icon {
+      path {
+        fill: $ds-brand-light-color;
+      }
+    }
+  }
+
+  &--selected,
+  &--selected:hover {
+    border-color: $ds-input-border-focus-color;
+    box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.1), inset 0px 0px 0px 1px $ds-input-border-focus-color;
+    outline: none;
+  }
+
+  &:focus,
+  &:active {
+    border-color: $ds-input-border-focus-color;
+    box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.1), inset 0px 0px 0px 1px $ds-input-border-focus-color;
+    outline: none;
+
+    .ds-card__label {
+      color: $ds-brand-light-color;
+    }
+  }
+
+  &[disabled] {
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+      border-color: $ds-ui-darker-color;
+      box-shadow: none;
+      background: $ds-ui-regular-color;
+
+      .ds-card__label,
+      .ds-card__value {
+        color: $ds-body-light-color;
+      }
+    }
+  }
+
+  &--has-image {
+    padding: spacing('xxsm') spacing('lg') spacing('xxsm') spacing('xxsm');
+
+    > img {
+      width: 100%;
+      border-radius: $ds-border-radius-base;
+    }
+  }
+
+  &--has-colors {
+    padding: spacing('xxsm') spacing('lg') spacing('xxsm') spacing('xxsm');
+
+    .ds-palette-option {
+      width: 100%;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      padding: 0;
+      margin: 0;
+      height: 50px;
+
+      &:hover {
+        transform: none !important;
+      }
+    }
+  }
+}

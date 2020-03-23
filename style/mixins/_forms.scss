@@ -1,0 +1,216 @@
+/* Inputs mixins
+ * these styles are used across all inputs/selects/textareas and etc.
+ */
+
+ @mixin ds-form-group {
+  @include ds-reset;
+
+  & + &,
+  & + div {
+    margin-top: 10px;
+  }
+
+  &__help-text {
+    @include ds-reset;
+    font-size: 13px;
+    line-height: 18px;
+    margin-top: 4px;
+    position: relative;
+    padding-left: 20px;
+
+    svg {
+      position: absolute;
+      left: 0;
+      top: 1px;
+    }
+  }
+
+  &__error-message {
+    @include ds-reset;
+    font-size: 13px;
+    line-height: 18px;
+    margin-top: 4px;
+    position: relative;
+  }
+
+  &.row {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+
+  /* States
+   */
+
+  &.has-feedback {
+    position: relative;
+
+    .feedback-icon {
+      @include input-icon;
+      right: 10px;
+    }
+
+    &.ds-form-group--select .feedback-icon {
+      display: none;
+    }
+  }
+
+  &.is-locked {
+    .ds-form-control {
+      background: $ds-input-background;
+      padding-right: $ds-input-padding-x*3;
+
+      &:hover {
+        border: $ds-input-border;
+      }
+    }
+  }
+
+  &.is-disabled {
+    .ds-form-control:hover {
+      border: $ds-input-border;
+    }
+
+    .ds-form-control-select__toggle {
+      cursor: default;
+      background-color: $ds-input-disabled-background;
+      color: $ds-input-disabled-color;
+
+      &::before,
+      &::after {
+        background: $ds-ui-darker-color;
+      }
+    }
+  }
+
+  &.has-error {
+    .ds-control-label {
+      color: $ds-error-regular-color;
+    }
+
+    .ds-form-control {
+      border-color: $ds-error-regular-color;
+
+      &:focus {
+        border-color: $ds-input-border-focus-color;
+      }
+    }
+
+    .ds-form-control-select__toggle {
+      &::before,
+      &::after {
+        background: $ds-error-regular-color;
+      }
+    }
+
+    .ds-form-group__error-message {
+      color: $ds-error-regular-color;
+    }
+  }
+
+  &.has-success {
+    .ds-control-label {
+      color: $ds-success-regular-color;
+    }
+
+    .ds-form-control {
+      border-color: $ds-success-regular-color;
+
+      &:focus {
+        border-color: $ds-input-border-focus-color;
+      }
+    }
+  }
+
+  &.has-search-icon {
+    .ds-form-control {
+      padding-left: 37px;
+    }
+
+    .search-icon {
+      @include input-icon;
+      left: 12px;
+    }
+  }
+}
+
+@mixin ds-control-label {
+  @include ds-reset;
+  font-size: 12px;
+  line-height: 18px;
+  color: $ds-body-light-color;
+  display: block;
+  margin-bottom: 2px;
+
+  &__counter {
+    float: right;
+  }
+}
+
+@mixin ds-form-control {
+  @include ds-reset;
+  display: block;
+  height: $ds-input-height;
+  width: 100%;
+  padding: $ds-input-padding-y $ds-input-padding-x;
+  font-size: 14px;
+  line-height: 20px;
+  color: $ds-input-color;
+  background-color: $ds-input-background;
+  background-image: none;
+  background-clip: padding-box;
+  border: $ds-input-border;
+  border-radius: $ds-input-border-radius;
+  box-shadow: $ds-input-shadow;
+  transition: $ds-transition;
+  font-family: $ds-font-family-base;
+  overflow: hidden;
+
+  &::-ms-expand {
+    background-color: transparent;
+    border: 0;
+  }
+
+  &:hover {
+    border-color: $ds-input-border-hover-color;
+  }
+
+  &:focus {
+    border-color: $ds-input-border-focus-color;
+    box-shadow: $ds-input-shadow-focused;
+    outline: none;
+  }
+
+  &::placeholder {
+    color: fade-out($ds-display-regular-color, .8);
+    opacity: 1;
+  }
+
+  &:disabled,
+  &[readonly] {
+    background-color: $ds-input-disabled-background;
+    color: $ds-input-disabled-color;
+    opacity: 1;
+    padding-right: 30px;
+  }
+}
+
+@mixin ds-form-control-select-item-empty {
+  @include body-xsmall-font;
+
+  > div {
+    background: $ds-ui-regular-color;
+    color: $ds-ui-darkest-color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@mixin input-icon() {
+  position: absolute;
+  top: 50%;
+  height: $ds-input-height;
+  transform: translateY(-50%);
+}

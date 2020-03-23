@@ -1,0 +1,155 @@
+.ds-form-control-checkbox,
+.ds-form-control-radio {
+  position: relative;
+  display: inline-flex;
+  min-height: 20px;
+  padding-left: 30px;
+  margin-right: $ds-gap-y;
+
+  &.is-disabled,
+  &.is-disabled:hover {
+    cursor: not-allowed;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    top: 0;
+    left: 0;
+
+    &:checked ~ .ds-form-control-checkbox__indicator,
+    &:checked ~ .ds-form-control-radio__indicator {
+      &::after,
+      svg {
+        opacity: 1;
+      }
+    }
+
+    &:focus ~ .ds-form-control-checkbox__indicator,
+    &:focus ~ .ds-form-control-radio__indicator {
+      border-color: $ds-brand-regular-color;
+    }
+
+    &:indeterminate ~ .ds-form-control-checkbox__indicator {
+      &::after {
+        display: block;
+        content: '';
+        height: 2px;
+        position: absolute;
+        left: 3px;
+        right: 3px;
+        top: 50%;
+        margin-top: -1px;
+        background: #bbb7c2;
+      }
+    }
+
+    &:disabled {
+      ~ .ds-form-control-checkbox__indicator,
+      ~ .ds-form-control-radio__indicator {
+
+        &::after {
+          background: fade-out($ds-display-light-color, .5);
+        }
+
+        svg path {
+          fill: fade-out($ds-display-light-color, .5);
+        }
+      }
+
+      ~ .ds-form-control-checkbox__label,
+      ~ .ds-form-control-radio__label {
+        color: fade-out($ds-display-light-color, .5);
+      }
+    }
+  }
+
+  &__indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: $ds-border-radius-base;
+    border: $ds-input-border;
+    pointer-events: none;
+    user-select: none;
+    background-color: $ds-ui-lightest-color;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 20px 20px;
+    box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    transition: $ds-transition;
+    cursor: pointer;
+
+    svg {
+      width: 10px;
+      height: 7px;
+      opacity: 0;
+      transition: $ds-transition;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+
+      path {
+        fill: $ds-brand-regular-color;
+      }
+    }
+  }
+
+  &__label {
+    color: $ds-input-color;
+    font-family: $ds-font-family-base;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  &.has-error {
+
+    input {
+      &:checked ~ .ds-form-control-checkbox__indicator,
+      &:checked ~ .ds-form-control-radio__indicator {
+        &::after {
+          background: $ds-error-regular-color;
+        }
+
+        svg path {
+          fill: $ds-error-regular-color;
+        }
+      }
+    }
+
+    .ds-form-control-checkbox__indicator {
+      border-color: $ds-error-regular-color;
+    }
+
+    .ds-form-control-checkbox__label {
+      color: $ds-error-regular-color;
+    }
+  }
+}
+
+.ds-form-control-radio__indicator {
+  border-radius: 50%;
+
+  &::after {
+    display: block;
+    content: '';
+    background: $ds-brand-regular-color;
+    opacity: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

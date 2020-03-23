@@ -1,0 +1,62 @@
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/mixins';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/tooltip';
+
+.ds-tooltip {
+  @include ds-tooltip;
+  
+  &__tap-help {
+    @include display-xsmall-font;
+    text-align: left;
+    color: $ds-display-light-color;
+    font-variant: small-caps;
+  }
+
+  ul, 
+  ol {
+    margin: 0;
+    padding-left: spacing('xsm');
+
+    li {
+      margin: 0;
+      text-align: left;
+    }
+  }
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.mobile-tooltip {
+  &.show {
+    opacity: 1;
+    max-width: 250px;
+  }
+  
+  .ds-tooltip {
+    @include display-small-font;
+    font-size: $header-small-font-size;
+    text-align: left;
+    background-color: rgba(15, 13, 58, 1);  
+    max-width: 250px;
+    animation: float 2s ease-in-out infinite;
+  }
+
+  .arrow {
+    animation: float 2s ease-in-out infinite;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translatey(2px);
+  }
+  50% {
+    transform: translatey(-2px);
+  }
+  100% {
+    transform: translatey(2px);
+  }
+}

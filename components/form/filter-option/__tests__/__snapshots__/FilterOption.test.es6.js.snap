@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should display dropdown 1`] = `
+<div
+  className="ds-filter-option"
+>
+  <div
+    className="ds-filter-option__items"
+  />
+  <div
+    className="ds-filter-option__select"
+    onBlur={[Function]}
+    tabIndex="-1"
+  >
+    <div
+      className="ds-filter-option__select-header"
+    >
+      Filter by...
+    </div>
+  </div>
+  <div
+    className="ds-filter-option__actions"
+  >
+    <button
+      className="button button--sm"
+      disabled={false}
+      onClick={[Function]}
+      type="button"
+    >
+      Add filters
+      
+    </button>
+  </div>
+</div>
+`;
+
+exports[`should not display dropdown by default 1`] = `
+<div
+  className="ds-filter-option"
+>
+  <div
+    className="ds-filter-option__items"
+  />
+  <div
+    className="ds-filter-option__actions"
+  >
+    <button
+      className="button button--sm"
+      disabled={false}
+      onClick={[Function]}
+      type="button"
+    >
+      Add filters
+      
+    </button>
+  </div>
+</div>
+`;

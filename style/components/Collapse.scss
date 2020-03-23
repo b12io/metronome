@@ -1,0 +1,20 @@
+.ds-collapse {
+  &__body {
+    height: auto;
+    overflow: hidden;
+    transition: all .2s ease;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  &__action {
+    font-family: $ds-font-family-base;
+    font-size: 13px;
+    text-decoration: underline;
+    line-height: 1.4;
+    color: $ds-body-light-color;
+    cursor: pointer;
+  }
+}

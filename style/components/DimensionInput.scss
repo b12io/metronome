@@ -1,0 +1,148 @@
+.ds-form-input-dimension {
+  &__group {
+    border: $ds-input-border;
+    border-radius: $ds-border-radius-base;
+  }
+
+  &__input {
+    border-bottom: 1px solid $ds-ui-regular-color;
+    display: flex;
+    align-items: stretch;
+    position: relative;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    .ds-form-control {
+      border: none;
+      border-radius: initial;
+      box-shadow: none;
+      background: transparent;
+      text-align: right;
+      height: auto;
+      padding: spacing('xxxsm');
+
+      &[type=number]::-webkit-inner-spin-button,
+      &[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    }
+
+    .ds-form-group {
+      margin: 0;
+
+      & + & {
+        margin: 0;
+      }
+    }
+
+    &.has-error {
+      .ds-form-input-dimension__hint,
+      .ds-form-control-select__toggle {
+        color: $ds-error-regular-color;
+      }
+
+      .ds-form-control-select__toggle::before,
+      .ds-form-control-select__toggle::after {
+        background: $ds-error-regular-color;
+      }
+    }
+
+    &:hover {
+      .ds-form-input-dimension__tooltip {
+        opacity: 1;
+      }
+    }
+
+    &.has-fixed-unit {
+      .ds-form-control {
+        padding-right: 4px;
+      }
+    }
+  }
+
+  &__textfield {
+    flex: 0 0 80px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+    font-size: $body-xsmall-font-size;
+    color: $ds-display-light-color;
+    flex-basis: 100%;
+    padding: 12px 0 12px 10px;
+  }
+
+  &__tooltip {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    height: 16px;
+    width: 16px;
+    z-index: 10;
+    background: #fff;
+    border-radius: 50%;
+    opacity: 0;
+    transition: $ds-transition;
+
+    > div {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &__select {
+    flex: 0 0 75px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    border-left: 1px solid $ds-ui-regular-color;
+
+    .ds-form-control {
+      color: $ds-display-light-color;
+
+      &.ds-form-control-select__toggle {
+        padding-right: 35px;
+      }
+    }
+
+    .ds-form-control-select__dropdown {
+      min-width: 75px;
+      margin-top: 2px;
+      left: auto;
+      border-radius: 0 0 $ds-border-radius-base $ds-border-radius-base;
+    }
+
+    &--wide {
+      flex: 0 0 120px;
+      border-left: 0;
+    }
+  }
+
+  &__checkbox {
+    padding: spacing('xxxsm');
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 0 0 75px;
+
+    .ds-form-control-checkbox {
+      width: 20px;
+      height: 20px;
+      padding: 0;
+      margin: 0;
+      display: flex;
+    }
+  }
+
+  &__fixed-unit {
+    padding: 12px 10px 12px 0;
+    color: $ds-display-light-color;
+    font-size: $display-xsmall-font-size;
+  }
+}

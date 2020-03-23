@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`B12TimePicker component should render with Time label when no label is passed in 1`] = `
+<div
+  className="ds-form-control-wrap"
+>
+  <div
+    className="ds-control-label"
+  >
+    Time
+  </div>
+  <div>
+    <div
+      className="react-datepicker-wrapper"
+    >
+      <div
+        className="react-datepicker__input-container"
+      >
+        <input
+          className="datetime-picker__time-picker"
+          disabled={false}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          placeholder="Choose time"
+          type="text"
+          value="12:00 PM"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`B12TimePicker component should render with label when label is passed in 1`] = `
+<div
+  className="ds-form-control-wrap"
+>
+  <div
+    className="ds-control-label"
+  >
+    Test label
+  </div>
+  <div>
+    <div
+      className="react-datepicker-wrapper"
+    >
+      <div
+        className="react-datepicker__input-container"
+      >
+        <input
+          className="datetime-picker__time-picker"
+          disabled={false}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          placeholder="Choose time"
+          type="text"
+          value="12:00 PM"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

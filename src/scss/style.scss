@@ -1,0 +1,21 @@
+/* Core
+ */
+
+@import "../../style/base";
+@import "normalize";
+@import "core";
+
+/* Design System static pages
+ */
+
+@import "layout";
+@import "pages/colors";
+@import "pages/inputs";
+@import "pages/icons";
+@import "pages/buttons";
+@import "pages/sidebar";
+
+/* Utils
+ */
+
+@import "utils";
