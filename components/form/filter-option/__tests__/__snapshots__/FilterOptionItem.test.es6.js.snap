@@ -77,6 +77,7 @@ exports[`FilterOptionItem component should display content 1`] = `
             disabled={false}
             onBlur={[Function]}
             onChange={[Function]}
+            onFocus={[Function]}
             placeholder=""
             type="text"
             value={1}

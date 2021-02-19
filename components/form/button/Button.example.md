@@ -1,7 +1,7 @@
 ### Default
 
 ```jsx
-import Button from '@b12/design-system/components/form/button/Button.es6.js';
+import Button from '@b12/design-system/components/form/button/Button';
 
 <>
     <Button label="Default"/>
@@ -12,7 +12,7 @@ import Button from '@b12/design-system/components/form/button/Button.es6.js';
 
 #### Primary Button 
 ```jsx
-import Button from '@b12/design-system/components/form/button/Button.es6.js';
+import Button from '@b12/design-system/components/form/button/Button';
 
 <>
     <Button label="Default" primary />
@@ -23,7 +23,7 @@ import Button from '@b12/design-system/components/form/button/Button.es6.js';
 
 #### Button Sizing 
 ```jsx
-import Button from '@b12/design-system/components/form/button/Button.es6.js';
+import Button from '@b12/design-system/components/form/button/Button';
 
 <>
     <Button label="Small" primary small />
@@ -36,7 +36,7 @@ import Button from '@b12/design-system/components/form/button/Button.es6.js';
 
 #### Button with Badges 
 ```jsx
-import Button from '@b12/design-system/components/form/button/Button.es6.js';
+import Button from '@b12/design-system/components/form/button/Button';
 
 <>
     <Button label="Get Expert Boost" badge="$99" primary />
@@ -46,7 +46,7 @@ import Button from '@b12/design-system/components/form/button/Button.es6.js';
 
 #### Button with Chevron 
 ```jsx
-import Button from '@b12/design-system/components/form/button/Button.es6.js';
+import Button from '@b12/design-system/components/form/button/Button';
 
 <>
     <Button label="I act like a toggle" chevron />

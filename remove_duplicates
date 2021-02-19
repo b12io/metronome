@@ -1,0 +1,27 @@
+#!/bin/bash
+
+for file in $(find components -type f -name '*.js')
+do
+  ts_version="${file/\.js/\.ts}"
+  tsx_version="${file/\.js/\.tsx}"
+
+  if [[ $file == *test.js ]]
+  then
+    echo "We don't rename tests, sorry: $file"
+    continue
+  fi
+
+  if [ -e $ts_version ] || [ -e $tsx_version ]
+  then
+    echo "File $file already has a typed version."
+    rm $file
+  else
+    if grep React $file >/dev/null
+    then
+      mv -v $file $tsx_version
+    else
+      mv -v $file $ts_version
+    fi
+  fi
+done
+

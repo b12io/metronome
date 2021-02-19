@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Find files that contain // @flow mark and try to migrate them to typescript
+npx @khanacademy/flow-to-ts --write `git grep --files-with-matches @flow`
+
+# Rename .es6.tsx to .tsx and es6.js to .ts
+find . -name '*.es6.tsx' | sed -e "p;s/es6\.tsx/tsx/" | xargs -n2 mv -v
+find . -name '*.es6.ts' | sed -e "p;s/es6\.ts/ts/" | xargs -n2 mv -v

@@ -21,6 +21,13 @@ module.exports = {
         'components/form/checkbox/Checkbox.es6.js'
       ],
       sectionDepth: 2
+    },
+    {
+      name: 'Layout',
+      components: [
+        'components/layout/nav-indicator/NavIndicator.es6.js'
+      ],
+      sectionDepth: 2
     }
   ],
   styleguideComponents: {
@@ -44,7 +51,7 @@ module.exports = {
       monospace: ['SF Mono', 'Segoe UI Mono', 'Roboto Mono', 'Ubuntu Mono', 'Menlo', 'Courier', 'monospace']
     }
   },
-  webpackConfig: require('./webpack.config.js'),
+  webpackConfig: require('./webpack/demo.config.js'),
   styles: path.join(__dirname, 'src/scss/style.scss'),
   getComponentPathLine (componentPath) {
     const name = path.basename(componentPath, '.es6.js')
