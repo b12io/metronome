@@ -14,6 +14,7 @@ do
   if [ -e $ts_version ] || [ -e $tsx_version ]
   then
     echo "File $file already has a typed version."
+    rm $file
   else
     if grep React $file >/dev/null
     then
