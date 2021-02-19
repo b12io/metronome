@@ -1,5 +1,6 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 const path = require('path')
 const rootPath = path.resolve(__dirname, '..')
@@ -30,7 +31,7 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          { loader: 'style-loader' },
+          { loader: MiniCssExtractPlugin.loader },
           { loader: 'css-loader' },
           { loader: 'sass-loader' }
         ]
@@ -40,6 +41,9 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(['dist'], {
       root: process.cwd()
+    }),
+    new MiniCssExtractPlugin({
+      filename: 'metronome.css'
     })
   ]
 }

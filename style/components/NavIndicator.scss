@@ -1,0 +1,33 @@
+@import '~bootstrap/scss/variables';
+
+.nav-indicator {
+  height: 7px;
+  display: flex;
+
+  & > span {
+    flex-grow: 1;
+    background-color: $ds-ui-border-color;
+
+    &:not(:last-child) {
+      margin-right: spacing('xxxxsm');
+    }
+
+    &:first-child {
+      border-radius: 3.5px 0 0 3.5px;
+    }
+
+    &:last-child {
+      border-radius: 0 3.5px 3.5px 0;
+    }
+
+    // For the case when only 1 step is used in total.
+    &:only-child {
+      border-radius: 3.5px;
+    }
+  }
+
+  & > &__active {
+    background-color: $ds-brand-light-color;
+  }
+}
+
