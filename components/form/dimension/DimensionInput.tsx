@@ -1,0 +1,80 @@
+
+import React from "react";
+import classnames from "classnames";
+
+import { isEmpty } from "lodash";
+
+import TextField from "../textfield/TextField.es6";
+import Select from "../select/Select.es6";
+import Option from "../option/Option.es6";
+import Tooltip from "./Tooltip.es6";
+
+type State = {
+  isValid: boolean;
+};
+
+type Props = {
+  label: string;
+  help?: string;
+  value: string;
+  units: Array<string>;
+  selectedUnit: string | null | undefined;
+  fixedUnit?: string;
+  onUpdate: (value: string, unit: string) => void;
+};
+
+class DimensionInput extends React.Component<Props, State> {
+
+  static defaultProps = {
+    units: [],
+    selectedUnit: ''
+  };
+
+  state = {
+    isValid: true
+  };
+
+  onValueChange = (value: string) => {
+    this.setState({
+      isValid: !isEmpty(value)
+    });
+    this.props.onUpdate(value, this.props.selectedUnit || '');
+  };
+
+  onUnitChange = (selectedUnit: string) => {
+    this.props.onUpdate(this.props.value, selectedUnit);
+  };
+
+  render() {
+    const {
+      label,
+      value,
+      units,
+      selectedUnit,
+      help,
+      fixedUnit
+    } = this.props;
+
+    return <div className={classnames('ds-form-input-dimension__input', {
+      'has-error': !this.state.isValid,
+      'has-fixed-unit': fixedUnit
+    })}>
+        <div className="ds-form-input-dimension__label">
+          {label}
+        </div>
+        <div className="ds-form-input-dimension__textfield">
+          <TextField type="number" value={value} onUpdate={this.onValueChange} />
+        </div>
+        {fixedUnit ? <div className="ds-form-input-dimension__fixed-unit">
+            {fixedUnit}
+          </div> : <div className="ds-form-input-dimension__select">
+            <Select placeholder={selectedUnit || "Please select a unit"} onChange={this.onUnitChange} search={false}>
+              {units.map(unit => <Option label={unit} value={unit} key={unit} />)}
+            </Select>
+          </div>}
+        {help && <Tooltip help={help} />}
+      </div>;
+  }
+}
+
+export default DimensionInput;
