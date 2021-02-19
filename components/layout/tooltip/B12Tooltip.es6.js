@@ -4,8 +4,10 @@ import { Tooltip, UncontrolledTooltip } from 'reactstrap'
 
 import type { Element, Node } from 'react'
 
+type children = Element<any> | ({ tooltip: Element<typeof UncontrolledTooltip | typeof Tooltip>, target: string }) => Node 
+
 type Props = {|
-  children: ({ tooltip: Element<typeof UncontrolledTooltip | typeof Tooltip>, target: string }) => Node,
+  children: children,
   innerClassName: string,
   modifiers: { offset: { offset: string } },
   onClick?: (event: SyntheticEvent<HTMLDivElement>) => void,
@@ -29,43 +31,83 @@ type Props = {|
   // Apply class to the inner-tooltip
   innerClassName?: string,
   // optionally hide tooltip when hovering over tooltip content - default true
-  autohide?: boolean
+  autohide?: boolean,
+  // use a simplified css-based tooltip (useful when used within a button)
+  simple?: boolean,
 |}
 
-function B12Tooltip (props: Props) {
-  const { children, target, text, controlled, showTapToDismissText, tapToDismiss, onClick, ...tooltipOptions } = props
-  const tapHelper = showTapToDismissText && (
-    <div className="ds-tooltip__tap-help">
-      tap to dismiss
-    </div>
-  )
-  const content = tapToDismiss ? (
-    <div onClick={onClick}>
-      {text}
-      {tapHelper}
-    </div>
-  ) : text
+type State = {|
+  hasError: boolean
+|}
 
-  const tooltip = controlled ? (
-    <Tooltip {...tooltipOptions} target={target}>
-      {content}
-    </Tooltip>
-  ) : (
-    <UncontrolledTooltip {...tooltipOptions} target={target}>
-      {content}
-    </UncontrolledTooltip>
-  )
+class B12Tooltip extends React.Component<Props, State> {
+  static defaultProps = {
+    controlled: false,
+    innerClassName: 'ds-tooltip',
+    modifiers: { offset: { offset: '0, 7' } },
+    placement: 'top',
+    showTapToDismissText: false,
+    tapToDismiss: false
+  }
 
-  return children({ tooltip, target })
-}
+  state = {
+    hasError: false
+  }
 
-B12Tooltip.defaultProps = {
-  controlled: false,
-  innerClassName: 'ds-tooltip',
-  modifiers: { offset: { offset: '0, 7' } },
-  placement: 'top',
-  showTapToDismissText: false,
-  tapToDismiss: false
+  currentAttempts = 0
+
+  componentDidCatch () {
+    this.setState({ hasError: true }, () => {
+      if (this.currentAttempts < 5) {
+        this.currentAttempts++
+        this.setState({ hasError: false })
+      }
+    })
+  }
+
+  render () {
+    if (this.state.hasError) {
+      return null
+    }
+
+    const { children, target, text, controlled, showTapToDismissText, tapToDismiss, onClick, ...tooltipOptions } = this.props
+    if (this.props.simple) {
+      /**
+       * B12Tooltip is constructed using `div`s and thus cannot be used inside buttons.
+       * This span with its class is created to address that issue.
+      */
+      const innerClass = `ds-tooltip__simple--${this.props.placement}`
+      return (
+        <span className="ds-tooltip__simple">
+          { children }
+          <span className={innerClass}>{ text }</span>
+        </span>
+      )
+    }
+    const tapHelper = showTapToDismissText && (
+      <div className="ds-tooltip__tap-help">
+        tap to dismiss
+      </div>
+    )
+    const content = tapToDismiss ? (
+      <div onClick={onClick}>
+        {text}
+        {tapHelper}
+      </div>
+    ) : text
+
+    const tooltip = controlled ? (
+      <Tooltip {...tooltipOptions} target={target}>
+        {content}
+      </Tooltip>
+    ) : (
+      <UncontrolledTooltip {...tooltipOptions} target={target}>
+        {content}
+      </UncontrolledTooltip>
+    )
+
+    return children({ tooltip, target })
+  }
 }
 
 export default B12Tooltip

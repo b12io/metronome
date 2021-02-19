@@ -17,9 +17,9 @@ type Props = {|
 
 function PaletteOption ({ block, colors, onOptionClick, selected,
   value, border }: Props) {
-  const swatches = colors.map(color => {
+  const swatches = colors.map((color, index) => {
     return (
-      <div key={color}
+      <div key={`${color}-${index}`}
         className="ds-palette-option__color"
         style={{ backgroundColor: color }}>
       </div>

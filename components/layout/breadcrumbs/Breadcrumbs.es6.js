@@ -3,7 +3,6 @@
 import * as React from 'react'
 import classnames from 'classnames'
 
-import B12Tooltip from '../tooltip/B12Tooltip.es6.js'
 import BreadcrumbEntry from './BreadcrumbEntry.es6.js'
 
 type EntryRef = { current: null | HTMLDivElement }
@@ -11,7 +10,8 @@ type Entry = { label: string | React.Element }
 
 type IndexedEntry = {
   entry: Entry,
-  index: number
+  index: number,
+  width: number
 }
 
 type Props = {
@@ -120,7 +120,7 @@ function Breadcrumbs ({ entries, onClick, maxEntryWidth = 90 }: Props) {
     // 2. Add visible entries to the visible list
     // 3. Add entries we should hide to the hidden list
 
-    const indexedEntries = entries.map((entry: Entry, index: number) => ({ index, entry }))
+    const indexedEntries = entries.map((entry: Entry, index: number) => ({ index, entry, width: getEntryWidth(entriesRefs[index]) }))
     const visible = indexedEntries.slice(indexedEntries.length - visibleEntriesCount)
     const hidden = indexedEntries.slice(1, indexedEntries.length - visibleEntriesCount)
 
@@ -153,6 +153,7 @@ function Breadcrumbs ({ entries, onClick, maxEntryWidth = 90 }: Props) {
           <div className="ds-tabbed-nav__breadcrumbs-container">
             <BreadcrumbEntry
               showSeparator={false}
+              showTooltip={false}
               label={entries[0].label}
               clickable={true}
               onClick={onClickEntryWithIndex(0)}
@@ -202,6 +203,7 @@ function Breadcrumbs ({ entries, onClick, maxEntryWidth = 90 }: Props) {
               <BreadcrumbEntry
                 clickable={(visibleEntries.length - 1) !== index}
                 width={maxEntryWidth}
+                showTooltip={(maxEntryWidth < entry.width)}
                 showSeparator={index !== 0}
                 key={entry.entry.label}
                 label={entry.entry.label}

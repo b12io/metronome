@@ -24,7 +24,8 @@ const defaultProps = {
   className: '',
   viewBox: '0 0 16 16',
   height: 16,
-  width: 16
+  width: 16,
+  solid: true
 }
 const defaultPropTypes = {
   color: propTypeRegExp(/^#([a-f0-9]{6}|[a-f0-9]{3})$/i),
@@ -32,7 +33,8 @@ const defaultPropTypes = {
   viewBox: PropTypes.string,
   height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  style: PropTypes.object
+  style: PropTypes.object,
+  solid: PropTypes.bool
 }
 
 function Icon ({ color, className, path, viewBox, width, height, style }) {
@@ -103,9 +105,21 @@ function TimesCircle (props) {
   return <Icon path={path} {...props} style={{transform: 'rotate(45deg)'}} />
 }
 
-function RemoveCircle (props) {
-  const path = 'M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm2.121 11.536L8 9.414l-2.121 2.122-1.415-1.415L6.586 8 4.464 5.879 5.88 4.464 8 6.586l2.121-2.122 1.415 1.415L9.414 8l2.122 2.121-1.415 1.415z'
-  return <Icon path={path} {...props} />
+function RemoveCircle ({className, width, height, style, color, solid}) {
+  if (solid) {
+    return (
+      <svg className={className} width={width} height={height} style={style} viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+        <path fillRule="nonzero" fill={color} d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm2.121 11.536L8 9.414l-2.121 2.122-1.415-1.415L6.586 8 4.464 5.879 5.88 4.464 8 6.586l2.121-2.122 1.415 1.415L9.414 8l2.122 2.121-1.415 1.415z"/>
+      </svg>
+    )
+  } else {
+    return (
+      <svg className={className} width={width} height={height} style={style} viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+        <path fillRule="nonzero" fill={color} d="M8 16C6.4 16 4.9 15.5 3.6 14.7 2.2 13.8 1.2 12.5 0.6 11.1 0 9.6-0.2 8 0.2 6.4 0.5 4.9 1.2 3.5 2.3 2.3 3.5 1.2 4.9 0.5 6.4 0.2 8-0.2 9.6 0 11.1 0.6 12.5 1.2 13.8 2.2 14.7 3.6 15.5 4.9 16 6.4 16 8 16 10.1 15.2 12.2 13.7 13.7 12.2 15.2 10.1 16 8 16ZM8 1C6.6 1 5.3 1.4 4.1 2.2 3 2.9 2.1 4 1.5 5.3 1 6.6 0.9 8 1.1 9.4 1.4 10.7 2.1 12 3.1 12.9 4 13.9 5.3 14.6 6.6 14.9 8 15.1 9.4 15 10.7 14.5 12 13.9 13.1 13 13.8 11.9 14.6 10.7 15 9.4 15 8 15 6.1 14.3 4.4 12.9 3.1 11.6 1.7 9.9 1 8 1Z"/>
+        <path fillRule="nonzero" fill={color} d="M4.6 10.3C4.3 10.6 4.3 11.1 4.6 11.4 4.9 11.7 5.4 11.7 5.7 11.4L8 9.1 10.3 11.4C10.6 11.7 11.1 11.7 11.4 11.4 11.7 11.1 11.7 10.6 11.4 10.3L9.1 8 11.4 5.7C11.7 5.4 11.7 4.9 11.4 4.6 11.1 4.3 10.6 4.3 10.3 4.6L8 6.9 5.7 4.6C5.4 4.3 4.9 4.3 4.6 4.6 4.3 4.9 4.3 5.4 4.6 5.7L6.9 8 4.6 10.3Z"/>
+      </svg>
+    )
+  }
 }
 
 function PlusCircle (props) {
@@ -734,8 +748,8 @@ function CheckSelected ({width, height, viewBox, color}) {
 function CheckmarkCircle ({width, height, viewBox, color}) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox={viewBox}>
-      <path fill={color} d="M8,16a8,8,0,1,1,8-8A8,8,0,0,1,8,16ZM8,1a7,7,0,1,0,7,7A7,7,0,0,0,8,1Z"/>
-      <path fill={color} d="M7,10.5a.5.5,0,0,1-.35-.15l-2.5-2.5a.5.5,0,0,1,.71-.71L7,9.29l4.65-4.65a.5.5,0,1,1,.71.71l-5,5A.5.5,0,0,1,7,10.5Z"/>
+      <path fill={color} d="M8 16C6.4 16 4.9 15.5 3.6 14.7 2.2 13.8 1.2 12.5 0.6 11.1 0 9.6-0.2 8 0.2 6.4 0.5 4.9 1.2 3.5 2.3 2.3 3.5 1.2 4.9 0.5 6.4 0.2 8-0.2 9.6 0 11.1 0.6 12.5 1.2 13.8 2.2 14.7 3.6 15.5 4.9 16 6.4 16 8 16 10.1 15.2 12.2 13.7 13.7 12.2 15.2 10.1 16 8 16V16ZM8 1C6.6 1 5.3 1.4 4.1 2.2 3 2.9 2.1 4 1.5 5.3 1 6.6 0.9 8 1.1 9.4 1.4 10.7 2.1 12 3.1 12.9 4 13.9 5.3 14.6 6.6 14.9 8 15.1 9.4 15 10.7 14.5 12 13.9 13.1 13 13.8 11.9 14.6 10.7 15 9.4 15 8 15 6.1 14.3 4.4 12.9 3.1 11.6 1.7 9.9 1 8 1V1Z"/>
+      <path fill={color} d="M7 11C6.9 11 6.7 11 6.6 10.9L4.1 8.4C4.1 8.3 4 8.1 4 8 4 7.9 4.1 7.7 4.1 7.6 4.2 7.6 4.4 7.5 4.5 7.5 4.6 7.5 4.8 7.6 4.9 7.6L7 9.8 11.6 5.1C11.7 5.1 11.7 5.1 11.8 5 11.9 5 11.9 5 12 5 12.1 5 12.1 5 12.2 5 12.3 5.1 12.3 5.1 12.4 5.1 12.4 5.2 12.4 5.2 12.5 5.3 12.5 5.4 12.5 5.4 12.5 5.5 12.5 5.6 12.5 5.6 12.5 5.7 12.4 5.8 12.4 5.8 12.4 5.9L7.4 10.9C7.3 10.9 7.3 10.9 7.2 11 7.1 11 7.1 11 7 11Z"/>
     </svg>
   )
 }
@@ -954,12 +968,9 @@ function Hidden (props) {
   return <Icon path={path} {...props} />
 }
 
-function ArrowCircle ({ color, className, viewBox, width, height }) {
-  return (
-    <svg className={className} width={width} height={height} viewBox={viewBox} xmlns="http://www.w3.org/2000/svg">
-      <g fill="none" fillRule="evenodd"><circle fill={color} cx="10" cy="10" r="10"/><circle fill="#FFF" cx="10" cy="10" r="7"/><path d="M10 2c-4.4 0-8 3.6-8 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm0 12v-3H6V9h4V6l4 4-4 4z" fill={color} fillRule="nonzero"/></g>
-    </svg>
-  )
+function ArrowCircle (props) {
+  const path = 'M8,0 C3.6,0 0,3.6 0,8 C0,12.4 3.6,16 8,16 C12.4,16 16,12.4 16,8 C16,3.6 12.4,0 8,0 Z M8,12 L8,9 L4,9 L4,7 L8,7 L8,4 L12,8 L8,12 Z'
+  return <Icon path={path} {...props} />
 }
 
 function InfoCircle ({ color = '#A9A9AB', ...props }) {
@@ -1517,6 +1528,175 @@ function Sidebar ({ className, width, height, viewBox, color }) {
   )
 }
 
+function Palette ({ className, width, height, viewBox, color }) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" className={className} width={width} height={height} viewBox={viewBox}>
+      <path fill={color} fillRule="nonzero" d="M13.9 3.8c-3.6-1.7-6.6 1.8-8 0-.5-.7.7-2 0-2.9C5.4.3 4.2.4 3.5.9 1.4 2.4 0 4.8 0 7.5c0 4.4 3.6 8 8 8 3.7 0 6.8-2.5 7.7-5.9.4-1.1.8-4.5-1.8-5.8zM3 8c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1zm2 4c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1zm4 2c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1zm3-4c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
+    </svg>
+  )
+}
+
+function Lightbox ({ className, width, height, color }) {
+  return (
+    <svg className={className} width={width} height={height} viewBox="0 0 562 562" xmlns="http://www.w3.org/2000/svg">
+      <path fill={color} d="M561.547 408.098v-357c0-28.05-22.95-51-51-51h-357c-28.05 0-51 22.95-51 51v357c0 28.05 22.95 51 51 51h357c28.05 0 51-22.95 51-51zm-318.75-140.25l63.75 76.5 89.25-114.75 114.75 153h-357l89.25-114.75zM.547 127.098v383c0 28.05 22.95 51 51 51h383c13.807 0 25-11.193 25-25v-1c0-13.807-11.193-25-25-25h-383v-383c0-13.807-11.193-25-25-25h-1c-13.807 0-25 11.193-25 25z" fillRule="nonzero"/>
+    </svg>
+  )
+}
+
+function Filter ({ className, width, height, color }) {
+  return (
+    <svg className={className} width={width} height={height} viewBox="0 0 402.577 402.577" xmlns="http://www.w3.org/2000/svg">
+      <path fill={color} d="M400.858 11.427C397.617 4.006 392.008.295 384.004.291H18.564c-7.993 0-13.61 3.715-16.846 11.136-3.234 7.801-1.903 14.467 3.999 19.985l140.757 140.753V310.92c0 4.955 1.809 9.232 5.424 12.854l73.085 73.083c3.429 3.614 7.71 5.428 12.851 5.428 2.282 0 4.66-.479 7.135-1.43 7.426-3.238 11.14-8.851 11.14-16.845V172.166L396.861 31.413c5.904-5.518 7.232-12.182 3.997-19.986z"/>
+    </svg>
+  )
+}
+
+function Slider ({ className, width, height, color }) {
+  return (
+    <svg className={className} width={width} height={height} viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+      <g fill={color} fillRule="evenodd">
+        <path d="M458.694 320.33a21.207 21.207 0 01-12.778-4.267c-9.43-7.062-11.35-20.438-4.267-29.867l22.4-29.867-22.4-29.866c-7.083-9.43-5.163-22.806 4.267-29.867 9.408-7.104 22.762-5.163 29.845 4.267l32 42.666c5.696 7.574 5.696 18.027 0 25.6l-32 42.667c-4.16 5.59-10.56 8.533-17.067 8.533zM53.404 320.33c-6.507 0-12.886-2.945-17.088-8.534l-32-42.667c-5.696-7.573-5.696-18.026 0-25.6l32-42.666c7.06-9.408 20.437-11.35 29.866-4.267 9.43 7.061 11.35 20.437 4.267 29.867l-22.4 29.866 22.4 29.867c7.083 9.43 5.163 22.805-4.267 29.867a21.207 21.207 0 01-12.778 4.266z"/>
+        <path d="M351.38 512.659H160.72c-35.285 0-54.004-22.49-54.004-64.887V64.888C106.716 22.491 125.435 0 160.72 0h190.66c35.285 0 54.002 22.491 54.002 64.888v382.884c0 42.397-18.717 64.887-54.002 64.887z" fillRule="nonzero"/>
+      </g>
+    </svg>
+  )
+}
+
+function Flash ({ className, color, width = '11', height = '16', viewBox = '0 0 11 16' }) {
+  return (
+    <svg className={className} width={width} height={height} viewBox={viewBox} xmlns="http://www.w3.org/2000/svg">
+      <g fill={color} fillRule="nonzero">
+        <path d="M7.2,0 L3.4,0 C3,0 2.6,0.3 2.4,0.7 L0.4,7.7 C0.2,8.4 0.7,9 1.3,9 L5,9 L3.5,16 L10.8,6.6 C11.3,6 10.8,5 10,5 L7,5 L8.1,1.3 C8.3,0.6 7.8,0 7.2,0 Z" />
+      </g>
+    </svg>
+  )
+}
+
+function Dashboard ({ className, color, width = '16', height = '16', viewBox = '0 0 16 16' }) {
+  return (
+    <svg className={className} width={width} height={height} viewBox={viewBox} xmlns="http://www.w3.org/2000/svg">
+      <path d="M8 0C3.589 0 0 3.589 0 8s3.589 8 8 8 8-3.589 8-8-3.589-8-8-8zm5.91 9H8.677L6.929 4.628l-1.858.744L6.523 9H2.09A5.998 5.998 0 012 8c0-3.309 2.691-6 6-6s6 2.691 6 6c0 .341-.035.674-.09 1z" fill={color} fillRule="nonzero"/>
+    </svg>
+  )
+}
+
+function Guides ({ className, color, width = '16', height = '16', viewBox = '0 0 16 16' }) {
+  return (
+    <svg className={className} width={width} height={height} viewBox={viewBox} xmlns="http://www.w3.org/2000/svg">
+      <g fill={color} fillRule="nonzero">
+        <path d="M7 3v10H5v2h3a1 1 0 001-1V4h2V2H8a1 1 0 00-1 1z"/>
+        <circle cx="2" cy="14" r="2"/>
+        <path d="M12 0v6l4-3z"/>
+      </g>
+    </svg>
+  )
+}
+
+function Article ({ className, color, width = '16', height = '16', viewBox = '0 0 16 16' }) {
+  return (
+    <svg className={className} width={width} height={height} viewBox={viewBox} xmlns="http://www.w3.org/2000/svg">
+      <path d="M15 15V5l-5-5H2c-.6 0-1 .4-1 1v14c0 .6.4 1 1 1h12c.6 0 1-.4 1-1zM3 2h6v4h4v8H3V2z" fill={color} fillRule="nonzero"/>
+    </svg>
+  )
+}
+
+function Pulse ({ className, color, width = '16', height = '16', viewBox = '0 0 16 16' }) {
+  return (
+    <svg className={className} width={width} height={height} viewBox={viewBox} xmlns="http://www.w3.org/2000/svg">
+      <path fill={color} d="M15,0 L1,0 C0.4,0 0,0.4 0,1 L0,15 C0,15.6 0.4,16 1,16 L15,16 C15.6,16 16,15.6 16,15 L16,1 C16,0.4 15.6,0 15,0 Z M14,14 L2,14 L2,9 L4.5,9 L6,6.8 L10,12.8 L12.5,9 L14,9 L14,14 Z M14,7 L11.5,7 L10,9.2 L6,3.2 L3.5,7 L2,7 L2,2 L14,2 L14,7 Z" />
+    </svg>
+  )
+}
+
+function Edit ({ className, color, width = '16', height = '16', viewBox = '0 0 16 16' }) {
+  return (
+    <svg className={className} width={width} height={height} viewBox={viewBox} xmlns="http://www.w3.org/2000/svg">
+      <path fill={color} d="M14.1,0.3 C13.7,-0.1 13.1,-0.1 12.7,0.3 L6,7 L6,10 L9,10 L15.7,3.3 C16.1,2.9 16.1,2.3 15.7,1.9 L14.1,0.3 Z" />
+      <path fill={color} d="M15,9 C14.4,9 14,9.4 14,10 L14,14 L2,14 L2,2 L6,2 C6.6,2 7,1.6 7,1 C7,0.4 6.6,0 6,0 L1,0 C0.4,0 0,0.4 0,1 L0,15 C0,15.6 0.4,16 1,16 L15,16 C15.6,16 16,15.6 16,15 L16,10 C16,9.4 15.6,9 15,9 Z" />
+    </svg>
+  )
+}
+
+function ContentApproved ({ className, color, width = '16', height = '16' }) {
+  return (
+    <svg className={className} width={width} height={height} viewBox="0 0 17 14" xmlns="http://www.w3.org/2000/svg">
+      <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+        <g fill={color} fillRule="nonzero">
+          <path d="M15.6247423,2 L1.65360816,2 C1.10274629,2 0.65567,1.552 0.65567,1 L0.65567,1 C0.65567,0.448 1.10274629,0 1.65360816,0 L15.6247423,0 C16.1756042,0 16.6226805,0.448 16.6226805,1 L16.6226805,1 C16.6226805,1.552 16.1756042,2 15.6247423,2 Z"/>
+          <path d="M15.6247423,6 L1.65360816,6 C1.10274629,6 0.65567,5.552 0.65567,5 L0.65567,5 C0.65567,4.448 1.10274629,4 1.65360816,4 L15.6247423,4 C16.1756042,4 16.6226805,4.448 16.6226805,5 L16.6226805,5 C16.6226805,5.552 16.1756042,6 15.6247423,6 Z"/>
+          <path d="M5.64536078,10 L1.65360816,10 C1.10174836,10 0.65567,9.553 0.65567,9 C0.65567,8.447 1.10174836,8 1.65360816,8 L5.64536078,8 C6.19722058,8 6.64329894,8.447 6.64329894,9 C6.64329894,9.553 6.19722058,10 5.64536078,10 Z"/>
+          <path d="M5.64536078,14 L1.65360816,14 C1.10174836,14 0.65567,13.553 0.65567,13 C0.65567,12.447 1.10174836,12 1.65360816,12 L5.64536078,12 C6.19722058,12 6.64329894,12.447 6.64329894,13 C6.64329894,13.553 6.19722058,14 5.64536078,14 Z"/>
+          <path d="M11.6329898,14 C11.3775176,14 11.1220454,13.902 10.9274475,13.707 L8.93157126,11.707 C8.54137745,11.316 8.54137745,10.684 8.93157126,10.293 C9.32176506,9.902 9.95246195,9.902 10.3426558,10.293 L11.6329898,11.586 L14.9192,8.293 C15.3093938,7.902 15.9400907,7.902 16.3302845,8.293 C16.7204783,8.684 16.7204783,9.316 16.3302845,9.707 L12.338532,13.707 C12.1439341,13.902 11.8884619,14 11.6329898,14 Z"/>
+        </g>
+      </g>
+    </svg>
+  )
+}
+
+function Dragger({ className, width, height, viewBox, color }) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" className={className} width={width} height={height} viewBox={viewBox}>
+      <g fill="none">
+        <g fill={color}>
+          <rect width="1" height="16" />
+          <rect x="5" width="1" height="16" />
+          <rect x="10" width="1" height="16" />
+        </g>
+      </g>
+    </svg>
+  )
+}
+
+function PaperClip({ className, width, height, viewBox, color }) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" className={className} width={width} height={height} viewBox={viewBox}>
+      <g fill={color}>
+        <path d="M5 5v4c0 1.7 1.3 3 3 3s3-1.3 3-3V4.5C11 2 9 0 6.5 0S2 2 2 4.5V10c0 3.3 2.7 6 6 6s6-2.7 6-6V4h-2v6c0 2.2-1.8 4-4 4s-4-1.8-4-4V4.5C4 3.1 5.1 2 6.5 2S9 3.1 9 4.5V9c0 0.6-0.4 1-1 1S7 9.6 7 9V5H5z"/>
+      </g>
+    </svg>
+  )
+}
+
+function Invoicing({ className, width, height, color }) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" className={className} width={width} height={height} viewBox="0 0 64 64" fill="none">
+      <path fillRule="evenodd" clipRule="evenodd" d="M6 0h52v63.608l-10-6.25-8 5-8-5-8 5-8-5-10 6.25V0zm4 4v52.392l6-3.75 8 5 8-5 8 5 8-5 6 3.75V4H10z" fill={color}/>
+      <path fillRule="evenodd" clipRule="evenodd" d="M16 15h20v4H16v-4zM16 27h20v4H16v-4zM16 39h20v4H16v-4zM40 39h8v4h-8v-4zM40 27h8v4h-8v-4zM40 15h8v4h-8v-4z" fill={color}/>
+    </svg>
+  )
+}
+
+function Banking({ className, width, height, viewBox, color }) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" className={className} width={width} height={height} viewBox={viewBox}>
+      <g fill={color}>
+        <path d="M8 6c2.9 0 6-.9 6-3s-3.1-3-6-3-6 .9-6 3 3.1 3 6 3z"/>
+        <path d="M2 6.5V8c0 2.1 3.1 3 6 3s6-.9 6-3V6.5C12.6 7.4 10.5 8 8 8s-4.6-.6-6-1.5zM2 11.5V13c0 2.1 3.1 3 6 3s6-.9 6-3v-1.5c-1.4 1-3.5 1.5-6 1.5s-4.6-.6-6-1.5z"/>
+      </g>
+    </svg>
+  )
+}
+
+function Checkbox({ className, width='16', height='16', color}) {
+  return (
+    <svg className={className} width={width} height={height} viewBox="0 0 15 16" xmlns="http://www.w3.org/2000/svg">
+      <g fill={color}>
+        <path d="M13.3 2.23L7 8.514 5.7 7.218c-.4-.4-1-.4-1.4 0-.4.399-.4.997 0 1.396l2 1.996c.2.2.4.3.7.3.3 0 .5-.1.7-.3l7-6.984c.4-.399.4-.998 0-1.397s-1-.399-1.4 0z"/>
+        <path d="M1 15.897h12c.6 0 1-.399 1-.997V9.91c0-.598-.4-.997-1-.997s-1 .399-1 .997v3.991H2V3.925h5c.6 0 1-.399 1-.997 0-.599-.4-.998-1-.998H1c-.6 0-1 .4-1 .998V14.9c0 .598.4.997 1 .997z"/>
+      </g>
+      </svg>
+  )
+}
+
+function Circle ({width, height, viewBox, color}) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox={viewBox}>
+      <path fill={color} d="M8,16a8,8,0,1,1,8-8A8,8,0,0,1,8,16ZM8,1a7,7,0,1,0,7,7A7,7,0,0,0,8,1Z"/>
+    </svg>
+  )
+}
+
 const icons = [
   Check,
   Checkmark,
@@ -1669,7 +1849,22 @@ const icons = [
   Chart,
   Pause,
   HubspotLogo,
-  Sidebar
+  Sidebar,
+  Palette,
+  Lightbox,
+  Filter,
+  Slider,
+  Dashboard,
+  Guides,
+  Article,
+  Pulse,
+  Edit,
+  ContentApproved,
+  Dragger,
+  PaperClip,
+  Invoicing,
+  Banking,
+  Circle
 ]
 
 each(icons, (icon) => {
@@ -1693,5 +1888,6 @@ export { Check, Checkmark, Lock, Notice, Disabled, Help, Search, Draggable,
   DiagonalArrow, Import, AddCustomer, CaretDown, Availability, Repeat, CalendarEvent, Payments,
   Service, Email, AppCube, MagicWand, Layout, Send, Code, User, Section, Tag, Welcome, Website, Chat,
   RotateForward, Globe, At, Target, IconRow, IconColumn, IconSection, FolderFilled, BlogPost, MenuItems, Popup,
-  Flag, Testimonials, Chart, Pause, HubspotLogo, AlignLeftV2, AlignRightV2, AlignCenterV2, AlignJustifyV2, Sidebar
+  Flag, Testimonials, Chart, Pause, HubspotLogo, AlignLeftV2, AlignRightV2, AlignCenterV2, AlignJustifyV2, Sidebar, Palette, Lightbox, Filter, Slider,
+  Flash, Dashboard, Guides, Article, Pulse, Edit, ContentApproved, Dragger, PaperClip, Invoicing, Banking, Checkbox, Circle
 }

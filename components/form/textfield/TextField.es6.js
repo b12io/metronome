@@ -102,6 +102,7 @@ class TextField extends React.Component {
               this.props.onUpdate(event.target.value)
             }}
             onBlur={(event) => this.props.onBlur(event.target.value)}
+            onFocus={(event) => this.props.onFocus(event.target.value)}
           />}
 
           {/* Show color picker controls */}
@@ -173,6 +174,7 @@ TextField.propTypes = {
   label: PropTypes.string,
   onUpdate: PropTypes.func,
   onBlur: PropTypes.func,
+  onFocus: PropTypes.func,
   onClearColor: PropTypes.func,
   placeholder: PropTypes.string,
   inputRef: PropTypes.oneOfType([
@@ -200,6 +202,7 @@ TextField.defaultProps = {
   type: 'text',
   onUpdate: () => {},
   onBlur: () => {},
+  onFocus: () => {},
   onClearColor: () => {}
 }
 

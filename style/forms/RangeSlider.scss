@@ -41,7 +41,6 @@ $ie-bottom-track-color: darken($track-color, $contrast) !default;
 }
 
 @mixin thumb($adjustment: 0) {
-  @include shadow($thumb-shadow-size, $thumb-shadow-blur, $thumb-shadow-color);
   background: $thumb-color;
   border: $thumb-border-width solid $thumb-border-color;
   border-radius: $thumb-radius;
