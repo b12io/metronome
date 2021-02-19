@@ -14,9 +14,7 @@
  * Please refer to the license for additional information https://nucleoapp.com/license
  */
 import React from 'react'
-import PropTypes from 'prop-types'
 import { assign, each } from 'lodash'
-import { propTypeRegExp } from './lib/helpers.es6.js'
 
 const defaultColor = '#d8d8d8'
 const defaultProps = {
@@ -26,15 +24,6 @@ const defaultProps = {
   height: 16,
   width: 16,
   solid: true
-}
-const defaultPropTypes = {
-  color: propTypeRegExp(/^#([a-f0-9]{6}|[a-f0-9]{3})$/i),
-  className: PropTypes.string,
-  viewBox: PropTypes.string,
-  height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  style: PropTypes.object,
-  solid: PropTypes.bool
 }
 
 function Icon ({ color, className, path, viewBox, width, height, style }) {
@@ -1869,7 +1858,6 @@ const icons = [
 
 each(icons, (icon) => {
   icon.defaultProps = assign({}, defaultProps)
-  icon.propTypes = assign({}, defaultPropTypes)
 })
 
 export { Check, Checkmark, Lock, Notice, Disabled, Help, Search, Draggable,

@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
 function Radio ({disabled, label, name, value, checked, onChange}) {
   return (
@@ -27,18 +26,6 @@ Radio.defaultProps = {
   checked: false,
   disabled: false,
   onChange: () => {}
-}
-
-Radio.propTypes = {
-  label: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.element
-  ]),
-  name: PropTypes.string,
-  value: PropTypes.string,
-  checked: PropTypes.bool,
-  disabled: PropTypes.bool,
-  onChange: PropTypes.func
 }
 
 export default Radio

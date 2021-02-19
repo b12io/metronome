@@ -1,5 +1,4 @@
 import React, {Children} from 'react'
-import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import ListItemContent from './ListItemContent.es6.js'
 
@@ -45,17 +44,6 @@ const ListItem = props => {
 
 ListItem.defaultProps = {
   md: false
-}
-
-ListItem.propTypes = {
-  children: PropTypes.node,
-  cardListItem: PropTypes.bool,
-  collectionListItem: PropTypes.bool,
-  clickable: PropTypes.bool,
-  onClick: PropTypes.func,
-  listItemRef: PropTypes.func,
-  dragStyles: PropTypes.any,
-  md: PropTypes.bool
 }
 
 export default ListItem

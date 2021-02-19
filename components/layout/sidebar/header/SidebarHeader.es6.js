@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react'
-import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
 import QuickActions from './QuickActions.es6.js'
@@ -180,31 +179,6 @@ SidebarHeader.defaultProps = {
   showLogo: false,
   quickDialog: null,
   tabbedNavigation: null
-}
-
-SidebarHeader.propTypes = {
-  backButtonText: PropTypes.string,
-  children: PropTypes.node,
-  dropdownMenuLabel: PropTypes.string,
-  title: PropTypes.string,
-  steps: PropTypes.string,
-  onBack: PropTypes.func,
-  onHomeClick: PropTypes.func,
-  backButton: PropTypes.bool,
-  homeButton: PropTypes.bool,
-  isScrollingDown: PropTypes.bool,
-  onAction: PropTypes.func,
-  actionIcon: PropTypes.oneOfType([
-    PropTypes.element,
-    PropTypes.string
-  ]),
-  leftAction: PropTypes.element,
-  progress: PropTypes.number,
-  quickActions: PropTypes.array,
-  onQuickActionSelected: PropTypes.func,
-  showLogo: PropTypes.bool,
-  quickDialog: PropTypes.element,
-  tabbedNavigation: PropTypes.element
 }
 
 export default SidebarHeader

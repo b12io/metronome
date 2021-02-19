@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import { Draggable } from '../../Icons.es6.js'
 
@@ -23,11 +22,6 @@ const ListItemIcon = props => {
       {iconElement}
     </div>
   )
-}
-
-ListItemIcon.propTypes = {
-  icon: PropTypes.element,
-  draggableIcon: PropTypes.bool
 }
 
 export default ListItemIcon

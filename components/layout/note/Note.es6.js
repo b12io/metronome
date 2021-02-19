@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
 function Note ({icon, bordered, shadowed, padded, children, className}) {
@@ -26,19 +25,6 @@ Note.defaultProps = {
   padded: true,
   children: null,
   className: ''
-}
-
-Note.propTypes = {
-  icon: PropTypes.element,
-  bordered: PropTypes.bool,
-  shadowed: PropTypes.bool,
-  padded: PropTypes.bool,
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.element),
-    PropTypes.element,
-    PropTypes.node,
-    String
-  ])
 }
 
 export default Note

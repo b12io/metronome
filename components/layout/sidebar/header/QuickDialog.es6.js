@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
 function QuickDialog ({ title, body, buttons, onButtonClicked }) {
@@ -28,13 +27,6 @@ QuickDialog.defaultProps = {
   body: null,
   buttons: [],
   onButtonClicked: () => {}
-}
-
-QuickDialog.propTypes = {
-  title: PropTypes.string,
-  body: PropTypes.element,
-  buttons: PropTypes.array,
-  onButtonClicked: PropTypes.func
 }
 
 export default QuickDialog

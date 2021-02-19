@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import { isEmpty } from 'lodash'
 
@@ -203,32 +202,6 @@ Select.defaultProps = {
   inlineSearch: false,
   onSearchQueryClear: () => {},
   fillSelectedQuery: false
-}
-
-Select.propTypes = {
-  firstOptionAction: PropTypes.bool,
-  label: PropTypes.string,
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(Option),
-    PropTypes.node
-  ]),
-  filter: PropTypes.func,
-  onChange: PropTypes.func,
-  onBlur: PropTypes.func,
-  placeholder: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.element
-  ]),
-  help: PropTypes.string,
-  error: PropTypes.bool,
-  disabled: PropTypes.bool,
-  className: PropTypes.string,
-  search: PropTypes.bool,
-  preview: PropTypes.string,
-  keepOpen: PropTypes.func,
-  inlineSearch: PropTypes.bool,
-  onSearchQueryClear: PropTypes.func,
-  fillSelectedQuery: PropTypes.bool
 }
 
 export default Select

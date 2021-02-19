@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { isNumber } from 'lodash'
 
 /*
@@ -62,14 +61,6 @@ Collapse.defaultProps = {
   expandLabel: 'View more',
   collapseHeight: 'auto',
   isCollapsed: false
-}
-
-Collapse.propTypes = {
-  children: PropTypes.node,
-  collapseLabel: PropTypes.string,
-  expandLabel: PropTypes.string,
-  isCollapsed: PropTypes.bool,
-  collapseHeight: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
 }
 
 export default Collapse

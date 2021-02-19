@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import { SketchPicker } from 'react-color'
 import { values, some, pick, isEmpty } from 'lodash'
@@ -151,37 +150,6 @@ class TextField extends React.Component {
       </div>
     )
   }
-}
-
-TextField.propTypes = {
-  locked: PropTypes.bool,
-  error: PropTypes.bool,
-  errorMessage: PropTypes.string,
-  success: PropTypes.bool,
-  successIcon: PropTypes.element,
-  searchIcon: PropTypes.bool,
-  disabled: PropTypes.bool,
-  color: PropTypes.bool,
-  colorLeft: PropTypes.bool,
-  colorRight: PropTypes.bool,
-  hideIcon: PropTypes.bool,
-  canClearColor: PropTypes.bool,
-  help: PropTypes.string,
-  value: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number
-  ]).isRequired,
-  label: PropTypes.string,
-  onUpdate: PropTypes.func,
-  onBlur: PropTypes.func,
-  onFocus: PropTypes.func,
-  onClearColor: PropTypes.func,
-  placeholder: PropTypes.string,
-  inputRef: PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.object
-  ]),
-  type: PropTypes.string
 }
 
 TextField.defaultProps = {

@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
 const ListItemAction = ({children, className, cardListItemAction, collectionListItemAction, clickable, ...otherProps}) => {
@@ -13,13 +12,6 @@ const ListItemAction = ({children, className, cardListItemAction, collectionList
       {children}
     </div>
   )
-}
-
-ListItemAction.propTypes = {
-  children: PropTypes.node,
-  cardListItemAction: PropTypes.bool,
-  collectionListItemAction: PropTypes.bool,
-  clickable: PropTypes.bool
 }
 
 export default ListItemAction

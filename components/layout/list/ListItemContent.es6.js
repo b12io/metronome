@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
 const ListItemContent = ({children, className, subtitle, suptitle, hasDescription, widthAuto, clickable, ...otherProps}) => {
@@ -23,21 +22,6 @@ const ListItemContent = ({children, className, subtitle, suptitle, hasDescriptio
 ListItemContent.defaultProps = {
   widthAuto: false,
   hasDescription: false
-}
-
-ListItemContent.propTypes = {
-  children: PropTypes.node,
-  subtitle: PropTypes.oneOfType([
-    PropTypes.element,
-    PropTypes.string
-  ]),
-  suptitle: PropTypes.oneOfType([
-    PropTypes.element,
-    PropTypes.string
-  ]),
-  widthAuto: PropTypes.bool,
-  hasDescription: PropTypes.bool,
-  clickable: PropTypes.bool
 }
 
 export default ListItemContent

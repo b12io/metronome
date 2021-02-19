@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
 // TODO(chyngyz): Add clipboard.js support
 
@@ -19,12 +18,6 @@ function DemoIconCard ({ children, onCopyClick, label }) {
       </button> */}
     </div>
   )
-}
-
-DemoIconCard.propTypes = {
-  children: PropTypes.any,
-  label: PropTypes.string,
-  onCopyClick: PropTypes.func
 }
 
 export default DemoIconCard
