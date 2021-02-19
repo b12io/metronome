@@ -1,6 +1,6 @@
 import React from 'react'
 import classnames from 'classnames'
-import BaseTextArea from '../base/BaseTextArea.es6.js'
+import BaseTextArea from '../base/BaseTextArea'
 
 function TextArea ({label, value, placeholder, rows, hasFeedback, hasError, resizable, counter, onUpdate, onFocus, onBlur, contentHeight, disabled}) {
   const counterDiv = counter ? (<div className="ds-control-label__counter">{counter}</div>) : null

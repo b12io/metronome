@@ -1,6 +1,6 @@
 import React from 'react'
 import classnames from 'classnames'
-import { Draggable } from '../../Icons.es6.js'
+import { Draggable } from '../../Icons'
 
 const ListItemIcon = props => {
   const {className, icon, draggableIcon, ...otherProps} = props

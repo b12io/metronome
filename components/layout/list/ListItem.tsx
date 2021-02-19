@@ -1,6 +1,6 @@
 import React, {Children} from 'react'
 import classnames from 'classnames'
-import ListItemContent from './ListItemContent.es6.js'
+import ListItemContent from './ListItemContent'
 
 const ListItem = props => {
   const {

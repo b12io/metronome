@@ -2,7 +2,7 @@ import React from 'react'
 import { mount, shallow } from 'enzyme'
 import faker from 'faker'
 
-import ThumbnailOption from './ThumbnailOption.es6.js'
+import ThumbnailOption from './ThumbnailOption'
 
 let image
 

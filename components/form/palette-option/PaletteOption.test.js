@@ -2,7 +2,7 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import faker from 'faker'
 
-import PaletteOption from './PaletteOption.es6.js'
+import PaletteOption from './PaletteOption'
 
 let color1, color2, colors
 

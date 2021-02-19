@@ -4,8 +4,8 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import renderer from 'react-test-renderer'
 
-import Card from './Card.es6.js'
-import { ChevronRight, PlusCircle } from '../../Icons.es6.js'
+import Card from './Card'
+import { ChevronRight, PlusCircle } from '../../Icons'
 
 it('renders the card component', () => {
   const component = shallow(<Card />)

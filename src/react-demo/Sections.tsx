@@ -1,16 +1,16 @@
 import React from 'react'
 
-import DemoLayoutContent from './demo-only-components/DemoLayoutContent.es6.js'
-import Sidebar from '../../components/layout/sidebar/Sidebar.es6.js'
-import SidebarHeader from '../../components/layout/sidebar/header/SidebarHeader.es6.js'
-import SidebarBodyHeader from '../../components/layout/sidebar/body/SidebarBodyHeader.es6.js'
-import SidebarBody from '../../components/layout/sidebar/body/SidebarBody.es6.js'
-import SidebarActions from '../../components/layout/sidebar/actions/SidebarActions.es6.js'
-import Button from '../../components/form/button/Button.es6.js'
-import { Close, Back, Gear } from '../../components/Icons.es6.js'
-import TabbedNavigation from '../../components/layout/tabbed-navigation/TabbedNavigation.es6.js'
-import TabbedNavigationItem from '../../components/layout/tabbed-navigation/TabbedNavigationItem.es6.js'
-import B12Tooltip from '../../components/layout/tooltip/B12Tooltip.es6.js'
+import DemoLayoutContent from './demo-only-components/DemoLayoutContent'
+import Sidebar from '../../components/layout/sidebar/Sidebar'
+import SidebarHeader from '../../components/layout/sidebar/header/SidebarHeader'
+import SidebarBodyHeader from '../../components/layout/sidebar/body/SidebarBodyHeader'
+import SidebarBody from '../../components/layout/sidebar/body/SidebarBody'
+import SidebarActions from '../../components/layout/sidebar/actions/SidebarActions'
+import Button from '../../components/form/button/Button'
+import { Close, Back, Gear } from '../../components/Icons'
+import TabbedNavigation from '../../components/layout/tabbed-navigation/TabbedNavigation'
+import TabbedNavigationItem from '../../components/layout/tabbed-navigation/TabbedNavigationItem'
+import B12Tooltip from '../../components/layout/tooltip/B12Tooltip'
 
 function Sections () {
   return (

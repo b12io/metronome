@@ -2,10 +2,10 @@ import React, {Children} from 'react'
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
 import classnames from 'classnames'
 
-import List from './List.es6.js'
-import ListItem from './ListItem.es6.js'
-import ListItemContent from './ListItemContent.es6.js'
-import ListItemIcon from './ListItemIcon.es6.js'
+import List from './List'
+import ListItem from './ListItem'
+import ListItemContent from './ListItemContent'
+import ListItemIcon from './ListItemIcon'
 
 const getItemClassNames = (isDragging, collectionListItem, cardListItem) => classnames({
   'card-list-item--is-dragging': cardListItem && !collectionListItem && isDragging,

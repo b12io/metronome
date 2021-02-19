@@ -1,20 +1,20 @@
 import React from 'react'
-import DemoLayoutContent from './demo-only-components/DemoLayoutContent.es6.js'
-import CodeExample from './demo-only-components/CodeExample.es6.js'
-import MetaData from './demo-only-components/MetaData.es6.js'
-import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDataProps.es6.js'
+import DemoLayoutContent from './demo-only-components/DemoLayoutContent'
+import CodeExample from './demo-only-components/CodeExample'
+import MetaData from './demo-only-components/MetaData'
+import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDataProps'
 
-import Block from '../../components/layout/panel/block/Block.es6.js'
-import BlockTitle from '../../components/layout/panel/block/BlockTitle.es6.js'
-import BlockContent from '../../components/layout/panel/block/BlockContent.es6.js'
-import Button from '../../components/form/button/Button.es6.js'
-import Group from '../../components/layout/panel/group/Group.es6.js'
-import TextField from '../../components/form/textfield/TextField.es6.js'
-import Nav from '../../components/layout/nav/Nav.es6.js'
-import NavItem from '../../components/layout/nav/NavItem.es6.js'
-import { HomeEmpty, Client, Visible } from '../../components/Icons.es6.js'
+import Block from '../../components/layout/panel/block/Block'
+import BlockTitle from '../../components/layout/panel/block/BlockTitle'
+import BlockContent from '../../components/layout/panel/block/BlockContent'
+import Button from '../../components/form/button/Button'
+import Group from '../../components/layout/panel/group/Group'
+import TextField from '../../components/form/textfield/TextField'
+import Nav from '../../components/layout/nav/Nav'
+import NavItem from '../../components/layout/nav/NavItem'
+import { HomeEmpty, Client, Visible } from '../../components/Icons'
 
-import { AppearanceAppearance } from '../../components/Icons.es6.js'
+import { AppearanceAppearance } from '../../components/Icons'
 
 function BlockPage () {
   return (
@@ -23,7 +23,7 @@ function BlockPage () {
         <h1>Block</h1>
         <p>An entity containing title and content. Block component should be used in side panels for dividing logical groups of content.</p>
         <MetaData
-          importFrom="import Block from '@b12/design-system/components/layout/panel/block/Block.es6.js'"
+          importFrom="import Block from '@b12/design-system/components/layout/panel/block/Block'"
           flow="Yes"
           tests="Yes"
         />
@@ -123,7 +123,7 @@ function BlockPage () {
         <h1>BlockTitle</h1>
         <p>Title of the block component that contains <code>label</code>, <code>icon</code>, <code>description</code> and an <code>action</code></p>
         <MetaData
-          importFrom="import BlockTitle from '@b12/design-system/components/layout/panel/block/BlockTitle.es6.js'"
+          importFrom="import BlockTitle from '@b12/design-system/components/layout/panel/block/BlockTitle'"
           flow="Yes"
           dependencies="Block"
           tests="Yes"
@@ -191,7 +191,7 @@ function BlockPage () {
         <h1>BlockContent</h1>
         <p>Container for any type of content that lives inside Block element.</p>
         <MetaData
-          importFrom="import BlockContent from '@b12/design-system/components/layout/panel/block/BlockContent.es6.js'"
+          importFrom="import BlockContent from '@b12/design-system/components/layout/panel/block/BlockContent'"
           flow="Yes"
           dependencies="Block"
           tests="Yes"

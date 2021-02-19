@@ -3,7 +3,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import BlockContent from './BlockContent.es6.js'
+import BlockContent from './BlockContent'
 
 it('renders properly', () => {
   const component = shallow(<BlockContent />)

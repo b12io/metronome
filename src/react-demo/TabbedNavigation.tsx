@@ -1,12 +1,12 @@
 import React from 'react'
-import DemoLayoutContent from './demo-only-components/DemoLayoutContent.es6.js'
-import CodeExample from './demo-only-components/CodeExample.es6.js'
-import MetaData from './demo-only-components/MetaData.es6.js'
-import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDataProps.es6.js'
+import DemoLayoutContent from './demo-only-components/DemoLayoutContent'
+import CodeExample from './demo-only-components/CodeExample'
+import MetaData from './demo-only-components/MetaData'
+import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDataProps'
 
-import TabbedNavigation from '../../components/layout/tabbed-navigation/TabbedNavigation.es6.js'
-import TabbedNavigationItem from '../../components/layout/tabbed-navigation/TabbedNavigationItem.es6.js'
-import B12Tooltip from '../../components/layout/tooltip/B12Tooltip.es6.js'
+import TabbedNavigation from '../../components/layout/tabbed-navigation/TabbedNavigation'
+import TabbedNavigationItem from '../../components/layout/tabbed-navigation/TabbedNavigationItem'
+import B12Tooltip from '../../components/layout/tooltip/B12Tooltip'
 
 const TabbedNavigationProps = [
   {
@@ -68,7 +68,7 @@ function TabbedNavigationPage () {
       <div className="app-page-title">
         <h1>TabbedNavigation</h1>
         <MetaData
-          importFrom="import TabbedNavigation from '@b12/design-system/components/layout/tabbed-navigation/TabbedNavigation.es6.js'"
+          importFrom="import TabbedNavigation from '@b12/design-system/components/layout/tabbed-navigation/TabbedNavigation'"
           flow="Yes"
           tests="No"
         />

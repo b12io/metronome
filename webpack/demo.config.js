@@ -6,6 +6,7 @@ const rootPath = path.resolve(__dirname, '..')
 
 module.exports = {
   devtool: 'source-map',
+  entry: path.resolve(rootPath, './src/index.tsx'),
   devServer: {
     clientLogLevel: 'info',
     contentBase: path.join(rootPath, 'src'),

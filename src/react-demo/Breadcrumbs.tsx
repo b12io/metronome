@@ -1,11 +1,11 @@
 import React from 'react'
 import faker from 'faker'
-import DemoLayoutContent from './demo-only-components/DemoLayoutContent.es6.js'
-import MetaData from './demo-only-components/MetaData.es6.js'
-import CodeExample from './demo-only-components/CodeExample.es6.js'
+import DemoLayoutContent from './demo-only-components/DemoLayoutContent'
+import MetaData from './demo-only-components/MetaData'
+import CodeExample from './demo-only-components/CodeExample'
 
-import Breadcrumbs from '../../components/layout/breadcrumbs/Breadcrumbs.es6.js'
-import { Home } from '../../components/Icons.es6.js'
+import Breadcrumbs from '../../components/layout/breadcrumbs/Breadcrumbs'
+import { Home } from '../../components/Icons'
 
 export default function BreadcrumbsDemo () {
   return (
@@ -13,7 +13,7 @@ export default function BreadcrumbsDemo () {
       <div className="app-page-title">
         <h1>TabbedNavigation</h1>
         <MetaData
-          importFrom="import Breadcrumbs from '@b12/design-system/components/layout/breadcrumbs/Breadcrumbs.es6.js'"
+          importFrom="import Breadcrumbs from '@b12/design-system/components/layout/breadcrumbs/Breadcrumbs'"
           flow="Yes"
           tests="No"
         />

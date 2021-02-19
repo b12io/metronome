@@ -3,8 +3,8 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
 import { SketchPicker } from 'react-color'
-import TextField from './TextField.es6.js'
-import { Locked } from '../../Icons.es6.js'
+import TextField from './TextField'
+import { Locked } from '../../Icons'
 
 it('should have a `has-feedack` class', () => {
   let component

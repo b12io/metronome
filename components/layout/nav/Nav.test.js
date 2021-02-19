@@ -3,7 +3,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import Nav from './Nav.es6.js'
+import Nav from './Nav'
 
 it('has no bordered class by default', () => {
   const component = shallow(<Nav />)

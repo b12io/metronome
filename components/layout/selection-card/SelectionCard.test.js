@@ -1,8 +1,8 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import Button from '../../form/button/Button.es6.js'
-import SelectionCard from './SelectionCard.es6.js'
+import Button from '../../form/button/Button'
+import SelectionCard from './SelectionCard'
 
 it('should render one button', function () {
   const component = shallow(

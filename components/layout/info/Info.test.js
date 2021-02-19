@@ -1,8 +1,8 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
-import { Hidden } from '../../Icons.es6.js'
+import { Hidden } from '../../Icons'
 
-import Info from './Info.es6.js'
+import Info from './Info'
 
 it('should render svg set through the icon property', () => {
   const mockDelay = 100

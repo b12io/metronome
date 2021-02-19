@@ -1,3 +1,3 @@
-import basicClassCreator from '../../../lib/basicClassCreator.es6.js'
+import basicClassCreator from '../../../lib/basicClassCreator'
 
 export default basicClassCreator('SidebarGreeting', 'sidebar-greeting')

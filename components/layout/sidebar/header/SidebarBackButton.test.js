@@ -3,7 +3,7 @@ import React from 'react'
 import renderer from 'react-test-renderer'
 import { shallow } from 'enzyme'
 
-import SidebarBackButton from './SidebarBackButton.es6.js'
+import SidebarBackButton from './SidebarBackButton'
 
 describe('SidebarBackButton component', () => {
   test('renders correctly', () => {

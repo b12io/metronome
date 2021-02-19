@@ -3,9 +3,9 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
 
-import BlockTitle from './BlockTitle.es6.js'
-import Button from '../../../form/button/Button.es6.js'
-import { Home } from '../../../Icons.es6.js'
+import BlockTitle from './BlockTitle'
+import Button from '../../../form/button/Button'
+import { Home } from '../../../Icons'
 
 it('should have title text', () => {
   const component = shallow(<BlockTitle label="I am a title" />)

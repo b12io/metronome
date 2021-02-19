@@ -1,16 +1,16 @@
 import React from 'react'
-import DemoLayoutContent from './demo-only-components/DemoLayoutContent.es6.js'
-import CodeExample from './demo-only-components/CodeExample.es6.js'
-import MetaData from './demo-only-components/MetaData.es6.js'
-import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDataProps.es6.js'
+import DemoLayoutContent from './demo-only-components/DemoLayoutContent'
+import CodeExample from './demo-only-components/CodeExample'
+import MetaData from './demo-only-components/MetaData'
+import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDataProps'
 
-import Group from '../../components/layout/panel/group/Group.es6.js'
-import InputGroup from '../../components/form/input-group/InputGroup.es6.js'
-import TextField from '../../components/form/textfield/TextField.es6.js'
-import Select from '../../components/form/select/Select.es6.js'
-import Option from '../../components/form/option/Option.es6.js'
-import Button from '../../components/form/button/Button.es6.js'
-import { RemoveCircle } from '../../components/Icons.es6.js'
+import Group from '../../components/layout/panel/group/Group'
+import InputGroup from '../../components/form/input-group/InputGroup'
+import TextField from '../../components/form/textfield/TextField'
+import Select from '../../components/form/select/Select'
+import Option from '../../components/form/option/Option'
+import Button from '../../components/form/button/Button'
+import { RemoveCircle } from '../../components/Icons'
 
 function NavPage () {
   return (
@@ -19,7 +19,7 @@ function NavPage () {
         <h1>InputGroup</h1>
         <p>Stateless component that acts like a wrapper that holds several inputs, selects or buttons</p>
         <MetaData
-          importFrom="import InputGroup from '@b12/design-system/components/form/input-group/InputGroup.es6.js'"
+          importFrom="import InputGroup from '@b12/design-system/components/form/input-group/InputGroup'"
           flow="Yes"
           tests="Yes"
         />

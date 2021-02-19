@@ -1,13 +1,13 @@
 import React from 'react'
-import DemoLayoutContent from './demo-only-components/DemoLayoutContent.es6.js'
-import CodeExample from './demo-only-components/CodeExample.es6.js'
-import Highlighter from './demo-only-components/Highlighter.es6.js'
-import MetaData from './demo-only-components/MetaData.es6.js'
-import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDataProps.es6.js'
+import DemoLayoutContent from './demo-only-components/DemoLayoutContent'
+import CodeExample from './demo-only-components/CodeExample'
+import Highlighter from './demo-only-components/Highlighter'
+import MetaData from './demo-only-components/MetaData'
+import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDataProps'
 
-import Nav from '../../components/layout/nav/Nav.es6.js'
-import NavItem from '../../components/layout/nav/NavItem.es6.js'
-import { HomeEmpty, Client, Visible } from '../../components/Icons.es6.js'
+import Nav from '../../components/layout/nav/Nav'
+import NavItem from '../../components/layout/nav/NavItem'
+import { HomeEmpty, Client, Visible } from '../../components/Icons'
 
 function NavPage () {
   return (
@@ -16,7 +16,7 @@ function NavPage () {
         <h1>Nav</h1>
         <p>This is a simple navigation component for sidebar.</p>
         <MetaData
-          importFrom="import Nav from '@b12/design-system/components/layout/nav/Nav.es6.js'"
+          importFrom="import Nav from '@b12/design-system/components/layout/nav/Nav'"
           flow="Yes"
           tests="Yes"
         />
@@ -93,7 +93,7 @@ function NavPage () {
         <h1>NavItem</h1>
         <p>Navigation item to be used in Nav</p>
         <MetaData
-          importFrom="import NavItem from '@b12/design-system/components/layout/nav/NavItem.es6.js'"
+          importFrom="import NavItem from '@b12/design-system/components/layout/nav/NavItem'"
           flow="Yes"
           tests="Yes"
           dependencies="Nav"

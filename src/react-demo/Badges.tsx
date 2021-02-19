@@ -1,10 +1,10 @@
 import React from 'react'
-import DemoLayoutContent from './demo-only-components/DemoLayoutContent.es6.js'
-import CodeExample from './demo-only-components/CodeExample.es6.js'
-import MetaData from './demo-only-components/MetaData.es6.js'
-import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDataProps.es6.js'
+import DemoLayoutContent from './demo-only-components/DemoLayoutContent'
+import CodeExample from './demo-only-components/CodeExample'
+import MetaData from './demo-only-components/MetaData'
+import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDataProps'
 
-import Badge from '../../components/layout/badge/Badge.es6.js'
+import Badge from '../../components/layout/badge/Badge'
 
 const BadgeProps = [
   {
@@ -87,7 +87,7 @@ function BadgesPage () {
       <div className="app-page-title">
         <h1>Badges</h1>
         <MetaData
-          importFrom="import Badge from '@b12/design-system/components/layout/badge/Badge.es6.js'"
+          importFrom="import Badge from '@b12/design-system/components/layout/badge/Badge'"
           flow="Yes"
           tests="No"
         />

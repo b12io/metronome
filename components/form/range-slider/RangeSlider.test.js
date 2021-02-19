@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { mount } from 'enzyme'
-import RangeSlider from './RangeSlider.es6.js'
+import RangeSlider from './RangeSlider'
 
 it('should render range slider component', () => {
   const component = mount(<RangeSlider

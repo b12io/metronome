@@ -2,8 +2,8 @@ import React from 'react'
 import classnames from 'classnames'
 import { isEmpty } from 'lodash'
 
-import { Help, Search, Close } from '../../Icons.es6.js'
-import Option from '../option/Option.es6.js'
+import { Help, Search, Close } from '../../Icons'
+import Option from '../option/Option'
 
 class Select extends React.Component {
   constructor (props) {

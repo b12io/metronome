@@ -2,7 +2,7 @@ import React from 'react'
 import classnames from 'classnames'
 import { filter, keys, intersection } from 'lodash'
 
-import Checkbox from '../checkbox/Checkbox.es6.js'
+import Checkbox from '../checkbox/Checkbox'
 
 class CheckboxMultipleSelect extends React.Component {
   constructor (props) {

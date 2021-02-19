@@ -1,19 +1,19 @@
 import React from 'react'
-import DemoLayoutContent from './demo-only-components/DemoLayoutContent.es6.js'
-import CodeExample from './demo-only-components/CodeExample.es6.js'
-import MetaData from './demo-only-components/MetaData.es6.js'
-import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDataProps.es6.js'
+import DemoLayoutContent from './demo-only-components/DemoLayoutContent'
+import CodeExample from './demo-only-components/CodeExample'
+import MetaData from './demo-only-components/MetaData'
+import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDataProps'
 
-import Dropdown from '../../components/layout/dropdown/Dropdown.es6.js'
-import DropdownItem from '../../components/layout/dropdown/DropdownItem.es6.js'
-import DropdownItemDivider from '../../components/layout/dropdown/DropdownItemDivider.es6.js'
-import DropdownItemHeader from '../../components/layout/dropdown/DropdownItemHeader.es6.js'
-import Button from '../../components/form/button/Button.es6.js'
-import Group from '../../components/layout/panel/group/Group.es6.js'
-import TextField from '../../components/form/textfield/TextField.es6.js'
-import Select from '../../components/form/select/Select.es6.js'
-import Option from '../../components/form/option/Option.es6.js'
-import { Customer, ContactInformation, Lock, Move } from '../../components/Icons.es6.js'
+import Dropdown from '../../components/layout/dropdown/Dropdown'
+import DropdownItem from '../../components/layout/dropdown/DropdownItem'
+import DropdownItemDivider from '../../components/layout/dropdown/DropdownItemDivider'
+import DropdownItemHeader from '../../components/layout/dropdown/DropdownItemHeader'
+import Button from '../../components/form/button/Button'
+import Group from '../../components/layout/panel/group/Group'
+import TextField from '../../components/form/textfield/TextField'
+import Select from '../../components/form/select/Select'
+import Option from '../../components/form/option/Option'
+import { Customer, ContactInformation, Lock, Move } from '../../components/Icons'
 
 function DropdownPage () {
   return (
@@ -23,10 +23,10 @@ function DropdownPage () {
         <p>Toggle contextual overlays for displaying lists of links and more.</p>
 
         <MetaData
-          importFrom="import Dropdown from '@b12/design-system/components/layout/dropdown/Dropdown.es6.js',
-          import DropdownItemHeader from '@b12/design-system/components/layout/dropdown/DropdownItemHeader.es6.js',
-          import DropdownItem from '@b12/design-system/components/layout/dropdown/DropdownItem.es6.js',
-          import DropdownItemDivider from '@b12/design-system/components/layout/dropdown/DropdownItemDivider.es6.js'"
+          importFrom="import Dropdown from '@b12/design-system/components/layout/dropdown/Dropdown',
+          import DropdownItemHeader from '@b12/design-system/components/layout/dropdown/DropdownItemHeader',
+          import DropdownItem from '@b12/design-system/components/layout/dropdown/DropdownItem',
+          import DropdownItemDivider from '@b12/design-system/components/layout/dropdown/DropdownItemDivider'"
           flow="Yes"
           tests="Yes"
         />

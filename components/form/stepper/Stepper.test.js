@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { shallow, mount } from 'enzyme'
-import Stepper from './Stepper.es6.js'
+import Stepper from './Stepper'
 
 it('should call onUpdate', (done) => {
   const onUpdate = jest.fn()

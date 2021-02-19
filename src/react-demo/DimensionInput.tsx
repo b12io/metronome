@@ -1,13 +1,13 @@
 import React from 'react'
-import DemoLayoutContent from './demo-only-components/DemoLayoutContent.es6.js'
-import CodeExample from './demo-only-components/CodeExample.es6.js'
-import MetaData from './demo-only-components/MetaData.es6.js'
-import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDataProps.es6.js'
+import DemoLayoutContent from './demo-only-components/DemoLayoutContent'
+import CodeExample from './demo-only-components/CodeExample'
+import MetaData from './demo-only-components/MetaData'
+import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDataProps'
 
-import DimensionGroup from '../../components/form/dimension/DimensionGroup.es6.js'
-import DimensionInput from '../../components/form/dimension/DimensionInput.es6.js'
-import DimensionBoolean from '../../components/form/dimension/DimensionBoolean.es6.js'
-import DimensionSelect from '../../components/form/dimension/DimensionSelect.es6.js'
+import DimensionGroup from '../../components/form/dimension/DimensionGroup'
+import DimensionInput from '../../components/form/dimension/DimensionInput'
+import DimensionBoolean from '../../components/form/dimension/DimensionBoolean'
+import DimensionSelect from '../../components/form/dimension/DimensionSelect'
 
 function InputDimension () {
   return (
@@ -17,10 +17,10 @@ function InputDimension () {
         <p>This is a complex input that allows you to choose several values for a variable.</p>
 
         <MetaData
-          importFrom="import DimensionGroup from '@b12/design-system/components/form/dimension/DimensionGroup.es6.js',
-          import DimensionInput from '@b12/design-system/components/form/dimension/DimensionInput.es6.js',
-          import DimensionBoolean from '@b12/design-system/components/form/dimension/DimensionBoolean.es6.js',
-          import DimensionSelect from '@b12/design-system/components/form/dimension/DimensionSelect.es6.js'"
+          importFrom="import DimensionGroup from '@b12/design-system/components/form/dimension/DimensionGroup',
+          import DimensionInput from '@b12/design-system/components/form/dimension/DimensionInput',
+          import DimensionBoolean from '@b12/design-system/components/form/dimension/DimensionBoolean',
+          import DimensionSelect from '@b12/design-system/components/form/dimension/DimensionSelect'"
           flow="Yes"
           tests="Yes"
         />

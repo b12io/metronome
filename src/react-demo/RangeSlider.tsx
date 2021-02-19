@@ -1,11 +1,11 @@
 import React from 'react'
-import DemoLayoutContent from './demo-only-components/DemoLayoutContent.es6.js'
-import CodeExample from './demo-only-components/CodeExample.es6.js'
-import MetaData from './demo-only-components/MetaData.es6.js'
-import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDataProps.es6.js'
+import DemoLayoutContent from './demo-only-components/DemoLayoutContent'
+import CodeExample from './demo-only-components/CodeExample'
+import MetaData from './demo-only-components/MetaData'
+import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDataProps'
 
-import RangeSlider from '../../components/form/range-slider/RangeSlider.es6.js'
-import DemoRangeSlider from './demo-only-components/DemoRangeSlider.es6.js'
+import RangeSlider from '../../components/form/range-slider/RangeSlider'
+import DemoRangeSlider from './demo-only-components/DemoRangeSlider'
 
 const RangeSliderProps = [
   {
@@ -83,7 +83,7 @@ export default function AvatarItemPage () {
         <h1>RangeSlider</h1>
         <p>Input type range form component</p>
         <MetaData
-          importFrom="import RangeSlider from '@b12/design-system/components/form/range-slider/RangeSlider.es6.js'"
+          importFrom="import RangeSlider from '@b12/design-system/components/form/range-slider/RangeSlider'"
           flow="Yes"
           tests="Yes"
         />

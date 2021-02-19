@@ -1,10 +1,10 @@
 import React from 'react'
-import DemoLayoutContent from './demo-only-components/DemoLayoutContent.es6.js'
-import CodeExample from './demo-only-components/CodeExample.es6.js'
-import MetaData from './demo-only-components/MetaData.es6.js'
-import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDataProps.es6.js'
+import DemoLayoutContent from './demo-only-components/DemoLayoutContent'
+import CodeExample from './demo-only-components/CodeExample'
+import MetaData from './demo-only-components/MetaData'
+import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDataProps'
 
-import Stepper from '../../components/form/stepper/Stepper.es6.js'
+import Stepper from '../../components/form/stepper/Stepper'
 
 function StepperPage () {
   return (
@@ -13,7 +13,7 @@ function StepperPage () {
         <h1>Stepper</h1>
         <p>An input component with increase and decrease value functionality. User can input value manually. The input itself contains a pattern `[0-9]` that restricts user to input only numbers.</p>
         <MetaData
-          importFrom="import Stepper from '@b12/design-system/components/form/stepper/Stepper.es6.js'"
+          importFrom="import Stepper from '@b12/design-system/components/form/stepper/Stepper'"
           flow="Yes"
           tests="Yes"
         />

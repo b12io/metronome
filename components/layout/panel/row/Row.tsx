@@ -1,6 +1,6 @@
 import React from 'react'
 import classnames from 'classnames'
-import Column from '../column/Column.es6.js'
+import Column from '../column/Column'
 
 /**
  * Row.

@@ -10,7 +10,7 @@ import {
   Help,
   CloseMedia,
   Search
-} from '../../Icons.es6.js'
+} from '../../Icons'
 
 class TextField extends React.Component {
   constructor (props) {

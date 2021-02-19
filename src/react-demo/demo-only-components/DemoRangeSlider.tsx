@@ -1,6 +1,6 @@
 import React from 'react'
 
-import RangeSlider from '../../../components/form/range-slider/RangeSlider.es6.js'
+import RangeSlider from '../../../components/form/range-slider/RangeSlider'
 
 export default class DemoRangeSlider extends React.Component {
   state = {

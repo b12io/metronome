@@ -4,7 +4,7 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import renderer from 'react-test-renderer'
 
-import Option from './Option.es6.js'
+import Option from './Option'
 
 it('should have correct className', () => {
   const component = shallow(<Option label="test label" />)

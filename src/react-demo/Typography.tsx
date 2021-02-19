@@ -1,6 +1,6 @@
 import React from 'react'
-import DemoLayoutContent from './demo-only-components/DemoLayoutContent.es6.js'
-import Highlighter from './demo-only-components/Highlighter.es6.js'
+import DemoLayoutContent from './demo-only-components/DemoLayoutContent'
+import Highlighter from './demo-only-components/Highlighter'
 
 function Typography () {
   return (

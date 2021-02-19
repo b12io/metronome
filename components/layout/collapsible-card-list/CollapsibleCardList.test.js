@@ -1,8 +1,8 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import CollapsibleCardList from './CollapsibleCardList.es6.js'
-import CollapsibleCardListItem from './CollapsibleCardListItem.es6.js'
+import CollapsibleCardList from './CollapsibleCardList'
+import CollapsibleCardListItem from './CollapsibleCardListItem'
 
 let component
 

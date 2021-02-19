@@ -1,6 +1,6 @@
 import React from 'react'
 import classnames from 'classnames'
-import { Checkmark } from '../../Icons.es6.js'
+import { Checkmark } from '../../Icons'
 
 function NotificationCard ({ label, icon, success, error, warning, hideIcon, alignCenter, children }) {
   const classNames = classnames({

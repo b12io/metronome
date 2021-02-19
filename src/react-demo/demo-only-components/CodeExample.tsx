@@ -1,5 +1,5 @@
 import React from 'react'
-import Highlighter from './Highlighter.es6.js'
+import Highlighter from './Highlighter'
 
 function CodeExample ({ title = 'Code example', code, language = 'jsx', children }) {
   return (

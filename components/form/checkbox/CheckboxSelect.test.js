@@ -2,10 +2,10 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import faker from 'faker'
 
-import CheckboxSelect from './CheckboxSelect.es6.js'
-import Checkbox from '../checkbox/Checkbox.es6.js'
-import Option from '../option/Option.es6.js'
-import Select from '../select/Select.es6.js'
+import CheckboxSelect from './CheckboxSelect'
+import Checkbox from '../checkbox/Checkbox'
+import Option from '../option/Option'
+import Select from '../select/Select'
 
 let label, option1, option2, options, component
 

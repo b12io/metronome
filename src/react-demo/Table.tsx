@@ -1,8 +1,8 @@
 import React from 'react'
-import DemoLayoutContent from './demo-only-components/DemoLayoutContent.es6.js'
-import CodeExample from './demo-only-components/CodeExample.es6.js'
-import MetaData from './demo-only-components/MetaData.es6.js'
-import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDataProps.es6.js'
+import DemoLayoutContent from './demo-only-components/DemoLayoutContent'
+import CodeExample from './demo-only-components/CodeExample'
+import MetaData from './demo-only-components/MetaData'
+import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDataProps'
 import { DemoSimpleTable } from './demo-only-components/DemoTable.es6'
 import DemoSmartTable from './demo-only-components/DemoSmartTable.es6'
 
@@ -229,7 +229,7 @@ import TableRow from '@b12/design-system/components/layout/table/TableRow.es6'
 import TableCell from '@b12/design-system/components/layout/table/TableCell.es6'
 import AvatarItem from '@b12/design-system/components/layout/avatar/AvatarItem.es6'
 import TablePagination from '@b12/design-system/components/layout/table/TablePagination.es6'
-import Grid from '@b12/design-system/components/layout/grid/Grid.es6.js'
+import Grid from '@b12/design-system/components/layout/grid/Grid'
 
 let counter = 0
 function createData (name, calories, fat, carbs, protein) {

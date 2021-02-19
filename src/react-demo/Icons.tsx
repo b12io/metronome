@@ -1,8 +1,8 @@
 import React from 'react'
-import DemoLayoutContent from './demo-only-components/DemoLayoutContent.es6.js'
-import DemoIconCard from './demo-only-components/DemoIconCard.es6.js'
-import MetaData from './demo-only-components/MetaData.es6.js'
-import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDataProps.es6.js'
+import DemoLayoutContent from './demo-only-components/DemoLayoutContent'
+import DemoIconCard from './demo-only-components/DemoIconCard'
+import MetaData from './demo-only-components/MetaData'
+import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDataProps'
 
 import {
   Check, Lock, Notice, Disabled, Help, Search, Draggable,
@@ -20,7 +20,7 @@ import {
   Website, Chat, RotateForward, Globe, At, Target, IconRow, IconColumn, IconSection, FolderFilled, BlogPost, MenuItems, Popup, Bold, Italic, Underline, UnorderedList, OrderedList,
   Flag, Testimonials, Chart, Play, Pause, AlignLeftV2, AlignCenterV2, AlignRightV2, AlignJustifyV2, Sidebar, ArrowCircle, Palette, Lightbox, Filter, Slider,
   Flash, Dashboard, Guides, Article, Pulse, Edit, ContentApproved, Dragger, PaperClip, Invoicing, Banking, Checkbox, Circle
-} from '../../components/Icons.es6.js'
+} from '../../components/Icons'
 
 const ICONS = [
   {
@@ -663,7 +663,7 @@ function Icons () {
         <h1>Icons</h1>
         <p>Icons can be used almost in any component. All icons are in <code>SVG</code> format.</p>
         <MetaData
-          importFrom="import { IconName } from '@b12/design-system/components/Icons.es6.js'"
+          importFrom="import { IconName } from '@b12/design-system/components/Icons'"
         />
       </div>
 

@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { shallow } from 'enzyme'
-import MiniSelect from '../MiniSelect.es6.js'
+import MiniSelect from '../MiniSelect'
 
 let component, inputValueChange, selectValueChange
 

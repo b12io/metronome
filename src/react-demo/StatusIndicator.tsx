@@ -1,10 +1,10 @@
 import React from 'react'
-import DemoLayoutContent from './demo-only-components/DemoLayoutContent.es6.js'
-import CodeExample from './demo-only-components/CodeExample.es6.js'
-import MetaData from './demo-only-components/MetaData.es6.js'
-import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDataProps.es6.js'
+import DemoLayoutContent from './demo-only-components/DemoLayoutContent'
+import CodeExample from './demo-only-components/CodeExample'
+import MetaData from './demo-only-components/MetaData'
+import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDataProps'
 
-import StatusIndicator from '../../components/layout/status-indicator/StatusIndicator.es6.js'
+import StatusIndicator from '../../components/layout/status-indicator/StatusIndicator'
 
 const BadgeProps = [
   {
@@ -38,7 +38,7 @@ function StatusIndicatorPage () {
       <div className="app-page-title">
         <h1>StatusIndicator</h1>
         <MetaData
-          importFrom="import StatusIndicator from '@b12/design-system/components/layout/status-indicator/StatusIndicator.es6.js'"
+          importFrom="import StatusIndicator from '@b12/design-system/components/layout/status-indicator/StatusIndicator'"
           flow="Yes"
           tests="No"
         />

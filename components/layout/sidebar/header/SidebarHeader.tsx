@@ -1,11 +1,11 @@
 import React, { Fragment } from 'react'
 import classnames from 'classnames'
 
-import QuickActions from './QuickActions.es6.js'
-import SidebarBackButton from './SidebarBackButton.es6.js'
-import SidebarHeaderActionButton from './SidebarHeaderActionButton.es6.js'
-import Button from '../../../form/button/Button.es6.js'
-import { Home } from '../../../Icons.es6.js'
+import QuickActions from './QuickActions'
+import SidebarBackButton from './SidebarBackButton'
+import SidebarHeaderActionButton from './SidebarHeaderActionButton'
+import Button from '../../../form/button/Button'
+import { Home } from '../../../Icons'
 
 class SidebarHeader extends React.Component {
   state = {

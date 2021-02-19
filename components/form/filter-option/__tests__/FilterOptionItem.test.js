@@ -1,6 +1,6 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import FilterOptionItem from '../FilterOptionItem.es6.js'
+import FilterOptionItem from '../FilterOptionItem'
 
 describe('FilterOptionItem component', () => {
   let testProps

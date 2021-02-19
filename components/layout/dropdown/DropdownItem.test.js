@@ -3,7 +3,7 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
 
-import DropdownItem from './DropdownItem.es6.js'
+import DropdownItem from './DropdownItem'
 
 it('should be disabled', () => {
   const onClick = jest.fn()

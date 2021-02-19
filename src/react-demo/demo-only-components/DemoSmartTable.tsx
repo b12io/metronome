@@ -7,7 +7,7 @@ import TableRow from '../../../components/layout/table/TableRow.es6'
 import TableCell from '../../../components/layout/table/TableCell.es6'
 import AvatarItem from '../../../components/layout/avatar/AvatarItem.es6'
 import TablePagination from '../../../components/layout/table/TablePagination.es6'
-import Grid from '../../../components/layout/grid/Grid.es6.js'
+import Grid from '../../../components/layout/grid/Grid'
 
 let counter = 0
 function createData (name, calories, fat, carbs, protein) {

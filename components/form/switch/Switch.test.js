@@ -2,8 +2,8 @@
 
 import React from 'react'
 import { shallow, mount } from 'enzyme'
-import Button from '../button/Button.es6.js'
-import Switch from './Switch.es6.js'
+import Button from '../button/Button'
+import Switch from './Switch'
 
 it('should render inline', () => {
   const component = shallow(<Switch />)

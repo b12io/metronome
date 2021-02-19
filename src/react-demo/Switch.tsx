@@ -1,12 +1,12 @@
 import React from 'react'
-import DemoLayoutContent from './demo-only-components/DemoLayoutContent.es6.js'
-import CodeExample from './demo-only-components/CodeExample.es6.js'
-import MetaData from './demo-only-components/MetaData.es6.js'
-import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDataProps.es6.js'
+import DemoLayoutContent from './demo-only-components/DemoLayoutContent'
+import CodeExample from './demo-only-components/CodeExample'
+import MetaData from './demo-only-components/MetaData'
+import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDataProps'
 
-import Button from '../../components/form/button/Button.es6.js'
-import Switch from '../../components/form/switch/Switch.es6.js'
-import { Desktop, Tablet, Mobile } from '../../components/Icons.es6.js'
+import Button from '../../components/form/button/Button'
+import Switch from '../../components/form/switch/Switch'
+import { Desktop, Tablet, Mobile } from '../../components/Icons'
 
 const ButtonHtml5 = `<Switch selected={0}>
   <Button label="Left" />
@@ -34,7 +34,7 @@ function SwitchPage () {
         <h1>Switch</h1>
 
         <MetaData
-          importFrom="import Switch from '@b12/design-system/components/form/switch/Switch.es6.js'"
+          importFrom="import Switch from '@b12/design-system/components/form/switch/Switch'"
           flow="No"
           tests="Yes"
         />

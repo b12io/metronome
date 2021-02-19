@@ -3,7 +3,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import AvatarItem from './AvatarItem.es6.js'
+import AvatarItem from './AvatarItem'
 
 const onClick = jest.fn()
 const defaultAvatarComponent = shallow(

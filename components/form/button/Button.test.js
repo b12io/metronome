@@ -2,8 +2,8 @@
 
 import React from 'react'
 import { shallow } from 'enzyme'
-import Button from './Button.es6.js'
-import { Help } from '../../Icons.es6.js'
+import Button from './Button'
+import { Help } from '../../Icons'
 
 it('should render default button', () => {
   const component = shallow(<Button />)

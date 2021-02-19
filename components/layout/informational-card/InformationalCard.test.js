@@ -2,7 +2,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import InformationalCard from './InformationalCard.es6.js'
+import InformationalCard from './InformationalCard'
 
 describe('InformationalCard component', () => {
   let testProps

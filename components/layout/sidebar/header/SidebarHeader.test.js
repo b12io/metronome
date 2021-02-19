@@ -4,9 +4,9 @@ import { shallow } from 'enzyme'
 
 import {
   RotateForward
-} from '../../../Icons.es6.js'
+} from '../../../Icons'
 
-import SidebarHeader from './SidebarHeader.es6.js'
+import SidebarHeader from './SidebarHeader'
 
 it('should show a logo', () => {
   const component = shallow(<SidebarHeader showLogo />)

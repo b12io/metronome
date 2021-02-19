@@ -1,5 +1,5 @@
 import React from 'react'
-import DemoLayoutContent from './demo-only-components/DemoLayoutContent.es6.js'
+import DemoLayoutContent from './demo-only-components/DemoLayoutContent'
 
 function Welcome () {
   return (

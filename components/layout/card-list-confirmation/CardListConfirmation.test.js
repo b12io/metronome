@@ -1,8 +1,8 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import Button from '../../form/button/Button.es6.js'
-import CardListConfirmation from './CardListConfirmation.es6.js'
+import Button from '../../form/button/Button'
+import CardListConfirmation from './CardListConfirmation'
 
 it('should not show any buttons', function () {
   const component = shallow(

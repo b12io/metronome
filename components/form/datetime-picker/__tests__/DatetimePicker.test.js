@@ -4,9 +4,9 @@ import moment from 'moment'
 import uuidV4 from 'uuid/v4'
 import { mount } from 'enzyme'
 
-import B12DatePicker from '../DatePicker.es6.js'
-import B12TimePicker from '../TimePicker.es6.js'
-import DatetimePicker from '../DatetimePicker.es6.js'
+import B12DatePicker from '../DatePicker'
+import B12TimePicker from '../TimePicker'
+import DatetimePicker from '../DatetimePicker'
 
 describe('DatetimePicker component', () => {
   let testProps

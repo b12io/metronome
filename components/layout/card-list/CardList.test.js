@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import CardList from './CardList.es6.js'
+import CardList from './CardList'
 
 it('is bordered and clickable by default', function () {
   const component = shallow(

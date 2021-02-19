@@ -3,8 +3,8 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import { DateIcon } from '../../Icons.es6.js'
-import NotificationCard from './NotificationCard.es6.js'
+import { DateIcon } from '../../Icons'
+import NotificationCard from './NotificationCard'
 
 it('should render component with empty label', () => {
   const component = shallow(<NotificationCard />)

@@ -1,11 +1,11 @@
 import React from 'react'
-import DemoLayoutContent from './demo-only-components/DemoLayoutContent.es6.js'
-import CodeExample from './demo-only-components/CodeExample.es6.js'
-import Highlighter from './demo-only-components/Highlighter.es6.js'
+import DemoLayoutContent from './demo-only-components/DemoLayoutContent'
+import CodeExample from './demo-only-components/CodeExample'
+import Highlighter from './demo-only-components/Highlighter'
 
-import Grid from '../../components/layout/grid/Grid.es6.js'
-import GridCol from '../../components/layout/grid/GridCol.es6.js'
-import Button from '../../components/form/button/Button.es6.js'
+import Grid from '../../components/layout/grid/Grid'
+import GridCol from '../../components/layout/grid/GridCol'
+import Button from '../../components/form/button/Button'
 
 const text = `.dsu-{property}{sides}-{size}`
 

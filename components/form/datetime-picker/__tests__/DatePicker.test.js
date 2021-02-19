@@ -3,7 +3,7 @@ import React from 'react'
 import renderer from 'react-test-renderer'
 import moment from 'moment'
 
-import B12DatePicker from '../DatePicker.es6.js'
+import B12DatePicker from '../DatePicker'
 
 describe('B12DatePicker component', () => {
   test('should render the react datepicker component using dropdown styles as a custom input', () => {

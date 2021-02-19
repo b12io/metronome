@@ -1,10 +1,10 @@
 import React from 'react'
-import DemoLayoutContent from './demo-only-components/DemoLayoutContent.es6.js'
-import CodeExample from './demo-only-components/CodeExample.es6.js'
-import MetaData from './demo-only-components/MetaData.es6.js'
-import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDataProps.es6.js'
+import DemoLayoutContent from './demo-only-components/DemoLayoutContent'
+import CodeExample from './demo-only-components/CodeExample'
+import MetaData from './demo-only-components/MetaData'
+import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDataProps'
 
-import SimpleCard from '../../components/layout/simple-card/SimpleCard.es6.js'
+import SimpleCard from '../../components/layout/simple-card/SimpleCard'
 
 const RangeSliderProps = [
   {
@@ -28,7 +28,7 @@ export default function AvatarItemPage () {
         <h1>SimpleCard</h1>
         <p>Simplest card component</p>
         <MetaData
-          importFrom="import SimpleCard from '@b12/design-system/components/layout/simple-card/SimpleCard.es6.js'"
+          importFrom="import SimpleCard from '@b12/design-system/components/layout/simple-card/SimpleCard'"
           flow="Yes"
           tests="No"
         />

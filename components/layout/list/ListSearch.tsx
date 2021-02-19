@@ -1,6 +1,6 @@
 import React from 'react'
 import classnames from 'classnames'
-import {Search} from '../../Icons.es6.js'
+import {Search} from '../../Icons'
 
 const ListSearch = props => {
   const {

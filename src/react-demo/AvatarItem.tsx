@@ -1,10 +1,10 @@
 import React from 'react'
-import DemoLayoutContent from './demo-only-components/DemoLayoutContent.es6.js'
-import CodeExample from './demo-only-components/CodeExample.es6.js'
-import MetaData from './demo-only-components/MetaData.es6.js'
-import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDataProps.es6.js'
+import DemoLayoutContent from './demo-only-components/DemoLayoutContent'
+import CodeExample from './demo-only-components/CodeExample'
+import MetaData from './demo-only-components/MetaData'
+import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDataProps'
 
-import AvatarItem from '../../components/layout/avatar/AvatarItem.es6.js'
+import AvatarItem from '../../components/layout/avatar/AvatarItem'
 
 export default function AvatarItemPage () {
   return (
@@ -13,7 +13,7 @@ export default function AvatarItemPage () {
         <h1>AvatarItem</h1>
         <p>A component that represents a user</p>
         <MetaData
-          importFrom="import AvatarItem from '@b12/design-system/components/layout/avatar/AvatarItem.es6.js'"
+          importFrom="import AvatarItem from '@b12/design-system/components/layout/avatar/AvatarItem'"
           flow="Yes"
           tests="Yes"
         />

@@ -1,10 +1,10 @@
 import React from 'react'
 import { mount } from 'enzyme'
 
-import Select from '../select/Select.es6.js'
-import Option from '../option/Option.es6.js'
+import Select from '../select/Select'
+import Option from '../option/Option'
 
-import DimensionInput from './DimensionInput.es6.js'
+import DimensionInput from './DimensionInput'
 
 let testProps
 

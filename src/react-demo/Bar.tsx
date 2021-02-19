@@ -2,9 +2,9 @@ import React from 'react'
 import SyntaxHighlighter from 'react-syntax-highlighter'
 import github from 'react-syntax-highlighter/styles/hljs/github'
 
-import DemoLayoutContent from './demo-only-components/DemoLayoutContent.es6.js'
-import Button from '../../components/form/button/Button.es6.js'
-import { Desktop, Faq, Checkmark } from '../../components/Icons.es6.js'
+import DemoLayoutContent from './demo-only-components/DemoLayoutContent'
+import Button from '../../components/form/button/Button'
+import { Desktop, Faq, Checkmark } from '../../components/Icons'
 
 const previewFrameBarHtml = `<div className="ds-preview-frame-bar">
   <div className="ds-preview-frame-bar__col">

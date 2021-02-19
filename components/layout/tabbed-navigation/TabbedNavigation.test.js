@@ -3,8 +3,8 @@
 import React from 'react'
 import { mount } from 'enzyme'
 
-import TabbedNavigation from './TabbedNavigation.es6.js'
-import TabbedNavigationItem from './TabbedNavigationItem.es6.js'
+import TabbedNavigation from './TabbedNavigation'
+import TabbedNavigationItem from './TabbedNavigationItem'
 
 let component
 

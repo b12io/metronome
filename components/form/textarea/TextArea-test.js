@@ -1,7 +1,7 @@
 /* global jest, expect */
 import React from 'react'
 import { shallow } from 'enzyme'
-import TextArea from './TextArea.es6.js'
+import TextArea from './TextArea'
 it('should call onUpdate', () => {
   const onUpdate = jest.fn()
   const component = shallow(<TextArea value="Hey world" label="test" onUpdate={onUpdate} />)

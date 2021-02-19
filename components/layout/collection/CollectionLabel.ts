@@ -1,4 +1,4 @@
-import basicClassCreator from '../../lib/basicClassCreator.es6.js'
+import basicClassCreator from '../../lib/basicClassCreator'
 
 const CollectionLabel = basicClassCreator('CollectionLabel', 'collection__label')
 export default CollectionLabel

@@ -3,7 +3,7 @@
 import React from 'react'
 import { mount } from 'enzyme'
 
-import Collapse from './Collapse.es6.js'
+import Collapse from './Collapse'
 
 const text = (<p>Lorem ipsum</p>)
 

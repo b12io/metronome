@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { shallow, mount } from 'enzyme'
-import Radio from './Radio.es6.js'
+import Radio from './Radio'
 
 it('should render label', () => {
   const component = shallow(<Radio label="Option 1" />)

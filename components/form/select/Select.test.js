@@ -2,8 +2,8 @@
 
 import React from 'react'
 import { shallow, mount } from 'enzyme'
-import Select from './Select.es6.js'
-import Option from '../option/Option.es6.js'
+import Select from './Select'
+import Option from '../option/Option'
 
 it('should render label', () => {
   const component = shallow(<Select label="Media" />)

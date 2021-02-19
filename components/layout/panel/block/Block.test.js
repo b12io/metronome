@@ -3,9 +3,9 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
 
-import Block from './Block.es6.js'
-import BlockTitle from './BlockTitle.es6.js'
-import BlockContent from './BlockContent.es6.js'
+import Block from './Block'
+import BlockTitle from './BlockTitle'
+import BlockContent from './BlockContent'
 
 it('has no bottom divider', () => {
   const component = shallow(<Block />)

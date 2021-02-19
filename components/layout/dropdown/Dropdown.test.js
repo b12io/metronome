@@ -3,12 +3,12 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
 
-import Dropdown from './Dropdown.es6.js'
-import DropdownItem from './DropdownItem.es6.js'
-import DropdownItemHeader from './DropdownItemHeader.es6.js'
-import DropdownItemDivider from './DropdownItemDivider.es6.js'
-import Button from '../../form/button/Button.es6.js'
-import { Customer } from '../../../components/Icons.es6.js'
+import Dropdown from './Dropdown'
+import DropdownItem from './DropdownItem'
+import DropdownItemHeader from './DropdownItemHeader'
+import DropdownItemDivider from './DropdownItemDivider'
+import Button from '../../form/button/Button'
+import { Customer } from '../../../components/Icons'
 
 it('should render toggle with icon and label', () => {
   const component = shallow(

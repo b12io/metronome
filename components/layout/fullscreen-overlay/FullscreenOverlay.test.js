@@ -1,8 +1,8 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import Button from '../../form/button/Button.es6.js'
-import FullscreenOverlay from './FullscreenOverlay.es6.js'
+import Button from '../../form/button/Button'
+import FullscreenOverlay from './FullscreenOverlay'
 
 it('should render the leftIcon', function () {
   const icon = shallow(

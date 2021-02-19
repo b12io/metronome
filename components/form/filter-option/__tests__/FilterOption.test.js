@@ -1,7 +1,7 @@
 /* global expect */
 import React from 'react'
 import renderer from 'react-test-renderer'
-import FilterOption from '../FilterOption.es6.js'
+import FilterOption from '../FilterOption'
 
 it('should not display dropdown by default', () => {
   const tree = renderer.create(<FilterOption filters={[]} />).toJSON()

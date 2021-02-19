@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { shallow } from 'enzyme'
-import CheckboxMultipleSelect from './CheckboxMultipleSelect.es6.js'
+import CheckboxMultipleSelect from './CheckboxMultipleSelect'
 
 let component, options, onChange
 

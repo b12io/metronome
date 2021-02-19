@@ -3,7 +3,7 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
 
-import ButtonGroup from './ButtonGroup.es6.js'
+import ButtonGroup from './ButtonGroup'
 
 it('is horizontal', () => {
   const component = shallow(<ButtonGroup />)

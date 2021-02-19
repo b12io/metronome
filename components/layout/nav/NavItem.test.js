@@ -3,8 +3,8 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
 
-import NavItem from './NavItem.es6.js'
-import { Visible } from '../../Icons.es6.js'
+import NavItem from './NavItem'
+import { Visible } from '../../Icons'
 
 it('shows arrow icon', () => {
   const component = shallow(<NavItem showArrow />)
