@@ -5,6 +5,12 @@ do
   ts_version="${file/\.js/\.ts}"
   tsx_version="${file/\.js/\.tsx}"
 
+  if [[ $file == *test.js ]]
+  then
+    echo "We don't rename tests, sorry: $file"
+    continue
+  fi
+
   if [ -e $ts_version ] || [ -e $tsx_version ]
   then
     echo "File $file already has a typed version."
