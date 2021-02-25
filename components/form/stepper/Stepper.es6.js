@@ -1,7 +1,6 @@
 // @flow
 
 import React from 'react'
-import PropTypes from 'prop-types'
 import { debounce } from 'lodash'
 import classnames from 'classnames'
 
@@ -38,7 +37,7 @@ class Stepper extends React.Component<Props, State> {
     const { min, step } = this.props
     let newVal
 
-    if (value == min) {
+    if (value === min) {
       return
     }
 
@@ -56,7 +55,7 @@ class Stepper extends React.Component<Props, State> {
     const { min, max, step } = this.props
     let newVal
 
-    if (value == max) {
+    if (value === max) {
       return
     }
 
@@ -90,16 +89,23 @@ class Stepper extends React.Component<Props, State> {
     }
   }, 700)
 
+  componentDidUpdate (prevProps: Props) {
+    const { value } = this.props
+    if (prevProps.value !== value && this.state.value !== value) {
+      this.setState({ value })
+    }
+  }
+
   render () {
     const { value } = this.state
-    const { min, max, step, label } = this.props
+    const { label } = this.props
 
     return (
       <div className={classnames(
-          'ds-form-group',
-          'ds-form-group--stepper',
-          {'has-error': value === -1}
-        )}>
+        'ds-form-group',
+        'ds-form-group--stepper',
+        { 'has-error': value === -1 }
+      )}>
         {label && (
           <div className="ds-control-label">
             {label}

@@ -1,11 +1,12 @@
 /* @flow */
 import React from 'react'
 import classnames from 'classnames'
+import type { Element } from 'react'
 
 import { Checkmark } from '../../Icons.es6.js'
 
 type Props = {|
-  label: string,
+  label: string | Element <*>,
   name: string,
   checked: boolean,
   indeterminate: boolean,

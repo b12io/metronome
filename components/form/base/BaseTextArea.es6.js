@@ -34,13 +34,14 @@ class BaseTextArea extends Component {
   }
 
   render () {
-    const {value, className, placeholder, rows, contentHeight} = this.props
+    const {value, className, placeholder, rows, contentHeight, disabled} = this.props
     return (
       <textarea
         placeholder={placeholder}
         rows={!contentHeight ? rows : null}
         className={classnames('ds-form-control', className)}
         value={value}
+        disabled={disabled}
         onFocus={this.onFocus}
         onBlur={this.onBlur}
         onChange={this.autoResize}
@@ -55,6 +56,7 @@ BaseTextArea.defaultProps = {
   rows: 5,
   className: '',
   contentHeight: false,
+  disabled: false,
   onFocus: () => {},
   onBlur: () => {},
   onChange: () => {}
@@ -65,6 +67,7 @@ BaseTextArea.propTypes = {
   placeholder: PropTypes.string,
   rows: PropTypes.number,
   contentHeight: PropTypes.bool,
+  disabled: PropTypes.bool,
   onFocus: PropTypes.func,
   onBlur: PropTypes.func,
   onChange: PropTypes.func

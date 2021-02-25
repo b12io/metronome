@@ -21,6 +21,13 @@ module.exports = {
         'components/form/checkbox/Checkbox.es6.js'
       ],
       sectionDepth: 2
+    },
+    {
+      name: 'Layout',
+      components: [
+        'components/layout/nav-indicator/NavIndicator.es6.js'
+      ],
+      sectionDepth: 2
     }
   ],
   styleguideComponents: {

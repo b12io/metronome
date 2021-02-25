@@ -285,6 +285,9 @@
     @include display-xl-font;
     font-family: $ds-font-family-base;
     font-weight: $ds-font-weight-bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
     &-container {
       display: flex;

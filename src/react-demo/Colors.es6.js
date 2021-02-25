@@ -1,5 +1,184 @@
 import React from 'react'
 import DemoLayoutContent from './demo-only-components/DemoLayoutContent.es6.js'
+import DemoColorCard from './demo-only-components/DemoColorCard.es6.js'
+
+const BRAND_COLORS = [
+  {
+    name: 'Lightest',
+    color: '#f6f5ff',
+    variable: '$ds-brand-lightest-color'
+  },
+  {
+    name: 'Lightest hover',
+    color: '#F6F5FF',
+    variable: '$ds-brand-lightest-hover-color'
+  },
+  {
+    name: 'Lighter',
+    color: '#756cf9',
+    variable: '$ds-brand-lighter-color'
+  },
+  {
+    name: 'Light',
+    color: '#766cff',
+    variable: '$ds-brand-light-color'
+  },
+  {
+    name: 'Regular',
+    color: '#6548c7',
+    variable: '$ds-brand-regular-color'
+  },
+  {
+    name: 'Medium',
+    color: '#5048c7',
+    variable: '$ds-brand-medium-color'
+  },
+  {
+    name: 'Semi Medium',
+    color: '#382dd4',
+    variable: '$ds-brand-semi-medium-color'
+  },
+  {
+    name: 'Dark',
+    color: '#2a22a1',
+    variable: '$ds-brand-dark-color'
+  }
+]
+
+const UI_COLORS = [
+  {
+    name: 'Lightest',
+    color: '#ffffff',
+    variable: '$ds-ui-lightest-color'
+  },
+  {
+    name: 'Light',
+    color: '#fdfdfd',
+    variable: '$ds-ui-light-color'
+  },
+  {
+    name: 'Regular',
+    color: '#f2f2f2',
+    variable: '$ds-ui-regular-color'
+  },
+  {
+    name: 'Dark',
+    color: '#d9d9d9',
+    variable: '$ds-ui-dark-color'
+  },
+  {
+    name: 'Darker',
+    color: '#cccccc',
+    variable: '$ds-ui-darker-color'
+  },
+  {
+    name: 'Darkest',
+    color: '#b3b3b3',
+    variable: '$ds-ui-darkest-color'
+  },
+  {
+    name: 'Background',
+    color: '#f5f5f7',
+    variable: '$ds-ui-background-color'
+  },
+  {
+    name: 'Background Dark',
+    color: '#695ff6',
+    variable: '$ds-ui-background-dark-color'
+  },
+  {
+    name: 'Background Darker',
+    color: '#413AA1',
+    variable: '$ds-ui-background-darker-color'
+  },
+  {
+    name: 'Border',
+    color: '#e6e6e6',
+    variable: '$ds-ui-border-color'
+  },
+]
+
+const DISPLAY_COLORS = [
+  {
+    name: 'Light',
+    color: '#706f84',
+    variable: '$ds-display-light-color'
+  },
+  {
+    name: 'Regular',
+    color: '#110f33',
+    variable: '$ds-display-regular-color'
+  },
+  {
+    name: 'Dark',
+    color: '#0f0d3a',
+    variable: '$ds-display-dark-color'
+  },
+]
+
+const BODY_COLORS = [
+  {
+    name: 'Light',
+    color: '#808080',
+    variable: '$ds-body-light-color'
+  },
+  {
+    name: 'Lighter',
+    color: '#84839c',
+    variable: '$ds-body-lighter-color'
+  },
+  {
+    name: 'Regular',
+    color: '#4d4d4d',
+    variable: '$ds-body-regular-color'
+  },
+]
+
+const ACCENT_COLORS = [
+  {
+    name: 'Success regular',
+    color: '#8fc980',
+    variable: '$ds-success-regular-color'
+  },
+  {
+    name: 'Success dark',
+    color: '#6b9660',
+    variable: '$ds-success-dark-color'
+  },
+  {
+    name: 'Warning regular',
+    color: '#f8d074',
+    variable: '$ds-warning-regular-color'
+  },
+  {
+    name: 'Warning dark',
+    color: '#f5be33',
+    variable: '$ds-warning-dark-color'
+  },
+  {
+    name: 'Error regular',
+    color: '#f05e5e',
+    variable: '$ds-error-regular-color'
+  },
+  {
+    name: 'Error dark',
+    color: '#bd4a4a',
+    variable: '$ds-error-dark-color'
+  },
+]
+
+const MISC_COLORS = [
+  {
+    name: 'Icon focus',
+    color: '#5048c7',
+    variable: '$ds-icon-focus-color'
+  },
+  {
+    name: 'Badge background',
+    color: '#8e8d9e',
+    variable: '$ds-adge-background-color'
+  },
+]
 
 function Colors () {
   return (
@@ -13,39 +192,15 @@ function Colors () {
           <h4>Brand</h4>
           <p>Buttons, DisplayXL, Active sidebar icon</p>
         </div>
-
         <div className="ds-color-cards">
-          <div className="ds-color-card">
-            <div className="ds-color-card__color" style={{backgroundColor: '#f6f5ff'}}></div>
-            <div className="ds-color-card__body">
-              <h5>Lightest <small>#f6f5ff</small></h5>
-              <code>$ds-brand-lightest-color</code>
-            </div>
-          </div>
-
-          <div className="ds-color-card">
-            <div className="ds-color-card__color" style={{backgroundColor: '#766cff'}}></div>
-            <div className="ds-color-card__body">
-              <h5>Light <small>#766cff</small></h5>
-              <code>$ds-brand-light-color</code>
-            </div>
-          </div>
-
-          <div className="ds-color-card">
-            <div className="ds-color-card__color" style={{backgroundColor: '#382dd4'}}></div>
-            <div className="ds-color-card__body">
-              <h5>Regular <small>#382dd4</small></h5>
-              <code>$ds-brand-regular-color</code>
-            </div>
-          </div>
-
-          <div className="ds-color-card">
-            <div className="ds-color-card__color" style={{backgroundColor: '#2a22a1'}}></div>
-            <div className="ds-color-card__body">
-              <h5>Dark <small>#2a22a1</small></h5>
-              <code>$ds-brand-dark-color</code>
-            </div>
-          </div>
+          {BRAND_COLORS.map((item, index) => (
+            <DemoColorCard
+              key={`${item.name}-${index}`}
+              name={item.name}
+              color={item.color}
+              variable={item.variable}
+            />
+          ))}
         </div>
       </div>
 
@@ -56,53 +211,14 @@ function Colors () {
         </div>
 
         <div className="ds-color-cards">
-          <div className="ds-color-card">
-            <div className="ds-color-card__color" style={{backgroundColor: '#ffffff'}}></div>
-            <div className="ds-color-card__body">
-              <h5>Lightest <small>#ffffff</small></h5>
-              <code>$ds-ui-lightest-color</code>
-            </div>
-          </div>
-
-          <div className="ds-color-card">
-            <div className="ds-color-card__color" style={{backgroundColor: '#fdfdfd'}}></div>
-            <div className="ds-color-card__body">
-              <h5>Light <small>#fdfdfd</small></h5>
-              <code>$ds-ui-light-color</code>
-            </div>
-          </div>
-
-          <div className="ds-color-card">
-            <div className="ds-color-card__color" style={{backgroundColor: '#f2f2f2'}}></div>
-            <div className="ds-color-card__body">
-              <h5>Regular <small>#f2f2f2</small></h5>
-              <code>$ds-ui-regular-color</code>
-            </div>
-          </div>
-
-          <div className="ds-color-card">
-            <div className="ds-color-card__color" style={{backgroundColor: '#d9d9d9'}}></div>
-            <div className="ds-color-card__body">
-              <h5>Dark <small>#d9d9d9</small></h5>
-              <code>$ds-ui-dark-color</code>
-            </div>
-          </div>
-
-          <div className="ds-color-card">
-            <div className="ds-color-card__color" style={{backgroundColor: '#cccccc'}}></div>
-            <div className="ds-color-card__body">
-              <h5>Darker <small>#cccccc</small></h5>
-              <code>$ds-ui-darker-color</code>
-            </div>
-          </div>
-
-          <div className="ds-color-card">
-            <div className="ds-color-card__color" style={{backgroundColor: '#b3b3b3'}}></div>
-            <div className="ds-color-card__body">
-              <h5>Darkest <small>#b3b3b3</small></h5>
-              <code>$ds-ui-darkest-color</code>
-            </div>
-          </div>
+          {UI_COLORS.map((item, index) => (
+            <DemoColorCard
+              key={`${item.name}-${index}`}
+              name={item.name}
+              color={item.color}
+              variable={item.variable}
+            />
+          ))}
         </div>
       </div>
 
@@ -113,29 +229,14 @@ function Colors () {
         </div>
 
         <div className="ds-color-cards">
-          <div className="ds-color-card">
-            <div className="ds-color-card__color" style={{backgroundColor: '#706f84'}}></div>
-            <div className="ds-color-card__body">
-              <h5>Light <small>#706f84</small></h5>
-              <code>$ds-display-light-color</code>
-            </div>
-          </div>
-
-          <div className="ds-color-card">
-            <div className="ds-color-card__color" style={{backgroundColor: '#110f33'}}></div>
-            <div className="ds-color-card__body">
-              <h5>Regular <small>#110f33</small></h5>
-              <code>$ds-display-regular-color</code>
-            </div>
-          </div>
-
-          <div className="ds-color-card">
-            <div className="ds-color-card__color" style={{backgroundColor: '#0f0d3a'}}></div>
-            <div className="ds-color-card__body">
-              <h5>Dark <small>#0f0d3a</small></h5>
-              <code>$ds-display-dark-color</code>
-            </div>
-          </div>
+          {DISPLAY_COLORS.map((item, index) => (
+            <DemoColorCard
+              key={`${item.name}-${index}`}
+              name={item.name}
+              color={item.color}
+              variable={item.variable}
+            />
+          ))}
         </div>
       </div>
 
@@ -146,104 +247,50 @@ function Colors () {
         </div>
 
         <div className="ds-color-cards">
-          <div className="ds-color-card">
-            <div className="ds-color-card__color" style={{backgroundColor: '#8e8d9e'}}></div>
-            <div className="ds-color-card__body">
-              <h5>Lighter <small>#8e8d9e</small></h5>
-              <code>$ds-body-lighter-color</code>
-            </div>
-          </div>
-
-          <div className="ds-color-card">
-            <div className="ds-color-card__color" style={{backgroundColor: '#808080'}}></div>
-            <div className="ds-color-card__body">
-              <h5>Light <small>#808080</small></h5>
-              <code>$ds-body-light-color</code>
-            </div>
-          </div>
-
-          <div className="ds-color-card">
-            <div className="ds-color-card__color" style={{backgroundColor: '#4d4d4d'}}></div>
-            <div className="ds-color-card__body">
-              <h5>Regular <small>#4d4d4d</small></h5>
-              <code>$ds-body-regular-color</code>
-            </div>
-          </div>
+          {BODY_COLORS.map((item, index) => (
+            <DemoColorCard
+              key={`${item.name}-${index}`}
+              name={item.name}
+              color={item.color}
+              variable={item.variable}
+            />
+          ))}
         </div>
       </div>
 
       <div className="ds-block dsu-mt-lg">
         <div className="ds-block__title">
-          <h4>Success</h4>
-          <p>Icons and text on successful text inputs</p>
+          <h4>Success, Error, Warning</h4>
+          <p>Icons and text on text inputs</p>
         </div>
 
         <div className="ds-color-cards">
-          <div className="ds-color-card">
-            <div className="ds-color-card__color" style={{backgroundColor: '#8fc980'}}></div>
-            <div className="ds-color-card__body">
-              <h5>Regular <small>#8fc980</small></h5>
-              <code>$ds-success-regular-color</code>
-            </div>
-          </div>
-
-          <div className="ds-color-card">
-            <div className="ds-color-card__color" style={{backgroundColor: '#6b9660'}}></div>
-            <div className="ds-color-card__body">
-              <h5>Dark <small>#6b9660</small></h5>
-              <code>$ds-success-dark-color</code>
-            </div>
-          </div>
+          {ACCENT_COLORS.map((item, index) => (
+            <DemoColorCard
+              key={`${item.name}-${index}`}
+              name={item.name}
+              color={item.color}
+              variable={item.variable}
+            />
+          ))}
         </div>
       </div>
 
       <div className="ds-block dsu-mt-lg">
         <div className="ds-block__title">
-          <h4>Error</h4>
-          <p>Icons and text on text inputs with errors</p>
+          <h4>Misc</h4>
+          <p>Other things</p>
         </div>
 
         <div className="ds-color-cards">
-          <div className="ds-color-card">
-            <div className="ds-color-card__color" style={{backgroundColor: '#f05e5e'}}></div>
-            <div className="ds-color-card__body">
-              <h5>Regular <small>#f05e5e</small></h5>
-              <code>$ds-error-regular-color</code>
-            </div>
-          </div>
-
-          <div className="ds-color-card">
-            <div className="ds-color-card__color" style={{backgroundColor: '#bd4a4a'}}></div>
-            <div className="ds-color-card__body">
-              <h5>Dark <small>#bd4a4a</small></h5>
-              <code>$ds-error-dark-color</code>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="ds-block dsu-mt-lg">
-        <div className="ds-block__title">
-          <h4>Warning</h4>
-          <p>Icons and text on text inputs with warnings</p>
-        </div>
-
-        <div className="ds-color-cards">
-          <div className="ds-color-card">
-            <div className="ds-color-card__color" style={{backgroundColor: '#f8d074'}}></div>
-            <div className="ds-color-card__body">
-              <h5>Regular <small>#f8d074</small></h5>
-              <code>$ds-warning-regular-color</code>
-            </div>
-          </div>
-
-          <div className="ds-color-card">
-            <div className="ds-color-card__color" style={{backgroundColor: '#f5be33'}}></div>
-            <div className="ds-color-card__body">
-              <h5>Dark <small>#f5be33</small></h5>
-              <code>$ds-warning-dark-color</code>
-            </div>
-          </div>
+          {MISC_COLORS.map((item, index) => (
+            <DemoColorCard
+              key={`${item.name}-${index}`}
+              name={item.name}
+              color={item.color}
+              variable={item.variable}
+            />
+          ))}
         </div>
       </div>
     </DemoLayoutContent>

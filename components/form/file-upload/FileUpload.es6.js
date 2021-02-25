@@ -28,7 +28,8 @@ type Props = {|
   showButton: boolean,
   showDropzone: boolean,
   hasError?: boolean,
-  errorMessage?: string
+  errorMessage?: string,
+  hideUploadedFileLinks?: boolean
 |}
 
 class FileUpload extends React.Component<Props> {
@@ -48,6 +49,7 @@ class FileUpload extends React.Component<Props> {
     loadingLabel: '',
     mediaCollectionItem: false,
     hasError: false,
+    hideUploadedFileLinks: false,
     errorMessage: 'Error uploading file(s)'
   }
 
@@ -58,7 +60,7 @@ class FileUpload extends React.Component<Props> {
   render () {
     const {multiple, showDropzone, dropzoneLabel, accept, showButton, buttonLabel, buttonBlock,
       buttonPrimary, buttonSmall, buttonIcon, loading, loadingLabel, mediaCollectionItem,
-      fileList, hasError, errorMessage, children} = this.props
+      hideUploadedFileLinks, fileList, hasError, errorMessage, children} = this.props
     const fileDivs = fileList.map((file, idx) => {
       return (
         <div key={`fn-${file.name}-${idx}`} >
@@ -99,6 +101,7 @@ class FileUpload extends React.Component<Props> {
           })}
           multiple={multiple}
           accept={accept}
+          onClick={(e) => { e.preventDefault(); } }
           onDrop={this.onDrop}>
           {children || uploadContent}
 
@@ -116,9 +119,9 @@ class FileUpload extends React.Component<Props> {
           icon={buttonIcon}
           small={buttonSmall}
           // $FlowFixMe: Not sure how to type this.dropzoneRef
-          onClick={() => { this.dropzoneRef.open() } }
+          onClick={(e) => { e.preventDefault(); this.dropzoneRef.open(); } }
         />}
-        {fileDivs}
+        {!hideUploadedFileLinks && (fileDivs)}
       </div>
     )
   }

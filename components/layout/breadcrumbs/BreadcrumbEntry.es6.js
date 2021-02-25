@@ -10,6 +10,7 @@ type Props = {
   label: string,
   clickable: boolean,
   showSeparator: boolean,
+  showTooltip?: boolean,
   width?: number,
   onClick?: () => void
 }
@@ -18,7 +19,7 @@ type NodeRef = { current: null | HTMLDivElement } | ((null | HTMLDivElement) => 
 
 export default React.forwardRef<Props, HTMLDivElement>(
   function BreadcrumbEntry ({
-    label, clickable, onClick, showSeparator, width
+    label, clickable, onClick, showSeparator, width, showTooltip = true
   }: Props, ref: NodeRef) {
     const style = {}
     if (width) {
@@ -50,7 +51,7 @@ export default React.forwardRef<Props, HTMLDivElement>(
                 className="ds-tabbed-nav__breadcrumbs-label"
                 onClick={onClick}
               >{label}</div>
-              {tooltip}
+              {showTooltip && tooltip}
             </div>
           )}
         </B12Tooltip>

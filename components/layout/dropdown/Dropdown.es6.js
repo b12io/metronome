@@ -55,6 +55,7 @@ class Dropdown extends React.Component<Props, State> {
   }
 
   onToggle = (event: SyntheticEvent<HTMLDivElement>) => {
+    event && event.stopPropagation()
     this.setState(prevState => ({
       isMenuVisible: !prevState.isMenuVisible
     }))

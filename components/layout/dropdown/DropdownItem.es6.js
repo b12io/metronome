@@ -19,7 +19,8 @@ function DropdownItem ({ className, label, icon, disabled, onClick, onCloseMenu 
         'ds-dropdown__menu-item': true,
         'ds-dropdown__menu-item--disabled': disabled
       }, className)}
-      onClick={() => {
+      onClick={(event) => {
+        event && event.stopPropagation()
         if (disabled) {
           return
         }

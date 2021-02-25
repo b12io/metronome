@@ -8,6 +8,7 @@ function QuickDialog ({ title, body, buttons, onButtonClicked }) {
     {body}
     {buttons.length > 0 && <div className="ds-quick-actions__actions">
       {buttons.map((button, index) => <button
+        disabled={button.disabled}
         className={classnames({
           button: true,
           'button--sm': true,

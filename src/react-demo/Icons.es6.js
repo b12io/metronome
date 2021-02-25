@@ -18,7 +18,8 @@ import {
   CreditCard, Indent, Key, Animations, DiagonalArrow, Import, AddCustomer, CaretDown, Repeat, Availability,
   CalendarEvent, Payments, Service, Email, AppCube, MagicWand, Layout, Send, Code, User, Section, Tag, Welcome,
   Website, Chat, RotateForward, Globe, At, Target, IconRow, IconColumn, IconSection, FolderFilled, BlogPost, MenuItems, Popup, Bold, Italic, Underline, UnorderedList, OrderedList,
-  Flag, Testimonials, Chart, Play, Pause, AlignLeftV2, AlignCenterV2, AlignRightV2, AlignJustifyV2, Sidebar
+  Flag, Testimonials, Chart, Play, Pause, AlignLeftV2, AlignCenterV2, AlignRightV2, AlignJustifyV2, Sidebar, ArrowCircle, Palette, Lightbox, Filter, Slider,
+  Flash, Dashboard, Guides, Article, Pulse, Edit, ContentApproved, Dragger, PaperClip, Invoicing, Banking, Checkbox, Circle
 } from '../../components/Icons.es6.js'
 
 const ICONS = [
@@ -253,6 +254,10 @@ const ICONS = [
   {
     name: 'CheckmarkCircle',
     component: CheckmarkCircle
+  },
+  {
+    name: 'Circle',
+    component: Circle
   },
   {
     name: 'Folder',
@@ -573,6 +578,74 @@ const ICONS = [
   {
     name: 'Sidebar',
     component: Sidebar
+  },
+  {
+    name: 'ArrowCircle',
+    component: ArrowCircle
+  },
+  {
+    name: 'Palette',
+    component: Palette
+  },
+  {
+    name: 'Lightbox',
+    component: Lightbox
+  },
+  {
+    name: 'Filter',
+    component: Filter
+  },
+  {
+    name: 'Slider',
+    component: Slider
+  },
+  {
+    name: 'Flash',
+    component: Flash
+  },
+  {
+    name: 'Dashboard',
+    component: Dashboard
+  },
+  {
+    name: 'Guides',
+    component: Guides
+  },
+  {
+    name: 'Article',
+    component: Article
+  },
+  {
+    name: 'Pulse',
+    component: Pulse
+  },
+  {
+    name: 'Edit',
+    component: Edit
+  },
+  {
+    name: 'ContentApproved',
+    component: ContentApproved
+  },
+  {
+    name: 'Dragger',
+    component: Dragger
+  },
+  {
+    name: 'PaperClip',
+    component: PaperClip
+  },
+  {
+    name: 'Invoicing',
+    component: Invoicing
+  },
+  {
+    name: 'Banking',
+    component: Banking
+  },
+  {
+    name: 'Checkbox',
+    component: Checkbox
   }
 ]
 
