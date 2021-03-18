@@ -6,7 +6,7 @@ import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDat
 
 import {
   Check, Lock, Notice, Disabled, Help, Search, Draggable,
-  ChevronRight, Home, TimesCircle, RemoveCircle, PlusCircle, Plus, Minus, ShoppingCart, Team,
+  ChevronRight, Home, TimesCircle, RemoveCircle, SolidCircle, PlusCircle, Plus, Minus, ShoppingCart, Team,
   Briefcase, Image, Video, Award, Client, Testimonial, Blog,
   Announcement, Export, Link, Calendar, QuestionCircle, DateIcon, Clock, ImageUpload,
   AlignCenter, AlignLeft, AlignRight, Close, AppearanceLayout, AppearanceAppearance,
@@ -66,6 +66,10 @@ const ICONS = [
   {
     name: 'TimesCircle (DEPRECATED)',
     component: TimesCircle
+  },
+  {
+    name: 'SolidCircle',
+    component: SolidCircle
   },
   {
     name: 'RemoveCircle',
