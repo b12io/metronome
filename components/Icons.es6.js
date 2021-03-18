@@ -1697,6 +1697,14 @@ function Circle ({width, height, viewBox, color}) {
   )
 }
 
+function SolidCircle ({ className, width, height, viewBox, color }) {
+  return (
+    <svg className={className} width={width} height={height} viewBox={viewBox} xmlns="http://www.w3.org/2000/svg">
+      <path fillRule="nonzero" fill={color} d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm2.121"/>
+    </svg>
+  )
+}
+
 const icons = [
   Check,
   Checkmark,
@@ -1712,6 +1720,7 @@ const icons = [
   TimesCircle,
   RemoveCircle,
   PlusCircle,
+  SolidCircle,
   Plus,
   Minus,
   ShoppingCart,
@@ -1873,7 +1882,7 @@ each(icons, (icon) => {
 })
 
 export { Check, Checkmark, Lock, Notice, Disabled, Help, Search, Draggable,
-  ChevronRight, ChevronLeft, Home, TimesCircle, RemoveCircle, PlusCircle, Plus, Minus, ShoppingCart, Team,
+  ChevronRight, ChevronLeft, Home, TimesCircle, RemoveCircle, SolidCircle, PlusCircle, Plus, Minus, ShoppingCart, Team,
   Briefcase, Image, Video, Camera, Play, Award, Client, Testimonial, Blog,
   Announcement, Export, Link, Unlink, Calendar, QuestionCircle, DateIcon, Clock, ImageUpload,
   AlignCenter, AlignLeft, AlignRight, Close, AppearanceLayout, AppearanceAppearance,
