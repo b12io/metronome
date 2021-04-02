@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import BaseTextArea from '../base/BaseTextArea.es6.js'
 
@@ -32,22 +31,6 @@ function TextArea ({label, value, placeholder, rows, hasFeedback, hasError, resi
       />
     </div>
   )
-}
-
-TextArea.propTypes = {
-  label: PropTypes.string,
-  value: PropTypes.string,
-  placeholder: PropTypes.string,
-  rows: PropTypes.number,
-  hasFeedback: PropTypes.bool,
-  hasError: PropTypes.bool,
-  resizable: PropTypes.bool,
-  counter: PropTypes.string,
-  contentHeight: PropTypes.bool,
-  disabled: PropTypes.bool,
-  onFocus: PropTypes.func,
-  onBlur: PropTypes.func,
-  onUpdate: PropTypes.func
 }
 
 TextArea.defaultProps = {

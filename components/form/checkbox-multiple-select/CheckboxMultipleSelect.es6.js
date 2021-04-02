@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import { filter, keys, intersection } from 'lodash'
 
@@ -119,17 +118,6 @@ CheckboxMultipleSelect.defaultProps = {
   highlightOnSelect: true,
   unselectedLabel: 'Select',
   onChange: () => {}
-}
-
-CheckboxMultipleSelect.propTypes = {
-  className: PropTypes.string,
-  highlightOnSelect: PropTypes.bool,
-  unselectedLabel: PropTypes.string,
-  selectedLabel: PropTypes.string,
-  options: PropTypes.arrayOf(PropTypes.string),
-  selectedOptions: PropTypes.arrayOf(PropTypes.string),
-  disabledOptions: PropTypes.arrayOf(PropTypes.string),
-  onChange: PropTypes.func.isRequired
 }
 
 export default CheckboxMultipleSelect

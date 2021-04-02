@@ -1,5 +1,4 @@
 import React, {Children} from 'react'
-import PropTypes from 'prop-types'
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
 import classnames from 'classnames'
 
@@ -76,15 +75,6 @@ class DragList extends React.Component {
       </DragDropContext>
     )
   }
-}
-
-DragList.propTypes = {
-  droppableId: PropTypes.string,
-  children: PropTypes.node,
-  collectionList: PropTypes.bool,
-  cardList: PropTypes.bool,
-  onDragEnd: PropTypes.func,
-  isDragAndDropDisabled: PropTypes.bool
 }
 
 export default DragList

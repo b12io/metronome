@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
 const ListAction = props => {
@@ -17,13 +16,6 @@ const ListAction = props => {
 
 ListAction.defaultProps = {
   onClick: () => {}
-}
-
-ListAction.propTypes = {
-  children: PropTypes.node,
-  cardListAction: PropTypes.bool,
-  collectionAction: PropTypes.bool,
-  onClick: PropTypes.func
 }
 
 export default ListAction

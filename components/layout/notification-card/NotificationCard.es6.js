@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import { Checkmark } from '../../Icons.es6.js'
 
@@ -36,15 +35,4 @@ NotificationCard.defaultProps = {
  * `success` prop is here to show the flexibility
  * to extend and add new notification states
  */
-NotificationCard.propTypes = {
-  icon: PropTypes.element,
-  label: PropTypes.string,
-  success: PropTypes.bool,
-  error: PropTypes.bool,
-  warning: PropTypes.bool,
-  children: PropTypes.node,
-  hideIcon: PropTypes.bool,
-  alignCenter: PropTypes.bool
-}
-
 export default NotificationCard

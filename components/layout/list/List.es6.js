@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
 const List = props => {
@@ -15,13 +14,6 @@ const List = props => {
       {children}
     </div>
   )
-}
-
-List.propTypes = {
-  children: PropTypes.node,
-  cardList: PropTypes.bool,
-  collectionList: PropTypes.bool,
-  listRef: PropTypes.func
 }
 
 export default List

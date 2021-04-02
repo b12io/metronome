@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import {
   UISref
 } from '@uirouter/react'
@@ -21,10 +20,6 @@ function DemoLayoutNav ({ children }) {
       </div>
     </div>
   )
-}
-
-DemoLayoutNav.propTypes = {
-  children: PropTypes.any
 }
 
 export default DemoLayoutNav

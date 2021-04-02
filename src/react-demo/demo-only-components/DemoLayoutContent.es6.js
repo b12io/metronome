@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
 function DemoLayoutContent ({ children, darkBg }) {
@@ -15,11 +14,6 @@ function DemoLayoutContent ({ children, darkBg }) {
 
 DemoLayoutContent.defaultProps = {
   darkBg: false
-}
-
-DemoLayoutContent.propTypes = {
-  children: PropTypes.any,
-  darkBg: PropTypes.bool
 }
 
 export default DemoLayoutContent

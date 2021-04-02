@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
 class Switch extends React.Component {
@@ -47,16 +46,6 @@ Switch.defaultProps = {
   block: false,
   selected: -1,
   onChange: () => {}
-}
-
-Switch.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.object,
-    PropTypes.array
-  ]),
-  block: PropTypes.bool,
-  selected: PropTypes.number,
-  onChange: PropTypes.func
 }
 
 export default Switch

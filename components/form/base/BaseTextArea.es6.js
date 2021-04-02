@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
 class BaseTextArea extends Component {
@@ -60,17 +59,6 @@ BaseTextArea.defaultProps = {
   onFocus: () => {},
   onBlur: () => {},
   onChange: () => {}
-}
-
-BaseTextArea.propTypes = {
-  value: PropTypes.string,
-  placeholder: PropTypes.string,
-  rows: PropTypes.number,
-  contentHeight: PropTypes.bool,
-  disabled: PropTypes.bool,
-  onFocus: PropTypes.func,
-  onBlur: PropTypes.func,
-  onChange: PropTypes.func
 }
 
 export default BaseTextArea
