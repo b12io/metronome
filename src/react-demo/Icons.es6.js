@@ -19,7 +19,7 @@ import {
   CalendarEvent, Payments, Service, Email, AppCube, MagicWand, Layout, Send, Code, User, Section, Tag, Welcome,
   Website, Chat, RotateForward, Globe, At, Target, IconRow, IconColumn, IconSection, FolderFilled, BlogPost, MenuItems, Popup, Bold, Italic, Underline, UnorderedList, OrderedList,
   Flag, Testimonials, Chart, Play, Pause, AlignLeftV2, AlignCenterV2, AlignRightV2, AlignJustifyV2, Sidebar, ArrowCircle, Palette, Lightbox, Filter, Slider,
-  Flash, Dashboard, Guides, Article, Pulse, Edit, ContentApproved, Dragger, PaperClip, Invoicing, Banking, Checkbox, Circle
+  Flash, Dashboard, Guides, Article, Pulse, Edit, ContentApproved, Dragger, PaperClip, Invoicing, Banking, Checkbox, Circle, Bank, Card
 } from '../../components/Icons.es6.js'
 
 const ICONS = [
@@ -646,6 +646,14 @@ const ICONS = [
   {
     name: 'Banking',
     component: Banking
+  },
+  {
+    name: 'Bank',
+    component: Bank
+  },
+  {
+    name: 'Card',
+    component: Card
   },
   {
     name: 'Checkbox',

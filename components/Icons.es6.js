@@ -1705,6 +1705,22 @@ function SolidCircle ({ className, width, height, viewBox, color }) {
   )
 }
 
+function Bank ({ className, width, height, viewBox, color }) {
+  return (
+    <svg className={className} width={width} height={height} viewBox={viewBox} fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M15.3333 14h-.6666V8.6667h-1.3334V14h-2.6666V8.6667H9.3333V14H6.6667V8.6667H5.3333V14H2.6667V8.6667H1.3333V14H.6667A.6665.6665 0 000 14.6667c0 .3686.2987.6666.6667.6666h14.6666c.368 0 .6667-.298.6667-.6666A.6665.6665 0 0015.3333 14zM15.6527 4.0815l-7.3334-4a.67.67 0 00-.6386 0l-7.3334 4A.6668.6668 0 000 4.6668v2c0 .3687.2987.6667.6667.6667h14.6666c.368 0 .6667-.298.6667-.6667v-2a.6668.6668 0 00-.3473-.5853zM8 5.3335c-.7367 0-1.3333-.5967-1.3333-1.3333 0-.7367.5966-1.3334 1.3333-1.3334.7367 0 1.3333.5967 1.3333 1.3334 0 .7366-.5966 1.3333-1.3333 1.3333z" fill={color}/>
+    </svg>
+  )
+}
+
+function Card ({ className, width="21", height="14", viewBox="0 0 21 14", color }) {
+  return (
+    <svg className={className} width={width} height={height} viewBox={viewBox} fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M19.98 0H1.02C.45 0 0 .4 0 .9v11.95c0 .5.45.9 1.02.9h18.96c.57 0 1.02-.4 1.02-.9V.9c0-.5-.45-.9-1.02-.9zM16.5 2.6c-.1-.14-.05-.32.1-.41a.4.4 0 01.49.07 3.46 3.46 0 010 4.33.4.4 0 01-.48.08c-.16-.09-.2-.27-.11-.4a2.93 2.93 0 000-3.67zm-1.05.9c-.1-.14-.05-.32.1-.4a.35.35 0 01.45.1c.6.84.6 1.92 0 2.77a.34.34 0 01-.27.14.35.35 0 01-.18-.05.3.3 0 01-.14-.18.27.27 0 01.04-.22c.47-.66.47-1.5 0-2.16zm-1.07.63c-.07-.15-.02-.35.12-.43.14-.08.31-.02.38.13.23.47.23 1.03 0 1.5a.28.28 0 01-.24.17c-.1 0-.2-.06-.25-.15a.36.36 0 010-.33c.13-.27.13-.6 0-.89zM2.8 2.75c0-.17.16-.3.35-.3h3.5c.2 0 .35.13.35.3v2.14c0 .17-.16.3-.35.3h-3.5c-.2 0-.35-.13-.35-.3V2.75zm9.11 7.94H3.14c-.19 0-.34-.14-.34-.3 0-.18.15-.31.34-.31h8.77c.19 0 .34.13.34.3 0 .17-.15.3-.34.3zm1.56-5.8c-.28 0-.52-.2-.52-.46 0-.25.24-.46.53-.46.28 0 .52.2.52.46 0 .25-.24.46-.53.46zm4.38 5.8h-3.5c-.2 0-.35-.14-.35-.3 0-.18.16-.31.35-.31h3.5c.2 0 .35.13.35.3 0 .17-.16.3-.35.3z" fill={color}/>
+    </svg>
+  )
+}
+
 const icons = [
   Check,
   Checkmark,
@@ -1873,7 +1889,9 @@ const icons = [
   PaperClip,
   Invoicing,
   Banking,
-  Circle
+  Circle,
+  Bank,
+  Card
 ]
 
 each(icons, (icon) => {
@@ -1898,5 +1916,5 @@ export { Check, Checkmark, Lock, Notice, Disabled, Help, Search, Draggable,
   Service, Email, AppCube, MagicWand, Layout, Send, Code, User, Section, Tag, Welcome, Website, Chat,
   RotateForward, Globe, At, Target, IconRow, IconColumn, IconSection, FolderFilled, BlogPost, MenuItems, Popup,
   Flag, Testimonials, Chart, Pause, HubspotLogo, AlignLeftV2, AlignRightV2, AlignCenterV2, AlignJustifyV2, Sidebar, Palette, Lightbox, Filter, Slider,
-  Flash, Dashboard, Guides, Article, Pulse, Edit, ContentApproved, Dragger, PaperClip, Invoicing, Banking, Checkbox, Circle
+  Flash, Dashboard, Guides, Article, Pulse, Edit, ContentApproved, Dragger, PaperClip, Invoicing, Banking, Checkbox, Circle, Bank, Card
 }
