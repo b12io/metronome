@@ -11,6 +11,7 @@ type Props = {|
   key?: Key,
   label: string,
   onOptionClick: (event: SyntheticEvent<HTMLDivElement>, value: string) => *,
+  onFocus: (event: SyntheticEvent<HTMLDivElement>, value: string) => *,
   selected: boolean,
   thumbnail: string,
   thumbnailCover: boolean,
@@ -22,7 +23,8 @@ type Props = {|
   text?: string,
   value: string,
   children?: Node,
-  className?: string | Object
+  className?: string | Object,
+  tabIndex?: number
 |}
 
 type ImageThumbnailType = {|
@@ -44,9 +46,9 @@ function ImageThumbnail ({ thumbnail, thumbnailCover, label }: ImageThumbnailTyp
   )
 }
 
-function ThumbnailOption ({ label, onOptionClick, selected, thumbnail,
+function ThumbnailOption ({ label, onOptionClick, onFocus, selected, thumbnail,
   thumbnailCover, value, isVideo, videoType, videoUrl, rounded,
-  shadowed, text, className, children }: Props) {
+  shadowed, text, tabIndex, className, children }: Props) {
   return (
     <div className={classnames({
       'ds-thumbnail-option': true,
@@ -55,6 +57,8 @@ function ThumbnailOption ({ label, onOptionClick, selected, thumbnail,
       'ds-thumbnail-option--shadowed': shadowed
     }, className)}
     onClick={(event) => onOptionClick(event, value)}
+    onFocus={(event) => onFocus(event, value)}
+    tabIndex={tabIndex}
     >
       <div className="ds-thumbnail-option__thumbnail-container">
         {isVideo ? (
@@ -101,6 +105,7 @@ function ThumbnailOption ({ label, onOptionClick, selected, thumbnail,
 ThumbnailOption.defaultProps = {
   label: '',
   onOptionClick: () => {},
+  onFocus: () => {},
   selected: false,
   thumbnail: '',
   thumbnailCover: false,
@@ -108,7 +113,8 @@ ThumbnailOption.defaultProps = {
   rounded: false,
   shadowed: false,
   text: '',
-  value: ''
+  value: '',
+  tabIndex: 0
 }
 
 export default ThumbnailOption

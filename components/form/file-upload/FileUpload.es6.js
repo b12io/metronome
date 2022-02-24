@@ -118,6 +118,7 @@ class FileUpload extends React.Component<Props> {
           label={buttonLabel}
           icon={buttonIcon}
           small={buttonSmall}
+          loading={loading}
           // $FlowFixMe: Not sure how to type this.dropzoneRef
           onClick={(e) => { e.preventDefault(); this.dropzoneRef.open(); } }
         />}

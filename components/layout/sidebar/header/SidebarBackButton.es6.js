@@ -18,7 +18,8 @@ class SidebarBackButton extends React.Component<Props> {
     text: 'Back'
   }
 
-  handleClick = () => {
+  handleClick = (event: SyntheticEvent<HTMLDivElement>) => {
+    event && event.preventDefault()
     if (this.backButtonRef.current) {
       this.backButtonRef.current.focus()
     }
@@ -30,6 +31,7 @@ class SidebarBackButton extends React.Component<Props> {
       <div
         className="ds-sidebar__header-back-button-container"
         onClick={this.handleClick}
+        onTouchStart={this.handleClick}
         ref={this.backButtonRef}
         tabIndex="-1"
       >

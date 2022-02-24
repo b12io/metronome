@@ -36,6 +36,12 @@ class DatetimePicker extends React.Component<Props, State> {
   // event from firing.
   textInput: ?boolean
 
+  componentDidUpdate(prevProps: Props) {
+    if(prevProps.value !== this.props.value) {
+      this.setState({datetime: this.props.value});
+    }
+  }
+
   handleChange = (datetime: moment$Moment): void => {
     const { dateOnly, timeOnly, updateDatetime } = this.props
 

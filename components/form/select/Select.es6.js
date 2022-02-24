@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import { isEmpty } from 'lodash'
 
-import { Help, Search, Close } from '../../Icons.es6.js'
+import { Help, Search, Close, RemoveCircle } from '../../Icons.es6.js'
 import Option from '../option/Option.es6.js'
 
 class Select extends React.Component {
@@ -19,16 +19,19 @@ class Select extends React.Component {
     this.state = {
       isOpened: false,
       query: '',
-      filteredOptions: props.search ? props.filter(this.options, '') : this.options
+      filteredOptions: props.search ? props.filter(this.options, '') : this.options,
+      initialPlaceholder: '',
+      hasInitialPlaceholderChanged: false
     }
   }
 
   componentDidMount () {
+    this.setState({ initialPlaceholder: this.props.placeholder })
     document.addEventListener('click', this.handleDocumentClick, false)
     document.addEventListener('touchend', this.handleDocumentClick, false)
   }
 
-  componentWillReceiveProps (nextProps) {
+  UNSAFE_componentWillReceiveProps (nextProps) {
     const {children, search, filter} = nextProps
     this.options = this.updateOptions(children)
     this.setState({
@@ -36,7 +39,11 @@ class Select extends React.Component {
     })
   }
 
-  componentDidUpdate () {
+  componentDidUpdate (prevProps) {
+    const { placeholder, search } = this.props
+    if ((prevProps.placeholder !== placeholder) && (placeholder !== this.state.initialPlaceholder)) {
+      this.setState({ hasInitialPlaceholderChanged: true })
+    }
     if (this.props.search && this.state.isOpened && this.searchInput) {
       this.searchInput.focus()
     }
@@ -117,8 +124,43 @@ class Select extends React.Component {
     })
   }
 
+  renderCloseIcon = (query) => {
+    return (
+      <div
+        className={classnames('ds-form-control-select__search-clear', {
+          'is-hidden': !query
+        })}
+        onClick={this.handleClearSearch}
+      >
+        <Close color="#ddd" />
+      </div>
+    )
+  }
+
+  resetHandler = () => {
+    this.handleClearSearch()
+    this.props.onResetClick()
+    this.setState({ hasInitialPlaceholderChanged: false })
+  }
+
+  renderResetIcon = () => {
+    return (
+      <div
+        className={classnames('ds-form-control-select__reset', {
+          'is-hidden': !this.state.hasInitialPlaceholderChanged
+        })}
+        onClick={this.resetHandler}
+      >
+        <RemoveCircle color="#ddd" />
+      </div>
+    )
+  }
+
   render () {
-    const {error, disabled, className, label, preview, inlineSearch, placeholder, search, help} = this.props
+    const {
+      error, disabled, className, label, preview, showResetIcon,
+      inlineSearch, placeholder, search, help
+    } = this.props
     const {query, filteredOptions, isOpened} = this.state
     return (
       <div className={classnames({
@@ -146,6 +188,7 @@ class Select extends React.Component {
             {inlineSearch && <Search color="#ddd" />}
             {inlineSearch && query ? query : placeholder}
             {preview && <img src={preview} alt={placeholder} />}
+            {showResetIcon && this.renderResetIcon()}
           </div>
 
           {/* Options */}
@@ -159,16 +202,8 @@ class Select extends React.Component {
                 ref={(node) => { this.searchInput = node }}
                 onChange={(e) => this.onSearch(e.target.value)}
               />
-              {inlineSearch && <div
-                className={classnames('ds-form-control-select__search-clear', {
-                  'is-hidden': !query
-                })}
-                onClick={this.handleClearSearch}
-              >
-                <Close color="#ddd" />
-              </div>}
+              {inlineSearch && this.renderCloseIcon(query)}
             </div>}
-
             <div className="ds-form-control-select__dropdown-options">
               {filteredOptions}
             </div>
@@ -201,6 +236,7 @@ Select.defaultProps = {
   children: [],
   keepOpen: () => {},
   inlineSearch: false,
+  showResetIcon: false,
   onSearchQueryClear: () => {},
   fillSelectedQuery: false
 }
@@ -226,8 +262,10 @@ Select.propTypes = {
   search: PropTypes.bool,
   preview: PropTypes.string,
   keepOpen: PropTypes.func,
+  showResetIcon: PropTypes.bool,
   inlineSearch: PropTypes.bool,
   onSearchQueryClear: PropTypes.func,
+  onResetClick: PropTypes.func,
   fillSelectedQuery: PropTypes.bool
 }
 

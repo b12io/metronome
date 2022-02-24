@@ -11,6 +11,8 @@
   }
 
   &__toggle {
+    display: flex;
+    justify-content: space-between;
     position: relative;
     cursor: pointer;
     box-sizing: border-box;
@@ -19,7 +21,9 @@
     overflow: hidden;
 
     &.ds-form-control {
-      padding-right: 25px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-right: 30px;
     }
 
     &::before,
@@ -31,7 +35,7 @@
       width: 7px;
       background: $ds-ui-darker-color;
       pointer-events: none;
-      top: 50%;
+      top: 48%;
       transition: $ds-transition;
     }
 
@@ -50,6 +54,12 @@
       &::after {
         background: $ds-brand-regular-color;
       }
+    }
+  }
+
+  &__reset {
+    &.is-hidden {
+      display: none;
     }
   }
 
