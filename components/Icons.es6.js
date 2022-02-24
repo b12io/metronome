@@ -25,7 +25,7 @@ const defaultProps = {
   viewBox: '0 0 16 16',
   height: 16,
   width: 16,
-  solid: true
+  solid: 'true'
 }
 const defaultPropTypes = {
   color: propTypeRegExp(/^#([a-f0-9]{6}|[a-f0-9]{3})$/i),
@@ -34,7 +34,7 @@ const defaultPropTypes = {
   height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   style: PropTypes.object,
-  solid: PropTypes.bool
+  solid: PropTypes.string
 }
 
 function Icon ({ color, className, path, viewBox, width, height, style }) {
@@ -1337,7 +1337,7 @@ function Tag ({ color, className, style, width, height }) {
       xmlns="http://www.w3.org/2000/svg"
     >
       <path fill={color} d="M15.4,8.3l-7.7-8C7.5,0.1,7.3,0,7,0H1.2c-0.6,0-1,0.4-1,1v6c0,0.3,0.1,0.5,0.3,0.7l7.7,8
-      	C8.5,15.9,8.7,16,9,16s0.5-0.1,0.7-0.3l5.8-6C15.8,9.3,15.8,8.7,15.4,8.3z M9,13.6l-6.8-7V2h4.4l6.8,7L9,13.6z"/>
+        C8.5,15.9,8.7,16,9,16s0.5-0.1,0.7-0.3l5.8-6C15.8,9.3,15.8,8.7,15.4,8.3z M9,13.6l-6.8-7V2h4.4l6.8,7L9,13.6z"/>
       <ellipse fill={color} cx="5.1" cy="5" rx="1" ry="1"/>
     </svg>
   )
@@ -1634,7 +1634,7 @@ function ContentApproved ({ className, color, width = '16', height = '16' }) {
   )
 }
 
-function Dragger({ className, width, height, viewBox, color }) {
+function Dragger ({ className, width, height, viewBox, color }) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" className={className} width={width} height={height} viewBox={viewBox}>
       <g fill="none">
@@ -1648,7 +1648,7 @@ function Dragger({ className, width, height, viewBox, color }) {
   )
 }
 
-function PaperClip({ className, width, height, viewBox, color }) {
+function PaperClip ({ className, width, height, viewBox, color }) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" className={className} width={width} height={height} viewBox={viewBox}>
       <g fill={color}>
@@ -1658,7 +1658,7 @@ function PaperClip({ className, width, height, viewBox, color }) {
   )
 }
 
-function Invoicing({ className, width, height, color }) {
+function Invoicing ({ className, width, height, color }) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" className={className} width={width} height={height} viewBox="0 0 64 64" fill="none">
       <path fillRule="evenodd" clipRule="evenodd" d="M6 0h52v63.608l-10-6.25-8 5-8-5-8 5-8-5-10 6.25V0zm4 4v52.392l6-3.75 8 5 8-5 8 5 8-5 6 3.75V4H10z" fill={color}/>
@@ -1667,7 +1667,7 @@ function Invoicing({ className, width, height, color }) {
   )
 }
 
-function Banking({ className, width, height, viewBox, color }) {
+function Banking ({ className, width, height, viewBox, color }) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" className={className} width={width} height={height} viewBox={viewBox}>
       <g fill={color}>
@@ -1678,14 +1678,14 @@ function Banking({ className, width, height, viewBox, color }) {
   )
 }
 
-function Checkbox({ className, width='16', height='16', color}) {
+function Checkbox ({ className, width = '16', height = '16', color }) {
   return (
     <svg className={className} width={width} height={height} viewBox="0 0 15 16" xmlns="http://www.w3.org/2000/svg">
       <g fill={color}>
         <path d="M13.3 2.23L7 8.514 5.7 7.218c-.4-.4-1-.4-1.4 0-.4.399-.4.997 0 1.396l2 1.996c.2.2.4.3.7.3.3 0 .5-.1.7-.3l7-6.984c.4-.399.4-.998 0-1.397s-1-.399-1.4 0z"/>
         <path d="M1 15.897h12c.6 0 1-.399 1-.997V9.91c0-.598-.4-.997-1-.997s-1 .399-1 .997v3.991H2V3.925h5c.6 0 1-.399 1-.997 0-.599-.4-.998-1-.998H1c-.6 0-1 .4-1 .998V14.9c0 .598.4.997 1 .997z"/>
       </g>
-      </svg>
+    </svg>
   )
 }
 
@@ -1700,7 +1700,7 @@ function Circle ({width, height, viewBox, color}) {
 function SolidCircle ({ className, width, height, viewBox, color }) {
   return (
     <svg className={className} width={width} height={height} viewBox={viewBox} xmlns="http://www.w3.org/2000/svg">
-      <path fillRule="nonzero" fill={color} d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm2.121"/>
+      <path fillRule="nonzero" fill={color} d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8z"/>
     </svg>
   )
 }
