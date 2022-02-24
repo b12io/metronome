@@ -139,7 +139,7 @@ function Breadcrumbs ({ entries, onClick, maxEntryWidth = 90 }: Props) {
           <div className="ds-tabbed-nav__breadcrumbs-container ds-tabbed-nav__breadcrumbs-container--not-calculated">
             {entries.map((entry: Entry, index: number) => (
               <BreadcrumbEntry
-                key={entry.label}
+                key={`${entry.label}-${index}`}
                 showSeparator={index !== 0}
                 label={entry.label}
                 ref={entriesRefs[index]}
@@ -178,11 +178,11 @@ function Breadcrumbs ({ entries, onClick, maxEntryWidth = 90 }: Props) {
                     'ds-tabbed-nav__breadcrumbs-entry-menu': true,
                     'ds-tabbed-nav__breadcrumbs-entry-menu--opened': isMenuOpened
                   })}>
-                    {hiddenEntries.map((entry: IndexedEntry) => (
+                    {hiddenEntries.map((entry: IndexedEntry, index: number) => (
                       <div
                         className="ds-tabbed-nav__breadcrumbs-entry-menu-item"
                         onClick={onClickEntryWithIndex(entry.index)}
-                        key={entry.entry.label}
+                        key={`${entry.entry.label}-${index}`}
                       >
                         {entry.entry.label}
                       </div>
@@ -205,7 +205,7 @@ function Breadcrumbs ({ entries, onClick, maxEntryWidth = 90 }: Props) {
                 width={maxEntryWidth}
                 showTooltip={(maxEntryWidth < entry.width)}
                 showSeparator={index !== 0}
-                key={entry.entry.label}
+                key={`${entry.entry.label}-${index}`}
                 label={entry.entry.label}
                 onClick={onClickEntryWithIndex(entry.index)}
               />

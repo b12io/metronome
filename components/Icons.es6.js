@@ -629,10 +629,14 @@ function Help (props) {
   </svg>)
 }
 
-function AppearanceAppearance () {
-  return (<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+function AppearanceAppearance ({
+  color = '#766CFF',
+  width = 16,
+  height = 16
+}) {
+  return (<svg width={width} height={height} viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
     <g id="Demo" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-      <g id="3.-Section-–-Appearance" transform="translate(-90.000000, -143.000000)" fillRule="nonzero" fill="#766CFF">
+      <g id="3.-Section-–-Appearance" transform="translate(-90.000000, -143.000000)" fillRule="nonzero" fill={color}>
         <g id="Sections-/-Sidebar-/-Drill-in-/-With-Actions-and-Tabs" transform="translate(70.000000, 0.000000)">
           <g id="Group-2" transform="translate(20.000000, 140.000000)">
             <g id="Appearance">
@@ -651,10 +655,14 @@ function AppearanceAppearance () {
   </svg>)
 }
 
-function AppearanceLayout () {
-  return (<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+function AppearanceLayout ({
+  color = '#776BFF',
+  width = 16,
+  height = 16
+}) {
+  return (<svg width={width} height={height} viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
     <g id="Demo" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-      <g id="3.-Section-–-Appearance" transform="translate(-90.000000, -556.000000)" fillRule="nonzero" fill="#776BFF">
+      <g id="3.-Section-–-Appearance" transform="translate(-90.000000, -556.000000)" fillRule="nonzero" fill={color}>
         <g id="Sections-/-Sidebar-/-Drill-in-/-With-Actions-and-Tabs" transform="translate(70.000000, 0.000000)">
           <g id="Group-2" transform="translate(20.000000, 140.000000)">
             <g id="Layout" transform="translate(0.000000, 385.000000)">
@@ -1151,6 +1159,7 @@ function CalendarEvent ({ color, className, style, width, height }) {
       width={width}
       height={height}
       xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 16 16"
     >
       <g
         fill={color}
@@ -1658,11 +1667,10 @@ function PaperClip ({ className, width, height, viewBox, color }) {
   )
 }
 
-function Invoicing ({ className, width, height, color }) {
+function Invoicing ({ className, width, height, viewBox, color }) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" className={className} width={width} height={height} viewBox="0 0 64 64" fill="none">
-      <path fillRule="evenodd" clipRule="evenodd" d="M6 0h52v63.608l-10-6.25-8 5-8-5-8 5-8-5-10 6.25V0zm4 4v52.392l6-3.75 8 5 8-5 8 5 8-5 6 3.75V4H10z" fill={color}/>
-      <path fillRule="evenodd" clipRule="evenodd" d="M16 15h20v4H16v-4zM16 27h20v4H16v-4zM16 39h20v4H16v-4zM40 39h8v4h-8v-4zM40 27h8v4h-8v-4zM40 15h8v4h-8v-4z" fill={color}/>
+    <svg xmlns="http://www.w3.org/2000/svg" className={className} width={width} height={height} viewBox={viewBox}>
+      <path fill={color} fillRule="evenodd" d="M12 2l-2-2-2 2-2-2-2 2-3-2v15c0 .6.4 1 1 1h12c.6 0 1-.4 1-1V0l-3 2zM4 12v-2h8v2H4zm0-6v2h8V6H4z" clipRule="evenodd"/>
     </svg>
   )
 }
@@ -1717,6 +1725,114 @@ function Card ({ className, width="21", height="14", viewBox="0 0 21 14", color 
   return (
     <svg className={className} width={width} height={height} viewBox={viewBox} fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M19.98 0H1.02C.45 0 0 .4 0 .9v11.95c0 .5.45.9 1.02.9h18.96c.57 0 1.02-.4 1.02-.9V.9c0-.5-.45-.9-1.02-.9zM16.5 2.6c-.1-.14-.05-.32.1-.41a.4.4 0 01.49.07 3.46 3.46 0 010 4.33.4.4 0 01-.48.08c-.16-.09-.2-.27-.11-.4a2.93 2.93 0 000-3.67zm-1.05.9c-.1-.14-.05-.32.1-.4a.35.35 0 01.45.1c.6.84.6 1.92 0 2.77a.34.34 0 01-.27.14.35.35 0 01-.18-.05.3.3 0 01-.14-.18.27.27 0 01.04-.22c.47-.66.47-1.5 0-2.16zm-1.07.63c-.07-.15-.02-.35.12-.43.14-.08.31-.02.38.13.23.47.23 1.03 0 1.5a.28.28 0 01-.24.17c-.1 0-.2-.06-.25-.15a.36.36 0 010-.33c.13-.27.13-.6 0-.89zM2.8 2.75c0-.17.16-.3.35-.3h3.5c.2 0 .35.13.35.3v2.14c0 .17-.16.3-.35.3h-3.5c-.2 0-.35-.13-.35-.3V2.75zm9.11 7.94H3.14c-.19 0-.34-.14-.34-.3 0-.18.15-.31.34-.31h8.77c.19 0 .34.13.34.3 0 .17-.15.3-.34.3zm1.56-5.8c-.28 0-.52-.2-.52-.46 0-.25.24-.46.53-.46.28 0 .52.2.52.46 0 .25-.24.46-.53.46zm4.38 5.8h-3.5c-.2 0-.35-.14-.35-.3 0-.18.16-.31.35-.31h3.5c.2 0 .35.13.35.3 0 .17-.16.3-.35.3z" fill={color}/>
+    </svg>
+  )
+}
+
+function Contract ({ className, width="17", height="16", viewBox="0 0 17 16", color }) {
+  return (
+    <svg className={className} width={width} height={height} viewBox={viewBox} fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fillRule="evenodd" clipRule="evenodd" d="M3.906 4.726c-.733 1.219-1.14 2.774-.792 4.495a1 1 0 1 1-1.96.397c-.462-2.279.085-4.339 1.038-5.923C3.131 2.135 4.51.964 5.831.497 6.488.264 7.243.17 7.936.434c.75.286 1.238.918 1.426 1.73.177.766.095 1.698-.199 2.76-.238.863-.629 1.861-1.196 3.006.182-.114.37-.244.553-.385a9.251 9.251 0 0 1 1.358-.88c.378-.194.88-.403 1.367-.38.274.012.665.107.955.454.283.338.316.73.294 1-.041.497-.307 1.046-.639 1.59-.113.185-.209.348-.287.489.139-.028.298-.064.479-.11.817-.211 1.98-.601 3.594-1.222a1 1 0 0 1 .718 1.867c-1.637.63-2.884 1.052-3.814 1.291-.465.12-.875.2-1.23.233-.338.032-.711.03-1.054-.086-.392-.132-.753-.42-.908-.89-.13-.396-.062-.776.01-1.028.06-.21.151-.431.26-.655-.406.302-.83.565-1.234.77-.426.215-.896.397-1.334.45a1.744 1.744 0 0 1-.803-.075 1.299 1.299 0 0 1-.784-.766 1.598 1.598 0 0 1-.037-.942 3.34 3.34 0 0 1 .318-.79c.774-1.437 1.24-2.584 1.486-3.473.25-.902.25-1.466.178-1.778-.06-.262-.152-.297-.187-.31h-.002c-.09-.035-.323-.064-.727.078-.802.284-1.843 1.101-2.591 2.344zm7.371 5.736.002-.01a.067.067 0 0 1-.002.01zM6.794 8.454H6.8h-.006zm.581.672zM1 15a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H2a1 1 0 0 1-1-1z" fill={color}/>
+    </svg>
+  )
+}
+
+function MinusCircle ({ className, width="16", height="16", viewBox="0 0 16 16", color }) {
+  return (
+    <svg className={className} width={width} height={height} viewBox={viewBox} fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8 0C3.6 0 0 3.6 0 8C0 12.4 3.6 16 8 16C12.4 16 16 12.4 16 8C16 3.6 12.4 0 8 0Z" fill={color}/>
+      <rect x="4" y="7" width="8" height="2" fill="white"/>
+    </svg>
+  )
+}
+
+function RepeatCircle ({ className, width="16", height="16", viewBox="0 0 16 16", color }) {
+  return (
+    <svg className={className} width={width} height={height} viewBox={viewBox} fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fillRule="evenodd" clipRule="evenodd" d="M0 8C0 3.6 3.6 0 8 0C12.4 0 16 3.6 16 8C16 12.4 12.4 16 8 16C3.6 16 0 12.4 0 8ZM11.8067 4.01424C11.8389 4.00795 11.8723 4.01135 11.9027 4.024C11.933 4.03672 11.959 4.05812 11.9772 4.08551C11.9955 4.1129 12.0053 4.14507 12.0053 4.178V7.58C12.0055 7.60193 12.0013 7.62368 11.993 7.64399C11.9847 7.66429 11.9724 7.68273 11.9569 7.69824C11.9414 7.71375 11.923 7.72602 11.9027 7.73434C11.8824 7.74265 11.8606 7.74684 11.8387 7.74666H11.82L8.72667 7.404C8.69531 7.40075 8.66553 7.38861 8.64084 7.369C8.61616 7.3494 8.59759 7.32314 8.58733 7.29333C8.57716 7.26369 8.57552 7.23179 8.58259 7.20126C8.58967 7.17074 8.60517 7.14281 8.62733 7.12066L9.75733 6C9.27337 5.56939 8.64779 5.33207 8 5.33333C7.54545 5.33333 7.09844 5.44952 6.70143 5.67087C6.30441 5.89222 5.97057 6.21138 5.7316 6.59805C5.49263 6.98471 5.35646 7.42604 5.33603 7.88013C5.3156 8.33422 5.41158 8.786 5.61486 9.19256C5.81814 9.59913 6.12197 9.94698 6.49751 10.2031C6.87304 10.4592 7.3078 10.6151 7.76052 10.6559C8.21323 10.6967 8.66887 10.6211 9.08416 10.4363C9.49944 10.2515 9.8606 9.96364 10.1333 9.59999C10.2394 9.45855 10.3974 9.36503 10.5724 9.34003C10.6591 9.32765 10.7473 9.33246 10.8321 9.35419C10.9169 9.37591 10.9966 9.41413 11.0667 9.46666C11.2081 9.57275 11.3016 9.73068 11.3266 9.90571C11.3516 10.0807 11.3061 10.2585 11.2 10.4C10.7909 10.9455 10.2492 11.3773 9.62624 11.6545C9.0033 11.9317 8.31985 12.0451 7.64078 11.9838C6.96171 11.9226 6.30956 11.6888 5.74626 11.3046C5.18296 10.9205 4.72721 10.3987 4.42229 9.78885C4.11737 9.17901 3.9734 8.50134 4.00404 7.8202C4.03469 7.13906 4.23894 6.47707 4.5974 5.89707C4.95585 5.31707 5.45662 4.83833 6.05214 4.50631C6.64766 4.17428 7.31817 4 8 4C9.0046 3.9978 9.97245 4.37769 10.7073 5.06266L11.7213 4.05933C11.7447 4.03621 11.7744 4.02052 11.8067 4.01424Z" fill={color}/>
+    </svg>
+  )
+}
+
+function BadgeCard ({ className, width="16", height="16", viewBox="0 0 16 16", color }) {
+  return (
+    <svg className={className} width={width} height={height} viewBox={viewBox} fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fillRule="evenodd" clipRule="evenodd" d="M15 5H11V3C11 1.3 9.7 0 8 0C6.3 0 5 1.3 5 3V5H1C0.4 5 0 5.4 0 6V15C0 15.6 0.4 16 1 16H15C15.6 16 16 15.6 16 15V6C16 5.4 15.6 5 15 5ZM7 3C7 2.4 7.4 2 8 2C8.6 2 9 2.4 9 3V5H7V3ZM2 7V14H14V7H2Z" fill={color}/>
+      <rect x="4" y="9" width="3" height="3" fill={color}/>
+      <rect x="8" y="9" width="4" height="1" fill={color}/>
+      <rect x="8" y="11" width="4" height="1" fill={color}/>
+    </svg>
+  )
+}
+
+function HeadphonesMic ({ className, width="16", height="16", color }) {
+  return (
+    <svg className={className} width={width} height={height} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M4 17.584V19C4 21.209 5.791 23 8 23H12" stroke={color} strokeWidth="2" strokeMiterlimit="10"/>
+    <path d="M4 8.406V8C4 4.134 7.134 1 11 1H13C16.866 1 20 4.134 20 8V8.422" stroke={color} strokeWidth="2" strokeMiterlimit="10"/>
+    <path d="M7 8.101C6.677 8.035 6.343 8 6 8C3.239 8 1 10.239 1 13C1 15.761 3.239 18 6 18C6.343 18 6.677 17.965 7 17.899V8.101Z" stroke={color} strokeWidth="2" strokeMiterlimit="10" strokeLinecap="square"/>
+    <path d="M17 17.899C17.323 17.965 17.657 18 18 18C20.761 18 23 15.761 23 13C23 10.239 20.761 8 18 8C17.657 8 17.323 8.035 17 8.101V17.899Z" stroke={color} strokeWidth="2" strokeMiterlimit="10" strokeLinecap="square"/>
+  </svg>
+  )
+}
+
+function CheckmarkLarge ({ className, width="16", height="16", viewBox="0 0 16 16", color="#84839C" }) {
+  return (
+    <svg className={className} width={width} height={height} viewBox={viewBox} fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2 8l4 4 8-8" stroke={color} strokeWidth="2" strokeLinecap="square"/>
+    </svg>
+  )
+}
+
+function NoticeOutlined ({ className, width="16", height="16", viewBox="0 0 16 16", color="#84839C" }) {
+  return (
+    <svg className={className} width={width} height={height} viewBox={viewBox} fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M15 8c0 3.848-3.152 7-7 7s-7-3.152-7-7 3.152-7 7-7 7 3.152 7 7z" stroke={color} strokeWidth="2"/>
+      <path d="M8 4c.6 0 1 .4 1 1s-.4 1-1 1-1-.4-1-1 .4-1 1-1zM7 7h2v5H7V7z" fill={color}/>
+    </svg>
+  )
+}
+
+function Archive ({ className, width="16", height="16", viewBox="0 0 16 16", color="#84839C" }) {
+  return (
+    <svg className={className} xmlns="http://www.w3.org/2000/svg" fill="none" width={width} height={height} viewBox={viewBox}>
+      <path fill={color} d="M15.977 4.887a.974.974 0 0 0-.04-.2.91.91 0 0 0-.089-.186 1.03 1.03 0 0 0-.048-.1l-3-4A1 1 0 0 0 12 0H4a1 1 0 0 0-.8.4l-3 4a1.047 1.047 0 0 0-.048.1.892.892 0 0 0-.089.187.957.957 0 0 0-.04.2A.885.885 0 0 0 0 5v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V5a.87.87 0 0 0-.023-.113ZM8 13.5 5 10h2V7h2v3h2l-3 3.5ZM3 4l1.5-2h7L13 4H3Z"/>
+    </svg>
+  )
+}
+
+function Questionnaire ({ className, width="16", height="16", viewBox="0 0 16 16", color="#84839C" }) {
+  return (
+    <svg className={className} width={width} height={height} viewBox={viewBox} fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M5.632 1.23H.75A.75.75 0 0 0 0 1.981v4.881c0 .415.336.751.75.751h4.882a.75.75 0 0 0 .75-.75V1.98a.75.75 0 0 0-.75-.75ZM10.138 17h4.88a.75.75 0 0 0 .752-.75v-4.882a.75.75 0 0 0-.751-.75h-4.881a.75.75 0 0 0-.751.75v4.881a.75.75 0 0 0 .75.751ZM5.632 10.617H.75a.75.75 0 0 0-.751.751v4.881A.75.75 0 0 0 .75 17h4.882a.75.75 0 0 0 .75-.75v-4.882a.75.75 0 0 0-.75-.75Z" fill={color}/>
+      <path d="M11.417 5.843 9.574 4.001l-.796.796 2.275 2.276a.563.563 0 0 0 .399.165h.023a.566.566 0 0 0 .407-.2l4.493-5.31-.86-.728-4.098 4.843Z" fill={color} stroke={color}/>
+    </svg>
+  )
+}
+
+function Upload ({ className, width="16", height="16", viewBox="0 0 16 16", color="#84839C" }) {
+  return (
+    <svg className={className} width={width} height={height} viewBox={viewBox} fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1.333 15.667h13.334" stroke={color} strokeWidth="2" strokeLinecap="square"/>
+      <path d="M6.667 9.778H9.11V6.11h3.667L7.888 0 3 6.111h3.667v3.667Z" fill={color}/>
+    </svg>
+  )
+}
+
+function ShareFeedback ({ className, width="16", height="16", viewBox="0 0 16 16", color="#84839C" }) {
+  return (
+    <svg className={className} width={width} height={height} viewBox={viewBox} fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path clipRule="evenodd" d="M11.667 1h-9.6C1.477 1 1 1.478 1 2.067v6.4c0 .588.478 1.066 1.067 1.066H4.2v3.2l3.2-3.2h4.267c.588 0 1.066-.478 1.066-1.066v-6.4c0-.59-.478-1.067-1.066-1.067Z" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M7.4 13.8h3.2l3.2 3.2v-3.2h2.133c.59 0 1.067-.478 1.067-1.067v-6.4c0-.589-.478-1.066-1.067-1.066h-1.066" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  )
+}
+
+function Spaceship ({ className, width="16", height="16", viewBox="0 0 16 16", color="#84839C" }) {
+  return (
+    <svg className={className} width={width} height={height} viewBox={viewBox} fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fillRule="evenodd" clipRule="evenodd" d="M15.295 0a.67.67 0 0 1 .703.709c-.532 9.358-8.862 12.87-8.946 12.904a.67.67 0 0 1-.727-.146L2.533 9.675a.67.67 0 0 1-.148-.723C2.42 8.867 5.892.492 15.295 0ZM8.87 7.856a1.34 1.34 0 1 0 1.026-2.477A1.34 1.34 0 0 0 8.87 7.855Z" fill={color}/>
+      <path d="M.746 12.544a1.906 1.906 0 1 1 2.696 2.696C2.697 15.984 0 16 0 16s0-2.712.746-3.456ZM6.942 1.483a5.973 5.973 0 0 0-6.18 2.871.67.67 0 0 0 .105.814L2.2 6.502a17.844 17.844 0 0 1 4.742-5.02ZM14.517 9.058a5.972 5.972 0 0 1-2.871 6.18.67.67 0 0 1-.815-.105L9.498 13.8a17.844 17.844 0 0 0 5.02-4.742Z" fill={color}/>
     </svg>
   )
 }
@@ -1891,7 +2007,19 @@ const icons = [
   Banking,
   Circle,
   Bank,
-  Card
+  Card,
+  Contract,
+  MinusCircle,
+  RepeatCircle,
+  BadgeCard,
+  HeadphonesMic,
+  CheckmarkLarge,
+  NoticeOutlined,
+  Archive,
+  Questionnaire,
+  Upload,
+  ShareFeedback,
+  Spaceship
 ]
 
 each(icons, (icon) => {
@@ -1916,5 +2044,6 @@ export { Check, Checkmark, Lock, Notice, Disabled, Help, Search, Draggable,
   Service, Email, AppCube, MagicWand, Layout, Send, Code, User, Section, Tag, Welcome, Website, Chat,
   RotateForward, Globe, At, Target, IconRow, IconColumn, IconSection, FolderFilled, BlogPost, MenuItems, Popup,
   Flag, Testimonials, Chart, Pause, HubspotLogo, AlignLeftV2, AlignRightV2, AlignCenterV2, AlignJustifyV2, Sidebar, Palette, Lightbox, Filter, Slider,
-  Flash, Dashboard, Guides, Article, Pulse, Edit, ContentApproved, Dragger, PaperClip, Invoicing, Banking, Checkbox, Circle, Bank, Card
+  Flash, Dashboard, Guides, Article, Pulse, Edit, ContentApproved, Dragger, PaperClip, Invoicing, Banking, Checkbox, Circle, Bank, Card, Contract,
+  MinusCircle, RepeatCircle, BadgeCard, HeadphonesMic, CheckmarkLarge, NoticeOutlined, Archive, Questionnaire, Upload, ShareFeedback, Spaceship
 }

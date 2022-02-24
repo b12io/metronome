@@ -1,5 +1,6 @@
 /* @flow */
 import React, { Fragment } from 'react'
+import type { Node } from 'react'
 import classnames from 'classnames'
 import { isEmpty } from 'lodash'
 
@@ -12,20 +13,25 @@ type Props = {|
   onSelect: (idx: number) => void
 |}
 
+type DropdownMenuLabelProps = {
+  label: string
+}
+
 function QuickActions ({ actions, onSelect, label }: Props) {
   if (isEmpty(actions) || !Array.isArray(actions)) {
     return null
   }
 
+  const DropdownMenuLabel = ({ label }: DropdownMenuLabelProps) => <li className="ds-dropdown__menu-header">{label}</li>
+
   const DropdownMenuDivider = () => <li className="ds-dropdown__menu-divider" />
 
   return (
     <ul className="ds-dropdown__menu">
-      <li className="ds-dropdown__menu-header">
-        {label}
-      </li>
-      {actions.map(({ icon, text, divider, hidden, disabled, onActionSelect }: HeaderQuickAction, index) => (
+      <DropdownMenuLabel label={label} />
+      {actions.map(({ icon, text, divider, actionLabel, action, hidden, disabled, onActionSelect }: HeaderQuickAction, index) => (
         <Fragment key={text}>
+          {actionLabel && <DropdownMenuLabel label={actionLabel} />}
           <li
             className={classnames({
               'ds-dropdown__menu-item': true,
@@ -44,7 +50,7 @@ function QuickActions ({ actions, onSelect, label }: Props) {
               onSelect(index)
             }}
           >
-            <span>{icon}{text}</span>
+            {action ? action : <span>{icon}{text}</span>}
           </li>
           {divider && <DropdownMenuDivider />}
         </Fragment>

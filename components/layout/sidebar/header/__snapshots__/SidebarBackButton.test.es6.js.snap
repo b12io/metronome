@@ -4,6 +4,7 @@ exports[`SidebarBackButton component renders correctly 1`] = `
 <div
   className="ds-sidebar__header-back-button-container"
   onClick={[Function]}
+  onTouchStart={[Function]}
   tabIndex="-1"
 >
   <button

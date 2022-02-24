@@ -8,8 +8,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: $ds-brand-medium-color;
-    color: $ds-ui-lightest-color;
+    background-color: $ds-brand-lightest-color;
+    color: $ds-brand-medium-color;
+    font-weight: $ds-font-weight-bold;
     border-radius: 50%;
     text-transform: uppercase;
     flex-shrink: 0;

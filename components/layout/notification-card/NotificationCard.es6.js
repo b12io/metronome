@@ -38,7 +38,7 @@ NotificationCard.defaultProps = {
  */
 NotificationCard.propTypes = {
   icon: PropTypes.element,
-  label: PropTypes.string,
+  label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   success: PropTypes.bool,
   error: PropTypes.bool,
   warning: PropTypes.bool,

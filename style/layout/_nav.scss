@@ -39,7 +39,7 @@
 
     &:hover {
       cursor: pointer;
-      background: fade-out($ds-ui-background-dark-color, .96);
+      background: fade-out($ds-ui-background-dark-color, .93);
 
       .ds-nav__item-label {
         color: $ds-brand-regular-color;
@@ -57,8 +57,11 @@
     }
 
     &--active {
+      background: fade-out($ds-ui-background-dark-color, .93);
+
       .ds-nav__item-label {
         color: $ds-brand-regular-color;
+        font-weight: $ds-font-weight-bold;
       }
 
       .ds-nav__item-icon,

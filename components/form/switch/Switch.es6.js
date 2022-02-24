@@ -12,7 +12,7 @@ class Switch extends React.Component {
     }
   }
 
-  componentWillReceiveProps (nextProps) {
+  UNSAFE_componentWillReceiveProps (nextProps) {
     this.setState({
       selected: nextProps.selected,
       buttons: this.updateButtons(nextProps.children, nextProps.selected)

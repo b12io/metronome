@@ -35,7 +35,7 @@ class FilterOption extends React.Component<Props, State> {
     filters: []
   }
 
-  componentWillReceiveProps ({ isOpened }: Props) {
+  UNSAFE_componentWillReceiveProps ({ isOpened }: Props) {
     if (isOpened !== this.state.isOpened) {
       this.setState({ isOpened })
     }

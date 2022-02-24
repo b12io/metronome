@@ -26,7 +26,7 @@ class CheckboxMultipleSelect extends React.Component {
     })
   }
 
-  componentWillReceiveProps (nextProps) {
+  UNSAFE_componentWillReceiveProps (nextProps) {
     this.overrideStateFromProps(nextProps)
   }
 

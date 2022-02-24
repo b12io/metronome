@@ -19,7 +19,8 @@ import {
   CalendarEvent, Payments, Service, Email, AppCube, MagicWand, Layout, Send, Code, User, Section, Tag, Welcome,
   Website, Chat, RotateForward, Globe, At, Target, IconRow, IconColumn, IconSection, FolderFilled, BlogPost, MenuItems, Popup, Bold, Italic, Underline, UnorderedList, OrderedList,
   Flag, Testimonials, Chart, Play, Pause, AlignLeftV2, AlignCenterV2, AlignRightV2, AlignJustifyV2, Sidebar, ArrowCircle, Palette, Lightbox, Filter, Slider,
-  Flash, Dashboard, Guides, Article, Pulse, Edit, ContentApproved, Dragger, PaperClip, Invoicing, Banking, Checkbox, Circle, Bank, Card
+  Flash, Dashboard, Guides, Article, Pulse, Edit, ContentApproved, Dragger, PaperClip, Invoicing, Banking, Checkbox, Circle, Bank, Card, Contract,
+  MinusCircle, RepeatCircle, BadgeCard, HeadphonesMic, CheckmarkLarge, NoticeOutlined, Archive, Questionnaire, Upload, ShareFeedback, Spaceship
 } from '../../components/Icons.es6.js'
 
 const ICONS = [
@@ -656,8 +657,56 @@ const ICONS = [
     component: Card
   },
   {
+    name: 'Contract',
+    component: Contract
+  },
+  {
     name: 'Checkbox',
     component: Checkbox
+  },
+  {
+    name: 'MinusCircle',
+    component: MinusCircle
+  },
+  {
+    name: 'RepeatCircle',
+    component: RepeatCircle
+  },
+  {
+    name: 'BadgeCard',
+    component: BadgeCard
+  },
+  {
+    name: 'HeadphonesMic',
+    component: HeadphonesMic
+  },
+  {
+    name: 'CheckmarkLarge',
+    component: CheckmarkLarge
+  },
+  {
+    name: 'NoticeOutlined',
+    component: NoticeOutlined
+  },
+  {
+    name: 'Archive',
+    component: Archive
+  },
+  {
+    name: 'Questionnaire',
+    component: Questionnaire
+  },
+  {
+    name: 'Upload',
+    component: Upload
+  },
+  {
+    name: 'ShareFeedback',
+    component: ShareFeedback
+  },
+  {
+    name: 'Spaceship',
+    component: Spaceship
   }
 ]
 

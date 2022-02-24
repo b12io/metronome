@@ -31,7 +31,7 @@ class Select extends React.Component {
     document.addEventListener('touchend', this.handleDocumentClick, false)
   }
 
-  componentWillReceiveProps (nextProps) {
+  UNSAFE_componentWillReceiveProps (nextProps) {
     const {children, search, filter} = nextProps
     this.options = this.updateOptions(children)
     this.setState({
@@ -44,7 +44,6 @@ class Select extends React.Component {
     if ((prevProps.placeholder !== placeholder) && (placeholder !== this.state.initialPlaceholder)) {
       this.setState({ hasInitialPlaceholderChanged: true })
     }
-
     if (this.props.search && this.state.isOpened && this.searchInput) {
       this.searchInput.focus()
     }
@@ -205,7 +204,6 @@ class Select extends React.Component {
               />
               {inlineSearch && this.renderCloseIcon(query)}
             </div>}
-
             <div className="ds-form-control-select__dropdown-options">
               {filteredOptions}
             </div>

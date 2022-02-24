@@ -44,7 +44,7 @@ function NavPage () {
             <Nav>
               <NavItem label="Nav item one" icon={<HomeEmpty />} />
               <NavItem label="Nav item two" icon={<Client />} actionIcon={<Visible width={16} height={12} viewBox="0 0 16 12" />} showArrow onClick={() => {}} onActionClick={() => {}} />
-              <NavItem label="Nav item three" showArrow />
+              <NavItem label="Nav item three" active showArrow />
               <NavItem label="Nav item four" disabled />
               <NavItem label="Nav item five" badge="5" />
             </Nav>
@@ -63,7 +63,8 @@ function NavPage () {
               <NavItem label="Nav item two" icon={<Client />} showArrow />
               <NavItem label="Nav item three" showArrow />
               <NavItem label="Nav item four" disabled showArrow />
-              <NavItem label="Nav item five" showArrow />
+              <NavItem label="Nav item five" active showArrow />
+              <NavItem label="Nav item six" showArrow />
             </Nav>
           </div>
         </CodeExample>

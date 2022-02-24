@@ -284,7 +284,6 @@
   &__title {
     @include display-xl-font;
     font-family: $ds-font-family-base;
-    font-weight: $ds-font-weight-bold;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -338,6 +337,13 @@
     &--right {
       justify-content: flex-end;
     }
+  }
+
+  &__description {
+    font-size: $display-small-font-size;
+    line-height: 1.5;
+    color: $ds-body-lighter-color;
+    margin-bottom: spacing(xsm);
   }
 
   &--alternative-bg {
