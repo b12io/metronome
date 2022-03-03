@@ -1,4 +1,4 @@
-name: Build Metronome with Webpack
+name: Build Metronome
 
 on:
   push:
@@ -17,10 +17,10 @@ jobs:
     - name: Setup Node
       uses: actions/setup-node@v3
       with:
-        node-version: '16'
+        node-version: '14'
       
     - name: Install deps
-      run: npm install
+      run: yarn
 
     - name: Build
-      run: npm run build
+      run: yarn build
