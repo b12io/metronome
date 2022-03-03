@@ -20,7 +20,7 @@ jobs:
         node-version: '14'
       
     - name: Install deps
-      run: yarn
+      run: yarn install
 
     - name: Build
       run: yarn build
