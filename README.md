@@ -41,11 +41,10 @@ If you are developing on a remote machine and want to view the demo in your brow
 ## How can I test my changes in an internal repository without publishing?
 You can do it in five steps:
 
-1. [IS THIS NECESSARY NOW THAT WE'VE OPEN SOURCED IT?] Ensure you have the proper token in `~/.npmrc`;
-2. Link metronome in yarn with command `yarn link` [IS THIS IN THE INTERNAL REPOSITORY OR IN METRONOME?];
-3. Run `yarn install --production` in the `metronome` repo;
-4. Use your linked version in the internal repository with command `yarn link @b12/metronome`;
-5. Try to build product with `yarn && yarn dev`;
+1. Link metronome in yarn with command `yarn link` in the internal repository;
+2. Run `yarn install --production` in the `metronome` repo;
+3. Use your linked version in the internal repository with command `yarn link @b12/metronome`;
+4. Try to build product with `yarn && yarn dev`;
 
 #### Note: If you're using docker, then you should do this outside of docker.
 In case you accidentally ran the commands inside of docker and are running into permissions issues
