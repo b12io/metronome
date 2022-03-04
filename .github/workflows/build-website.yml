@@ -1,0 +1,32 @@
+name: Build Metronome
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout 🛎️
+      uses: actions/checkout@master
+      
+    - name: Setup Node 🔧
+      uses: actions/setup-node@v3
+      with:
+        node-version: '14'
+      
+    - name: Install and Build 🔧
+      run: |
+        yarn install
+        yarn build
+
+    - name: Deploy 🚀
+      if: github.ref == 'refs/heads/main'
+      uses: JamesIves/github-pages-deploy-action@v4.2.5
+      with:
+        branch: gh-pages # The branch the action should deploy to. It should be any branch other than `main`
+        folder: dist # The folder the action should deploy.
