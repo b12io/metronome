@@ -21,7 +21,7 @@ Root of the repo looks like this. The main parts are: `components`  and `style` 
 
 ```
 
-::**Warning!** All javascript files should have `*.es6.js` file extension to be compatible with `crowdsurfing` codebase.::
+::**Warning!** By convention, all javascript files should have a `*.es6.js` file extension.::
 
 Below are basic command you may need:
 
