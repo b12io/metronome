@@ -13,12 +13,23 @@ type Props = {
   padding?: 'compact' | 'comfortable',
   verticalAlign: 'top' | 'middle',
   background: 'light' | 'transparent',
+  responsive?: boolean,
   children: React.ChildrenArray<TableHeadType | TableBodyType> | TableHeadType | TableBodyType
 }
 
-function Table ({ className, cardLike, padding, verticalAlign, children, background, ...otherProps }: Props) {
+function Table ({
+  className,
+  cardLike,
+  padding,
+  verticalAlign,
+  children,
+  background,
+  responsive = false,
+  ...otherProps
+}: Props) {
   const wrapperClasses = classnames({
-    'ds-table-wrapper': cardLike
+    'ds-table-wrapper': cardLike,
+    'ds-table-responsive': responsive
   })
   const tableClasses = classnames(
     'ds-table',

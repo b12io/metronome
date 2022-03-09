@@ -20,6 +20,20 @@
   }
 }
 
+.ds-table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+
+  @media (max-width: 825px) {
+    .ds-table {
+      td,
+      th {
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
 .ds-table {
   border-collapse: collapse;
   box-sizing: border-box;
