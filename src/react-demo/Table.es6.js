@@ -30,6 +30,12 @@ const TABLE_PROPS = [
     value: 'light | transparent',
     defaultValue: 'light',
     description: 'Table background color'
+  },
+  {
+    property: 'responsive',
+    value: 'boolean',
+    defaultValue: 'false',
+    description: 'Responsive table (horizontal scroll)'
   }
 ]
 
@@ -131,6 +137,44 @@ import TablePagination from '@b12/design-system/components/layout/table/TablePag
   </TableBody>
 </Table>`}>
           <DemoSimpleTable />
+        </CodeExample>
+      </div>
+      <div className="ds-block">
+        <div className="ds-block__title">
+          <h4>Responsive table</h4>
+          <p>Adding <code>responsive</code> prop allows table to be scrollable horizontally on smaller devices.</p>
+        </div>
+
+        <CodeExample code={`<Table
+  responsive
+  cardLike
+>
+  <TableHead>
+    <TableRow>
+      {rows.map(row => (
+        <TableCell
+          key={row.id}
+          align={row.numeric ? 'center' : 'left'}
+        >{row.label}</TableCell>
+      ))}
+    </TableRow>
+  </TableHead>
+  <TableBody>
+    {data.map(row => (
+      <TableRow key={row.id}>
+        <TableCell>{row.name}</TableCell>
+        <TableCell>{row.calories}</TableCell>
+        <TableCell>{row.fat}</TableCell>
+        <TableCell>{row.carbs}</TableCell>
+        <TableCell>{row.protein}</TableCell>
+      </TableRow>
+    ))}
+  </TableBody>
+</Table>`}>
+          <DemoSimpleTable
+            responsive
+            cardLike
+          />
         </CodeExample>
       </div>
       <div className="ds-block">
