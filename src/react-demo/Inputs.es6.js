@@ -321,6 +321,7 @@ class Inputs extends React.Component {
               <Radio label="Checked" val="checked" checked />
               <Radio label="Disabled" val="disabled" disabled />
               <Radio label="Checked disabled" val="checked disabled" checked disabled />
+              <Radio label="With description" description="Long awaited description" val="description" />
             </Group>
           </div>
         </div>
