@@ -104,11 +104,20 @@
     }
   }
 
+  &__label-group {
+    display: flex;
+    flex-direction: column;
+  }
+
   &__label {
     color: $ds-input-color;
     font-family: $ds-font-family-base;
     font-size: 14px;
     line-height: 20px;
+  }
+
+  &__description {
+    @include ds-control-label;
   }
 
   &.has-error {

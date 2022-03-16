@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
-function Radio ({ className, disabled, label, name, value, checked, onChange, tabIndex }) {
+function Radio ({ className, disabled, label, description, name, value, checked, onChange, tabIndex }) {
   return (
     <div className={classnames('ds-form-group', className)}>
       <label className="ds-form-control-radio">
@@ -16,7 +16,10 @@ function Radio ({ className, disabled, label, name, value, checked, onChange, ta
             onChange(value)
           }} />
         <span className="ds-form-control-radio__indicator"></span>
-        <span className="ds-form-control-radio__label">{label}</span>
+        <div className="ds-form-control-radio__label-group">
+          <span className="ds-form-control-radio__label">{label}</span>
+          <span className="ds-control-label">{description}</span>
+        </div>
       </label>
     </div>
   )
@@ -25,6 +28,7 @@ function Radio ({ className, disabled, label, name, value, checked, onChange, ta
 Radio.defaultProps = {
   className: '',
   label: '',
+  description: '',
   value: '',
   name: '',
   tabIndex: 0,
@@ -39,6 +43,7 @@ Radio.propTypes = {
     PropTypes.string,
     PropTypes.element
   ]),
+  description: PropTypes.string,
   name: PropTypes.string,
   tabIndex: PropTypes.number,
   value: PropTypes.string,
