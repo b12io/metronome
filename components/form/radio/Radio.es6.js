@@ -46,7 +46,7 @@ Radio.propTypes = {
   description: PropTypes.string,
   name: PropTypes.string,
   tabIndex: PropTypes.number,
-  value: PropTypes.string,
+  value: PropTypes.any,
   checked: PropTypes.bool,
   disabled: PropTypes.bool,
   onChange: PropTypes.func
