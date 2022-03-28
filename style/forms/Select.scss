@@ -16,9 +16,7 @@
     position: relative;
     cursor: pointer;
     box-sizing: border-box;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
+    @include text-truncate();
 
     &.ds-form-control {
       padding-top: 10px;

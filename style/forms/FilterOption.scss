@@ -76,9 +76,7 @@
       cursor: pointer;
       position: relative;
       box-sizing: border-box;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      overflow: hidden;
+      @include text-truncate();
   
       &::before,
       &::after {

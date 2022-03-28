@@ -103,9 +103,7 @@
   cursor: pointer;
   max-width: 200px;
   height: 1.2em;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  @include text-truncate();
 }
 
 @-webkit-keyframes rotateme {
