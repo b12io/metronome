@@ -88,9 +88,7 @@
       color: $ds-display-regular-color;
       flex: 0 0 auto;
       max-width: 200px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      @include text-truncate();
     }
 
     &-subtitle {
@@ -284,9 +282,7 @@
   &__title {
     @include display-xl-font;
     font-family: $ds-font-family-base;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    @include text-truncate();
 
     &-container {
       display: flex;
@@ -315,9 +311,7 @@
     }
 
     &--overflow-hidden {
-      white-space: nowrap;
-      overflow-x: hidden;
-      text-overflow: ellipsis;
+      @include text-truncate();
     }
   }
 

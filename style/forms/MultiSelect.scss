@@ -60,9 +60,7 @@
   right: 0;
   top: 0;
   max-width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  @include text-truncate();
 }
 .has-value.is-clearable.Select--single > .Select-control .Select-value {
   padding-right: 42px;

@@ -81,8 +81,7 @@
     }
 
     .ds-tabbed-nav__item {
-      overflow: hidden;
-      text-overflow: ellipsis;
+      @include text-truncate();
     }
   }
 
