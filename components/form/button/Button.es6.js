@@ -5,7 +5,7 @@ import classnames from 'classnames'
 /**
  * Buttons trigger actions when clicked.
  */
-function Button ({ label, badge, primary, danger, loading, superSmall, small, large, wide, icon, iconWithLabel, active, block, disabled, onClick, className, buttonRef, id, alternative, chevron, type }) {
+function Button ({ label, badge, primary, danger, loading, superSmall, small, large, wide, icon, iconWithLabel, active, block, disabled, onClick, className, buttonRef, id, alternative, chevron, type, title }) {
   return (<button
     className={classnames({
       button: true,
@@ -28,6 +28,7 @@ function Button ({ label, badge, primary, danger, loading, superSmall, small, la
     type={type}
     ref={buttonRef}
     id={id}
+    title={title}
   >
     {iconWithLabel ? (
       <>
@@ -67,7 +68,8 @@ Button.defaultProps = {
   iconWithLabel: false,
   chevron: false,
   type: 'button',
-  onClick: () => {}
+  onClick: () => {},
+  title: '',
 }
 
 Button.propTypes = {
@@ -147,7 +149,11 @@ Button.propTypes = {
   /**
    * Click event handler.
    */
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+  /**
+   * HTML title attribute of the button.
+   */
+  title: PropTypes.string,
 }
 
 export default Button

@@ -68,7 +68,7 @@ function TabbedNavigationPage () {
       <div className="app-page-title">
         <h1>TabbedNavigation</h1>
         <MetaData
-          importFrom="import TabbedNavigation from '@b12/design-system/components/layout/tabbed-navigation/TabbedNavigation.es6.js'"
+          importFrom="import TabbedNavigation from '@b12/metronome/components/layout/tabbed-navigation/TabbedNavigation.es6.js'"
           flow="Yes"
           tests="No"
         />

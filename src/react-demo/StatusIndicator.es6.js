@@ -38,7 +38,7 @@ function StatusIndicatorPage () {
       <div className="app-page-title">
         <h1>StatusIndicator</h1>
         <MetaData
-          importFrom="import StatusIndicator from '@b12/design-system/components/layout/status-indicator/StatusIndicator.es6.js'"
+          importFrom="import StatusIndicator from '@b12/metronome/components/layout/status-indicator/StatusIndicator.es6.js'"
           flow="Yes"
           tests="No"
         />

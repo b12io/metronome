@@ -23,10 +23,10 @@ function DropdownPage () {
         <p>Toggle contextual overlays for displaying lists of links and more.</p>
 
         <MetaData
-          importFrom="import Dropdown from '@b12/design-system/components/layout/dropdown/Dropdown.es6.js',
-          import DropdownItemHeader from '@b12/design-system/components/layout/dropdown/DropdownItemHeader.es6.js',
-          import DropdownItem from '@b12/design-system/components/layout/dropdown/DropdownItem.es6.js',
-          import DropdownItemDivider from '@b12/design-system/components/layout/dropdown/DropdownItemDivider.es6.js'"
+          importFrom="import Dropdown from '@b12/metronome/components/layout/dropdown/Dropdown.es6.js',
+          import DropdownItemHeader from '@b12/metronome/components/layout/dropdown/DropdownItemHeader.es6.js',
+          import DropdownItem from '@b12/metronome/components/layout/dropdown/DropdownItem.es6.js',
+          import DropdownItemDivider from '@b12/metronome/components/layout/dropdown/DropdownItemDivider.es6.js'"
           flow="Yes"
           tests="Yes"
         />

@@ -16,7 +16,7 @@ function NavPage () {
         <h1>Nav</h1>
         <p>This is a simple navigation component for sidebar.</p>
         <MetaData
-          importFrom="import Nav from '@b12/design-system/components/layout/nav/Nav.es6.js'"
+          importFrom="import Nav from '@b12/metronome/components/layout/nav/Nav.es6.js'"
           flow="Yes"
           tests="Yes"
         />
@@ -94,7 +94,7 @@ function NavPage () {
         <h1>NavItem</h1>
         <p>Navigation item to be used in Nav</p>
         <MetaData
-          importFrom="import NavItem from '@b12/design-system/components/layout/nav/NavItem.es6.js'"
+          importFrom="import NavItem from '@b12/metronome/components/layout/nav/NavItem.es6.js'"
           flow="Yes"
           tests="Yes"
           dependencies="Nav"

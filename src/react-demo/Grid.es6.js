@@ -16,7 +16,7 @@ function GridPage () {
         <div className="ds-metadata">
           <div className="ds-metadata__di">
             <div className="ds-metadata__dt">Import</div>
-            <div className="ds-metadata__dd"><code>import Grid from '@b12/design-system/components/layout/grid/Grid.es6.js'</code></div>
+            <div className="ds-metadata__dd"><code>import Grid from '@b12/metronome/components/layout/grid/Grid.es6.js'</code></div>
           </div>
           <div className="ds-metadata__di">
             <div className="ds-metadata__dt">Dependencies</div>
@@ -117,7 +117,7 @@ function GridPage () {
         <div className="ds-metadata">
           <div className="ds-metadata__di">
             <div className="ds-metadata__dt">Import</div>
-            <div className="ds-metadata__dd"><code>import GridCol from '@b12/design-system/components/layout/grid/GridCol.es6.js'</code></div>
+            <div className="ds-metadata__dd"><code>import GridCol from '@b12/metronome/components/layout/grid/GridCol.es6.js'</code></div>
           </div>
           <div className="ds-metadata__di">
             <div className="ds-metadata__dt">Dependencies</div>
