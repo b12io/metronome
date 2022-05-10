@@ -23,7 +23,7 @@ function NavPage () {
         <h1>ButtonGroup</h1>
         <p>Stateless component that acts like a wrapper that holds several inputs, selects or buttons</p>
         <MetaData
-          importFrom="import ButtonGroup from '@b12/design-system/components/form/button-group/ButtonGroup.es6.js'"
+          importFrom="import ButtonGroup from '@b12/metronome/components/form/button-group/ButtonGroup.es6.js'"
           flow="Yes"
           tests="Yes"
         />

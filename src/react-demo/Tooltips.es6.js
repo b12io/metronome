@@ -16,7 +16,7 @@ export default function Tooltips () {
       <div className="app-page-title">
         <h1>Tooltips</h1>
         <MetaData
-          importFrom="import Info from '@b12/design-system/components/layout/info/Info.es6.js'"
+          importFrom="import Info from '@b12/metronome/components/layout/info/Info.es6.js'"
           flow="Yes"
           tests="Yes"
         />

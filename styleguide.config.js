@@ -39,7 +39,7 @@ module.exports = {
     TableRenderer: path.resolve(__dirname, 'styleguide/components/PropsTable.es6.js')
   },
   moduleAliases: {
-    '@b12/design-system': path.resolve(__dirname)
+    '@b12/metronome': path.resolve(__dirname)
   },
   require: [
     path.join(__dirname, 'style/base.scss')
@@ -56,7 +56,7 @@ module.exports = {
   getComponentPathLine (componentPath) {
     const name = path.basename(componentPath, '.es6.js')
 
-    return `import ${name} from '@b12/design-system/${componentPath}'`
+    return `import ${name} from '@b12/metronome/${componentPath}'`
   },
   styleguideDir: './styleguide/static',
   pagePerSection: true,

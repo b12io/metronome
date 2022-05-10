@@ -13,7 +13,7 @@ export default function AvatarItemPage () {
         <h1>AvatarItem</h1>
         <p>A component that represents a user</p>
         <MetaData
-          importFrom="import AvatarItem from '@b12/design-system/components/layout/avatar/AvatarItem.es6.js'"
+          importFrom="import AvatarItem from '@b12/metronome/components/layout/avatar/AvatarItem.es6.js'"
           flow="Yes"
           tests="Yes"
         />

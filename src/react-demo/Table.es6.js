@@ -96,14 +96,14 @@ export default function TablePage () {
       <div className="app-page-title">
         <h1>Table</h1>
         <MetaData
-          importFrom="import Table from '@b12/design-system/components/layout/table/Table.es6',
-import TableHead from '@b12/design-system/components/layout/table/TableHead.es6',
-import TableBody from '@b12/design-system/components/layout/table/TableBody.es6',
-import TableRow from '@b12/design-system/components/layout/table/TableRow.es6',
-import TableCell from '@b12/design-system/components/layout/table/TableCell.es6',
-import AvatarItem from '@b12/design-system/components/layout/avatar/AvatarItem.es6',
-import TableSortLabel from '@b12/design-system/components/layout/table/TableSortLabel.es6',
-import TablePagination from '@b12/design-system/components/layout/table/TablePagination.es6'"
+          importFrom="import Table from '@b12/metronome/components/layout/table/Table.es6',
+import TableHead from '@b12/metronome/components/layout/table/TableHead.es6',
+import TableBody from '@b12/metronome/components/layout/table/TableBody.es6',
+import TableRow from '@b12/metronome/components/layout/table/TableRow.es6',
+import TableCell from '@b12/metronome/components/layout/table/TableCell.es6',
+import AvatarItem from '@b12/metronome/components/layout/avatar/AvatarItem.es6',
+import TableSortLabel from '@b12/metronome/components/layout/table/TableSortLabel.es6',
+import TablePagination from '@b12/metronome/components/layout/table/TablePagination.es6'"
           flow="Yes"
           tests="Yes"
         />
@@ -266,14 +266,14 @@ import TablePagination from '@b12/design-system/components/layout/table/TablePag
 
         <CodeExample code={`import React from 'react'
 
-import Table from '@b12/design-system/components/layout/table/Table.es6'
-import TableHead from '@b12/design-system/components/layout/table/TableHead.es6'
-import TableBody from '@b12/design-system/components/layout/table/TableBody.es6'
-import TableRow from '@b12/design-system/components/layout/table/TableRow.es6'
-import TableCell from '@b12/design-system/components/layout/table/TableCell.es6'
-import AvatarItem from '@b12/design-system/components/layout/avatar/AvatarItem.es6'
-import TablePagination from '@b12/design-system/components/layout/table/TablePagination.es6'
-import Grid from '@b12/design-system/components/layout/grid/Grid.es6.js'
+import Table from '@b12/metronome/components/layout/table/Table.es6'
+import TableHead from '@b12/metronome/components/layout/table/TableHead.es6'
+import TableBody from '@b12/metronome/components/layout/table/TableBody.es6'
+import TableRow from '@b12/metronome/components/layout/table/TableRow.es6'
+import TableCell from '@b12/metronome/components/layout/table/TableCell.es6'
+import AvatarItem from '@b12/metronome/components/layout/avatar/AvatarItem.es6'
+import TablePagination from '@b12/metronome/components/layout/table/TablePagination.es6'
+import Grid from '@b12/metronome/components/layout/grid/Grid.es6.js'
 
 let counter = 0
 function createData (name, calories, fat, carbs, protein) {

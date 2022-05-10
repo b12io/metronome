@@ -13,7 +13,7 @@ function StepperPage () {
         <h1>Stepper</h1>
         <p>An input component with increase and decrease value functionality. User can input value manually. The input itself contains a pattern `[0-9]` that restricts user to input only numbers.</p>
         <MetaData
-          importFrom="import Stepper from '@b12/design-system/components/form/stepper/Stepper.es6.js'"
+          importFrom="import Stepper from '@b12/metronome/components/form/stepper/Stepper.es6.js'"
           flow="Yes"
           tests="Yes"
         />

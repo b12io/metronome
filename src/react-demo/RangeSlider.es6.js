@@ -83,7 +83,7 @@ export default function AvatarItemPage () {
         <h1>RangeSlider</h1>
         <p>Input type range form component</p>
         <MetaData
-          importFrom="import RangeSlider from '@b12/design-system/components/form/range-slider/RangeSlider.es6.js'"
+          importFrom="import RangeSlider from '@b12/metronome/components/form/range-slider/RangeSlider.es6.js'"
           flow="Yes"
           tests="Yes"
         />

@@ -23,7 +23,7 @@ function BlockPage () {
         <h1>Block</h1>
         <p>An entity containing title and content. Block component should be used in side panels for dividing logical groups of content.</p>
         <MetaData
-          importFrom="import Block from '@b12/design-system/components/layout/panel/block/Block.es6.js'"
+          importFrom="import Block from '@b12/metronome/components/layout/panel/block/Block.es6.js'"
           flow="Yes"
           tests="Yes"
         />
@@ -123,7 +123,7 @@ function BlockPage () {
         <h1>BlockTitle</h1>
         <p>Title of the block component that contains <code>label</code>, <code>icon</code>, <code>description</code> and an <code>action</code></p>
         <MetaData
-          importFrom="import BlockTitle from '@b12/design-system/components/layout/panel/block/BlockTitle.es6.js'"
+          importFrom="import BlockTitle from '@b12/metronome/components/layout/panel/block/BlockTitle.es6.js'"
           flow="Yes"
           dependencies="Block"
           tests="Yes"
@@ -191,7 +191,7 @@ function BlockPage () {
         <h1>BlockContent</h1>
         <p>Container for any type of content that lives inside Block element.</p>
         <MetaData
-          importFrom="import BlockContent from '@b12/design-system/components/layout/panel/block/BlockContent.es6.js'"
+          importFrom="import BlockContent from '@b12/metronome/components/layout/panel/block/BlockContent.es6.js'"
           flow="Yes"
           dependencies="Block"
           tests="Yes"

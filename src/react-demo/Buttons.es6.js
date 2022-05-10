@@ -14,7 +14,7 @@ function Buttons () {
         <h1>Buttons</h1>
 
         <MetaData
-          importFrom="import Button from '@b12/design-system/components/form/button/Button.es6.js'"
+          importFrom="import Button from '@b12/metronome/components/form/button/Button.es6.js'"
           flow="No"
           tests="Yes"
         />
@@ -25,10 +25,10 @@ function Buttons () {
           <h4>Default</h4>
         </div>
 
-        <CodeExample code={`<Button label="Default"/>
+        <CodeExample code={`<Button label="Default" title="Here is a title" />
 <Button label="Disabled" disabled />
 <Button label="Disabled" loading />`}>
-          <Button label="Default"/>
+          <Button label="Default" title="Here is a title" />
           <Button label="Disabled" disabled />
           <Button label="Disabled" loading />
         </CodeExample>

@@ -17,10 +17,10 @@ function InputDimension () {
         <p>This is a complex input that allows you to choose several values for a variable.</p>
 
         <MetaData
-          importFrom="import DimensionGroup from '@b12/design-system/components/form/dimension/DimensionGroup.es6.js',
-          import DimensionInput from '@b12/design-system/components/form/dimension/DimensionInput.es6.js',
-          import DimensionBoolean from '@b12/design-system/components/form/dimension/DimensionBoolean.es6.js',
-          import DimensionSelect from '@b12/design-system/components/form/dimension/DimensionSelect.es6.js'"
+          importFrom="import DimensionGroup from '@b12/metronome/components/form/dimension/DimensionGroup.es6.js',
+          import DimensionInput from '@b12/metronome/components/form/dimension/DimensionInput.es6.js',
+          import DimensionBoolean from '@b12/metronome/components/form/dimension/DimensionBoolean.es6.js',
+          import DimensionSelect from '@b12/metronome/components/form/dimension/DimensionSelect.es6.js'"
           flow="Yes"
           tests="Yes"
         />

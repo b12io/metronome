@@ -87,7 +87,7 @@ function BadgesPage () {
       <div className="app-page-title">
         <h1>Badges</h1>
         <MetaData
-          importFrom="import Badge from '@b12/design-system/components/layout/badge/Badge.es6.js'"
+          importFrom="import Badge from '@b12/metronome/components/layout/badge/Badge.es6.js'"
           flow="Yes"
           tests="No"
         />

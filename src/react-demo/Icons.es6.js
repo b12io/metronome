@@ -724,7 +724,7 @@ function Icons () {
         <h1>Icons</h1>
         <p>Icons can be used almost in any component. All icons are in <code>SVG</code> format.</p>
         <MetaData
-          importFrom="import { IconName } from '@b12/design-system/components/Icons.es6.js'"
+          importFrom="import { IconName } from '@b12/metronome/components/Icons.es6.js'"
         />
       </div>
 

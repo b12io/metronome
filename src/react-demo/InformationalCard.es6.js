@@ -50,7 +50,7 @@ class InformationalCardPage extends React.Component<Props, State> {
           <h1>InformationalCard</h1>
           <p>Simple card component to convey information</p>
           <MetaData
-            importFrom="import InformationalCard from '@b12/design-system/components/layout/informational-card/InformationalCard.es6.js'"
+            importFrom="import InformationalCard from '@b12/metronome/components/layout/informational-card/InformationalCard.es6.js'"
             flow="Yes"
             tests="Yes"
           />

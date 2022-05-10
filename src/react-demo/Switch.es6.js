@@ -34,7 +34,7 @@ function SwitchPage () {
         <h1>Switch</h1>
 
         <MetaData
-          importFrom="import Switch from '@b12/design-system/components/form/switch/Switch.es6.js'"
+          importFrom="import Switch from '@b12/metronome/components/form/switch/Switch.es6.js'"
           flow="No"
           tests="Yes"
         />

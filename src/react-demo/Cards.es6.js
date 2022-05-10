@@ -28,7 +28,7 @@ export default function AvatarItemPage () {
         <h1>SimpleCard</h1>
         <p>Simplest card component</p>
         <MetaData
-          importFrom="import SimpleCard from '@b12/design-system/components/layout/simple-card/SimpleCard.es6.js'"
+          importFrom="import SimpleCard from '@b12/metronome/components/layout/simple-card/SimpleCard.es6.js'"
           flow="Yes"
           tests="No"
         />
