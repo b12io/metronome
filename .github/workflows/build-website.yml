@@ -33,12 +33,11 @@ jobs:
 
     - name: Publish ✨
       id: publish
-      # if: github.ref == 'refs/heads/main'
+      if: github.ref == 'refs/heads/main'
       uses: JS-DevTools/npm-publish@v1
       with:
         token: ${{ secrets.NPM_TOKEN }}
-        dry-run: true
-        # check-version: true
+        check-version: true
 
     - name: Version update
       if: steps.publish.outputs.type != 'none'
