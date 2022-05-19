@@ -40,6 +40,7 @@ jobs:
         dry-run: true
         # check-version: true
 
-    - if: steps.publish.outputs.type != 'none'
+    - name: Version update
+      if: steps.publish.outputs.type != 'none'
       run: |
         echo "Version changed: ${{ steps.publish.outputs.old-version }} => ${{ steps.publish.outputs.version }}"
