@@ -1705,6 +1705,7 @@ function Circle ({width, height, viewBox, color}) {
   )
 }
 
+<<<<<<< Updated upstream
 function SolidCircle ({ className, width, height, viewBox, color }) {
   return (
     <svg className={className} width={width} height={height} viewBox={viewBox} xmlns="http://www.w3.org/2000/svg">
@@ -1833,6 +1834,14 @@ function Spaceship ({ className, width="16", height="16", viewBox="0 0 16 16", c
     <svg className={className} width={width} height={height} viewBox={viewBox} fill="none" xmlns="http://www.w3.org/2000/svg">
       <path fillRule="evenodd" clipRule="evenodd" d="M15.295 0a.67.67 0 0 1 .703.709c-.532 9.358-8.862 12.87-8.946 12.904a.67.67 0 0 1-.727-.146L2.533 9.675a.67.67 0 0 1-.148-.723C2.42 8.867 5.892.492 15.295 0ZM8.87 7.856a1.34 1.34 0 1 0 1.026-2.477A1.34 1.34 0 0 0 8.87 7.855Z" fill={color}/>
       <path d="M.746 12.544a1.906 1.906 0 1 1 2.696 2.696C2.697 15.984 0 16 0 16s0-2.712.746-3.456ZM6.942 1.483a5.973 5.973 0 0 0-6.18 2.871.67.67 0 0 0 .105.814L2.2 6.502a17.844 17.844 0 0 1 4.742-5.02ZM14.517 9.058a5.972 5.972 0 0 1-2.871 6.18.67.67 0 0 1-.815-.105L9.498 13.8a17.844 17.844 0 0 0 5.02-4.742Z" fill={color}/>
+    </svg>
+  )
+}
+
+function Zap ({ className, width='11', height='16', color="#D7D7DE" }) {
+  return (
+    <svg width={width} height={width} viewBox="0 0 11 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6.84479 0H3.04479C2.64479 0 2.24479 0.3 2.04479 0.7L0.0447901 7.7C-0.15521 8.4 0.34479 9 0.94479 9H4.64479L3.14479 16L10.4448 6.6C10.9448 6 10.4448 5 9.64479 5H6.64479L7.74479 1.3C7.94479 0.6 7.44479 0 6.84479 0Z" fill={color} />
     </svg>
   )
 }
@@ -2019,7 +2028,8 @@ const icons = [
   Questionnaire,
   Upload,
   ShareFeedback,
-  Spaceship
+  Spaceship,
+  Zap
 ]
 
 each(icons, (icon) => {
@@ -2045,5 +2055,5 @@ export { Check, Checkmark, Lock, Notice, Disabled, Help, Search, Draggable,
   RotateForward, Globe, At, Target, IconRow, IconColumn, IconSection, FolderFilled, BlogPost, MenuItems, Popup,
   Flag, Testimonials, Chart, Pause, HubspotLogo, AlignLeftV2, AlignRightV2, AlignCenterV2, AlignJustifyV2, Sidebar, Palette, Lightbox, Filter, Slider,
   Flash, Dashboard, Guides, Article, Pulse, Edit, ContentApproved, Dragger, PaperClip, Invoicing, Banking, Checkbox, Circle, Bank, Card, Contract,
-  MinusCircle, RepeatCircle, BadgeCard, HeadphonesMic, CheckmarkLarge, NoticeOutlined, Archive, Questionnaire, Upload, ShareFeedback, Spaceship
+  MinusCircle, RepeatCircle, BadgeCard, HeadphonesMic, CheckmarkLarge, NoticeOutlined, Archive, Questionnaire, Upload, ShareFeedback, Spaceship, Zap,
 }
