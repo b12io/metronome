@@ -39,14 +39,14 @@ If you are developing on a remote machine and want to view the demo in your brow
 * Then you can access the demo interface at `http://your-remote-server.com:{port}`.
 
 ## How can I test my changes in an internal repository without publishing?
+#### Note: If you're using docker, then you should do this outside of docker.
 You can do it in five steps:
 
-1. Link metronome in yarn with command `yarn link` in the internal repository;
-2. Run `yarn install --production` in the `metronome` repo;
-3. Use your linked version in the internal repository with command `yarn link @b12/metronome`;
-4. Try to build product with `yarn && yarn dev`;
+1. In the `metronome` repository link metronome in yarn with command `yarn link`;
+2. In the `metronome` repository run `yarn install --production`;
+3. In your internal repository use your linked version with command `yarn link @b12/metronome`;
+4. In your internal repository try to build product with `yarn && yarn dev`;
 
-#### Note: If you're using docker, then you should do this outside of docker.
 In case you accidentally ran the commands inside of docker and are running into permissions issues
 1. In your docker env remove `node_modules` folder, also remove `build/static/build` dir;
 2. On your host machine recreate `build/static/build` dir with local user permissions;
