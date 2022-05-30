@@ -1837,6 +1837,14 @@ function Spaceship ({ className, width="16", height="16", viewBox="0 0 16 16", c
   )
 }
 
+function Zap ({ className, width='11', height='16', color="#D7D7DE", viewBox="0 0 11 16" }) {
+  return (
+    <svg width={width} height={height} viewBox={viewBox} fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6.84479 0H3.04479C2.64479 0 2.24479 0.3 2.04479 0.7L0.0447901 7.7C-0.15521 8.4 0.34479 9 0.94479 9H4.64479L3.14479 16L10.4448 6.6C10.9448 6 10.4448 5 9.64479 5H6.64479L7.74479 1.3C7.94479 0.6 7.44479 0 6.84479 0Z" fill={color} />
+    </svg>
+  )
+}
+
 const icons = [
   Check,
   Checkmark,
@@ -2019,7 +2027,8 @@ const icons = [
   Questionnaire,
   Upload,
   ShareFeedback,
-  Spaceship
+  Spaceship,
+  Zap
 ]
 
 each(icons, (icon) => {
@@ -2045,5 +2054,5 @@ export { Check, Checkmark, Lock, Notice, Disabled, Help, Search, Draggable,
   RotateForward, Globe, At, Target, IconRow, IconColumn, IconSection, FolderFilled, BlogPost, MenuItems, Popup,
   Flag, Testimonials, Chart, Pause, HubspotLogo, AlignLeftV2, AlignRightV2, AlignCenterV2, AlignJustifyV2, Sidebar, Palette, Lightbox, Filter, Slider,
   Flash, Dashboard, Guides, Article, Pulse, Edit, ContentApproved, Dragger, PaperClip, Invoicing, Banking, Checkbox, Circle, Bank, Card, Contract,
-  MinusCircle, RepeatCircle, BadgeCard, HeadphonesMic, CheckmarkLarge, NoticeOutlined, Archive, Questionnaire, Upload, ShareFeedback, Spaceship
+  MinusCircle, RepeatCircle, BadgeCard, HeadphonesMic, CheckmarkLarge, NoticeOutlined, Archive, Questionnaire, Upload, ShareFeedback, Spaceship, Zap,
 }
