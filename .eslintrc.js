@@ -3,17 +3,11 @@ const path = require('path')
 module.exports = {
   extends: [
     'standard',
-    'plugin:flowtype/recommended',
     'plugin:react/recommended',
     'prettier'
   ],
   parser: 'babel-eslint',
-  settings: {
-    flowtype: {
-      onlyFilesWithFlowAnnotation: true
-    }
-  },
-  plugins: ['standard', 'flowtype', 'promise', 'import', 'react', 'jsx-a11y'],
+  plugins: ['standard', 'promise', 'import', 'react', 'jsx-a11y'],
   env: {
     mocha: true,
     node: true,
