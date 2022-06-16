@@ -1,7 +1,7 @@
 /*  */
 import * as React from 'react'
 import classnames from 'classnames'
-import { CaretDown } from '../../../components/Icons.es6'
+import { CaretDown } from '../../../components/Icons.es6.js'
 
 
 function TableSortLabel ({ className, active, direction, icon, label, ...otherProps }) {
