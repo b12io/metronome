@@ -1,23 +1,12 @@
-/* @flow */
+/*  */
 
 import React, { Fragment } from 'react'
-import type { Element, Node } from 'react'
-
 import B12Tooltip from '../tooltip/B12Tooltip.es6.js'
 import { generateId } from '../../lib/helpers.es6.js'
 
-type Props = {|
-  text: string | React$Element<'ul' | 'ol'>,
-  icon?: Element<'svg'>,
-  children?: Node,
-  delay?: number | { show: number, hide: number }
-|}
 
-type State = {|
-  uniqueClassName: string
-|}
 
-class Info extends React.PureComponent<Props, State> {
+class Info extends React.PureComponent {
   state = {
     uniqueClassName: 'info-' + generateId()
   }

@@ -1,12 +1,9 @@
-/* @flow */
+/*  */
 import React from 'react'
 import classnames from 'classnames'
 
-type Props = {|
-  className?: string | Object,
-|}
 
-function Divider (props: Props) {
+function Divider (props) {
   const { className } = props
   return (
     <div className={classnames({

@@ -1,18 +1,12 @@
-/* @flow */
+/*  */
 import React from 'react'
 import classnames from 'classnames'
-import type { Element, Node } from 'react'
 
-type Props = {|
-  children: Node,
-  icon: ?Element<*>,
-  label: ?string
-|}
 
 /**
  * Form group
  */
-function Group ({ label, children, icon }: Props) {
+function Group ({ label, children, icon }) {
   return (
     <div className="ds-form-group">
       {(label || icon) && (

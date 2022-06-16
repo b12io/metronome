@@ -1,26 +1,10 @@
-/* @flow */
+/*  */
 import React from 'react'
-import type { Element, Node } from 'react'
 import classnames from 'classnames'
 
-type Props = {|
-  add: boolean,
-  disabled: boolean,
-  children?: Node,
-  handleClick: SyntheticEvent<HTMLButtonElement> => void | Promise<void>,
-  icon: ?Element<'svg'>,
-  label: string,
-  value: string,
-  selected: boolean,
-  hasImage: boolean,
-  hasColorPalette: boolean,
-  className?: string,
-  onMouseEnter?: () => void,
-  onMouseLeave?: () => void
-|}
 
 function Card ({ add, children, disabled, handleClick, icon, label, value, className,
-  selected, hasImage, hasColorPalette, onMouseEnter, onMouseLeave }: Props) {
+  selected, hasImage, hasColorPalette, onMouseEnter, onMouseLeave }) {
   return (
     <button
       className={classnames(className, {

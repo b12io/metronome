@@ -1,4 +1,4 @@
-// @flow
+// 
 
 import * as React from 'react'
 import classnames from 'classnames'
@@ -6,21 +6,12 @@ import uuidV4 from 'uuid/v4'
 
 import B12Tooltip from '../tooltip/B12Tooltip.es6.js'
 
-type Props = {
-  label: string,
-  clickable: boolean,
-  showSeparator: boolean,
-  showTooltip?: boolean,
-  width?: number,
-  onClick?: () => void
-}
 
-type NodeRef = { current: null | HTMLDivElement } | ((null | HTMLDivElement) => mixed)
 
-export default React.forwardRef<Props, HTMLDivElement>(
+export default React.forwardRef(
   function BreadcrumbEntry ({
     label, clickable, onClick, showSeparator, width, showTooltip = true
-  }: Props, ref: NodeRef) {
+  }, ref) {
     const style = {}
     if (width) {
       style.maxWidth = width

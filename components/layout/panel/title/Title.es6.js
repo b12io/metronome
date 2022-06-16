@@ -1,25 +1,12 @@
-/* @flow */
+/*  */
 
 import React from 'react'
 import { isEmpty } from 'lodash'
 import classname from 'classnames'
 
-import type { Element, Node } from 'react'
 
-type Props = {|
-  label?: string | Node,
-  icon?: Node,
-  help?: string | Element<*>,
-  spread?: boolean,
-  borderBottom?: boolean,
-  marginBottomMedium?: boolean,
-  marginBottomSmall?: boolean,
-  marginBottomXSmall?: boolean,
-  children?: Node,
-  button?: Node
-|}
 
-class Title extends React.Component<Props> {
+class Title extends React.Component {
   render () {
     const { icon, label, help, spread, borderBottom, marginBottomMedium,
       marginBottomSmall, marginBottomXSmall, children, button } = this.props

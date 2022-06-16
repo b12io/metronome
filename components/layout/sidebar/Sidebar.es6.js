@@ -1,15 +1,9 @@
-/* @flow */
+/*  */
 import * as React from 'react'
 import classnames from 'classnames'
 
-type Props = {|
-  alternativeBg: boolean,
-  children: React.Node,
-  className?: string,
-  noTitle: boolean
-|}
 
-function Sidebar ({ children, alternativeBg, className, noTitle }: Props) {
+function Sidebar ({ children, alternativeBg, className, noTitle }) {
   return (
     <div className={classnames('sidebar-container', className)}>
       <div className={classnames({

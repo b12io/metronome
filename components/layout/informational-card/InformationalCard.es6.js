@@ -1,20 +1,10 @@
-/* @flow */
+/*  */
 import * as React from 'react'
 import classnames from 'classnames'
 import { InfoCircle } from '../../Icons.es6.js'
 
-type Props = {|
-  accentColor: string,
-  children?: React.Node,
-  heading: string | React.Node,
-  showIcon: boolean,
-  subheading: string | React.Node,
-  icon: React.Element,
-  iconStyle: Object,
-  className?: string | Object
-|}
 
-function InformationalCard ({ accentColor, children, heading, showIcon, icon, iconStyle, subheading, className }: Props) {
+function InformationalCard ({ accentColor, children, heading, showIcon, icon, iconStyle, subheading, className }) {
   const iconElement = React.cloneElement(icon, {
     color: accentColor,
     style: iconStyle

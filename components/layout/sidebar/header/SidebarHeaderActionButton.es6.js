@@ -1,15 +1,9 @@
-/* @flow */
+/*  */
 import React from 'react'
 import classnames from 'classnames'
-import type { Node } from 'react'
 
-type Props = {|
-  dropdown?: boolean,
-  icon?: Node | string,
-  onClick: SyntheticEvent<HTMLDivElement> => void
-|}
 
-function SidebarHeaderActionButton ({ dropdown, icon, onClick }: Props) {
+function SidebarHeaderActionButton ({ dropdown, icon, onClick }) {
   return (
     <button
       type="button"

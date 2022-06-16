@@ -1,33 +1,22 @@
-/* @flow */
+/*  */
 import React, { Fragment } from 'react'
 import classnames from 'classnames'
 import { isEmpty } from 'lodash'
 
-import type { HeaderQuickAction } from './types.es6.js'
 
-type Props = {|
-  actions: ?Array<HeaderQuickAction>,
-  label: string,
-  onSelect: (idx: number) => void
-|}
-
-type DropdownMenuLabelProps = {
-  label: string
-}
-
-function QuickActions ({ actions, onSelect, label }: Props) {
+function QuickActions ({ actions, onSelect, label }) {
   if (isEmpty(actions) || !Array.isArray(actions)) {
     return null
   }
 
-  const DropdownMenuLabel = ({ label }: DropdownMenuLabelProps) => <li className="ds-dropdown__menu-header">{label}</li>
+  const DropdownMenuLabel = ({ label }) => <li className="ds-dropdown__menu-header">{label}</li>
 
   const DropdownMenuDivider = () => <li className="ds-dropdown__menu-divider" />
 
   return (
     <ul className="ds-dropdown__menu">
       <DropdownMenuLabel label={label} />
-      {actions.map(({ icon, text, divider, actionLabel, action, hidden, disabled, onActionSelect }: HeaderQuickAction, index) => (
+      {actions.map(({ icon, text, divider, actionLabel, action, hidden, disabled, onActionSelect }, index) => (
         <Fragment key={text}>
           {actionLabel && <DropdownMenuLabel label={actionLabel} />}
           <li

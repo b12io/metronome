@@ -1,17 +1,11 @@
-// @flow
+// 
 import React from 'react'
 
 import Checkbox from '../checkbox/Checkbox.es6.js'
 import Tooltip from './Tooltip.es6.js'
 
-type Props = {|
-  label: string,
-  help?: string,
-  value: boolean,
-  onChange: (value: boolean) => void
-|}
 
-class DimensionBoolean extends React.Component<Props> { 
+class DimensionBoolean extends React.Component { 
   render () {
     const { label, help, value, onChange } = this.props
 

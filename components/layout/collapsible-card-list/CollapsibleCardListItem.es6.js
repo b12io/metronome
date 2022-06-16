@@ -1,19 +1,12 @@
-// @flow
+// 
 import * as React from 'react'
 import classnames from 'classnames'
 
 import ListItem from '../list/ListItem.es6.js'
 import ListItemContent from '../list/ListItemContent.es6.js'
 
-type Props = {
-  collapsedLayout: string | React.Node,
-  isActive?: boolean,
-  className?: string | Object,
-  children?: React.Node,
-  onSelect: () => void
-}
 
-class CollapsibleCardListItem extends React.Component<Props> {
+class CollapsibleCardListItem extends React.Component {
   static defaultProps = {
     isActive: false,
     onSelect: () => {}

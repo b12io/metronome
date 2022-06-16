@@ -1,15 +1,9 @@
-/* @flow */
+/*  */
 import React from 'react'
 import DatePicker from 'react-datepicker'
 
-type Props = {
-  label?: string,
-  onChange?: (datetime: moment$Moment) => void,
-  onChangeRaw?: (datetimeRaw: string) => void,
-  value?: ?moment$Moment
-}
 
-function B12TimePicker ({ label, onChange, onChangeRaw, value, ...rest }: Props) {
+function B12TimePicker ({ label, onChange, onChangeRaw, value, ...rest }) {
   return (
     <div className="ds-form-control-wrap">
       <div className="ds-control-label">

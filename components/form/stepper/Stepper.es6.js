@@ -1,4 +1,4 @@
-// @flow
+// 
 
 import React from 'react'
 import { debounce } from 'lodash'
@@ -6,20 +6,9 @@ import classnames from 'classnames'
 
 import { Plus, Minus } from '../../Icons.es6.js'
 
-type State = {|
-  value: number
-|}
 
-type Props = {|
-  label?: string,
-  value: number,
-  min: number,
-  max: number,
-  step: number,
-  onUpdate: (value: number) => void
-|}
 
-class Stepper extends React.Component<Props, State> {
+class Stepper extends React.Component {
   state = {
     value: this.props.value
   }
@@ -32,7 +21,7 @@ class Stepper extends React.Component<Props, State> {
     onUpdate: () => {}
   }
 
-  onDecrement = (event: SyntheticEvent<HTMLButtonElement>) => {
+  onDecrement = (event) => {
     const { value } = this.state
     const { min, step } = this.props
     let newVal
@@ -50,7 +39,7 @@ class Stepper extends React.Component<Props, State> {
     this.setState({ value: newVal }, this.onUpdate)
   }
 
-  onIncrement = (event: SyntheticEvent<HTMLButtonElement>) => {
+  onIncrement = (event) => {
     const { value } = this.state
     const { min, max, step } = this.props
     let newVal
@@ -68,7 +57,7 @@ class Stepper extends React.Component<Props, State> {
     this.setState({ value: newVal }, this.onUpdate)
   }
 
-  onFieldUpdate = (event: SyntheticInputEvent<HTMLInputElement>) => {
+  onFieldUpdate = (event) => {
     const value = parseInt(event.target.value) || -1
 
     this.setState({
@@ -89,7 +78,7 @@ class Stepper extends React.Component<Props, State> {
     }
   }, 700)
 
-  componentDidUpdate (prevProps: Props) {
+  componentDidUpdate (prevProps) {
     const { value } = this.props
     if (prevProps.value !== value && this.state.value !== value) {
       this.setState({ value })

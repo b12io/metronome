@@ -1,21 +1,13 @@
-/* @flow */
+/*  */
 import React, { Fragment } from 'react'
-import type { Node } from 'react'
 
-type ComponentListSectionProps = {|
-  href: string,
-  visibleName: string,
-  selected: boolean,
-  slug: string,
-  content: Node
-|}
 
 const ComponentListSection = ({
   href, 
   visibleName,
   content,
   selected
-}: ComponentListSectionProps) => {
+}) => {
   return (
     <Fragment>
       {content
@@ -34,14 +26,10 @@ const ComponentListSection = ({
   )
 }
 
-type ComponentListProps = {|
-  href: string,
-  items: ComponentListSectionProps[]
-|}
 
 const ComponentList = ({
   items
-}: ComponentListProps) => {
+}) => {
   return (
     <Fragment>
       {items.map(item => (

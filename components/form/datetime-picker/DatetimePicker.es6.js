@@ -1,4 +1,4 @@
-/* @flow */
+/*  */
 
 import * as React from 'react'
 import moment from 'moment'
@@ -6,21 +6,9 @@ import { debounce } from 'lodash'
 
 const UPDATE_DEBOUNCE_INTERVAL = 700
 
-type Props = {|
-  children: React.Node,
-  dateOnly: boolean,
-  fieldName?: string,
-  timeOnly: boolean,
-  updateDatetime: (datetime: string | null) => void,
-  uuid?: UUID,
-  value?: moment$Moment
-|}
 
-type State = {|
-  datetime: ?moment$Moment
-|}
 
-class DatetimePicker extends React.Component<Props, State> {
+class DatetimePicker extends React.Component {
   state = {
     datetime: this.props.value
   }
@@ -34,15 +22,15 @@ class DatetimePicker extends React.Component<Props, State> {
   // text is input into the time field, the date field's datepicker also observes a change
   // and fires its onChange event. This boolean flag is used to prevent that extra onChange
   // event from firing.
-  textInput: ?boolean
+  textInput
 
-  componentDidUpdate(prevProps: Props) {
+  componentDidUpdate(prevProps) {
     if(prevProps.value !== this.props.value) {
       this.setState({datetime: this.props.value})
     }
   }
 
-  handleChange = (datetime: moment$Moment): void => {
+  handleChange = (datetime) => {
     const { dateOnly, timeOnly, updateDatetime } = this.props
 
     if (this.textInput) {
@@ -74,7 +62,7 @@ class DatetimePicker extends React.Component<Props, State> {
   handleChangeDebounced = debounce(this.handleChange, UPDATE_DEBOUNCE_INTERVAL)
 
   // Handles update of time picker via text input
-  handleChangeRaw = (datetimeRaw: string): void => {
+  handleChangeRaw = (datetimeRaw) => {
     const datetime = this.state.datetime || moment()
     const newDatetime = moment.utc(datetimeRaw, 'h:mm A', true)
 

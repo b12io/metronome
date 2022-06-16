@@ -1,15 +1,9 @@
-/* @flow */
+/*  */
 import React from 'react'
-import type { Node } from 'react'
 import classnames from 'classnames'
 
-type Props = {|
-  children: Node,
-  alignRight?: boolean,
-  alignLeft?: boolean,
-|}
 
-function SidebarActions ({ children, alignRight, alignLeft }: Props) {
+function SidebarActions ({ children, alignRight, alignLeft }) {
   return (
     <div className={classnames({
       'ds-sidebar__actions': true,

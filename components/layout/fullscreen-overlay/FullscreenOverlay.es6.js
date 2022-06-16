@@ -1,15 +1,10 @@
-// @flow
+// 
 
 import React from 'react'
 
-import type { Node } from 'react'
 
-type Props = {
-  children?: Node,
-  leftIcon?: Node,
-}
 
-function FullscreenOverlay ({ children, leftIcon }: Props) {
+function FullscreenOverlay ({ children, leftIcon }) {
   const leftIconNode = (
     <div className="ds-overlay__header-icon">
       {leftIcon}

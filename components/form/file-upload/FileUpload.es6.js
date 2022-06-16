@@ -1,38 +1,14 @@
-/* @flow */
+/*  */
 import React from 'react'
-import type { Element, Node } from 'react'
 import classnames from 'classnames'
 
 import Dropzone from 'react-dropzone'
 import Button from '../../form/button/Button.es6.js'
 import {TimesCircle, ImageUpload, Notice} from '../../Icons.es6.js'
 
-import type { FileList } from '../../types.es6.js'
 
-type Props = {|
-  accept?: string,
-  buttonBlock: boolean,
-  buttonIcon?: Element<'svg'>,
-  buttonLabel: string,
-  buttonPrimary: boolean,
-  buttonSmall: boolean,
-  children?: Node,
-  dropzoneLabel: string,
-  fileList: FileList,
-  loading: boolean,
-  loadingLabel: string,
-  mediaCollectionItem: boolean,
-  multiple: boolean,
-  onAdd: (accepted: FileList, rejected: FileList) => void | Promise<void>,
-  removeFileByIndex: (idx: number) => void,
-  showButton: boolean,
-  showDropzone: boolean,
-  hasError?: boolean,
-  errorMessage?: string,
-  hideUploadedFileLinks?: boolean
-|}
 
-class FileUpload extends React.Component<Props> {
+class FileUpload extends React.Component {
   static defaultProps = {
     multiple: false,
     onAdd: () => {},
@@ -53,7 +29,7 @@ class FileUpload extends React.Component<Props> {
     errorMessage: 'Error uploading file(s)'
   }
 
-  onDrop = (acceptedList: FileList, rejectedList: FileList): void => {
+  onDrop = (acceptedList, rejectedList) => {
     this.props.onAdd(acceptedList, rejectedList)
   }
 

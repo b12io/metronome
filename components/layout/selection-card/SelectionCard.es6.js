@@ -1,25 +1,12 @@
-/* @flow */
+/*  */
 import React from 'react'
 import classnames from 'classnames'
 
-import type { Node } from 'react'
-
 import Button from '../../../components/form/button/Button.es6.js'
 
-type Props = {|
-  buttonLabel: string,
-  children?: Node,
-  label: string,
-  onClick: (value: string) => void,
-  preview: ?Node,
-  scroll: boolean,
-  thumbnail: string,
-  thumbnailCover: boolean,
-  value: string,
-|}
 
 function SelectionCard ({ children, label, value,
-  thumbnail, thumbnailCover, onClick, preview, scroll, buttonLabel }: Props) {
+  thumbnail, thumbnailCover, onClick, preview, scroll, buttonLabel }) {
   return (
     <div
       className={classnames({

@@ -1,4 +1,4 @@
-/* @flow */
+/*  */
 import React from 'react'
 import DemoLayoutContent from './demo-only-components/DemoLayoutContent.es6.js'
 import CodeExample from './demo-only-components/CodeExample.es6.js'
@@ -8,8 +8,6 @@ import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDat
 import InformationalCard from '../../components/layout/informational-card/InformationalCard.es6.js'
 import Checkbox from '../../components/form/checkbox/Checkbox.es6.js'
 
-type Props = {}
-type State = { isChecked: boolean }
 
 const codeExample1 = `
 <InformationalCard
@@ -32,7 +30,7 @@ const codeExample2 = `
 </InformationalCard>
 `
 
-class InformationalCardPage extends React.Component<Props, State> {
+class InformationalCardPage extends React.Component {
   state = {
     isChecked: false
   }

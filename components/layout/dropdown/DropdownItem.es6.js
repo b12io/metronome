@@ -1,18 +1,10 @@
-/* @flow */
+/*  */
 
-import React, { type Node } from 'react'
+import React, { } from 'react'
 import classnames from 'classnames'
 
-type Props = {
-  className?: string | Object,
-  label: string,
-  icon?: Node,
-  disabled?: boolean,
-  onClick: () => void | Promise<void>,
-  onCloseMenu: () => void
-}
 
-function DropdownItem ({ className, label, icon, disabled, onClick, onCloseMenu }: Props) {
+function DropdownItem ({ className, label, icon, disabled, onClick, onCloseMenu }) {
   return (
     <div
       className={classnames({

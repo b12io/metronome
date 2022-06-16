@@ -1,24 +1,19 @@
-/* @flow */
+/*  */
 import React from 'react'
 
 import { HEADER_BACK_ICON_COLOR } from './constants.es6.js'
 import { Back } from '../../../Icons.es6.js'
 
-type Props = {|
-  onClick(): void,
-  hideText: boolean,
-  text: string
-|}
 
-class SidebarBackButton extends React.Component<Props> {
-  backButtonRef = React.createRef<HTMLDivElement>()
+class SidebarBackButton extends React.Component {
+  backButtonRef = React.createRef()
 
   static defaultProps = {
     hideText: false,
     text: 'Back'
   }
 
-  handleClick = (event: SyntheticEvent<HTMLDivElement>) => {
+  handleClick = (event) => {
     event && event.preventDefault()
     if (this.backButtonRef.current) {
       this.backButtonRef.current.focus()

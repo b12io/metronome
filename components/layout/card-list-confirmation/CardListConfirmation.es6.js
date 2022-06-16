@@ -1,32 +1,21 @@
-// @flow
+// 
 
 import React from 'react'
 
-import type { Element } from 'react'
 import Title from '../panel/title/Title.es6.js'
 import Button from '../../form/button/Button.es6.js'
 
 const YES = 'yes'
 const NO = 'no'
 
-type YesNo = 'yes' | 'no'
 
-type Props = {|
-  title: string,
-  help: string,
-  defaultAction: YesNo,
-  icon?: Element<'svg'>,
-  yes?: string,
-  no?: string,
-  onClick?: (result: boolean) => void
-|}
 
-class CardListConfirmation extends React.Component<Props> {
+class CardListConfirmation extends React.Component {
   static defaultProps = {
     defaultAction: YES
   }
 
-  handleSelectChoice = (choice: boolean) => {
+  handleSelectChoice = (choice) => {
     return () => {
       if (this.props.onClick) {
         this.props.onClick(choice)

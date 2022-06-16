@@ -1,4 +1,4 @@
-/* @flow */
+/*  */
 
 import React from 'react'
 import classnames from 'classnames'
@@ -7,25 +7,10 @@ import Button from '../button/Button.es6.js'
 import FilterOptionSelect from './FilterOptionSelect.es6.js'
 import FilterOptionItem from './FilterOptionItem.es6.js'
 
-import type { Filter, Operator } from './types.es6.js'
 
-type Props = {|
-  filterableFields: Array<string>,
-  getValidOperators: (idx: number) => Array<Operator>,
-  handleAddNewFilter: (fieldName: string) => void,
-  handleRemoveFilter: (idx: number) => void,
-  handleUpdateFilter: (idx: number, newData: Object) => void,
-  isOpened: boolean,
-  filters: Array<Filter>,
-  toggleFilterDropdown: () => void
-|}
 
-type State = {|
-  filterAdded: boolean,
-  isOpened: boolean,
-|}
 
-class FilterOption extends React.Component<Props, State> {
+class FilterOption extends React.Component {
   state = {
     filterAdded: false,
     isOpened: this.props.isOpened
@@ -35,13 +20,13 @@ class FilterOption extends React.Component<Props, State> {
     filters: []
   }
 
-  UNSAFE_componentWillReceiveProps ({ isOpened }: Props) {
+  UNSAFE_componentWillReceiveProps ({ isOpened }) {
     if (isOpened !== this.state.isOpened) {
       this.setState({ isOpened })
     }
   }
 
-  handleAddNewFilter = (fieldName: string): void => {
+  handleAddNewFilter = (fieldName) => {
     this.setState({ filterAdded: true }, () => {
       this.props.handleAddNewFilter(fieldName)
     })

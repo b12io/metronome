@@ -1,19 +1,11 @@
-/* @flow */
+/*  */
 
 import * as React from 'react'
 import classnames from 'classnames'
 import CommonPagination from './CommonPagination.es6'
 
-type Props = {
-  count: number,
-  rowsPerPage: number,
-  className?: string | Object,
-  page: number,
-  backgroundType: 'light' | 'dark',
-  onChangePage: (page: number) => void
-}
 
-function TablePagination ({ count, className, rowsPerPage, page, backgroundType, onChangePage }: Props) {
+function TablePagination ({ count, className, rowsPerPage, page, backgroundType, onChangePage }) {
   const classNames = classnames(
     `ds-table__pagination--${backgroundType}`,
     className

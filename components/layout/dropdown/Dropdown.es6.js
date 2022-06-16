@@ -1,32 +1,17 @@
-/* @flow */
+/*  */
 
-import React, { type Node, type ElementRef, Fragment } from 'react'
+import React, { Fragment } from 'react'
 import classnames from 'classnames'
 
 import DropdownItem from './DropdownItem.es6.js'
 import DropdownItemHeader from './DropdownItemHeader.es6.js'
 import DropdownItemDivider from './DropdownItemDivider.es6.js'
 
-type State = {
-  isMenuVisible: boolean
-}
 
-type Props = {
-  className?: string | Object,
-  simple?: boolean,
-  isMenuVisible: boolean,
-  toggle: string | Node,
-  toggleIcon?: Node,
-  menuOnRightSide?: boolean,
-  children: Node,
-  quickActions?: Node
-}
 
-type MouseOrTouchEvent = MouseEvent | TouchEvent
 
-type ElRef = ElementRef<*>
 
-class Dropdown extends React.Component<Props, State> {
+class Dropdown extends React.Component {
   state = {
     isMenuVisible: this.props.isMenuVisible
   }
@@ -36,7 +21,7 @@ class Dropdown extends React.Component<Props, State> {
     toggle: ''
   }
 
-  toggleRef: ElRef = React.createRef()
+  toggleRef = React.createRef()
 
   componentDidMount () {
     document.addEventListener('click', this.onDocumentClick, false)
@@ -48,13 +33,13 @@ class Dropdown extends React.Component<Props, State> {
     document.removeEventListener('touchend', this.onDocumentClick, false)
   }
 
-  onDocumentClick = (event: MouseOrTouchEvent) => {
+  onDocumentClick = (event) => {
     if (!this.toggleRef.current.contains(event.target) && this.state.isMenuVisible) {
       this.setState({ isMenuVisible: false })
     }
   }
 
-  onToggle = (event: SyntheticEvent<HTMLDivElement>) => {
+  onToggle = (event) => {
     event && event.stopPropagation()
     this.setState(prevState => ({
       isMenuVisible: !prevState.isMenuVisible

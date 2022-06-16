@@ -1,36 +1,13 @@
-/* @flow */
+/*  */
 import React from 'react'
 import classnames from 'classnames'
 import { FileHelper } from '../../lib/helpers.es6.js'
 
-import type { Element } from 'react'
 
-export type OptionValue = Object | string | number
-type Preview = {
-  thumbnail: ?string,
-  original: ?string
-}
-type Props = {|
-  active?: boolean,
-  actionOption?: boolean,
-  collectionOption?: boolean,
-  contentTypeOption?: boolean,
-  disabled?: boolean,
-  folderOption?: boolean,
-  icon: ?Element<*>,
-  iconRight?: ?Element<*>,
-  label?: string,
-  mappingOption?: boolean,
-  onOptionClick: (value: ?OptionValue) => void,
-  preview: ?Preview,
-  value?: OptionValue,
-  style?: Object,
-  children?: Element<*>
-|}
 
 function Option ({ actionOption, active, collectionOption, contentTypeOption, disabled,
   folderOption, icon, iconRight, label, mappingOption, onOptionClick, value, preview,
-  style, children }: Props) {
+  style, children }) {
   const iconLeft = mappingOption || folderOption || actionOption
   const fileInfo = preview ? FileHelper(preview) : null
   const optionPreview = (

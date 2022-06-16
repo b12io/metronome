@@ -1,24 +1,14 @@
-// @flow
+// 
 import * as React from 'react'
 import classnames from 'classnames'
 import CardList from '../card-list/CardList.es6.js'
 import CollapsibleCardListItem from './CollapsibleCardListItem.es6.js'
 import { isNumber } from 'lodash'
 
-type CollapsibleCardListItemType = React.Element<typeof CollapsibleCardListItem>
 
-type Props = {
-  activeIndex?: number,
-  className?: string | Object,
-  bordered?: boolean,
-  children: React.ChildrenArray<CollapsibleCardListItemType> | CollapsibleCardListItemType
-}
 
-type State = {|
-  activeIndex: number
-|}
 
-class CollapsibleCardList extends React.Component<Props, State> {
+class CollapsibleCardList extends React.Component {
   state = {
     activeIndex: -1
   }
@@ -27,7 +17,7 @@ class CollapsibleCardList extends React.Component<Props, State> {
     bordered: true
   }
 
-  static getDerivedStateFromProps (nextProps: Props, prevState: State) {
+  static getDerivedStateFromProps (nextProps, prevState) {
     if (isNumber(nextProps.activeIndex) && nextProps.activeIndex >= 0) {
       return {
         activeIndex: nextProps.activeIndex
@@ -36,7 +26,7 @@ class CollapsibleCardList extends React.Component<Props, State> {
     return null
   }
 
-  selectCardListIndex = (activeIndex: number) => {
+  selectCardListIndex = (activeIndex) => {
     this.setState({
       activeIndex: activeIndex === this.state.activeIndex ? -1 : activeIndex
     })

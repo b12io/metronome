@@ -1,15 +1,11 @@
-/* @flow */
+/*  */
 import React from 'react'
-import type { Node } from 'react'
 
-type Props = {|
-  children: Node
-|}
 
 /**
  * Column.
  */
-function Column ({ children }: Props) {
+function Column ({ children }) {
   return (<div className="col-md-6">{children}</div>)
 }
 

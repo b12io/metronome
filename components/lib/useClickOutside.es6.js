@@ -1,14 +1,13 @@
-// @flow
+// 
 
 import { useState, useEffect } from 'react'
 
-type Ref = { current: null | HTMLDivElement }
 
-function useClickOutside (containerRef: Ref) {
-  const [isVisible, setIsVisible] = useState<boolean>(false)
+function useClickOutside (containerRef) {
+  const [isVisible, setIsVisible] = useState(false)
 
   useEffect(function () {
-    function onDocumentClick (event: MouseEvent | TouchEvent) {
+    function onDocumentClick (event) {
       if (!isVisible || !containerRef.current) {
         return
       }

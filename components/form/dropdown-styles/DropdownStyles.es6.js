@@ -1,16 +1,9 @@
-/* @flow */
+/*  */
 import React from 'react'
 import classnames from 'classnames'
 
-type Props = {|
-  blurAction: () => void,
-  selectAction: () => void,
-  isOpen: boolean,
-  onClick: () => void,
-  value?: string
-|}
 
-class DropdownStyles extends React.Component<Props> {
+class DropdownStyles extends React.Component {
   static defaultProps = {
     blurAction: () => {},
     isOpen: false,

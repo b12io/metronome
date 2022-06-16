@@ -1,19 +1,12 @@
-// @flow
+// 
 import React from 'react'
 
 import Select from '../select/Select.es6.js'
 import Option from '../option/Option.es6.js'
 import Tooltip from './Tooltip.es6.js'
 
-type Props = {|
-  label: string,
-  help?: string,
-  choices: Array<string>,
-  selectedChoice?: string,
-  onChange: (value: string) => void
-|}
 
-class DimensionSelect extends React.Component<Props> {
+class DimensionSelect extends React.Component {
   render () {
     const { label, selectedChoice, onChange, choices, help } = this.props
 

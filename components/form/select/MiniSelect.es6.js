@@ -1,32 +1,17 @@
-/* @flow */
+/*  */
 
 import React from 'react'
 import classnames from 'classnames'
 
 import { Disabled } from '../../Icons.es6.js'
 
-type Props = {|
-  label: ?string,
-  inputPlaceholder: ?string,
-  inputDisabled: boolean,
-  selectDisabled: boolean,
-  inputValue: string | number,
-  selectValue: string | number,
-  selectOptions: Array<string | number>,
-  selectPosition: string,
-  inputValueChange: (value: string | number) => void,
-  selectValueChange: (value: string | number) => void
-|}
 
-type State = {|
-  isOpened: boolean
-|}
 
-class MiniSelect extends React.Component<Props, State> {
+class MiniSelect extends React.Component {
   state = {
     isOpened: false
   }
-  selectNode: HTMLDivElement
+  selectNode
 
   static defaultProps = {
     selectOptions: [],
@@ -36,7 +21,7 @@ class MiniSelect extends React.Component<Props, State> {
     selectDisabled: false
   }
 
-  handleDocumentClick = (event: any) => {
+  handleDocumentClick = (event) => {
     if (!this.selectNode.contains(event.target) && this.state.isOpened) {
       this.setState({ isOpened: false })
     }
@@ -52,7 +37,7 @@ class MiniSelect extends React.Component<Props, State> {
     })
   }
 
-  handleSelect = (option: string | number) => {
+  handleSelect = (option) => {
     this.props.selectValueChange(option)
     this.onToggle()
   }
@@ -75,7 +60,7 @@ class MiniSelect extends React.Component<Props, State> {
       'ds-mini-select__dropdown--right': selectPosition === 'right'
     })
     return (
-      <div className={classNames} ref={(node: any) => { this.selectNode = node }}>
+      <div className={classNames} ref={(node) => { this.selectNode = node }}>
         <div className="ds-mini-select__dropdown-toggle" onClick={this.onToggle}>{selectValue}</div>
         {isOpened && <ul className="ds-mini-select__dropdown-menu">
           {selectOptions.map(option => (<li

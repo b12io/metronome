@@ -1,19 +1,11 @@
-/* @flow */
+/*  */
 import * as React from 'react'
 import TableCell from './TableCell.es6'
 import classnames from 'classnames'
 
-type TableCellType = React.Element<typeof TableCell>
 
-type Props = {
-  isInTableHeader?: boolean,
-  noHover?: boolean,
-  children: React.ChildrenArray<TableCellType> | TableCellType,
-  onClick?: () => void,
-  className?: string | Object,
-}
 
-function TableRow ({ children, isInTableHeader, noHover, onClick, className, ...otherProps }: Props) {
+function TableRow ({ children, isInTableHeader, noHover, onClick, className, ...otherProps }) {
   const classNames = classnames({
     'ds-table__row-no-hover': noHover,
     'ds-table__row-clickable': onClick

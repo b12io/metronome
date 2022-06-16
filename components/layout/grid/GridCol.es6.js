@@ -1,17 +1,10 @@
-/* @flow */
+/*  */
 import React from 'react'
 import classnames from 'classnames'
 
-import type { Node } from 'react'
 
-type Props = {
-  className?: string | Object,
-  children?: Node,
-  col: string,
-  align: string
-}
 
-function GridCol ({ className, children, col, align }: Props) {
+function GridCol ({ className, children, col, align }) {
   const classes = classnames(
     'ds-grid__col',
     `ds-grid__col--col-${col}`,
