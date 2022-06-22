@@ -1,4 +1,3 @@
-/*  */
 import React from 'react'
 
 import Table from '../../../metronome/components/layout/table/Table.es6.js'

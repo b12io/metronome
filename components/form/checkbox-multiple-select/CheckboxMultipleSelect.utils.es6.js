@@ -1,5 +1,4 @@
 import { union, without, uniq, intersection } from 'lodash'
-
 /**
  * Handles defining selected, disabled and label options based on passed
  * dependent controls that are passed as selectConfig. It is being called for every

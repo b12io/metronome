@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-
 import DemoLayoutContent from './demo-only-components/DemoLayoutContent.es6.js'
 import Divider from '../../components/layout/panel/divider/Divider.es6.js'
 import Panel from '../../components/layout/panel/Panel.es6.js'

@@ -1,5 +1,3 @@
-// 
-
 import React from 'react'
 import classnames from 'classnames'
 import Button from '../../../components/form/button/Button.es6.js'

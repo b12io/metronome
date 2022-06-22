@@ -1,4 +1,3 @@
-/*  */
 import React from 'react'
 import MetaData from './MetaData.es6.js'
 

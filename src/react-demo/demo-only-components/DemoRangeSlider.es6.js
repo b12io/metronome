@@ -1,5 +1,4 @@
 import React from 'react'
-
 import RangeSlider from '../../../components/form/range-slider/RangeSlider.es6.js'
 
 export default class DemoRangeSlider extends React.Component {

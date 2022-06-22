@@ -1,5 +1,4 @@
 /* global expect, jest */
-
 import React from 'react'
 import { shallow } from 'enzyme'
 import Checkbox from './Checkbox.es6.js'

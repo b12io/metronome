@@ -1,5 +1,3 @@
-/*  */
-
 import React, { Fragment } from 'react'
 import B12Tooltip from '../tooltip/B12Tooltip.es6.js'
 import { generateId } from '../../lib/helpers.es6.js'

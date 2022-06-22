@@ -1,4 +1,3 @@
-/*  */
 import React from 'react'
 
 import { HEADER_BACK_ICON_COLOR } from './constants.es6.js'

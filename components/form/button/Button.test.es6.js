@@ -1,5 +1,4 @@
 /* global expect */
-
 import React from 'react'
 import { shallow } from 'enzyme'
 import Button from './Button.es6.js'

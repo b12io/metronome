@@ -1,5 +1,4 @@
 /* global expect, jest */
-
 import React from 'react'
 import { shallow, mount } from 'enzyme'
 import Button from '../button/Button.es6.js'

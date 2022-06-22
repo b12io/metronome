@@ -1,4 +1,3 @@
-// 
 import React from 'react'
 
 import Info from '../../../components/layout/info/Info.es6.js'

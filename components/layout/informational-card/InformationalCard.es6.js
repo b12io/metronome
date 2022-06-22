@@ -1,4 +1,3 @@
-/*  */
 import * as React from 'react'
 import classnames from 'classnames'
 import { InfoCircle } from '../../Icons.es6.js'

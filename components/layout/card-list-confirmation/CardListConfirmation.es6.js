@@ -1,5 +1,3 @@
-// 
-
 import React from 'react'
 
 import Title from '../panel/title/Title.es6.js'

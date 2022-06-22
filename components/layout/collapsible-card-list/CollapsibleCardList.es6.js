@@ -1,4 +1,3 @@
-// 
 import * as React from 'react'
 import classnames from 'classnames'
 import CardList from '../card-list/CardList.es6.js'

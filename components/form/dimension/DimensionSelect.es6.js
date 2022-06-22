@@ -1,4 +1,3 @@
-// 
 import React from 'react'
 
 import Select from '../select/Select.es6.js'

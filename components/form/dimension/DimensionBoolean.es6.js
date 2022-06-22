@@ -1,4 +1,3 @@
-// 
 import React from 'react'
 
 import Checkbox from '../checkbox/Checkbox.es6.js'

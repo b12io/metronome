@@ -1,4 +1,3 @@
-/*  */
 import React from 'react'
 import { B12Logo } from '../../components/Icons.es6.js'
 

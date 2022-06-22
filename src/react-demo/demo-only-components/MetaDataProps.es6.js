@@ -1,6 +1,5 @@
 /* eslint-disable */
 import React from 'react'
-
 function MetaDataProps ({ children }) {
   return (
     <table className="ds-table">

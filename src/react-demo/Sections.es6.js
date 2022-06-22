@@ -1,5 +1,4 @@
 import React from 'react'
-
 import DemoLayoutContent from './demo-only-components/DemoLayoutContent.es6.js'
 import Sidebar from '../../components/layout/sidebar/Sidebar.es6.js'
 import SidebarHeader from '../../components/layout/sidebar/header/SidebarHeader.es6.js'

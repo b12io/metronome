@@ -1,5 +1,4 @@
 /* global jest, expect */
-
 import React from 'react'
 import { shallow, mount } from 'enzyme'
 import { SketchPicker } from 'react-color'

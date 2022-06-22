@@ -1,4 +1,3 @@
-/*  */
 import React from 'react'
 import DemoLayoutContent from './demo-only-components/DemoLayoutContent.es6.js'
 import CodeExample from './demo-only-components/CodeExample.es6.js'

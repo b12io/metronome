@@ -1,5 +1,4 @@
 import React from 'react'
-
 import Table from '../../../components/layout/table/Table.es6.js'
 import TableHead from '../../../components/layout/table/TableHead.es6.js'
 import TableBody from '../../../components/layout/table/TableBody.es6.js'

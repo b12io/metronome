@@ -1,5 +1,3 @@
-/*  */
-
 import React, { Fragment } from 'react'
 import classnames from 'classnames'
 

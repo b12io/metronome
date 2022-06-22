@@ -1,6 +1,5 @@
 /* eslint-disable */
 import React from 'react'
-
 function MetaData ({ importFrom = '...', dependencies = 'No', flow = 'No', tests = 'No' }) {
   return (
     <div className="ds-metadata">

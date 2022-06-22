@@ -1,5 +1,3 @@
-/*  */
-
 import * as React from 'react'
 import classnames from 'classnames'
 import QuickActions from '../header/QuickActions.es6.js'

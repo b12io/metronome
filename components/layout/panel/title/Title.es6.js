@@ -1,5 +1,3 @@
-/*  */
-
 import React from 'react'
 import { isEmpty } from 'lodash'
 import classname from 'classnames'

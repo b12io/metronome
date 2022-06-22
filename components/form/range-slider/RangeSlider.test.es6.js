@@ -1,5 +1,4 @@
 /* global expect, jest */
-
 import React from 'react'
 import { mount } from 'enzyme'
 import RangeSlider from './RangeSlider.es6.js'

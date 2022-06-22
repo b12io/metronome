@@ -1,4 +1,3 @@
-/*  */
 import React from 'react'
 import classnames from 'classnames'
 import { FileHelper } from '../../lib/helpers.es6.js'

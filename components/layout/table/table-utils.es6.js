@@ -1,4 +1,3 @@
-/*  */
 import * as React from 'react'
 import TableRow from './TableRow.es6.js'
 

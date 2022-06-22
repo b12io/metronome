@@ -1,4 +1,3 @@
-/*  */
 import React from 'react'
 
 import { deslugify } from '../../lib/string-utils.es6.js'
