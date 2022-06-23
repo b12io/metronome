@@ -44,7 +44,7 @@ You can do it in five steps:
 
 1. In the `metronome` repository link metronome in yarn with command `yarn link`;
 2. In the `metronome` repository run `yarn install --production`;
-3. In your internal repository use your linked version with command `yarn link @b12/metronome`;
+3. In your internal repository (`crowdsurfing/product`) use your linked version with command `yarn link @b12/metronome`;
 4. In your internal repository try to build product with `yarn && yarn dev`;
 
 In case you accidentally ran the commands inside of docker and are running into permissions issues

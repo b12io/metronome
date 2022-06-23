@@ -1,6 +1,6 @@
 {
   "name": "@b12/metronome",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "",
   "main": "index.es6.js",
   "scripts": {

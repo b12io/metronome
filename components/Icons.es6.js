@@ -1845,6 +1845,15 @@ function Zap ({ className, width='11', height='16', color="#D7D7DE", viewBox="0 
   )
 }
 
+function Tip ({ className, width='12', height='16', color="#766bff", viewBox="0 0 12 16" }) {
+  return (
+    <svg width={width} height={height} viewBox={viewBox} fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6 0C2.7 0 0 2.7 0 6C0 8.2 1.2 10.1 3 11.2V15C3 15.6 3.4 16 4 16H8C8.6 16 9 15.6 9 15V11.2C10.8 10.1 12 8.2 12 6C12 2.7 9.3 0 6 0ZM5 14V13H7V14H5ZM7.6 9.7C7.2 9.8 7 10.2 7 10.6V12H5V10.6C5 10.2 4.8 9.8 4.4 9.7C2.9 9 2 7.6 2 6C2 3.8 3.8 2 6 2C8.2 2 10 3.8 10 6C10 7.6 9.1 9 7.6 9.7Z" fill="#695FF6"/>
+    </svg>
+
+  )
+}
+
 const icons = [
   Check,
   Checkmark,
@@ -2028,7 +2037,8 @@ const icons = [
   Upload,
   ShareFeedback,
   Spaceship,
-  Zap
+  Zap,
+  Tip
 ]
 
 each(icons, (icon) => {
@@ -2054,5 +2064,5 @@ export { Check, Checkmark, Lock, Notice, Disabled, Help, Search, Draggable,
   RotateForward, Globe, At, Target, IconRow, IconColumn, IconSection, FolderFilled, BlogPost, MenuItems, Popup,
   Flag, Testimonials, Chart, Pause, HubspotLogo, AlignLeftV2, AlignRightV2, AlignCenterV2, AlignJustifyV2, Sidebar, Palette, Lightbox, Filter, Slider,
   Flash, Dashboard, Guides, Article, Pulse, Edit, ContentApproved, Dragger, PaperClip, Invoicing, Banking, Checkbox, Circle, Bank, Card, Contract,
-  MinusCircle, RepeatCircle, BadgeCard, HeadphonesMic, CheckmarkLarge, NoticeOutlined, Archive, Questionnaire, Upload, ShareFeedback, Spaceship, Zap,
+  MinusCircle, RepeatCircle, BadgeCard, HeadphonesMic, CheckmarkLarge, NoticeOutlined, Archive, Questionnaire, Upload, ShareFeedback, Spaceship, Zap, Tip,
 }
