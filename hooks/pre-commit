@@ -1,0 +1,14 @@
+#!/bin/sh
+FILES=$(git diff --cached --name-only --diff-filter=ACMR | sed 's| |\\ |g')
+[ -z "$FILES" ] && exit 0
+JS_FILES=$(echo "$FILES" | grep ".js$")
+CSS_FILES=$(echo "$FILES" | grep ".scss\|.css")
+
+# Prettify all selected files
+(! test -z "$JS_FILES") && (echo "$JS_FILES" | xargs ./node_modules/.bin/eslint --config ./.eslintrc.js --fix || exit 1)
+(! test -z "$JS_FILES" || ! test -z "$CSS_FILES") && (echo "$JS_FILES\n$CSS_FILES" | xargs ./node_modules/.bin/prettier --ignore-path ./.prettierignore --config ./.prettierrc.json --ignore-unknown --write || exit 1)
+
+# Add back the modified/prettified files to staging
+echo "$FILES" | xargs git add
+
+exit 0
