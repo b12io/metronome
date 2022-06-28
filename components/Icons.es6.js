@@ -473,9 +473,9 @@ function Close ({ color, className, path, viewBox, width, height, style }) {
   )
 }
 
-function ImageUpload ({ color, className, path, width, height, style }) {
+function ImageUpload ({ color, className, path, viewBox, width, height, style }) {
   return (
-    <svg className={className} width={width} height={height} viewBox="0 0 32 28" style={style} xmlns="http://www.w3.org/2000/svg">
+    <svg className={className} width={width} height={height} viewBox={viewBox} style={style} xmlns="http://www.w3.org/2000/svg">
       <g strokeWidth="2" transform="translate(1 1)" stroke={color} fill="none" fillRule="evenodd"><path d="M13.858 18.142L21 11l9 8M0 22l9-8 8.501 7.249"/><path strokeLinecap="square" d="M0 0h30v26H0z"/><circle strokeLinecap="square" cx="13.5" cy="7.5" r="2.5"/></g>
     </svg>
   )
