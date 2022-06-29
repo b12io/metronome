@@ -22,7 +22,7 @@ jobs:
     - name: Run lint
       run: |
         yarn
-        yarn eslint --config .eslintrc.js --ignore-path .eslintignore .
+        make lint
 
   build:
     runs-on: ubuntu-latest
