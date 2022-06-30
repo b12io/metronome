@@ -1845,6 +1845,16 @@ function Zap ({ className, width='11', height='16', color="#D7D7DE", viewBox="0 
   )
 }
 
+function Webpage ({className, width="16", height="16", color = "#84839C"}) {
+  return (
+    <svg width={width} height={height} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path stroke={color} d="M7 8v14M1 8h22" stroke="#695FF6" strokeWidth="2" strokeMiterlimit="10"/>
+      <path stroke={color} d="M23 2H1v20h22V2Z" stroke="#695FF6" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="square"/>
+      <path stroke={color} d="M4 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2ZM7 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" fill="#695FF6"/>
+    </svg>
+  )
+}
+
 function Tip ({ className, width='12', height='16', color="#766bff", viewBox="0 0 12 16" }) {
   return (
     <svg width={width} height={height} viewBox={viewBox} fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -2038,7 +2048,8 @@ const icons = [
   ShareFeedback,
   Spaceship,
   Zap,
-  Tip
+  Tip,
+  Webpage
 ]
 
 each(icons, (icon) => {
@@ -2065,4 +2076,5 @@ export { Check, Checkmark, Lock, Notice, Disabled, Help, Search, Draggable,
   Flag, Testimonials, Chart, Pause, HubspotLogo, AlignLeftV2, AlignRightV2, AlignCenterV2, AlignJustifyV2, Sidebar, Palette, Lightbox, Filter, Slider,
   Flash, Dashboard, Guides, Article, Pulse, Edit, ContentApproved, Dragger, PaperClip, Invoicing, Banking, Checkbox, Circle, Bank, Card, Contract,
   MinusCircle, RepeatCircle, BadgeCard, HeadphonesMic, CheckmarkLarge, NoticeOutlined, Archive, Questionnaire, Upload, ShareFeedback, Spaceship, Zap, Tip,
+  Webpage
 }
