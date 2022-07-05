@@ -8,7 +8,9 @@
     "start": "webpack-dev-server --mode development",
     "build": "webpack --mode production",
     "styleguide": "styleguidist server",
-    "styleguide:build": "styleguidist build"
+    "styleguide:build": "styleguidist build",
+    "prettier": "prettier --ignore-path .prettierignore --config .prettierrc.json --ignore-unknown --write",
+    "lint-fix": "eslint --config .eslintrc.js --fix"
   },
   "author": "B12 <hello@b12.io> (https://b12.io/)",
   "license": "Apache-2.0",
