@@ -2,7 +2,6 @@ import React from 'react'
 import DemoLayoutContent from './demo-only-components/DemoLayoutContent.es6.js'
 import CodeExample from './demo-only-components/CodeExample.es6.js'
 import MetaData from './demo-only-components/MetaData.es6.js'
-import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDataProps.es6.js'
 
 import DimensionGroup from '../../components/form/dimension/DimensionGroup.es6.js'
 import DimensionInput from '../../components/form/dimension/DimensionInput.es6.js'
@@ -54,14 +53,14 @@ function InputDimension () {
                 label="Font size"
                 help="Help text"
                 value="1"
-                units={["px", "pt"]}
+                units={['px', 'pt']}
                 selectedUnit="px"
                 onUpdate={() => {}}
               />
               <DimensionInput
                 label="Letter spacing"
                 value="0.5"
-                units={["px", "pt"]}
+                units={['px', 'pt']}
                 selectedUnit="px"
                 onUpdate={() => {}}
               />
@@ -127,7 +126,7 @@ function InputDimension () {
 </DimensionGroup>`}>
           <div style={{width: '360px'}}>
             <DimensionGroup>
-              <DimensionSelect help="Help text" label="Size" choices={["big", "small", "regular"]} onChange={() => {}} />
+              <DimensionSelect help="Help text" label="Size" choices={['big', 'small', 'regular']} onChange={() => {}} />
               <DimensionSelect label="Button style" choices={['outlined', 'plain']} selectedChoice='plain' onChange={() => {}}/>
             </DimensionGroup>
           </div>

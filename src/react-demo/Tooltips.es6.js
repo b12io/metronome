@@ -4,7 +4,6 @@ import CodeExample from './demo-only-components/CodeExample.es6.js'
 import MetaData from './demo-only-components/MetaData.es6.js'
 import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDataProps.es6.js'
 
-import SimpleCard from '../../components/layout/simple-card/SimpleCard.es6.js'
 import { Visible } from '../../components/Icons.es6.js'
 import Info from '../../components/layout/info/Info.es6.js'
 import Grid from '../../components/layout/grid/Grid.es6.js'

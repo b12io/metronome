@@ -8,25 +8,6 @@ import Button from '../../components/form/button/Button.es6.js'
 import Switch from '../../components/form/switch/Switch.es6.js'
 import { Desktop, Tablet, Mobile } from '../../components/Icons.es6.js'
 
-const ButtonHtml5 = `<Switch selected={0}>
-  <Button label="Left" />
-  <Button label="Middle" />
-  <Button label="Right" />
-</Switch>
-
-<Switch selected={0} block>
-  <Button label="Left" />
-  <Button label="Middle" />
-  <Button label="Right" />
-</Switch>
-
-<Switch selected={1}>
-  <Button icon={<Desktop height="19" width="24" />} />
-  <Button icon={<Tablet height="19" />} />
-  <Button icon={<Mobile height="19" />} />
-</Switch>
-`
-
 function SwitchPage () {
   return (
     <DemoLayoutContent>

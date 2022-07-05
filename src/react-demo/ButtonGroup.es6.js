@@ -6,9 +6,6 @@ import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDat
 
 import Group from '../../components/layout/panel/group/Group.es6.js'
 import ButtonGroup from '../../components/form/button-group/ButtonGroup.es6.js'
-import TextField from '../../components/form/textfield/TextField.es6.js'
-import Select from '../../components/form/select/Select.es6.js'
-import Option from '../../components/form/option/Option.es6.js'
 import Button from '../../components/form/button/Button.es6.js'
 import { Close, Move } from '../../components/Icons.es6.js'
 import Dropdown from '../../components/layout/dropdown/Dropdown.es6.js'

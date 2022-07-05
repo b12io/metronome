@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react'
 import Highlighter from './Highlighter.es6.js'
 

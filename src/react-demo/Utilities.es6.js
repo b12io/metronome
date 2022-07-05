@@ -3,11 +3,9 @@ import DemoLayoutContent from './demo-only-components/DemoLayoutContent.es6.js'
 import CodeExample from './demo-only-components/CodeExample.es6.js'
 import Highlighter from './demo-only-components/Highlighter.es6.js'
 
-import Grid from '../../components/layout/grid/Grid.es6.js'
-import GridCol from '../../components/layout/grid/GridCol.es6.js'
 import Button from '../../components/form/button/Button.es6.js'
 
-const text = `.dsu-{property}{sides}-{size}`
+const text = '.dsu-{property}{sides}-{size}'
 
 function UtilitiesPage () {
   return (
@@ -19,7 +17,7 @@ function UtilitiesPage () {
       <div className="ds-block">
         <div className="ds-block__title">
           <h4>Spacing</h4>
-          <p>We use a range of shorthand margin and padding utility classes to modify an element’s appearance. For example, if you want to set margin bottom to 5px for a div, add this class: <code>.dsu-mb-xxxxsm</code></p>
+          <p>We use a range of shorthand margin and padding utility classes to modify an element&quot;s appearance. For example, if you want to set margin bottom to 5px for a div, add this class: <code>.dsu-mb-xxxxsm</code></p>
           <p>The classes are named using the format <code>{text}</code> (<i>dsu</i> stands for <i>design-system-utility</i>)</p>
           <p>Where <i>property</i> is one of:</p>
           <ul>
@@ -49,7 +47,7 @@ function UtilitiesPage () {
   'xxlg':   45px,
   'xxxlg':  50px
 );`}</Highlighter>
-          <p>You can also use these sizes in SCSS by using this function: <code>spacing('size')</code>. Please check an example below:</p>
+          <p>You can also use these sizes in SCSS by using this function: <code>spacing(&quot;size&quot;)</code>. Please check an example below:</p>
           <Highlighter language='scss'>{`.side-pane {
   position: absolute;
   left: 0;

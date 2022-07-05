@@ -55,6 +55,7 @@ export default function AvatarItemPage () {
         <MetaDataProps>
           {RangeSliderProps.map(prop => (
             <MetaDataPropsItem
+              key={prop.property}
               property={prop.property}
               value={prop.value}
               defaultValue={prop.defaultValue}
