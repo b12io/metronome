@@ -11,7 +11,7 @@ export function propTypeRegExp (regexp) {
   }
 }
 
-export function reorder (list, sourceIndex, destinationIndex)  {
+export function reorder (list, sourceIndex, destinationIndex) {
   const newList = cloneDeep(list)
   const [removed] = newList.splice(sourceIndex, 1)
   newList.splice(destinationIndex, 0, removed)

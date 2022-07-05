@@ -16,7 +16,7 @@ function GridPage () {
         <div className="ds-metadata">
           <div className="ds-metadata__di">
             <div className="ds-metadata__dt">Import</div>
-            <div className="ds-metadata__dd"><code>import Grid from '@b12/metronome/components/layout/grid/Grid.es6.js'</code></div>
+            <div className="ds-metadata__dd"><code>import Grid from &quot;@b12/metronome/components/layout/grid/Grid.es6.js&quot;</code></div>
           </div>
           <div className="ds-metadata__di">
             <div className="ds-metadata__dt">Dependencies</div>
@@ -90,7 +90,7 @@ function GridPage () {
             <tr>
               <td>direction</td>
               <td><code>column</code></td>
-              <td>Sets direction of the grid to column. Default is 'row'.</td>
+              <td>Sets direction of the grid to column. Default is &quot;row&quot;.</td>
             </tr>
             <tr>
               <td>justify</td>
@@ -117,7 +117,7 @@ function GridPage () {
         <div className="ds-metadata">
           <div className="ds-metadata__di">
             <div className="ds-metadata__dt">Import</div>
-            <div className="ds-metadata__dd"><code>import GridCol from '@b12/metronome/components/layout/grid/GridCol.es6.js'</code></div>
+            <div className="ds-metadata__dd"><code>import GridCol from &quot;@b12/metronome/components/layout/grid/GridCol.es6.js&quot;</code></div>
           </div>
           <div className="ds-metadata__di">
             <div className="ds-metadata__dt">Dependencies</div>
@@ -133,20 +133,20 @@ function GridPage () {
         </div>
 
         <CodeExample code={`<Grid justify="between" align="center">
-  <GridCol col="3">I'm a column</GridCol>
-  <GridCol col="3" align="end">I'm a column</GridCol>
-  <GridCol>I'm a column with Lorem ipsum ...</GridCol>
+  <GridCol col="3">I&quot;m a column</GridCol>
+  <GridCol col="3" align="end">I&quot;m a column</GridCol>
+  <GridCol>I&quot;m a column with Lorem ipsum ...</GridCol>
 </Grid>`}>
           <Grid justify="between" align="center">
-            <GridCol col="3">I'm a column</GridCol>
-            <GridCol col="3" align="end">I'm a column</GridCol>
-            <GridCol>I'm a column with Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mollis rutrum aliquet. Vivamus quis porttitor justo, in congue urna. Donec vehicula, velit sit amet venenatis vulputate, nisi odio rhoncus elit, a venenatis velit risus ornare dui.</GridCol>
+            <GridCol col="3">I&quot;m a column</GridCol>
+            <GridCol col="3" align="end">I&quot;m a column</GridCol>
+            <GridCol>I&quot;m a column with Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mollis rutrum aliquet. Vivamus quis porttitor justo, in congue urna. Donec vehicula, velit sit amet venenatis vulputate, nisi odio rhoncus elit, a venenatis velit risus ornare dui.</GridCol>
           </Grid>
         </CodeExample>
 
         <CodeExample title="Nested grid" code={`<Grid justify="between" align="center">
-  <GridCol col="3">I'm a column</GridCol>
-  <GridCol col="3" align="end">I'm a column</GridCol>
+  <GridCol col="3">I&quot;m a column</GridCol>
+  <GridCol col="3" align="end">I&quot;m a column</GridCol>
   <GridCol>
     <Grid>
       <Button label="Get started" />
@@ -156,8 +156,8 @@ function GridPage () {
   </GridCol>
 </Grid>`}>
           <Grid justify="between" align="center">
-            <GridCol col="3">I'm a column</GridCol>
-            <GridCol col="3">I'm a column</GridCol>
+            <GridCol col="3">I&quot;m a column</GridCol>
+            <GridCol col="3">I&quot;m a column</GridCol>
             <GridCol>
               <Grid>
                 <Button label="Get started" />

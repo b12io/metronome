@@ -15,7 +15,7 @@ type Props = {
 }
 
 function CommonPagination ({
-  paginationText, className, canGoBack, canGoForward, onGoBack, onGoForward, backgroundType
+  paginationText, className, canGoBack, canGoForward, onGoBack, onGoForward
 }: Props) {
   const classNames = classnames(
     'ds-table__pagination',

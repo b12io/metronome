@@ -276,10 +276,7 @@ function DropdownPage () {
             simple
             toggle={<Button label="Dropdown with content" chevron />}
             toggleIcon={<Customer height="16" color="#706F84" />}
-            quickActions={<>
-              <Button label="Quick action" />
-              <Button label="Quick action" />
-            </>}
+            quickActions={<>'             '<Button label="Quick action" />'             '<Button label="Quick action" />'           '</>}
           >
             <Group>
               <Select label="Default">

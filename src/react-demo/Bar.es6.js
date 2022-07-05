@@ -102,7 +102,7 @@ function Dropdown () {
                     </li>
                   </ul>
                 </div>
-                <a className="ds-link-with-icon" href=""><Faq height="16" color="#706F84" /> Support</a>
+                <a className="ds-link-with-icon"><Faq height="16" color="#706F84" /> Support</a>
               </div>
               <div className="ds-preview-frame-bar__col">
                 <Button label="Preview" />
@@ -137,7 +137,7 @@ function Dropdown () {
                     </li>
                   </ul>
                 </div>
-                <a className="ds-link-with-icon" href=""><Faq height="16" color="#706F84" /> Support</a>
+                <a className="ds-link-with-icon"><Faq height="16" color="#706F84" /> Support</a>
               </div>
               <div className="ds-preview-frame-bar__col">
                 <Button label="Preview" />

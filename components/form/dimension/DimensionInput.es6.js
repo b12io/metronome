@@ -69,7 +69,7 @@ class DimensionInput extends React.Component<Props, State> {
         ) : (
           <div className="ds-form-input-dimension__select">
             <Select
-              placeholder={selectedUnit || "Please select a unit"}
+              placeholder={selectedUnit || 'Please select a unit'}
               onChange={this.onUnitChange}
               search={false}
             >

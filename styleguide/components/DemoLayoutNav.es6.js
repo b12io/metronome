@@ -15,7 +15,7 @@ function DemoLayoutNav ({ children }: DemoLayoutNavProps) {
       </a>
       <div className="app__nav-intro">
         <h1>Design System</h1>
-        <p>Welcome to B12 Design language! Here you'll find all available components that are used to build our awesome product.</p>
+        <p>Welcome to B12 Design language! Here you&apos;ll find all available components that are used to build our awesome product.</p>
       </div>
       <div className="app__nav-body">
         <ul className="nav">

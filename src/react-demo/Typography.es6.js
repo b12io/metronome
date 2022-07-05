@@ -10,7 +10,7 @@ function Typography () {
         <p>We use sans-serif fonts for most of our type, the exception being when you want to display code then you should defer to monospace fonts.</p>
         <p>Font family depends on the OS that the user is using. Font family defined as follows:</p>
 
-        <Highlighter language='scss'>{`font-family: -apple-system, SFUIText, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;`}</Highlighter>
+        <Highlighter language='scss'>{'font-family: -apple-system, SFUIText, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;'}</Highlighter>
       </div>
 
       <table className="ds-table">
