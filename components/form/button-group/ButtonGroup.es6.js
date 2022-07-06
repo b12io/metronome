@@ -1,7 +1,5 @@
 import * as React from 'react'
 import classnames from 'classnames'
-import Button from '../button/Button.es6.js'
-
 
 
 function ButtonGroup ({ vertical, className, children }) {

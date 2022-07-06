@@ -1,9 +1,6 @@
 import * as React from 'react'
 import classnames from 'classnames'
 
-import NavItem from './NavItem.es6.js'
-
-
 
 class Nav extends React.Component {
   static defaultProps = {

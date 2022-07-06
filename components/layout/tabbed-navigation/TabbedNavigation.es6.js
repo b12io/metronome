@@ -1,8 +1,5 @@
-import React, { Children, isValidElement, Element, cloneElement } from 'react'
+import React, { Children, isValidElement, cloneElement } from 'react'
 import classnames from 'classnames'
-import TabbedNavigationItem from './TabbedNavigationItem.es6.js'
-
-
 
 
 const TabbedNavigation = ({ progress, spread, block, progressType, className, children }) => {

@@ -1,10 +1,6 @@
 import * as React from 'react'
 import classnames from 'classnames'
 
-import BlockTitle from './BlockTitle.es6.js'
-import BlockContent from './BlockContent.es6.js'
-
-
 
 function Block (props) {
   return (

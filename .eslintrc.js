@@ -25,7 +25,8 @@ module.exports = {
     'no-useless-return': 0,
     camelcase: 0,
     'prefer-const': 1,
-    'react/prop-types': [2, { ignore: ['className'] }],
+    // TODO(elstonayx): Set prop-types rule to 2 when we migrate to TS.
+    'react/prop-types': [1, { ignore: ['className'] }],
     'no-multi-spaces': [2, { ignoreEOLComments: true }],
     'import/no-webpack-loader-syntax': 0,
     'no-use-before-define': [0],
