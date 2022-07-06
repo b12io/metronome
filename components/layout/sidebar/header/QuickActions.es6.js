@@ -1,10 +1,8 @@
 /* @flow */
 import React, { Fragment } from 'react'
-import type { Node } from 'react'
 import classnames from 'classnames'
 import { isEmpty } from 'lodash'
 
-import type { Element } from 'react'
 import type { HeaderQuickAction } from './types.es6.js'
 
 type Props = {|
@@ -50,7 +48,7 @@ function QuickActions ({ actions, onSelect, label }: Props) {
               onSelect(index)
             }}
           >
-            {action ? action : <span>{icon}{text}</span>}
+            {action || <span>{icon}{text}</span>}
           </li>
           {divider && <DropdownMenuDivider />}
         </Fragment>

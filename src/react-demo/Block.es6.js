@@ -12,9 +12,7 @@ import Group from '../../components/layout/panel/group/Group.es6.js'
 import TextField from '../../components/form/textfield/TextField.es6.js'
 import Nav from '../../components/layout/nav/Nav.es6.js'
 import NavItem from '../../components/layout/nav/NavItem.es6.js'
-import { HomeEmpty, Client, Visible } from '../../components/Icons.es6.js'
-
-import { AppearanceAppearance } from '../../components/Icons.es6.js'
+import { HomeEmpty, Client, Visible, AppearanceAppearance } from '../../components/Icons.es6.js'
 
 function BlockPage () {
   return (

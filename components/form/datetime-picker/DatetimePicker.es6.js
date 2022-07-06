@@ -38,7 +38,7 @@ class DatetimePicker extends React.Component<Props, State> {
 
   componentDidUpdate(prevProps: Props) {
     if(prevProps.value !== this.props.value) {
-      this.setState({datetime: this.props.value});
+      this.setState({datetime: this.props.value})
     }
   }
 

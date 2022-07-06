@@ -1,7 +1,6 @@
 /* @flow */
 
-import React from 'react'
-import { Fragment } from 'react'
+import React, { Fragment } from 'react'
 import type { Element, Node } from 'react'
 
 import B12Tooltip from '../tooltip/B12Tooltip.es6.js'

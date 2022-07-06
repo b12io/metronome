@@ -44,7 +44,7 @@ class Select extends React.Component {
     if ((prevProps.placeholder !== placeholder) && (placeholder !== this.state.initialPlaceholder)) {
       this.setState({ hasInitialPlaceholderChanged: true })
     }
-    if (this.props.search && this.state.isOpened && this.searchInput) {
+    if (search && this.state.isOpened && this.searchInput) {
       this.searchInput.focus()
     }
   }

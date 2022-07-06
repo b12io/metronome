@@ -101,7 +101,7 @@ class FileUpload extends React.Component<Props> {
           })}
           multiple={multiple}
           accept={accept}
-          onClick={(e) => { e.preventDefault(); } }
+          onClick={(e) => { e.preventDefault() } }
           onDrop={this.onDrop}>
           {children || uploadContent}
 
@@ -120,7 +120,7 @@ class FileUpload extends React.Component<Props> {
           small={buttonSmall}
           loading={loading}
           // $FlowFixMe: Not sure how to type this.dropzoneRef
-          onClick={(e) => { e.preventDefault(); this.dropzoneRef.open(); } }
+          onClick={(e) => { e.preventDefault(); this.dropzoneRef.open() } }
         />}
         {!hideUploadedFileLinks && (fileDivs)}
       </div>
