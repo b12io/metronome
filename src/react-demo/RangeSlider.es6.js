@@ -4,7 +4,6 @@ import CodeExample from './demo-only-components/CodeExample.es6.js'
 import MetaData from './demo-only-components/MetaData.es6.js'
 import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDataProps.es6.js'
 
-import RangeSlider from '../../components/form/range-slider/RangeSlider.es6.js'
 import DemoRangeSlider from './demo-only-components/DemoRangeSlider.es6.js'
 
 const RangeSliderProps = [
@@ -139,6 +138,7 @@ export default function AvatarItemPage () {
         <MetaDataProps>
           {RangeSliderProps.map(prop => (
             <MetaDataPropsItem
+              key={prop.property}
               property={prop.property}
               value={prop.value}
               defaultValue={prop.defaultValue}

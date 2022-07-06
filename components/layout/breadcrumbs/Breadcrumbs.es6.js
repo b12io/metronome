@@ -160,12 +160,11 @@ function Breadcrumbs ({ entries, onClick, maxEntryWidth = 90 }: Props) {
             />
 
             {hiddenEntries.length > 0 && (
-              <>
+              <React.Fragment>
                 <div className="ds-tabbed-nav__breadcrumbs-entry">
                   <div className="ds-tabbed-nav__separator" />
                   <div className="ds-tabbed-nav__item" />
                 </div>
-
                 <div className="ds-tabbed-nav__breadcrumbs-entry ds-tabbed-nav__breadcrumbs-entry--expand">
                   <div
                     className="ds-tabbed-nav__breadcrumbs-entry-toggle"
@@ -189,7 +188,7 @@ function Breadcrumbs ({ entries, onClick, maxEntryWidth = 90 }: Props) {
                     ))}
                   </div>
                 </div>
-              </>
+              </React.Fragment>
             )}
 
             {visibleEntries.length > 0 && (

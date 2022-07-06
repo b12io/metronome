@@ -1,7 +1,6 @@
 import React from 'react'
 import DemoLayoutContent from './demo-only-components/DemoLayoutContent.es6.js'
 import CodeExample from './demo-only-components/CodeExample.es6.js'
-import Highlighter from './demo-only-components/Highlighter.es6.js'
 import MetaData from './demo-only-components/MetaData.es6.js'
 import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDataProps.es6.js'
 

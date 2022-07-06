@@ -2,7 +2,7 @@
 import React from 'react'
 import classnames from 'classnames'
 
-import type { Element, Node } from 'react'
+import type { Node } from 'react'
 
 import Button from '../../../components/form/button/Button.es6.js'
 

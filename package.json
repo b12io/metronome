@@ -8,7 +8,9 @@
     "start": "webpack-dev-server --mode development",
     "build": "webpack --mode production",
     "styleguide": "styleguidist server",
-    "styleguide:build": "styleguidist build"
+    "styleguide:build": "styleguidist build",
+    "prettier": "prettier --ignore-path .prettierignore --config .prettierrc.json --ignore-unknown --write",
+    "lint-fix": "eslint --config .eslintrc.js --fix"
   },
   "author": "B12 <hello@b12.io> (https://b12.io/)",
   "license": "Apache-2.0",
@@ -68,6 +70,7 @@
     "enzyme": "3.9.0",
     "enzyme-adapter-react-16": "1.10.0",
     "eslint": "4.19.1",
+    "eslint-config-prettier": "8.5.0",
     "eslint-config-standard": "11.0.0",
     "eslint-plugin-flowtype": "2.46.3",
     "eslint-plugin-import": "2.11.0",
@@ -85,6 +88,7 @@
     "jest": "24.1.0",
     "node-sass": "4.13.1",
     "popper.js": "1.14.3",
+    "prettier": "2.7.1",
     "prop-types": "15.6.2",
     "react": "16.8.0",
     "react-dom": "16.8.0",

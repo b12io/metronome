@@ -30,17 +30,14 @@ function Button ({ label, badge, primary, danger, loading, superSmall, small, la
     id={id}
     title={title}
   >
-    {iconWithLabel ? (
-      <>
-        {icon} {label}
-      </>
-    ) : (
-      <>
-        {icon || (
-          loading ? <span className="button__spinner" /> : label
-        )}
-      </>
-    )}
+    {iconWithLabel
+      ? `${icon} ${label}`
+      : icon || (
+        loading
+          ? <span className="button__spinner" />
+          : label
+      )
+    }
     {badge && (
       <span className="button__badge">{badge}</span>
     )}

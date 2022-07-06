@@ -7,6 +7,23 @@ on:
     branches: [ main ]
 
 jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout 🛎️
+      uses: actions/checkout@master
+      
+    - name: Setup Node 🔧
+      uses: actions/setup-node@v3
+      with:
+        node-version: '14'
+
+    - name: Run lint
+      run: |
+        yarn
+        make lint
+
   build:
     runs-on: ubuntu-latest
 
