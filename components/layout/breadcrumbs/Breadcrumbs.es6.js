@@ -164,8 +164,8 @@ function Breadcrumbs ({ entries, onClick, maxEntryWidth = 90 }: Props) {
                 <div className="ds-tabbed-nav__breadcrumbs-entry">
                   <div className="ds-tabbed-nav__separator" />
                   <div className="ds-tabbed-nav__item" />
-                </div>'
-               '<div className="ds-tabbed-nav__breadcrumbs-entry ds-tabbed-nav__breadcrumbs-entry--expand">
+                </div>
+                <div className="ds-tabbed-nav__breadcrumbs-entry ds-tabbed-nav__breadcrumbs-entry--expand">
                   <div
                     className="ds-tabbed-nav__breadcrumbs-entry-toggle"
                     onClick={toggleIsMenuOpened}
