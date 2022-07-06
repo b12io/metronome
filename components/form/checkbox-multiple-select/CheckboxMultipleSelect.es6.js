@@ -69,47 +69,61 @@ class CheckboxMultipleSelect extends React.Component {
   }
 
   handleCheckbox (value) {
-    this.setState({
-      selected: {
-        ...this.state.selected,
-        [value]: !this.state.selected[value]
+    this.setState(
+      {
+        selected: {
+          ...this.state.selected,
+          [value]: !this.state.selected[value]
+        }
+      },
+      () => {
+        this.props.onChange(value, this.state.selected)
       }
-    }, () => {
-      this.props.onChange(value, this.state.selected)
-    })
+    )
   }
 
   getSelectedOptions () {
-    return filter(keys(this.state.selected), key => this.state.selected[key])
+    return filter(keys(this.state.selected), (key) => this.state.selected[key])
   }
 
   render () {
     const { options, selected, disabled } = this.state
-    const { selectedLabel, unselectedLabel, highlightOnSelect, className } = this.props
+    const { selectedLabel, unselectedLabel, highlightOnSelect, className } =
+      this.props
     const selectedOptions = this.getSelectedOptions()
-    const filterSelectClassNames = classnames('ds-checkbox-select__label', {
-      'is-highlighted': selectedOptions.length > 0 && highlightOnSelect
-    }, className)
+    const filterSelectClassNames = classnames(
+      'ds-checkbox-select__label',
+      {
+        'is-highlighted': selectedOptions.length > 0 && highlightOnSelect
+      },
+      className
+    )
     return (
-      <div className="ds-checkbox-select" ref={(node) => { this.mainNode = node }}>
+      <div
+        className="ds-checkbox-select"
+        ref={(node) => {
+          this.mainNode = node
+        }}
+      >
         <div className={filterSelectClassNames} onClick={this.toggleDropdown}>
           {selectedOptions.length > 0
             ? selectedLabel || intersection(options, selectedOptions).join(', ')
-            : unselectedLabel
-          }
+            : unselectedLabel}
         </div>
-        {this.state.isOpened && (<div className="ds-checkbox-select__dropdown">
-          {options.map(option => (
-            <div className="ds-checkbox-select__item" key={option}>
-              <Checkbox
-                checked={selected[option]}
-                disabled={disabled[option]}
-                label={option}
-                onChange={e => this.handleCheckbox(option)}
-              />
-            </div>
-          ))}
-        </div>)}
+        {this.state.isOpened && (
+          <div className="ds-checkbox-select__dropdown">
+            {options.map((option) => (
+              <div className="ds-checkbox-select__item" key={option}>
+                <Checkbox
+                  checked={selected[option]}
+                  disabled={disabled[option]}
+                  label={option}
+                  onChange={(e) => this.handleCheckbox(option)}
+                />
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     )
   }

@@ -3,8 +3,6 @@ import classnames from 'classnames'
 
 import { Disabled } from '../../Icons.es6.js'
 
-
-
 class MiniSelect extends React.Component {
   state = {
     isOpened: false
@@ -58,20 +56,41 @@ class MiniSelect extends React.Component {
       'ds-mini-select__dropdown--right': selectPosition === 'right'
     })
     return (
-      <div className={classNames} ref={(node) => { this.selectNode = node }}>
-        <div className="ds-mini-select__dropdown-toggle" onClick={this.onToggle}>{selectValue}</div>
-        {isOpened && <ul className="ds-mini-select__dropdown-menu">
-          {selectOptions.map(option => (<li
-            onClick={e => this.handleSelect(option)}
-            key={option}>{option}</li>))}
-        </ul>}
+      <div
+        className={classNames}
+        ref={(node) => {
+          this.selectNode = node
+        }}
+      >
+        <div
+          className="ds-mini-select__dropdown-toggle"
+          onClick={this.onToggle}
+        >
+          {selectValue}
+        </div>
+        {isOpened && (
+          <ul className="ds-mini-select__dropdown-menu">
+            {selectOptions.map((option) => (
+              <li onClick={(e) => this.handleSelect(option)} key={option}>
+                {option}
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     )
   }
 
   render () {
-    const { inputDisabled, selectDisabled, inputPlaceholder, inputValue,
-      label, selectPosition, inputValueChange } = this.props
+    const {
+      inputDisabled,
+      selectDisabled,
+      inputPlaceholder,
+      inputValue,
+      label,
+      selectPosition,
+      inputValueChange
+    } = this.props
 
     return (
       <div
@@ -80,9 +99,10 @@ class MiniSelect extends React.Component {
         })}
       >
         {label && <div className="ds-control-label">{label}</div>}
-        <div className={classnames('ds-mini-select', {
-          'ds-mini-select--disabled': selectDisabled
-        })}
+        <div
+          className={classnames('ds-mini-select', {
+            'ds-mini-select--disabled': selectDisabled
+          })}
         >
           {selectPosition === 'left' && this.renderSelect()}
           <div className="ds-mini-select__input-wrap">
@@ -91,9 +111,12 @@ class MiniSelect extends React.Component {
               disabled={inputDisabled}
               type="text"
               value={inputValue}
-              onChange={e => inputValueChange(e.target.value)}
-              placeholder={inputPlaceholder} />
-            {inputDisabled && <Disabled className="feedback-icon" color="#ccc" />}
+              onChange={(e) => inputValueChange(e.target.value)}
+              placeholder={inputPlaceholder}
+            />
+            {inputDisabled && (
+              <Disabled className="feedback-icon" color="#ccc" />
+            )}
           </div>
           {selectPosition === 'right' && this.renderSelect()}
         </div>

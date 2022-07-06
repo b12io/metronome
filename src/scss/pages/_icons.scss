@@ -18,18 +18,18 @@
     position: relative;
 
     svg,
-    [class^="b12icon-"] {
+    [class^='b12icon-'] {
       position: absolute;
       left: 50%;
       top: 50%;
-      transform: translate(-50%,-50%);
+      transform: translate(-50%, -50%);
     }
 
-    [class^="b12icon-"] {
+    [class^='b12icon-'] {
       font-size: 24px;
     }
 
-    &--14px [class^="b12icon-"] {
+    &--14px [class^='b12icon-'] {
       font-size: 14px;
     }
   }
@@ -65,8 +65,8 @@
     color: #ccc;
     border-radius: 0 ($ds-border-radius-base - 1) 0 0;
     cursor: pointer;
-    border-left: 1px solid fade-out($ds-ui-dark-color, .5);
-    border-bottom: 1px solid fade-out($ds-ui-dark-color, .5);
+    border-left: 1px solid fade-out($ds-ui-dark-color, 0.5);
+    border-bottom: 1px solid fade-out($ds-ui-dark-color, 0.5);
     transition: $ds-transition;
 
     &:hover {

@@ -13,29 +13,22 @@ it('renders the card component', () => {
 
 it('adds the proper class', () => {
   const component = shallow(<Card add />)
-  expect(component.prop('className')).toEqual(expect.stringContaining('ds-card--add'))
+  expect(component.prop('className')).toEqual(
+    expect.stringContaining('ds-card--add')
+  )
 })
 
 it('renders correctly', () => {
-  const tree = renderer.create(
-    <Card
-      icon={<ChevronRight />}
-      label="Link"
-      value="Test Link"
-    />
-  ).toJSON()
+  const tree = renderer
+    .create(<Card icon={<ChevronRight />} label="Link" value="Test Link" />)
+    .toJSON()
   expect(tree).toMatchSnapshot()
 })
 
 it('renders correctly with add prop', () => {
-  const tree = renderer.create(
-    <Card
-      add
-      icon={<PlusCircle />}
-      label="Link"
-      value="None"
-    />
-  ).toJSON()
+  const tree = renderer
+    .create(<Card add icon={<PlusCircle />} label="Link" value="None" />)
+    .toJSON()
   expect(tree).toMatchSnapshot()
 })
 

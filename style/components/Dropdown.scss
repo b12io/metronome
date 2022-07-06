@@ -28,7 +28,7 @@
       position: absolute;
       left: 0;
       top: 50%;
-      transform: translate(0,-50%);
+      transform: translate(0, -50%);
     }
 
     @include breakpoint-tablet-portrait-up {
@@ -38,12 +38,13 @@
         position: absolute;
         right: 0;
         top: 50%;
-        transform: translate(0,-48%);
+        transform: translate(0, -48%);
         width: 0;
         height: 0;
         border-style: solid;
         border-width: 5px 4px 0 4px;
-        border-color: $ds-display-light-color transparent transparent transparent;
+        border-color: $ds-display-light-color transparent transparent
+          transparent;
       }
     }
 
@@ -103,7 +104,7 @@
           position: absolute;
           left: spacing('xsm');
           top: 50%;
-          transform: translate(0,-50%);
+          transform: translate(0, -50%);
         }
 
         &:hover {
@@ -141,11 +142,11 @@
         flex: 1 1 50%;
         margin: 0 -1px -1px;
         border-radius: 0;
-  
+
         &:first-child {
           border-bottom-left-radius: $ds-border-radius-base;
         }
-  
+
         &:last-child {
           border-bottom-right-radius: $ds-border-radius-base;
         }
@@ -181,9 +182,9 @@
   &--simple {
     .ds-dropdown__menu {
       left: 50%;
-      transform: translate(-50%,5px);
+      transform: translate(-50%, 5px);
       border: 1px solid #d7d7de;
-      box-shadow: 0 1px 7px 0 rgba(17,15,51,0.30);
+      box-shadow: 0 1px 7px 0 rgba(17, 15, 51, 0.3);
 
       &::before,
       &::after {
@@ -209,7 +210,7 @@
       &-header {
         text-transform: none;
         line-height: 20px;
-        opacity: .7;
+        opacity: 0.7;
         padding: 5px spacing('xsm');
       }
 

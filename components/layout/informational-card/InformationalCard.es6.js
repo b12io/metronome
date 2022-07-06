@@ -2,8 +2,16 @@ import * as React from 'react'
 import classnames from 'classnames'
 import { InfoCircle } from '../../Icons.es6.js'
 
-
-function InformationalCard ({ accentColor, children, heading, showIcon, icon, iconStyle, subheading, className }) {
+function InformationalCard ({
+  accentColor,
+  children,
+  heading,
+  showIcon,
+  icon,
+  iconStyle,
+  subheading,
+  className
+}) {
   const iconElement = React.cloneElement(icon, {
     color: accentColor,
     style: iconStyle
@@ -18,13 +26,9 @@ function InformationalCard ({ accentColor, children, heading, showIcon, icon, ic
         {showIcon && iconElement}
         {heading}
       </div>
-      <div className="informational-card__subheading">
-        {subheading}
-      </div>
+      <div className="informational-card__subheading">{subheading}</div>
       {children && (
-        <div className="informational-card__action-item">
-          {children}
-        </div>
+        <div className="informational-card__action-item">{children}</div>
       )}
     </div>
   )

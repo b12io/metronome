@@ -1,21 +1,31 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
-import {Search} from '../../Icons.es6.js'
+import { Search } from '../../Icons.es6.js'
 
-const ListSearch = props => {
+const ListSearch = (props) => {
   const {
-    className, placeholder, cardSearch, collectionSearch,
-    onInputChange, onSearchFocus, onSearchBlur, value, focusSearch
+    className,
+    placeholder,
+    cardSearch,
+    collectionSearch,
+    onInputChange,
+    onSearchFocus,
+    onSearchBlur,
+    value,
+    focusSearch
   } = props
-  const classes = classnames({
-    'card-list__search': cardSearch && !collectionSearch,
-    'collection__search': !cardSearch && collectionSearch,
-    'collection__search--focused': focusSearch
-  }, className)
+  const classes = classnames(
+    {
+      'card-list__search': cardSearch && !collectionSearch,
+      collection__search: !cardSearch && collectionSearch,
+      'collection__search--focused': focusSearch
+    },
+    className
+  )
   return (
     <div className={classes}>
-      <Search color="#ccc"/>
+      <Search color="#ccc" />
       <input
         type="text"
         placeholder={placeholder}

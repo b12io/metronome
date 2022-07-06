@@ -2,7 +2,10 @@ import React from 'react'
 import DemoLayoutContent from './demo-only-components/DemoLayoutContent.es6.js'
 import CodeExample from './demo-only-components/CodeExample.es6.js'
 import MetaData from './demo-only-components/MetaData.es6.js'
-import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDataProps.es6.js'
+import {
+  MetaDataProps,
+  MetaDataPropsItem
+} from './demo-only-components/MetaDataProps.es6.js'
 
 import Group from '../../components/layout/panel/group/Group.es6.js'
 import ButtonGroup from '../../components/form/button-group/ButtonGroup.es6.js'
@@ -18,7 +21,10 @@ function NavPage () {
     <DemoLayoutContent>
       <div className="app-page-title">
         <h1>ButtonGroup</h1>
-        <p>Stateless component that acts like a wrapper that holds several inputs, selects or buttons</p>
+        <p>
+          Stateless component that acts like a wrapper that holds several
+          inputs, selects or buttons
+        </p>
         <MetaData
           importFrom="import ButtonGroup from '@b12/metronome/components/form/button-group/ButtonGroup.es6.js'"
           flow="Yes"
@@ -28,10 +34,14 @@ function NavPage () {
       <div className="ds-block">
         <div className="ds-block__title">
           <h4>Example</h4>
-          <p>Children that you can use in component are: <code>Dropdown</code> and <code>Button</code></p>
+          <p>
+            Children that you can use in component are: <code>Dropdown</code>{' '}
+            and <code>Button</code>
+          </p>
         </div>
 
-        <CodeExample code={`<Group>
+        <CodeExample
+          code={`<Group>
   <ButtonGroup>
     <Button label="Button" />
     <Button label="Button" primary />
@@ -77,8 +87,9 @@ function NavPage () {
       />
     </Dropdown>
   </ButtonGroup>
-</Group>`}>
-          <div style={{width: '400px'}}>
+</Group>`}
+        >
+          <div style={{ width: '400px' }}>
             <Group>
               <ButtonGroup>
                 <Button label="Button" />
@@ -96,23 +107,11 @@ function NavPage () {
             <Group>
               <ButtonGroup>
                 <Button label="Button" />
-                <Dropdown
-                  simple
-                  toggle={<Button label="Toggle me" chevron />}
-                >
+                <Dropdown simple toggle={<Button label="Toggle me" chevron />}>
                   <DropdownItemHeader label="Account" />
-                  <DropdownItem
-                    label="Menu item one"
-                    onClick={() => {}}
-                  />
-                  <DropdownItem
-                    label="Menu item two"
-                    onClick={() => {}}
-                  />
-                  <DropdownItem
-                    label="Menu item three"
-                    onClick={() => {}}
-                  />
+                  <DropdownItem label="Menu item one" onClick={() => {}} />
+                  <DropdownItem label="Menu item two" onClick={() => {}} />
+                  <DropdownItem label="Menu item three" onClick={() => {}} />
                   <DropdownItem
                     label="Menu item three and a half"
                     onClick={() => {}}
@@ -128,7 +127,8 @@ function NavPage () {
             </Group>
           </div>
         </CodeExample>
-        <CodeExample code={`<Group label="Vertical">
+        <CodeExample
+          code={`<Group label="Vertical">
   <ButtonGroup vertical>
     <Button label="Button" />
     <Button label="Button" primary />
@@ -141,8 +141,9 @@ function NavPage () {
     <Button label="Button" primary />
     <Button icon={<Close color="#fff" />} primary />
   </ButtonGroup>
-</Group>`}>
-          <div style={{width: '300px'}}>
+</Group>`}
+        >
+          <div style={{ width: '300px' }}>
             <Group label="Vertical">
               <ButtonGroup vertical>
                 <Button label="Button" />

@@ -1,7 +1,6 @@
 import React from 'react'
 import MetaData from './MetaData.es6.js'
 
-
 const ReactComponent = ({
   examples,
   heading,
@@ -19,9 +18,7 @@ const ReactComponent = ({
         {docs}
         <MetaData>{pathLine}</MetaData>
       </div>
-      <div className="ds-block">
-        {examples}
-      </div>
+      <div className="ds-block">{examples}</div>
       {tabButtons}
       {tabBody}
     </React.Fragment>

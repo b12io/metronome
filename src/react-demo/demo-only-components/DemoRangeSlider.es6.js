@@ -5,7 +5,7 @@ export default class DemoRangeSlider extends React.Component {
   state = {
     basic: 50,
     minMax: 45,
-    withStep: 70,
+    withStep: 70
   }
 
   handleChange = (value, type) => {

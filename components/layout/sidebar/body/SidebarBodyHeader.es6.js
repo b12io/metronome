@@ -4,8 +4,6 @@ import QuickActions from '../header/QuickActions.es6.js'
 
 import useClickOutside from '../../../lib/useClickOutside.es6.js'
 
-
-
 function SidebarBodyHeader ({
   className,
   hideOverflow,
@@ -17,12 +15,11 @@ function SidebarBodyHeader ({
   onQuickActionSelected,
   quickDialog
 }) {
-  const actionsAvailable = Array.isArray(quickActions) && quickActions.length > 0
+  const actionsAvailable =
+    Array.isArray(quickActions) && quickActions.length > 0
   const actionsRef = React.useRef(null)
-  const {
-    isVisible: actionsVisible,
-    setIsVisible: setActionsVisible
-  } = useClickOutside(actionsRef)
+  const { isVisible: actionsVisible, setIsVisible: setActionsVisible } =
+    useClickOutside(actionsRef)
 
   return (
     <div className="ds-sidebar__title-container">
@@ -37,15 +34,17 @@ function SidebarBodyHeader ({
       {quickDialog}
 
       <div className="ds-sidebar__title-icon">
-        <span onClick={() => {
-          if (typeof onAction === 'function') {
-            onAction()
-          }
+        <span
+          onClick={() => {
+            if (typeof onAction === 'function') {
+              onAction()
+            }
 
-          if (actionsAvailable) {
-            setActionsVisible(!actionsVisible)
-          }
-        }}>
+            if (actionsAvailable) {
+              setActionsVisible(!actionsVisible)
+            }
+          }}
+        >
           {actionIcon}
         </span>
 

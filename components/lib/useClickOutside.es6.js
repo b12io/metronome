@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 
-
 function useClickOutside (containerRef) {
   const [isVisible, setIsVisible] = useState(false)
 

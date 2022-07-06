@@ -47,10 +47,14 @@
     position: absolute;
     bottom: 80px;
     left: 0px;
-    background-image: linear-gradient(to bottom, rgba(17, 15, 51, 0), rgba(17, 15, 51, 0.87));
+    background-image: linear-gradient(
+      to bottom,
+      rgba(17, 15, 51, 0),
+      rgba(17, 15, 51, 0.87)
+    );
     opacity: 0;
-    transition: all 0.3s ease 0s; 
-    -webkit-transition: all 0.3s ease 0s; 
+    transition: all 0.3s ease 0s;
+    -webkit-transition: all 0.3s ease 0s;
 
     div svg {
       position: relative;
@@ -68,7 +72,8 @@
   &:focus,
   &:active {
     border-color: $ds-input-border-focus-color;
-    box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.1), inset 0px 0px 0px 1px $ds-input-border-focus-color;
+    box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.1),
+      inset 0px 0px 0px 1px $ds-input-border-focus-color;
     outline: none;
 
     .ds-selection-card__label {

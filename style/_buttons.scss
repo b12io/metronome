@@ -20,7 +20,7 @@
   }
 
   &:hover {
-    background: darken($ds-ui-light-color, .25);
+    background: darken($ds-ui-light-color, 0.25);
     text-decoration: none;
   }
 
@@ -35,7 +35,7 @@
 
   &.disabled,
   &:disabled {
-    opacity: .3;
+    opacity: 0.3;
     pointer-events: none;
     cursor: default;
   }

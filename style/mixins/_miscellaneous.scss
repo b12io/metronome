@@ -14,7 +14,7 @@
   &::after {
     display: block;
     clear: both;
-    content: "";
+    content: '';
   }
 }
 
@@ -70,11 +70,11 @@
 @mixin ds-tooltip {
   max-width: 210px;
   padding: 9px 10px;
-  background-color: fade-out($ds-display-dark-color, .1);
+  background-color: fade-out($ds-display-dark-color, 0.1);
 
   + .arrow::before {
-    border-bottom-color: fade-out($ds-display-dark-color, .1);
-    border-top-color: fade-out($ds-display-dark-color, .1);
+    border-bottom-color: fade-out($ds-display-dark-color, 0.1);
+    border-top-color: fade-out($ds-display-dark-color, 0.1);
   }
 }
 
@@ -82,7 +82,8 @@
  */
 
 @mixin breakpoint-tablet-portrait-up {
-  @media screen and (min-width: 826px) { // Minimum toolbar width.
+  @media screen and (min-width: 826px) {
+    // Minimum toolbar width.
     @content;
   }
 }

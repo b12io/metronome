@@ -40,7 +40,7 @@ $arrow-top-bottom-border: 0.4rem solid rgba(15, 13, 58, 1);
 
 .ds-tooltip {
   @include ds-tooltip;
-  
+
   &__tap-help {
     @include display-xsmall-font;
     text-align: left;
@@ -48,7 +48,7 @@ $arrow-top-bottom-border: 0.4rem solid rgba(15, 13, 58, 1);
     font-variant: small-caps;
   }
 
-  ul, 
+  ul,
   ol {
     margin: 0;
     padding-left: spacing('xsm');
@@ -100,12 +100,12 @@ $arrow-top-bottom-border: 0.4rem solid rgba(15, 13, 58, 1);
     opacity: 1;
     max-width: 250px;
   }
-  
+
   .ds-tooltip {
     @include display-small-font;
     font-size: $header-small-font-size;
     text-align: left;
-    background-color: rgba(15, 13, 58, 1);  
+    background-color: rgba(15, 13, 58, 1);
     max-width: 250px;
     animation: float 2s ease-in-out infinite;
   }

@@ -52,19 +52,18 @@
     &:disabled {
       ~ .ds-form-control-checkbox__indicator,
       ~ .ds-form-control-radio__indicator {
-
         &::after {
-          background: fade-out($ds-display-light-color, .5);
+          background: fade-out($ds-display-light-color, 0.5);
         }
 
         svg path {
-          fill: fade-out($ds-display-light-color, .5);
+          fill: fade-out($ds-display-light-color, 0.5);
         }
       }
 
       ~ .ds-form-control-checkbox__label,
       ~ .ds-form-control-radio__label {
-        color: fade-out($ds-display-light-color, .5);
+        color: fade-out($ds-display-light-color, 0.5);
       }
     }
   }
@@ -96,7 +95,7 @@
       position: absolute;
       left: 50%;
       top: 50%;
-      transform: translate(-50%,-50%);
+      transform: translate(-50%, -50%);
 
       path {
         fill: $ds-brand-regular-color;
@@ -121,7 +120,6 @@
   }
 
   &.has-error {
-
     input {
       &:checked ~ .ds-form-control-checkbox__indicator,
       &:checked ~ .ds-form-control-radio__indicator {

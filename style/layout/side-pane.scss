@@ -12,7 +12,7 @@
   &--full-height {
     height: 100%;
 
-    [ui-view="sidePaneInner"] {
+    [ui-view='sidePaneInner'] {
       height: 100%;
     }
   }
@@ -229,7 +229,7 @@
         line-height: $ds-sidebar-header-height;
         font-weight: $ds-font-weight-bold;
         color: #121212;
-        opacity: .6;
+        opacity: 0.6;
         transition: $ds-transition;
         position: relative;
 
@@ -341,10 +341,11 @@
   }
 
   &--alternative-bg {
-    background-color: #F2F2F7;
+    background-color: #f2f2f7;
   }
 
-  h4, h6 {
+  h4,
+  h6 {
     margin-bottom: 7px;
   }
 }

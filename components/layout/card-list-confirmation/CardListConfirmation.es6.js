@@ -6,8 +6,6 @@ import Button from '../../form/button/Button.es6.js'
 const YES = 'yes'
 const NO = 'no'
 
-
-
 class CardListConfirmation extends React.Component {
   static defaultProps = {
     defaultAction: YES

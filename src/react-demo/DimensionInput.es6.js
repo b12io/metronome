@@ -13,7 +13,10 @@ function InputDimension () {
     <DemoLayoutContent>
       <div className="app-page-title">
         <h1>Dimension input</h1>
-        <p>This is a complex input that allows you to choose several values for a variable.</p>
+        <p>
+          This is a complex input that allows you to choose several values for a
+          variable.
+        </p>
 
         <MetaData
           importFrom="import DimensionGroup from '@b12/metronome/components/form/dimension/DimensionGroup.es6.js',
@@ -30,7 +33,8 @@ function InputDimension () {
           <h4>Default</h4>
         </div>
 
-        <CodeExample code={`<DimensionGroup>
+        <CodeExample
+          code={`<DimensionGroup>
   <DimensionInput
     label="Font size"
     help="Help text"
@@ -46,8 +50,9 @@ function InputDimension () {
     selectedUnit="px"
     onUpdate={() => {}}
   />
-</DimensionGroup>`}>
-          <div style={{width: '360px'}}>
+</DimensionGroup>`}
+        >
+          <div style={{ width: '360px' }}>
             <DimensionGroup>
               <DimensionInput
                 label="Font size"
@@ -74,7 +79,8 @@ function InputDimension () {
           <h4>Fixed unit</h4>
         </div>
 
-        <CodeExample code={`<DimensionGroup>
+        <CodeExample
+          code={`<DimensionGroup>
   <DimensionInput
     label="Font size"
     help="Help text"
@@ -82,8 +88,9 @@ function InputDimension () {
     fixedUnit="px"
     onUpdate={() => {}}
   />
-</DimensionGroup>`}>
-          <div style={{width: '360px'}}>
+</DimensionGroup>`}
+        >
+          <div style={{ width: '360px' }}>
             <DimensionGroup>
               <DimensionInput
                 label="Font size"
@@ -102,14 +109,25 @@ function InputDimension () {
           <h4>Boolean</h4>
         </div>
 
-        <CodeExample code={`<DimensionGroup>
+        <CodeExample
+          code={`<DimensionGroup>
   <DimensionBoolean help="Help text" label="Boolean value" value={true} onChange={() => {}} />
   <DimensionBoolean label="Alternate background" value={false} onChange={() => {}} />
-</DimensionGroup>`}>
-          <div style={{width: '360px'}}>
+</DimensionGroup>`}
+        >
+          <div style={{ width: '360px' }}>
             <DimensionGroup>
-              <DimensionBoolean help="Help text" label="Boolean value" value={true} onChange={() => {}} />
-              <DimensionBoolean label="Alternate background" value={false} onChange={() => {}} />
+              <DimensionBoolean
+                help="Help text"
+                label="Boolean value"
+                value={true}
+                onChange={() => {}}
+              />
+              <DimensionBoolean
+                label="Alternate background"
+                value={false}
+                onChange={() => {}}
+              />
             </DimensionGroup>
           </div>
         </CodeExample>
@@ -120,14 +138,26 @@ function InputDimension () {
           <h4>Select</h4>
         </div>
 
-        <CodeExample code={`<DimensionGroup>
+        <CodeExample
+          code={`<DimensionGroup>
   <DimensionSelect help="Help text" label="Size" choices={["big", "small", "regular"]} onChange={() => {}} />
   <DimensionSelect label="Button style" choices={['outlined', 'plain']} selectedChoice='plain' onChange={() => {}}/>
-</DimensionGroup>`}>
-          <div style={{width: '360px'}}>
+</DimensionGroup>`}
+        >
+          <div style={{ width: '360px' }}>
             <DimensionGroup>
-              <DimensionSelect help="Help text" label="Size" choices={['big', 'small', 'regular']} onChange={() => {}} />
-              <DimensionSelect label="Button style" choices={['outlined', 'plain']} selectedChoice='plain' onChange={() => {}}/>
+              <DimensionSelect
+                help="Help text"
+                label="Size"
+                choices={['big', 'small', 'regular']}
+                onChange={() => {}}
+              />
+              <DimensionSelect
+                label="Button style"
+                choices={['outlined', 'plain']}
+                selectedChoice="plain"
+                onChange={() => {}}
+              />
             </DimensionGroup>
           </div>
         </CodeExample>

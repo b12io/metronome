@@ -39,20 +39,20 @@
     border-radius: $ds-border-radius-base;
     background: $ds-ui-lightest-color;
     box-shadow: 0 2px 12px 0 rgba(17, 15, 51, 0.1);
-  
+
     &-header {
       @include ds-control-label;
-      padding: (spacing(xxxsm)/2) spacing(xxxsm);
+      padding: (spacing(xxxsm) / 2) spacing(xxxsm);
     }
-  
+
     &-item {
       padding: spacing(xxxsm);
       cursor: pointer;
-  
+
       &:hover {
-        background: $ds-brand-lightest-color
+        background: $ds-brand-lightest-color;
       }
-  
+
       &:last-child {
         border-radius: 0 0 $ds-border-radius-base $ds-border-radius-base;
       }
@@ -60,24 +60,23 @@
   }
 
   &__item {
-
     &:last-child {
       .ds-filter-option__item-toggle {
         margin-bottom: -1px;
       }
     }
-  
+
     &-toggle {
       color: $ds-display-regular-color;
       padding: 10px;
-      padding-right: $ds-input-padding-x*3;
+      padding-right: $ds-input-padding-x * 3;
       border-bottom: 1px solid $ds-ui-regular-color;
       transition: $ds-transition;
       cursor: pointer;
       position: relative;
       box-sizing: border-box;
       @include text-truncate();
-  
+
       &::before,
       &::after {
         position: absolute;
@@ -90,35 +89,35 @@
         top: 50%;
         transition: $ds-transition;
       }
-  
+
       &::before {
         right: 15px;
-        transform: translate(0,-50%) rotate(45deg);
+        transform: translate(0, -50%) rotate(45deg);
       }
-  
+
       &::after {
         right: 10px;
-        transform: translate(0,-50%) rotate(-45deg);
+        transform: translate(0, -50%) rotate(-45deg);
       }
-  
+
       &:hover {
         &::before,
         &::after {
           background: $ds-brand-regular-color;
         }
       }
-  
+
       &.is-active {
         &::before {
-          transform: translate(0,-50%) rotate(-45deg);
+          transform: translate(0, -50%) rotate(-45deg);
         }
-  
+
         &::after {
-          transform: translate(0,-50%) rotate(45deg);
+          transform: translate(0, -50%) rotate(45deg);
         }
       }
     }
-  
+
     &-content {
       padding: spacing(xxsm);
       margin-left: 1px;

@@ -3,14 +3,32 @@ import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import BaseTextArea from '../base/BaseTextArea.es6.js'
 
-function TextArea ({label, value, placeholder, rows, hasFeedback, hasError, resizable, counter, onUpdate, onFocus, onBlur, contentHeight, disabled}) {
-  const counterDiv = counter ? (<div className="ds-control-label__counter">{counter}</div>) : null
+function TextArea ({
+  label,
+  value,
+  placeholder,
+  rows,
+  hasFeedback,
+  hasError,
+  resizable,
+  counter,
+  onUpdate,
+  onFocus,
+  onBlur,
+  contentHeight,
+  disabled
+}) {
+  const counterDiv = counter ? (
+    <div className="ds-control-label__counter">{counter}</div>
+  ) : null
   return (
-    <div className={classnames({
-      'ds-form-group': true,
-      'has-feedback': hasFeedback,
-      'has-error': hasError
-    })}>
+    <div
+      className={classnames({
+        'ds-form-group': true,
+        'has-feedback': hasFeedback,
+        'has-error': hasError
+      })}
+    >
       <label className="ds-control-label">
         {label}
         {counterDiv}

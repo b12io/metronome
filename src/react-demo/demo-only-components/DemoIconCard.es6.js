@@ -6,9 +6,7 @@ import PropTypes from 'prop-types'
 function DemoIconCard ({ children, onCopyClick, label }) {
   return (
     <div className="icon-card">
-      <div className="icon-card__icon">
-        {children}
-      </div>
+      <div className="icon-card__icon">{children}</div>
       <div className="icon-card__title">{label}</div>
       {/* <button
         onClick={onCopyClick}

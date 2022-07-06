@@ -95,7 +95,7 @@ const UI_COLORS = [
     name: 'Border',
     color: '#e6e6e6',
     variable: '$ds-ui-border-color'
-  },
+  }
 ]
 
 const DISPLAY_COLORS = [
@@ -113,7 +113,7 @@ const DISPLAY_COLORS = [
     name: 'Dark',
     color: '#0f0d3a',
     variable: '$ds-display-dark-color'
-  },
+  }
 ]
 
 const BODY_COLORS = [
@@ -131,7 +131,7 @@ const BODY_COLORS = [
     name: 'Regular',
     color: '#4d4d4d',
     variable: '$ds-body-regular-color'
-  },
+  }
 ]
 
 const ACCENT_COLORS = [
@@ -164,7 +164,7 @@ const ACCENT_COLORS = [
     name: 'Error dark',
     color: '#bd4a4a',
     variable: '$ds-error-dark-color'
-  },
+  }
 ]
 
 const MISC_COLORS = [
@@ -177,7 +177,7 @@ const MISC_COLORS = [
     name: 'Badge background',
     color: '#8e8d9e',
     variable: '$ds-adge-background-color'
-  },
+  }
 ]
 
 function Colors () {

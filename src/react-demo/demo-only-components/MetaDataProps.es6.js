@@ -1,6 +1,6 @@
 /* eslint-disable */
 import React from 'react'
-function MetaDataProps ({ children }) {
+function MetaDataProps({ children }) {
   return (
     <table className="ds-table">
       <thead>
@@ -11,19 +11,30 @@ function MetaDataProps ({ children }) {
           <th>Description</th>
         </tr>
       </thead>
-      <tbody>
-        {children}
-      </tbody>
+      <tbody>{children}</tbody>
     </table>
   )
 }
 
-function MetaDataPropsItem ({ property, value, defaultValue = '-', description}) {
+function MetaDataPropsItem({
+  property,
+  value,
+  defaultValue = '-',
+  description
+}) {
   return (
     <tr>
       <td>{property}</td>
-      <td>{value.split(',').map((v, i) => <div key={i}><code>{v}</code></div>)}</td>
-      <td><code>{defaultValue}</code></td>
+      <td>
+        {value.split(',').map((v, i) => (
+          <div key={i}>
+            <code>{v}</code>
+          </div>
+        ))}
+      </td>
+      <td>
+        <code>{defaultValue}</code>
+      </td>
       <td>{description}</td>
     </tr>
   )

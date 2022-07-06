@@ -8,9 +8,7 @@ import B12DatePicker from '../DatePicker.es6.js'
 describe('B12DatePicker component', () => {
   test('should render the react datepicker component using dropdown styles as a custom input', () => {
     const date = moment('2018-03-29')
-    const tree = renderer.create(
-      <B12DatePicker value={date} />
-    ).toJSON()
+    const tree = renderer.create(<B12DatePicker value={date} />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })

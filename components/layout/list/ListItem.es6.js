@@ -1,9 +1,9 @@
-import React, {Children} from 'react'
+import React, { Children } from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import ListItemContent from './ListItemContent.es6.js'
 
-const ListItem = props => {
+const ListItem = (props) => {
   const {
     className,
     cardListItem,
@@ -13,18 +13,22 @@ const ListItem = props => {
     onClick,
     md,
     clickable,
-    ...otherProps} = props
+    ...otherProps
+  } = props
 
-  const classes = classnames({
-    'card-list-item': cardListItem,
-    'md': md,
-    'collection-item': collectionListItem,
-    'collection-item--clickable': clickable,
-    'card-list-item--draggable': cardListItem && dragStyles,
-    'collection-item--draggable': collectionListItem && dragStyles
-  }, className)
+  const classes = classnames(
+    {
+      'card-list-item': cardListItem,
+      md: md,
+      'collection-item': collectionListItem,
+      'collection-item--clickable': clickable,
+      'card-list-item--draggable': cardListItem && dragStyles,
+      'collection-item--draggable': collectionListItem && dragStyles
+    },
+    className
+  )
 
-  const children = Children.map(otherProps.children, child => {
+  const children = Children.map(otherProps.children, (child) => {
     if (typeof child === 'string') {
       return <ListItemContent>{child}</ListItemContent>
     }

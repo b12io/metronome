@@ -50,12 +50,14 @@
 
     &--previous {
       left: 9px;
-      background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNyIgaGVpZ2h0PSIxMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4gIDxwYXRoIGQ9Ik0uMiA1LjRMNS42IDAgNyAxLjRsLTQgNCA0IDQtMS40IDEuNHoiIGZpbGw9IiNDQ0MiIGZpbGwtcnVsZT0ibm9uemVybyIvPjwvc3ZnPg==) center center no-repeat;
+      background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNyIgaGVpZ2h0PSIxMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4gIDxwYXRoIGQ9Ik0uMiA1LjRMNS42IDAgNyAxLjRsLTQgNCA0IDQtMS40IDEuNHoiIGZpbGw9IiNDQ0MiIGZpbGwtcnVsZT0ibm9uemVybyIvPjwvc3ZnPg==)
+        center center no-repeat;
     }
 
     &--next {
       right: 9px;
-      background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNyIgaGVpZ2h0PSIxMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4gIDxwYXRoIGQ9Ik02LjggNS42TDEuNCAxMSAwIDkuNmw0LTQtNC00TDEuNC4yeiIgZmlsbD0iI0NDQyIgZmlsbC1ydWxlPSJub256ZXJvIi8+PC9zdmc+) center center no-repeat;
+      background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNyIgaGVpZ2h0PSIxMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4gIDxwYXRoIGQ9Ik02LjggNS42TDEuNCAxMSAwIDkuNmw0LTQtNC00TDEuNC4yeiIgZmlsbD0iI0NDQyIgZmlsbC1ydWxlPSJub256ZXJvIi8+PC9zdmc+)
+        center center no-repeat;
     }
   }
 
@@ -110,7 +112,9 @@
     color: $ds-display-regular-color;
 
     &--selected {
-      background: no-repeat url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iOCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4gIDxwYXRoIGQ9Ik05LjQgMkw4IC42bC00IDQtMi0yTC42IDQgNCA3LjR6IiBmaWxsPSIjNzY2Q0ZGIiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48L3N2Zz4=) 7px 12px !important;
+      background: no-repeat
+        url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iOCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4gIDxwYXRoIGQ9Ik05LjQgMkw4IC42bC00IDQtMi0yTC42IDQgNCA3LjR6IiBmaWxsPSIjNzY2Q0ZGIiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48L3N2Zz4=)
+        7px 12px !important;
       background-clip: padding-box;
       color: $ds-display-regular-color !important;
       font-weight: normal !important;
@@ -121,7 +125,7 @@
     }
   }
 
-  &-popper[data-placement^="bottom"] {
+  &-popper[data-placement^='bottom'] {
     margin-top: 4px;
     z-index: 30;
   }

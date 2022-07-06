@@ -13,20 +13,23 @@ it('should render component with empty label', () => {
 })
 
 it('should render custom label with success class name', () => {
-  const component = shallow(<NotificationCard
-    label="My success notification"
-    success
-  />)
+  const component = shallow(
+    <NotificationCard label="My success notification" success />
+  )
   expect(component.hasClass('ds-notification--success')).toBeTruthy()
-  expect(component.find('.ds-notification__label').text()).toBe('My success notification')
+  expect(component.find('.ds-notification__label').text()).toBe(
+    'My success notification'
+  )
 })
 
 it('should render DateIcon component as notification icon', () => {
-  const component = shallow(<NotificationCard
-    icon={<DateIcon />}
-    label="My success notification"
-    success
-  />)
+  const component = shallow(
+    <NotificationCard
+      icon={<DateIcon />}
+      label="My success notification"
+      success
+    />
+  )
   expect(component.find('DateIcon').length).toBe(1)
 })
 

@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
-function Note ({icon, bordered, shadowed, padded, children, className}) {
+function Note ({ icon, bordered, shadowed, padded, children, className }) {
   const classNames = classnames('ds-note', className, {
     'ds-note--has-icon': !!icon,
     'ds-note--bordered': bordered,
@@ -11,9 +11,7 @@ function Note ({icon, bordered, shadowed, padded, children, className}) {
   })
   return (
     <div className={classNames}>
-      {icon && <div className="ds-note__icon">
-        {icon}
-      </div>}
+      {icon && <div className="ds-note__icon">{icon}</div>}
       {children}
     </div>
   )

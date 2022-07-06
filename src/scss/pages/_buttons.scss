@@ -1,5 +1,5 @@
 .ds-button-emulate-hover {
-  background: darken($ds-ui-light-color, .2);
+  background: darken($ds-ui-light-color, 0.2);
 
   &.button--primary {
     background: $ds-brand-dark-color;
@@ -28,4 +28,3 @@
     box-shadow: inset 0 1px 4px 0 rgba(0, 0, 0, 0.5);
   }
 }
-

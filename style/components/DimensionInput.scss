@@ -23,8 +23,8 @@
       height: auto;
       padding: spacing('xxxsm');
 
-      &[type=number]::-webkit-inner-spin-button,
-      &[type=number]::-webkit-outer-spin-button {
+      &[type='number']::-webkit-inner-spin-button,
+      &[type='number']::-webkit-outer-spin-button {
         -webkit-appearance: none;
         margin: 0;
       }

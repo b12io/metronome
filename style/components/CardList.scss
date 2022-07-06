@@ -99,7 +99,7 @@
       cursor: pointer;
 
       &:hover {
-        background: fade-out($ds-ui-background-dark-color, .96);
+        background: fade-out($ds-ui-background-dark-color, 0.96);
 
         .card-list-item__icon {
           path,

@@ -58,11 +58,11 @@
       &--primary {
         border-color: $ds-brand-regular-color;
         border-top-color: rgba(0, 0, 0, 0.1);
-  
+
         &:focus {
           z-index: initial;
         }
-  
+
         &:first-child {
           border-top-color: $ds-brand-regular-color;
         }

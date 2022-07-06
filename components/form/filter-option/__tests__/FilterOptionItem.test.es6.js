@@ -23,7 +23,9 @@ describe('FilterOptionItem component', () => {
   })
 
   test('should display content', () => {
-    const tree = renderer.create(<FilterOptionItem {...testProps} isOpened />).toJSON()
+    const tree = renderer
+      .create(<FilterOptionItem {...testProps} isOpened />)
+      .toJSON()
     expect(tree).toMatchSnapshot()
   })
 })

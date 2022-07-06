@@ -1,14 +1,23 @@
-import React, { } from 'react'
+import React from 'react'
 import classnames from 'classnames'
 
-
-function DropdownItem ({ className, label, icon, disabled, onClick, onCloseMenu }) {
+function DropdownItem ({
+  className,
+  label,
+  icon,
+  disabled,
+  onClick,
+  onCloseMenu
+}) {
   return (
     <div
-      className={classnames({
-        'ds-dropdown__menu-item': true,
-        'ds-dropdown__menu-item--disabled': disabled
-      }, className)}
+      className={classnames(
+        {
+          'ds-dropdown__menu-item': true,
+          'ds-dropdown__menu-item--disabled': disabled
+        },
+        className
+      )}
       onClick={(event) => {
         event && event.stopPropagation()
         if (disabled) {
@@ -19,7 +28,10 @@ function DropdownItem ({ className, label, icon, disabled, onClick, onCloseMenu 
         onCloseMenu()
       }}
     >
-      <span>{icon}{label}</span>
+      <span>
+        {icon}
+        {label}
+      </span>
     </div>
   )
 }

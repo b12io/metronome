@@ -2,7 +2,10 @@ import React from 'react'
 import DemoLayoutContent from './demo-only-components/DemoLayoutContent.es6.js'
 import CodeExample from './demo-only-components/CodeExample.es6.js'
 import MetaData from './demo-only-components/MetaData.es6.js'
-import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDataProps.es6.js'
+import {
+  MetaDataProps,
+  MetaDataPropsItem
+} from './demo-only-components/MetaDataProps.es6.js'
 
 import DemoRangeSlider from './demo-only-components/DemoRangeSlider.es6.js'
 
@@ -92,7 +95,8 @@ export default function AvatarItemPage () {
           <h4>Example</h4>
         </div>
 
-        <CodeExample code={`<RangeSlider
+        <CodeExample
+          code={`<RangeSlider
   label="Basic"
   value={basic}
   onChange={(value) => this.handleChange(value, 'basic')}
@@ -126,7 +130,8 @@ export default function AvatarItemPage () {
   maxCaption="Right"
   onChange={(value) => {}}
 />
-`}>
+`}
+        >
           <DemoRangeSlider />
         </CodeExample>
       </div>
@@ -136,7 +141,7 @@ export default function AvatarItemPage () {
         </div>
 
         <MetaDataProps>
-          {RangeSliderProps.map(prop => (
+          {RangeSliderProps.map((prop) => (
             <MetaDataPropsItem
               key={prop.property}
               property={prop.property}

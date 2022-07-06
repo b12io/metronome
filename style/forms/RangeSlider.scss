@@ -12,7 +12,7 @@ $thumb-height: 18px !default;
 $thumb-width: 18px !default;
 $thumb-shadow-size: 3px !default;
 $thumb-shadow-blur: 4px !default;
-$thumb-shadow-color: rgba(0, 0, 0, .1) !default;
+$thumb-shadow-color: rgba(0, 0, 0, 0.1) !default;
 $thumb-border-width: 1px !default;
 $thumb-border-color: $ds-ui-border-color !default;
 
@@ -20,7 +20,7 @@ $track-width: 100% !default;
 $track-height: 6px !default;
 $track-shadow-size: 1px !default;
 $track-shadow-blur: 1px !default;
-$track-shadow-color: rgba(0, 0, 0, .1) !default;
+$track-shadow-color: rgba(0, 0, 0, 0.1) !default;
 $track-border-width: 1px !default;
 $track-border-color: $ds-ui-regular-color !default;
 
@@ -30,13 +30,14 @@ $contrast: 5% !default;
 $ie-bottom-track-color: darken($track-color, $contrast) !default;
 
 @mixin shadow($shadow-size, $shadow-blur, $shadow-color) {
-  box-shadow: $shadow-size $shadow-size $shadow-blur $shadow-color, 0 0 $shadow-size lighten($shadow-color, 5%);
+  box-shadow: $shadow-size $shadow-size $shadow-blur $shadow-color,
+    0 0 $shadow-size lighten($shadow-color, 5%);
 }
 
 @mixin track {
   cursor: default;
   height: $track-height;
-  transition: all .2s ease;
+  transition: all 0.2s ease;
   width: $track-width;
 }
 
@@ -84,7 +85,11 @@ $ie-bottom-track-color: darken($track-color, $contrast) !default;
 
   &::-webkit-slider-runnable-track {
     @include track;
-    @include shadow($track-shadow-size, $track-shadow-blur, $track-shadow-color);
+    @include shadow(
+      $track-shadow-size,
+      $track-shadow-blur,
+      $track-shadow-color
+    );
     background: $track-color;
     border: $track-border-width solid $track-border-color;
     border-radius: $track-radius;
@@ -93,11 +98,17 @@ $ie-bottom-track-color: darken($track-color, $contrast) !default;
   &::-webkit-slider-thumb {
     @include thumb;
     -webkit-appearance: none;
-    margin-top: ((-$track-border-width * 2 + $track-height) / 2 - $thumb-height / 2);
+    margin-top: (
+      (-$track-border-width * 2 + $track-height) / 2 - $thumb-height / 2
+    );
   }
 
   &::-moz-range-track {
-    @include shadow($track-shadow-size, $track-shadow-blur, $track-shadow-color);
+    @include shadow(
+      $track-shadow-size,
+      $track-shadow-blur,
+      $track-shadow-color
+    );
     @include track;
     background: $track-color;
     border: $track-border-width solid $track-border-color;
@@ -118,14 +129,22 @@ $ie-bottom-track-color: darken($track-color, $contrast) !default;
   }
 
   &::-ms-fill-lower {
-    @include shadow($track-shadow-size, $track-shadow-blur, $track-shadow-color);
+    @include shadow(
+      $track-shadow-size,
+      $track-shadow-blur,
+      $track-shadow-color
+    );
     background: $ie-bottom-track-color;
     border: $track-border-width solid $track-border-color;
     border-radius: ($track-radius * 2);
   }
 
   &::-ms-fill-upper {
-    @include shadow($track-shadow-size, $track-shadow-blur, $track-shadow-color);
+    @include shadow(
+      $track-shadow-size,
+      $track-shadow-blur,
+      $track-shadow-color
+    );
     background: $track-color;
     border: $track-border-width solid $track-border-color;
     border-radius: ($track-radius * 2);
@@ -192,5 +211,3 @@ $ie-bottom-track-color: darken($track-color, $contrast) !default;
     }
   }
 }
-
-

@@ -3,7 +3,16 @@ import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import { Checkmark } from '../../Icons.es6.js'
 
-function NotificationCard ({ label, icon, success, error, warning, hideIcon, alignCenter, children }) {
+function NotificationCard ({
+  label,
+  icon,
+  success,
+  error,
+  warning,
+  hideIcon,
+  alignCenter,
+  children
+}) {
   const classNames = classnames({
     'ds-notification': true,
     'ds-notification--success': success,
@@ -14,10 +23,10 @@ function NotificationCard ({ label, icon, success, error, warning, hideIcon, ali
   })
   return (
     <div className={classNames}>
-      {!hideIcon && <div className="ds-notification__icon">{icon || <Checkmark />}</div>}
-      <div className="ds-notification__label">
-        {label || children}
-      </div>
+      {!hideIcon && (
+        <div className="ds-notification__icon">{icon || <Checkmark />}</div>
+      )}
+      <div className="ds-notification__label">{label || children}</div>
     </div>
   )
 }

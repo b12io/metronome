@@ -1,9 +1,21 @@
 import React from 'react'
 import classnames from 'classnames'
 
-
-function Card ({ add, children, disabled, handleClick, icon, label, value, className,
-  selected, hasImage, hasColorPalette, onMouseEnter, onMouseLeave }) {
+function Card ({
+  add,
+  children,
+  disabled,
+  handleClick,
+  icon,
+  label,
+  value,
+  className,
+  selected,
+  hasImage,
+  hasColorPalette,
+  onMouseEnter,
+  onMouseLeave
+}) {
   return (
     <button
       className={classnames(className, {
@@ -18,9 +30,7 @@ function Card ({ add, children, disabled, handleClick, icon, label, value, class
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
-      <div className="ds-card__icon">
-        {icon}
-      </div>
+      <div className="ds-card__icon">{icon}</div>
       <div className="ds-card__label">{label}</div>
       <div className="ds-card__value">{value}</div>
       {children}

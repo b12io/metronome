@@ -36,24 +36,33 @@ class Collapse extends React.Component {
   render () {
     const { children, collapseLabel, expandLabel, collapseHeight } = this.props
     const collapseBodyHeight = {
-      height: this.state.isCollapsed
-        ? collapseHeight
-        : this.state.contentHeight
+      height: this.state.isCollapsed ? collapseHeight : this.state.contentHeight
     }
     if (!children) {
       return null
     }
-    const longEnoughToCollapse = this.state.contentHeight === 'auto' || (isNumber(this.state.contentHeight) && this.state.contentHeight > collapseHeight)
-    return (<div className="ds-collapse">
-      <div className="ds-collapse__body" style={collapseBodyHeight} ref={(node) => { this.contentElement = node }}>
-        {children}
-      </div>
-      { longEnoughToCollapse && (
-        <div className="ds-collapse__action" onClick={this.toggleCollapse}>
-          {this.state.isCollapsed ? expandLabel : collapseLabel}
+    const longEnoughToCollapse =
+      this.state.contentHeight === 'auto' ||
+      (isNumber(this.state.contentHeight) &&
+        this.state.contentHeight > collapseHeight)
+    return (
+      <div className="ds-collapse">
+        <div
+          className="ds-collapse__body"
+          style={collapseBodyHeight}
+          ref={(node) => {
+            this.contentElement = node
+          }}
+        >
+          {children}
         </div>
-      )}
-    </div>)
+        {longEnoughToCollapse && (
+          <div className="ds-collapse__action" onClick={this.toggleCollapse}>
+            {this.state.isCollapsed ? expandLabel : collapseLabel}
+          </div>
+        )}
+      </div>
+    )
   }
 }
 

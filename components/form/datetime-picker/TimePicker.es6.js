@@ -1,13 +1,10 @@
 import React from 'react'
 import DatePicker from 'react-datepicker'
 
-
 function B12TimePicker ({ label, onChange, onChangeRaw, value, ...rest }) {
   return (
     <div className="ds-form-control-wrap">
-      <div className="ds-control-label">
-        { label || 'Time' }
-      </div>
+      <div className="ds-control-label">{label || 'Time'}</div>
       <DatePicker
         {...rest}
         showTimeSelect
@@ -17,7 +14,7 @@ function B12TimePicker ({ label, onChange, onChangeRaw, value, ...rest }) {
         placeholderText="Choose time"
         selected={value}
         onChange={onChange}
-        onChangeRaw={event => {
+        onChangeRaw={(event) => {
           if (onChangeRaw) {
             onChangeRaw(event.target.value)
           }

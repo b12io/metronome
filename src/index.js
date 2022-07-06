@@ -209,148 +209,205 @@ ReactDOM.render(
           <li className="nav__header">Core</li>
           <UISrefActive class="active">
             <UISref to="typography">
-              <li><a>Typography</a></li>
+              <li>
+                <a>Typography</a>
+              </li>
             </UISref>
           </UISrefActive>
           <UISrefActive class="active">
             <UISref to="colors">
-              <li><a>Colors</a></li>
+              <li>
+                <a>Colors</a>
+              </li>
             </UISref>
           </UISrefActive>
           <UISrefActive class="active">
             <UISref to="icons">
-              <li><a>Icons</a></li>
+              <li>
+                <a>Icons</a>
+              </li>
             </UISref>
           </UISrefActive>
           <UISrefActive class="active">
             <UISref to="grid">
-              <li><a>Grid</a></li>
+              <li>
+                <a>Grid</a>
+              </li>
             </UISref>
           </UISrefActive>
           <UISrefActive class="active">
             <UISref to="table">
-              <li><a>Table</a></li>
+              <li>
+                <a>Table</a>
+              </li>
             </UISref>
           </UISrefActive>
           <UISrefActive class="active">
             <UISref to="utils">
-              <li><a>Utilities</a></li>
+              <li>
+                <a>Utilities</a>
+              </li>
             </UISref>
           </UISrefActive>
           <li className="nav__header">Components</li>
           <UISrefActive class="active">
             <UISref to="buttons">
-              <li><a>Buttons</a></li>
+              <li>
+                <a>Buttons</a>
+              </li>
             </UISref>
           </UISrefActive>
           <UISrefActive class="active">
             <UISref to="buttonGroup">
-              <li><a>ButtonGroup</a></li>
+              <li>
+                <a>ButtonGroup</a>
+              </li>
             </UISref>
           </UISrefActive>
           <UISrefActive class="active">
             <UISref to="badges">
-              <li><a>Badges</a></li>
+              <li>
+                <a>Badges</a>
+              </li>
             </UISref>
           </UISrefActive>
           <UISrefActive class="active">
             <UISref to="breadcrumbs">
-              <li><a>Breadcrumbs</a></li>
+              <li>
+                <a>Breadcrumbs</a>
+              </li>
             </UISref>
-          </UISrefActive><UISrefActive class="active">
+          </UISrefActive>
+          <UISrefActive class="active">
             <UISref to="switch">
-              <li><a>Switch</a></li>
+              <li>
+                <a>Switch</a>
+              </li>
             </UISref>
           </UISrefActive>
           <UISrefActive class="active">
             <UISref to="dropdown">
-              <li><a>Dropdown</a></li>
+              <li>
+                <a>Dropdown</a>
+              </li>
             </UISref>
           </UISrefActive>
           <UISrefActive class="active">
             <UISref to="inputs">
-              <li><a>Inputs</a></li>
+              <li>
+                <a>Inputs</a>
+              </li>
             </UISref>
           </UISrefActive>
           <UISrefActive class="active">
             <UISref to="inputGroup">
-              <li><a>InputGroup</a></li>
+              <li>
+                <a>InputGroup</a>
+              </li>
             </UISref>
           </UISrefActive>
           <UISrefActive class="active">
             <UISref to="stepper">
-              <li><a>Stepper</a></li>
+              <li>
+                <a>Stepper</a>
+              </li>
             </UISref>
           </UISrefActive>
           <UISrefActive class="active">
             <UISref to="dimensionInput">
-              <li><a>Dimension input</a></li>
+              <li>
+                <a>Dimension input</a>
+              </li>
             </UISref>
           </UISrefActive>
           <UISrefActive class="active">
             <UISref to="nav">
-              <li><a>Nav</a></li>
+              <li>
+                <a>Nav</a>
+              </li>
             </UISref>
           </UISrefActive>
           <UISrefActive class="active">
             <UISref to="block">
-              <li><a>Block</a></li>
+              <li>
+                <a>Block</a>
+              </li>
             </UISref>
           </UISrefActive>
           <UISrefActive class="active">
             <UISref to="avatar">
-              <li><a>AvatarItem</a></li>
+              <li>
+                <a>AvatarItem</a>
+              </li>
             </UISref>
           </UISrefActive>
           <UISrefActive class="active">
             <UISref to="informationalCard">
-              <li><a>InformationalCard</a></li>
+              <li>
+                <a>InformationalCard</a>
+              </li>
             </UISref>
           </UISrefActive>
           <UISrefActive class="active">
             <UISref to="rangeSlider">
-              <li><a>RangeSlider</a></li>
+              <li>
+                <a>RangeSlider</a>
+              </li>
             </UISref>
           </UISrefActive>
           <UISrefActive class="active">
             <UISref to="cards">
-              <li><a>Cards</a></li>
+              <li>
+                <a>Cards</a>
+              </li>
             </UISref>
           </UISrefActive>
           <UISrefActive class="active">
             <UISref to="tooltips">
-              <li><a>Tooltips</a></li>
+              <li>
+                <a>Tooltips</a>
+              </li>
             </UISref>
           </UISrefActive>
           <UISrefActive class="active">
             <UISref to="tabbedNavigation">
-              <li><a>TabbedNavigation</a></li>
+              <li>
+                <a>TabbedNavigation</a>
+              </li>
             </UISref>
           </UISrefActive>
           <UISrefActive class="active">
             <UISref to="statusIndicator">
-              <li><a>StatusIndicator</a></li>
+              <li>
+                <a>StatusIndicator</a>
+              </li>
             </UISref>
           </UISrefActive>
           <li className="nav__header">Composition</li>
           <UISrefActive class="active">
             <UISref to="previewFrameBar">
-              <li><a>Preview frame bar</a></li>
+              <li>
+                <a>Preview frame bar</a>
+              </li>
             </UISref>
           </UISrefActive>
           <UISrefActive class="active">
             <UISref to="sections">
-              <li><a>Sections</a></li>
+              <li>
+                <a>Sections</a>
+              </li>
             </UISref>
           </UISrefActive>
           <UISrefActive class="active">
             <UISref to="miscellaneous">
-              <li><a>Miscellaneous</a></li>
+              <li>
+                <a>Miscellaneous</a>
+              </li>
             </UISref>
           </UISrefActive>
         </ul>
       </DemoLayoutNav>
-      <UIView/>
+      <UIView />
     </DemoLayout>
   </UIRouter>,
   document.getElementById('index')

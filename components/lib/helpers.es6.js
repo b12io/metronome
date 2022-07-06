@@ -24,7 +24,8 @@ export function reorder (list, sourceIndex, destinationIndex) {
  */
 export function generateId (size = 16) {
   let text = ''
-  const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+  const possible =
+    'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
 
   for (var i = 0; i < size; i++) {
     text += possible.charAt(Math.floor(Math.random() * possible.length))
@@ -32,7 +33,6 @@ export function generateId (size = 16) {
 
   return text
 }
-
 
 export const FileHelper = (file) => {
   let fileInfo = {
@@ -49,8 +49,13 @@ export const FileHelper = (file) => {
   }
 
   const original = file.original || ''
-  const filename = original.replace(/.*[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}[-.]/, '')
-  const extension = filename.slice((Math.max(0, filename.lastIndexOf('.')) || Infinity) + 1)
+  const filename = original.replace(
+    /.*[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}[-.]/,
+    ''
+  )
+  const extension = filename.slice(
+    (Math.max(0, filename.lastIndexOf('.')) || Infinity) + 1
+  )
 
   fileInfo = {
     isVideo: isArray(original.match('.(mpg|mpeg|mp4|avi|webm|mov)$')),

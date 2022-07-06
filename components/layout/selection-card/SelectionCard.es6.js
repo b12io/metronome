@@ -3,9 +3,17 @@ import classnames from 'classnames'
 
 import Button from '../../../components/form/button/Button.es6.js'
 
-
-function SelectionCard ({ children, label, value,
-  thumbnail, thumbnailCover, onClick, preview, scroll, buttonLabel }) {
+function SelectionCard ({
+  children,
+  label,
+  value,
+  thumbnail,
+  thumbnailCover,
+  onClick,
+  preview,
+  scroll,
+  buttonLabel
+}) {
   return (
     <div
       className={classnames({
@@ -13,10 +21,10 @@ function SelectionCard ({ children, label, value,
         'ds-selection-card__scroll': scroll
       })}
     >
-      <img 
+      <img
         className={classnames({
           'ds-selection-card__thumbnail': true,
-          'ds-selection-card__thumbnail-cover': thumbnailCover,
+          'ds-selection-card__thumbnail-cover': thumbnailCover
         })}
         onClick={() => onClick(value)}
         src={thumbnail}
@@ -46,7 +54,7 @@ SelectionCard.defaultProps = {
   preview: null,
   scroll: false,
   onClick: () => {},
-  buttonLabel: '',
+  buttonLabel: ''
 }
 
 export default SelectionCard

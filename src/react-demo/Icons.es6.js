@@ -2,25 +2,186 @@ import React from 'react'
 import DemoLayoutContent from './demo-only-components/DemoLayoutContent.es6.js'
 import DemoIconCard from './demo-only-components/DemoIconCard.es6.js'
 import MetaData from './demo-only-components/MetaData.es6.js'
-import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDataProps.es6.js'
+import {
+  MetaDataProps,
+  MetaDataPropsItem
+} from './demo-only-components/MetaDataProps.es6.js'
 
 import {
-  Check, Lock, Notice, Disabled, Help, Search, Draggable,
-  ChevronRight, Home, TimesCircle, RemoveCircle, SolidCircle, PlusCircle, Plus, Minus, ShoppingCart, Team,
-  Briefcase, Image, Video, Award, Client, Testimonial, Blog,
-  Announcement, Export, Link, Calendar, QuestionCircle, DateIcon, Clock, ImageUpload,
-  AlignCenter, AlignLeft, AlignRight, Close, AppearanceLayout, AppearanceAppearance,
-  AppearanceAdvanced, CloseMedia, Back, Product, BulletPoints, Desktop, Tablet, Mobile, Gear,
-  Checkmark, CheckmarkCircle, CheckSelected, ContentIcon, Unlink, ChevronLeft, Todo, Folder,
-  Star, StarFilled, Post, CaseStudy, Form, ContactInformation, Customer, Event, Faq, Integration, Location,
-  Media, Steps, Project, SimpleText, ClearFormatting, StrikeThrough, TestimonialRound, FieldMapping, Sort, HeaderFooter, Pages,
-  Move, Duplicate, Delete, Visible, Hidden, InfoCircle, WindowCode, Logout, Badge, Pencil, Upgrade,
-  CreditCard, Indent, Key, Animations, DiagonalArrow, Import, AddCustomer, CaretDown, Repeat, Availability,
-  CalendarEvent, Payments, Service, Email, AppCube, MagicWand, Layout, Send, Code, User, Section, Tag, Welcome,
-  Website, Chat, RotateForward, Globe, At, Target, IconRow, IconColumn, IconSection, FolderFilled, BlogPost, MenuItems, Popup, Bold, Italic, Underline, UnorderedList, OrderedList,
-  Flag, Testimonials, Chart, Play, Pause, AlignLeftV2, AlignCenterV2, AlignRightV2, AlignJustifyV2, Sidebar, ArrowCircle, Palette, Lightbox, Filter, Slider,
-  Flash, Dashboard, Guides, Article, Pulse, Edit, ContentApproved, Dragger, PaperClip, Invoicing, Banking, Checkbox, Circle, Bank, Card, Contract,
-  MinusCircle, RepeatCircle, BadgeCard, HeadphonesMic, CheckmarkLarge, NoticeOutlined, Archive, Questionnaire, Upload, ShareFeedback, Spaceship, Zap, Tip, Webpage
+  Check,
+  Lock,
+  Notice,
+  Disabled,
+  Help,
+  Search,
+  Draggable,
+  ChevronRight,
+  Home,
+  TimesCircle,
+  RemoveCircle,
+  SolidCircle,
+  PlusCircle,
+  Plus,
+  Minus,
+  ShoppingCart,
+  Team,
+  Briefcase,
+  Image,
+  Video,
+  Award,
+  Client,
+  Testimonial,
+  Blog,
+  Announcement,
+  Export,
+  Link,
+  Calendar,
+  QuestionCircle,
+  DateIcon,
+  Clock,
+  ImageUpload,
+  AlignCenter,
+  AlignLeft,
+  AlignRight,
+  Close,
+  AppearanceLayout,
+  AppearanceAppearance,
+  AppearanceAdvanced,
+  CloseMedia,
+  Back,
+  Product,
+  BulletPoints,
+  Desktop,
+  Tablet,
+  Mobile,
+  Gear,
+  Checkmark,
+  CheckmarkCircle,
+  CheckSelected,
+  ContentIcon,
+  Unlink,
+  ChevronLeft,
+  Todo,
+  Folder,
+  Star,
+  StarFilled,
+  Post,
+  CaseStudy,
+  Form,
+  ContactInformation,
+  Customer,
+  Event,
+  Faq,
+  Integration,
+  Location,
+  Media,
+  Steps,
+  Project,
+  SimpleText,
+  ClearFormatting,
+  StrikeThrough,
+  TestimonialRound,
+  FieldMapping,
+  Sort,
+  HeaderFooter,
+  Pages,
+  Move,
+  Duplicate,
+  Delete,
+  Visible,
+  Hidden,
+  InfoCircle,
+  WindowCode,
+  Logout,
+  Badge,
+  Pencil,
+  Upgrade,
+  CreditCard,
+  Indent,
+  Key,
+  Animations,
+  DiagonalArrow,
+  Import,
+  AddCustomer,
+  CaretDown,
+  Repeat,
+  Availability,
+  CalendarEvent,
+  Payments,
+  Service,
+  Email,
+  AppCube,
+  MagicWand,
+  Layout,
+  Send,
+  Code,
+  User,
+  Section,
+  Tag,
+  Welcome,
+  Website,
+  Chat,
+  RotateForward,
+  Globe,
+  At,
+  Target,
+  IconRow,
+  IconColumn,
+  IconSection,
+  FolderFilled,
+  BlogPost,
+  MenuItems,
+  Popup,
+  Bold,
+  Italic,
+  Underline,
+  UnorderedList,
+  OrderedList,
+  Flag,
+  Testimonials,
+  Chart,
+  Play,
+  Pause,
+  AlignLeftV2,
+  AlignCenterV2,
+  AlignRightV2,
+  AlignJustifyV2,
+  Sidebar,
+  ArrowCircle,
+  Palette,
+  Lightbox,
+  Filter,
+  Slider,
+  Flash,
+  Dashboard,
+  Guides,
+  Article,
+  Pulse,
+  Edit,
+  ContentApproved,
+  Dragger,
+  PaperClip,
+  Invoicing,
+  Banking,
+  Checkbox,
+  Circle,
+  Bank,
+  Card,
+  Contract,
+  MinusCircle,
+  RepeatCircle,
+  BadgeCard,
+  HeadphonesMic,
+  CheckmarkLarge,
+  NoticeOutlined,
+  Archive,
+  Questionnaire,
+  Upload,
+  ShareFeedback,
+  Spaceship,
+  Zap,
+  Tip,
+  Webpage
 } from '../../components/Icons.es6.js'
 
 const ICONS = [
@@ -719,25 +880,27 @@ const ICONS = [
   {
     name: 'Webpage',
     component: Webpage
-  },
+  }
 ]
 
 function Icons () {
   const icons = ICONS.map((iconData, index) => {
     const IconTag = iconData.component
-    return (<DemoIconCard key={index} label={iconData.name}>
-      <IconTag color="#766bff" />
-    </DemoIconCard>
+    return (
+      <DemoIconCard key={index} label={iconData.name}>
+        <IconTag color="#766bff" />
+      </DemoIconCard>
     )
   })
   return (
     <DemoLayoutContent>
       <div className="app-page-title">
         <h1>Icons</h1>
-        <p>Icons can be used almost in any component. All icons are in <code>SVG</code> format.</p>
-        <MetaData
-          importFrom="import { IconName } from '@b12/metronome/components/Icons.es6.js'"
-        />
+        <p>
+          Icons can be used almost in any component. All icons are in{' '}
+          <code>SVG</code> format.
+        </p>
+        <MetaData importFrom="import { IconName } from '@b12/metronome/components/Icons.es6.js'" />
       </div>
 
       <div className="ds-block">
@@ -790,9 +953,7 @@ function Icons () {
           <h4>Available icons</h4>
         </div>
 
-        <div>
-          {icons}
-        </div>
+        <div>{icons}</div>
       </div>
     </DemoLayoutContent>
   )

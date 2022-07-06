@@ -1,12 +1,16 @@
-export const deslugify = input => {
+export const deslugify = (input) => {
   let outputString = input ? String(input) : ''
   outputString = outputString.replace(/[_-]/g, ' ')
-  return outputString.charAt(0).toUpperCase() + outputString.substr(1).toLowerCase()
+  return (
+    outputString.charAt(0).toUpperCase() + outputString.substr(1).toLowerCase()
+  )
 }
 
-export const slugify = input => {
+export const slugify = (input) => {
   const outputString = input ? String(input) : ''
-  return outputString.toString().toLowerCase()
+  return outputString
+    .toString()
+    .toLowerCase()
     .replace(/\s+/g, '-') // Replace spaces with -
     .replace(/[^\w-]+/g, '') // Remove all non-word chars
     .replace(/--+/g, '-') // Replace multiple - with single -
@@ -14,11 +18,12 @@ export const slugify = input => {
     .replace(/-+$/, '') // Trim - from end of str
 }
 
-export const titleCase = input => {
+export const titleCase = (input) => {
   const outputString = input ? String(input) : ''
-  return outputString.replace(/\w\S*/g, txt => (
-    txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
-  ))
+  return outputString.replace(
+    /\w\S*/g,
+    (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
+  )
 }
 
 /**
@@ -27,7 +32,7 @@ export const titleCase = input => {
  *
  * @param {string} input
  */
-export const snakeToKebab = input => input.replace(/_/g, '-')
+export const snakeToKebab = (input) => input.replace(/_/g, '-')
 
 /**
  * Convert sentence case to snake_case. Useful for getting field names
@@ -35,4 +40,4 @@ export const snakeToKebab = input => input.replace(/_/g, '-')
  *
  * @param {string} input
  */
-export const spacesToSnake = input => input.replace(/\s/g, '_')
+export const spacesToSnake = (input) => input.replace(/\s/g, '_')
