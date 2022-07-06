@@ -2,7 +2,10 @@ import React from 'react'
 import DemoLayoutContent from './demo-only-components/DemoLayoutContent.es6.js'
 import CodeExample from './demo-only-components/CodeExample.es6.js'
 import MetaData from './demo-only-components/MetaData.es6.js'
-import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDataProps.es6.js'
+import {
+  MetaDataProps,
+  MetaDataPropsItem
+} from './demo-only-components/MetaDataProps.es6.js'
 
 import AvatarItem from '../../components/layout/avatar/AvatarItem.es6.js'
 
@@ -24,7 +27,8 @@ export default function AvatarItemPage () {
           <p>...</p>
         </div>
 
-        <CodeExample code={`<AvatarItem
+        <CodeExample
+          code={`<AvatarItem
   primaryText="Patrick Glebovsky"
   hasHover
   showIconOnly
@@ -50,33 +54,31 @@ export default function AvatarItemPage () {
   secondaryText="Is online now"
   imgSrc="http://placekitten.com/200/200"
   isActive
-/>`}>
-          <AvatarItem
-            primaryText="Patrick Glebovsky"
-            hasHover
-            showIconOnly
-          />
-          <br /><br />
-          <AvatarItem
-            primaryText="Patrick Glebovsky"
-          />
-          <br /><br />
+/>`}
+        >
+          <AvatarItem primaryText="Patrick Glebovsky" hasHover showIconOnly />
+          <br />
+          <br />
+          <AvatarItem primaryText="Patrick Glebovsky" />
+          <br />
+          <br />
           <AvatarItem
             primaryText="Edil Kratskih"
             secondaryText="awesomefrontender@gmail.com"
             isActive
           />
-          <br /><br />
-          <AvatarItem
-            primaryText="Adam"
-          />
-          <br /><br />
+          <br />
+          <br />
+          <AvatarItem primaryText="Adam" />
+          <br />
+          <br />
           <AvatarItem
             primaryText="Nicolas Cage"
             secondaryText="Hollywood actor"
             imgSrc="https://www.placecage.com/c/200/200"
           />
-          <br /><br />
+          <br />
+          <br />
           <AvatarItem
             primaryText="Fluffy Mittens"
             secondaryText="Is online now"

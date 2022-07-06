@@ -6,7 +6,7 @@
     border-radius: $ds-border-radius-base;
     color: $ds-brand-regular-color;
     padding: 14px;
-    padding-right: $ds-input-padding-x*3;
+    padding-right: $ds-input-padding-x * 3;
     transition: $ds-transition;
     cursor: pointer;
     position: relative;
@@ -31,12 +31,12 @@
 
     &::before {
       right: 19px;
-      transform: translate(0,-50%) rotate(40deg);
+      transform: translate(0, -50%) rotate(40deg);
     }
 
     &::after {
       right: 15px;
-      transform: translate(0,-50%) rotate(-40deg);
+      transform: translate(0, -50%) rotate(-40deg);
     }
 
     &:hover {

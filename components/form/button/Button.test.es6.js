@@ -41,12 +41,12 @@ it('should be active', () => {
 })
 
 it('should pass id', () => {
-  const component = shallow(<Button id="button-id"/>)
+  const component = shallow(<Button id="button-id" />)
   expect(component.prop('id')).toEqual('button-id')
 })
 
 it('should render alternative button', () => {
-  const component = shallow(<Button alternative/>)
+  const component = shallow(<Button alternative />)
   expect(component.hasClass('button--alternative')).toBe(true)
 })
 

@@ -1,5 +1,15 @@
-.u-m-b    { margin-bottom: $ds-gap-y !important; }
-.u-m-b-sm { margin-bottom: $ds-gap-y/2 !important; }
-.u-m-b-lg { margin-bottom: $ds-gap-y*2 !important; }
-.u-m-b-0  { margin-bottom: 0 !important; }
-.u-m-t-0  { margin-top: 0 !important; }
+.u-m-b {
+  margin-bottom: $ds-gap-y !important;
+}
+.u-m-b-sm {
+  margin-bottom: $ds-gap-y/2 !important;
+}
+.u-m-b-lg {
+  margin-bottom: $ds-gap-y * 2 !important;
+}
+.u-m-b-0 {
+  margin-bottom: 0 !important;
+}
+.u-m-t-0 {
+  margin-top: 0 !important;
+}

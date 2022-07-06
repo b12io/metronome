@@ -1,6 +1,5 @@
 import * as React from 'react'
 
-
 const TABLE_HEAD_TAG = 'thead'
 
 // Creates table `thead`, `tbody` or `tfoot` elements component.
@@ -11,7 +10,7 @@ export const makeTablePartComponent = (partName) => {
   return function TablePartComponent ({ children, ...otherProps }) {
     let newChildren
     if (partName === TABLE_HEAD_TAG) {
-      newChildren = React.Children.map(children, child => {
+      newChildren = React.Children.map(children, (child) => {
         return React.cloneElement(child, {
           isInTableHeader: true
         })

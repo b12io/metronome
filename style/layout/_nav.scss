@@ -39,7 +39,7 @@
 
     &:hover {
       cursor: pointer;
-      background: fade-out($ds-ui-background-dark-color, .93);
+      background: fade-out($ds-ui-background-dark-color, 0.93);
 
       .ds-nav__item-label {
         color: $ds-brand-regular-color;
@@ -57,7 +57,7 @@
     }
 
     &--active {
-      background: fade-out($ds-ui-background-dark-color, .93);
+      background: fade-out($ds-ui-background-dark-color, 0.93);
 
       .ds-nav__item-label {
         color: $ds-brand-regular-color;
@@ -123,7 +123,7 @@
       padding: spacing('xxxxsm') spacing('xxxsm');
       color: $ds-ui-lightest-color;
       background: $ds-body-lighter-color;
-      border-radius: $ds-border-radius-base*2;
+      border-radius: $ds-border-radius-base * 2;
     }
 
     &-action {
@@ -141,7 +141,7 @@
     }
 
     &--disabled {
-      opacity: .5;
+      opacity: 0.5;
 
       &:hover {
         background: transparent;

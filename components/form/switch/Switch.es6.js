@@ -32,13 +32,15 @@ class Switch extends React.Component {
 
   render () {
     return (
-      <div className={classnames({
-        'buttons-group': true,
-        'buttons-group--block': this.props.block
-      })}
+      <div
+        className={classnames({
+          'buttons-group': true,
+          'buttons-group--block': this.props.block
+        })}
       >
         {this.state.buttons}
-      </div>)
+      </div>
+    )
   }
 }
 
@@ -50,10 +52,7 @@ Switch.defaultProps = {
 }
 
 Switch.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.object,
-    PropTypes.array
-  ]),
+  children: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   block: PropTypes.bool,
   selected: PropTypes.number,
   onChange: PropTypes.func

@@ -6,11 +6,9 @@ import Info from './Info.es6.js'
 
 it('should render svg set through the icon property', () => {
   const mockDelay = 100
-  const component = shallow(<Info
-      text='Test message'
-      icon={Hidden}
-      delay={mockDelay}
-    />)
+  const component = shallow(
+    <Info text="Test message" icon={Hidden} delay={mockDelay} />
+  )
 
   expect(component.find('B12Tooltip').length).toEqual(1)
   expect(component.find('B12Tooltip').html()).toContain('svg')
@@ -18,11 +16,11 @@ it('should render svg set through the icon property', () => {
 })
 
 it('should render svg set as a child', () => {
-  const component = shallow(<Info
-      text='Test message'
-    >
-      <Hidden/>
-    </Info>)
+  const component = shallow(
+    <Info text="Test message">
+      <Hidden />
+    </Info>
+  )
 
   expect(component.find('B12Tooltip').length).toEqual(1)
   expect(component.find('B12Tooltip').html()).toContain('svg')

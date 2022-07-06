@@ -1,8 +1,16 @@
 import * as React from 'react'
 import classnames from 'classnames'
 
-
-const TabbedNavigationItem = ({ active, visited, showProgress, clickable, disabled, className, onClick, children }) => {
+const TabbedNavigationItem = ({
+  active,
+  visited,
+  showProgress,
+  clickable,
+  disabled,
+  className,
+  onClick,
+  children
+}) => {
   return (
     <React.Fragment>
       <li
@@ -20,12 +28,11 @@ const TabbedNavigationItem = ({ active, visited, showProgress, clickable, disabl
       >
         {children}
       </li>
-      <li className={classnames(
-        'ds-tabbed-nav__separator',
-        {
+      <li
+        className={classnames('ds-tabbed-nav__separator', {
           'ds-tabbed-nav__separator--has-progress': showProgress
-        }
-      )}></li>
+        })}
+      ></li>
     </React.Fragment>
   )
 }

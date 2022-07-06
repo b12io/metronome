@@ -24,7 +24,6 @@
     }
 
     .ds-mini-select__dropdown-toggle {
-
       &::before,
       &::after {
         background: $ds-input-border-focus-color;
@@ -99,12 +98,12 @@
 
       &::before {
         right: 14px;
-        transform: translate(0,-50%) rotate(40deg);
+        transform: translate(0, -50%) rotate(40deg);
       }
 
       &::after {
         right: 10px;
-        transform: translate(0,-50%) rotate(-40deg);
+        transform: translate(0, -50%) rotate(-40deg);
       }
 
       &:hover {
@@ -164,7 +163,7 @@
     height: 100%;
 
     &:focus {
-      outline: 0
+      outline: 0;
     }
 
     &:disabled {

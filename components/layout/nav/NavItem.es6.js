@@ -2,8 +2,6 @@ import React from 'react'
 import classnames from 'classnames'
 import { ChevronRight } from '../../Icons.es6.js'
 
-
-
 class NavItem extends React.Component {
   static defaultProps = {
     label: '',
@@ -20,29 +18,33 @@ class NavItem extends React.Component {
     this.props.onActionClick()
   }
 
-  render() {
-    const { disabled, className, icon, label, showArrow, active, onClick, onActionClick, actionIcon, badge } = this.props
-    const classNames = classnames({
-      'ds-nav__item': true,
-      'ds-nav__item--disabled': disabled,
-      'ds-nav__item--active': active,
-    }, className)
+  render () {
+    const {
+      disabled,
+      className,
+      icon,
+      label,
+      showArrow,
+      active,
+      onClick,
+      onActionClick,
+      actionIcon,
+      badge
+    } = this.props
+    const classNames = classnames(
+      {
+        'ds-nav__item': true,
+        'ds-nav__item--disabled': disabled,
+        'ds-nav__item--active': active
+      },
+      className
+    )
 
     return (
       <div className={classNames} onClick={onClick}>
-        {icon && (
-          <div className="ds-nav__item-icon">
-            {icon}
-          </div>
-        )}
-        <div className="ds-nav__item-label">
-          {label}
-        </div>
-        {badge && (
-          <div className="ds-nav__item-badge">
-            {badge}
-          </div>
-        )}
+        {icon && <div className="ds-nav__item-icon">{icon}</div>}
+        <div className="ds-nav__item-label">{label}</div>
+        {badge && <div className="ds-nav__item-badge">{badge}</div>}
         {onActionClick && (
           <div className="ds-nav__item-action" onClick={this.handleActionClick}>
             {actionIcon}

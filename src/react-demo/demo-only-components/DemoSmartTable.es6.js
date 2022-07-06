@@ -19,7 +19,7 @@ const rows = [
   { id: 'calories', numeric: true, label: 'Calories' },
   { id: 'fat', numeric: true, label: 'Fat (g)' },
   { id: 'carbs', numeric: true, label: 'Carbs (g)' },
-  { id: 'protein', numeric: true, label: 'Protein (g)' },
+  { id: 'protein', numeric: true, label: 'Protein (g)' }
 ]
 
 export default class DemoSmartTable extends React.Component {
@@ -37,10 +37,10 @@ export default class DemoSmartTable extends React.Component {
       createData('Oreo', 437, 18.0, 63, 4.0),
       createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
       createData('KitKat', 518, 26.0, 65, 7.0),
-      createData('Lollipop', 392, 0.2, 98, 0.0),
+      createData('Lollipop', 392, 0.2, 98, 0.0)
     ],
     page: 0,
-    rowsPerPage: 5,
+    rowsPerPage: 5
   }
 
   handleChangePage = (page) => {
@@ -49,7 +49,8 @@ export default class DemoSmartTable extends React.Component {
 
   render () {
     const { data, rowsPerPage, page } = this.state
-    const emptyRows = rowsPerPage - Math.min(rowsPerPage, data.length - page * rowsPerPage)
+    const emptyRows =
+      rowsPerPage - Math.min(rowsPerPage, data.length - page * rowsPerPage)
     return (
       <div>
         <Grid nowrap justify="end" align="center">
@@ -60,14 +61,10 @@ export default class DemoSmartTable extends React.Component {
             onChangePage={this.handleChangePage}
           />
         </Grid>
-        <Table
-          padding="comfortable"
-          verticalAlign="middle"
-          cardLike
-        >
+        <Table padding="comfortable" verticalAlign="middle" cardLike>
           <TableHead>
             <TableRow>
-              {rows.map(row => (
+              {rows.map((row) => (
                 <TableCell key={row.id} align={row.numeric ? 'center' : 'left'}>
                   {row.label}
                 </TableCell>
@@ -75,8 +72,9 @@ export default class DemoSmartTable extends React.Component {
             </TableRow>
           </TableHead>
           <TableBody>
-            {data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-              .map(row => (
+            {data
+              .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+              .map((row) => (
                 <TableRow key={row.id}>
                   <TableCell width="35%">
                     <AvatarItem
@@ -91,10 +89,7 @@ export default class DemoSmartTable extends React.Component {
                 </TableRow>
               ))}
             {emptyRows > 0 && (
-              <TableRow
-                style={{ height: 71 * emptyRows }}
-                noHover
-              >
+              <TableRow style={{ height: 71 * emptyRows }} noHover>
                 <TableCell colSpan={6} />
               </TableRow>
             )}

@@ -1,11 +1,7 @@
 const path = require('path')
 
 module.exports = {
-  extends: [
-    'standard',
-    'plugin:react/recommended',
-    'prettier'
-  ],
+  extends: ['standard', 'plugin:react/recommended', 'prettier'],
   parser: 'babel-eslint',
   plugins: ['standard', 'promise', 'import', 'react', 'jsx-a11y'],
   env: {
@@ -34,6 +30,7 @@ module.exports = {
     'react/no-deprecated': 0,
     semi: ['error', 'never'],
     quotes: ['error', 'single', { avoidEscape: true }],
+    'space-before-function-paren': ['error', 'always'],
     'comma-dangle': 'off',
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
     'jsx-a11y/no-static-element-interactions': 'off',

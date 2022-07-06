@@ -1,8 +1,6 @@
 import React from 'react'
 import classnames from 'classnames'
 
-
-
 const DEFAULT_STATUS_LABELS = {
   success: 'Active',
   default: 'Inactive',

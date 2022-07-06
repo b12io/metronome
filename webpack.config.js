@@ -10,7 +10,7 @@ module.exports = {
     contentBase: path.join(__dirname, 'src'),
     host: '0.0.0.0',
     port: 8080, // Update this port with an available port on your machine!
-    disableHostCheck: true,
+    disableHostCheck: true
   },
   module: {
     rules: [

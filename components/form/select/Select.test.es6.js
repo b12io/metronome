@@ -6,17 +6,25 @@ import Option from '../option/Option.es6.js'
 
 it('should render label', () => {
   const component = shallow(<Select label="Media" />)
-  expect(component.find('.ds-control-label').at(0).text().trim()).toEqual('Media')
+  expect(component.find('.ds-control-label').at(0).text().trim()).toEqual(
+    'Media'
+  )
 })
 
 it('should render default placeholder', () => {
   const component = shallow(<Select label="Media" />)
-  expect(component.find('.ds-form-control-select__toggle').at(0).text().trim()).toEqual('Please select')
+  expect(
+    component.find('.ds-form-control-select__toggle').at(0).text().trim()
+  ).toEqual('Please select')
 })
 
 it('should render passed in placeholder', () => {
-  const component = shallow(<Select label="Media" placeholder="My test placeholder" />)
-  expect(component.find('.ds-form-control-select__toggle').at(0).text().trim()).toEqual('My test placeholder')
+  const component = shallow(
+    <Select label="Media" placeholder="My test placeholder" />
+  )
+  expect(
+    component.find('.ds-form-control-select__toggle').at(0).text().trim()
+  ).toEqual('My test placeholder')
 })
 
 it('should not show help by default', () => {
@@ -27,7 +35,9 @@ it('should not show help by default', () => {
 it('should display help message', () => {
   const component = shallow(<Select label="Media" help="Help message" />)
   expect(component.find('.ds-form-group__help-text').length).toEqual(1)
-  expect(component.find('.ds-form-group__help-text span').at(0).text().trim()).toEqual('Help message')
+  expect(
+    component.find('.ds-form-group__help-text span').at(0).text().trim()
+  ).toEqual('Help message')
 })
 
 it('should display error style', () => {
@@ -45,36 +55,36 @@ it('should be disabled', () => {
 it('should not toggle for disabled', () => {
   const component = shallow(<Select label="Media" disabled />)
 
-  expect(component
-    .find('.ds-form-control-select')
-    .hasClass('ds-form-control-select--focused')
+  expect(
+    component
+      .find('.ds-form-control-select')
+      .hasClass('ds-form-control-select--focused')
   ).toBeFalsy()
 
-  component
-    .find('.ds-form-control-select__toggle')
-    .simulate('click')
+  component.find('.ds-form-control-select__toggle').simulate('click')
 
-  expect(component
-    .find('.ds-form-control-select')
-    .hasClass('ds-form-control-select--focused')
+  expect(
+    component
+      .find('.ds-form-control-select')
+      .hasClass('ds-form-control-select--focused')
   ).toBeFalsy()
 })
 
 it('should show options on click', () => {
   const component = shallow(<Select label="Media" />)
 
-  expect(component
-    .find('.ds-form-control-select')
-    .hasClass('ds-form-control-select--focused')
+  expect(
+    component
+      .find('.ds-form-control-select')
+      .hasClass('ds-form-control-select--focused')
   ).toBeFalsy()
 
-  component
-    .find('.ds-form-control-select__toggle')
-    .simulate('click')
+  component.find('.ds-form-control-select__toggle').simulate('click')
 
-  expect(component
-    .find('.ds-form-control-select')
-    .hasClass('ds-form-control-select--focused')
+  expect(
+    component
+      .find('.ds-form-control-select')
+      .hasClass('ds-form-control-select--focused')
   ).toBeTruthy()
 })
 
@@ -110,7 +120,7 @@ it('should call onChange', () => {
 it('should search', () => {
   const onChange = jest.fn()
   const onFilter = (items, query) => {
-    return items.filter(item => item.props.label.indexOf(query) >= 0)
+    return items.filter((item) => item.props.label.indexOf(query) >= 0)
   }
 
   const component = mount(
@@ -123,9 +133,7 @@ it('should search', () => {
   expect(component.find(Option).length).toEqual(2)
 
   // Open menu
-  component
-    .find('.ds-form-control-select__toggle')
-    .simulate('click')
+  component.find('.ds-form-control-select__toggle').simulate('click')
 
   // Search
   component

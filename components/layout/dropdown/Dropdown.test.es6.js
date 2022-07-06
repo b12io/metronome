@@ -18,15 +18,15 @@ it('should render toggle with icon and label', () => {
   )
 
   expect(component.find('.ds-dropdown__toggle').exists()).toBe(true)
-  expect(component.find('.ds-dropdown__toggle').text().trim()).toBe('<Customer />Toggle me')
+  expect(component.find('.ds-dropdown__toggle').text().trim()).toBe(
+    '<Customer />Toggle me'
+  )
   expect(component.find('Customer').exists()).toBe(true)
 })
 
 it('should render custom toggle', () => {
   const component = shallow(
-    <Dropdown
-      toggle={<Button label="Toggle me" chevron />}
-    ></Dropdown>
+    <Dropdown toggle={<Button label="Toggle me" chevron />}></Dropdown>
   )
 
   expect(component.find('.ds-dropdown__toggle').exists()).toBe(true)
@@ -62,15 +62,15 @@ it('should render custom dropdown content', () => {
     </Dropdown>
   )
 
-  expect(component.find('div.ds-dropdown__menu--with-content').exists()).toBe(true)
+  expect(component.find('div.ds-dropdown__menu--with-content').exists()).toBe(
+    true
+  )
 })
 
 it('should show dropdown menu by clicking toggle', () => {
   const onClick = jest.fn()
   const component = shallow(
-    <Dropdown
-      toggle="Toggle me"
-    >
+    <Dropdown toggle="Toggle me">
       <DropdownItemHeader label="Header" />
       <DropdownItem label="Link 1" />
       <DropdownItemDivider />
@@ -85,9 +85,7 @@ it('should show dropdown menu by clicking toggle', () => {
 it('should hide dropdown menu by clicking on menu item', () => {
   const onClick = jest.fn()
   const component = mount(
-    <Dropdown
-      toggle="Toggle me"
-    >
+    <Dropdown toggle="Toggle me">
       <DropdownItemHeader label="Header" />
       <DropdownItem label="Link 1" onClick={onClick} />
       <DropdownItemDivider />
@@ -96,7 +94,11 @@ it('should hide dropdown menu by clicking on menu item', () => {
   )
 
   component.find('.ds-dropdown__toggle').simulate('click')
-  expect(component.find('.ds-dropdown').hasClass('ds-dropdown--menu-visible')).toBe(true)
+  expect(
+    component.find('.ds-dropdown').hasClass('ds-dropdown--menu-visible')
+  ).toBe(true)
   component.find('.ds-dropdown__menu-item').at(0).simulate('click')
-  expect(component.find('.ds-dropdown').hasClass('ds-dropdown--menu-visible')).toBe(false)
+  expect(
+    component.find('.ds-dropdown').hasClass('ds-dropdown--menu-visible')
+  ).toBe(false)
 })

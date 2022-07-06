@@ -2,7 +2,10 @@ import React from 'react'
 import DemoLayoutContent from './demo-only-components/DemoLayoutContent.es6.js'
 import CodeExample from './demo-only-components/CodeExample.es6.js'
 import MetaData from './demo-only-components/MetaData.es6.js'
-import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDataProps.es6.js'
+import {
+  MetaDataProps,
+  MetaDataPropsItem
+} from './demo-only-components/MetaDataProps.es6.js'
 
 import Group from '../../components/layout/panel/group/Group.es6.js'
 import InputGroup from '../../components/form/input-group/InputGroup.es6.js'
@@ -17,7 +20,10 @@ function NavPage () {
     <DemoLayoutContent>
       <div className="app-page-title">
         <h1>InputGroup</h1>
-        <p>Stateless component that acts like a wrapper that holds several inputs, selects or buttons</p>
+        <p>
+          Stateless component that acts like a wrapper that holds several
+          inputs, selects or buttons
+        </p>
         <MetaData
           importFrom="import InputGroup from '@b12/metronome/components/form/input-group/InputGroup.es6.js'"
           flow="Yes"
@@ -27,10 +33,14 @@ function NavPage () {
       <div className="ds-block">
         <div className="ds-block__title">
           <h4>Example</h4>
-          <p>Children that you can use in component are: <code>Select</code>, <code>TextField</code>, <code>Button</code></p>
+          <p>
+            Children that you can use in component are: <code>Select</code>,{' '}
+            <code>TextField</code>, <code>Button</code>
+          </p>
         </div>
 
-        <CodeExample code={`<Group>
+        <CodeExample
+          code={`<Group>
   <InputGroup>
     <Select>...</Select>
     <TextField value="The value" />
@@ -55,8 +65,9 @@ function NavPage () {
     <Button primary label="Go!" />
     <Select>...</Select>
   </InputGroup>
-</Group>`}>
-          <div style={{width: '400px'}}>
+</Group>`}
+        >
+          <div style={{ width: '400px' }}>
             <Group>
               <InputGroup>
                 <Select>
@@ -64,17 +75,13 @@ function NavPage () {
                   <Option label="Option 2" key="option-2" value="1" />
                   <Option label="Option 3" key="option-3" value="1" />
                 </Select>
-                <TextField
-                  value="The value"
-                />
+                <TextField value="The value" />
                 <Button icon={<RemoveCircle />} />
               </InputGroup>
             </Group>
             <Group>
               <InputGroup>
-                <TextField
-                  value="The value"
-                />
+                <TextField value="The value" />
                 <Select>
                   <Option label="Option 1" key="option-1" value="1" />
                   <Option label="Option 2" key="option-2" value="1" />
@@ -89,9 +96,7 @@ function NavPage () {
                   <Option label="Option 2" key="option-2" value="1" />
                   <Option label="Option 3" key="option-3" value="1" />
                 </Select>
-                <TextField
-                  value="The value"
-                />
+                <TextField value="The value" />
                 <Select>
                   <Option label="Option 1" key="option-1" value="1" />
                   <Option label="Option 2" key="option-2" value="1" />
@@ -111,7 +116,8 @@ function NavPage () {
             </Group>
           </div>
         </CodeExample>
-        <CodeExample code={`<Group label="Vertical">
+        <CodeExample
+          code={`<Group label="Vertical">
   <InputGroup vertical>
     <TextField value="The value" />
     <TextField value="Another value" />
@@ -124,8 +130,9 @@ function NavPage () {
     <TextField value="Third value" />
     <Button label="Apply" block />
   </InputGroup>
-</Group>`}>
-          <div style={{width: '300px'}}>
+</Group>`}
+        >
+          <div style={{ width: '300px' }}>
             <Group label="Vertical">
               <InputGroup vertical>
                 <TextField value="The value" />

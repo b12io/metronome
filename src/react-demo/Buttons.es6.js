@@ -2,7 +2,10 @@ import React from 'react'
 import DemoLayoutContent from './demo-only-components/DemoLayoutContent.es6.js'
 import CodeExample from './demo-only-components/CodeExample.es6.js'
 import MetaData from './demo-only-components/MetaData.es6.js'
-import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDataProps.es6.js'
+import {
+  MetaDataProps,
+  MetaDataPropsItem
+} from './demo-only-components/MetaDataProps.es6.js'
 
 import Button from '../../components/form/button/Button.es6.js'
 import { Tablet } from '../../components/Icons.es6.js'
@@ -25,38 +28,58 @@ function Buttons () {
           <h4>Default</h4>
         </div>
 
-        <CodeExample code={`<Button label="Default" title="Here is a title" />
+        <CodeExample
+          code={`<Button label="Default" title="Here is a title" />
 <Button label="Disabled" disabled />
-<Button label="Disabled" loading />`}>
+<Button label="Disabled" loading />`}
+        >
           <Button label="Default" title="Here is a title" />
           <Button label="Disabled" disabled />
           <Button label="Disabled" loading />
         </CodeExample>
-        <CodeExample title="Primary button" code={`<Button label="Default" primary />
+        <CodeExample
+          title="Primary button"
+          code={`<Button label="Default" primary />
 <Button label="Loading" primary disabled />
-<Button label="Loading" primary loading />`}>
+<Button label="Loading" primary loading />`}
+        >
           <Button label="Default" primary />
           <Button label="Loading" primary disabled />
           <Button label="Loading" primary loading />
         </CodeExample>
-        <CodeExample title="Button sizing" code={`<Button label="Small" primary small />
+        <CodeExample
+          title="Button sizing"
+          code={`<Button label="Small" primary small />
 <Button label="Disabled" primary loading small />
 <Button label="Default" primary />
 <Button label="Large" primary large />
-<Button label="Disabled" primary loading large />`}>
+<Button label="Disabled" primary loading large />`}
+        >
           <Button label="Small" primary small />
           <Button label="Disabled" primary loading small />
           <Button label="Default" primary />
           <Button label="Large" primary large />
           <Button label="Disabled" primary loading large />
         </CodeExample>
-        <CodeExample title="Button with badges" code={`<Button label="Get Expert Boost" badge="$99" primary />
-<Button label="Launch Satellite" badge="$0.99" />`}>
+        <CodeExample
+          title="Button with badges"
+          code={`<Button label="Get Expert Boost" badge="$99" primary />
+<Button label="Launch Satellite" badge="$0.99" />`}
+        >
           <Button label="Get Expert Boost" badge="$99" primary />
           <Button label="Launch Satellite" badge="$0.99" />
         </CodeExample>
-        <CodeExample title="Button with icon and label" code={'<Button iconWithLabel label="Tablet portrait mode" icon={<Tablet />} />'}>
-          <Button iconWithLabel label="Tablet portrait mode" icon={<Tablet />} />
+        <CodeExample
+          title="Button with icon and label"
+          code={
+            '<Button iconWithLabel label="Tablet portrait mode" icon={<Tablet />} />'
+          }
+        >
+          <Button
+            iconWithLabel
+            label="Tablet portrait mode"
+            icon={<Tablet />}
+          />
         </CodeExample>
       </div>
 
@@ -65,7 +88,8 @@ function Buttons () {
           <h4>Button with chevron</h4>
         </div>
 
-        <CodeExample code={`<Button label="I act like a toggle" chevron />
+        <CodeExample
+          code={`<Button label="I act like a toggle" chevron />
 <br /><br />
 <div style={{width: '300px'}}>
   <Button label="I act like a toggle" chevron block />
@@ -73,10 +97,12 @@ function Buttons () {
   <Button label="Primary button" primary chevron block />
   <br />
   <Button label="Active state" chevron block active />
-</div>`}>
+</div>`}
+        >
           <Button label="I act like a toggle" chevron />
-          <br /><br />
-          <div style={{width: '300px'}}>
+          <br />
+          <br />
+          <div style={{ width: '300px' }}>
             <Button label="I act like a toggle" chevron block />
             <br />
             <Button label="Primary button" primary chevron block />

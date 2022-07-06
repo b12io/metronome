@@ -2,15 +2,19 @@ import * as React from 'react'
 import classnames from 'classnames'
 import CommonPagination from './CommonPagination.es6.js'
 
-
-function TablePagination ({ count, className, rowsPerPage, page, backgroundType, onChangePage }) {
+function TablePagination ({
+  count,
+  className,
+  rowsPerPage,
+  page,
+  backgroundType,
+  onChangePage
+}) {
   const classNames = classnames(
     `ds-table__pagination--${backgroundType}`,
     className
   )
-  const from = (count === 0)
-    ? 0
-    : page * rowsPerPage + 1
+  const from = count === 0 ? 0 : page * rowsPerPage + 1
   const to = Math.min(count, (page + 1) * rowsPerPage)
   return (
     <CommonPagination

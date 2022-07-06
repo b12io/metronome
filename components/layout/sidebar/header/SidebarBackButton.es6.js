@@ -3,7 +3,6 @@ import React from 'react'
 import { HEADER_BACK_ICON_COLOR } from './constants.es6.js'
 import { Back } from '../../../Icons.es6.js'
 
-
 class SidebarBackButton extends React.Component {
   backButtonRef = React.createRef()
 
@@ -32,7 +31,9 @@ class SidebarBackButton extends React.Component {
         <button type="button">
           <Back color={HEADER_BACK_ICON_COLOR} />
           {!this.props.hideText && (
-            <span className="ds-sidebar__header-back-text">{this.props.text}</span>
+            <span className="ds-sidebar__header-back-text">
+              {this.props.text}
+            </span>
           )}
         </button>
       </div>

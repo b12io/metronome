@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
@@ -34,7 +34,8 @@ class BaseTextArea extends Component {
   }
 
   render () {
-    const {value, className, placeholder, rows, contentHeight, disabled} = this.props
+    const { value, className, placeholder, rows, contentHeight, disabled } =
+      this.props
     return (
       <textarea
         placeholder={placeholder}
@@ -45,7 +46,10 @@ class BaseTextArea extends Component {
         onFocus={this.onFocus}
         onBlur={this.onBlur}
         onChange={this.autoResize}
-        ref={(t) => { this.textarea = t }}/>
+        ref={(t) => {
+          this.textarea = t
+        }}
+      />
     )
   }
 }

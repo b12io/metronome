@@ -15,11 +15,13 @@ describe('InformationalCard component', () => {
   })
 
   test('should render correctly with children', () => {
-    const tree = renderer.create(
-      <InformationalCard {...testProps}>
-        <div>Test children prop</div>
-      </InformationalCard>
-    ).toJSON()
+    const tree = renderer
+      .create(
+        <InformationalCard {...testProps}>
+          <div>Test children prop</div>
+        </InformationalCard>
+      )
+      .toJSON()
     expect(tree).toMatchSnapshot()
   })
 

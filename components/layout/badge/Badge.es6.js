@@ -2,25 +2,42 @@ import * as React from 'react'
 import classnames from 'classnames'
 import { CloseMedia } from '../../Icons.es6.js'
 
-
-function Badge ({ neutral, label, icon, uppercase, filled,
-  success, warning, primary, hasRemoveIcon,
-  className, size, onRemoveClick, selected, ...otherProps }) {
-  const classNames = classnames({
-    'ds-badge': true,
-    'ds-badge--default': neutral,
-    'ds-badge--uppercase': uppercase,
-    'ds-badge--filled': filled,
-    'ds-badge--success': success,
-    'ds-badge--warning': warning,
-    'ds-badge--primary': primary,
-    'ds-badge--has-remove-icon': hasRemoveIcon,
-    'is-selected': selected,
-  }, `ds-badge--size-${size}`, className)
+function Badge ({
+  neutral,
+  label,
+  icon,
+  uppercase,
+  filled,
+  success,
+  warning,
+  primary,
+  hasRemoveIcon,
+  className,
+  size,
+  onRemoveClick,
+  selected,
+  ...otherProps
+}) {
+  const classNames = classnames(
+    {
+      'ds-badge': true,
+      'ds-badge--default': neutral,
+      'ds-badge--uppercase': uppercase,
+      'ds-badge--filled': filled,
+      'ds-badge--success': success,
+      'ds-badge--warning': warning,
+      'ds-badge--primary': primary,
+      'ds-badge--has-remove-icon': hasRemoveIcon,
+      'is-selected': selected
+    },
+    `ds-badge--size-${size}`,
+    className
+  )
   return (
     <div className={classNames} {...otherProps}>
       <div className="ds-badge__label">
-        {icon}{label}
+        {icon}
+        {label}
       </div>
       {hasRemoveIcon && (
         <div className="ds-badge__remove-icon" onClick={onRemoveClick}>

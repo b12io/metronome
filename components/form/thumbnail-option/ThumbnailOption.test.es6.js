@@ -25,9 +25,10 @@ it('should be selected', () => {
 it('should call onOptionClick', () => {
   const onOptionClick = jest.fn()
   const component = shallow(
-    <ThumbnailOption thumbnail={image}
+    <ThumbnailOption
+      thumbnail={image}
       onOptionClick={onOptionClick}
-      value={{slug: 'test'}}
+      value={{ slug: 'test' }}
     />
   )
   component.find('.ds-thumbnail-option').at(0).simulate('click')

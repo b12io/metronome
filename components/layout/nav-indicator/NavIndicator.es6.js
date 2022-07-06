@@ -2,7 +2,6 @@ import React from 'react'
 import classnames from 'classnames'
 import { times } from 'lodash'
 
-
 /**
  * An indicator to show the total number of steps, and the current active step.
  */

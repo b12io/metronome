@@ -2,9 +2,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import {
-  RotateForward
-} from '../../../Icons.es6.js'
+import { RotateForward } from '../../../Icons.es6.js'
 
 import SidebarHeader from './SidebarHeader.es6.js'
 
@@ -22,8 +20,6 @@ it('should display back button if backButton prop === true', () => {
 })
 
 it('should pass left action', () => {
-  const component = shallow(
-    <SidebarHeader leftAction={<RotateForward />} />
-  )
+  const component = shallow(<SidebarHeader leftAction={<RotateForward />} />)
   expect(component.find('RotateForward').exists()).toEqual(true)
 })

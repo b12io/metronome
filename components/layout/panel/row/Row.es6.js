@@ -7,10 +7,16 @@ import Column from '../column/Column.es6.js'
  * Row.
  */
 function Row ({ children, group }) {
-  return (<div className={classnames({
-    row: true,
-    'ds-form-group': group
-  })}>{children}</div>)
+  return (
+    <div
+      className={classnames({
+        row: true,
+        'ds-form-group': group
+      })}
+    >
+      {children}
+    </div>
+  )
 }
 
 Row.defaultProps = {

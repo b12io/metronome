@@ -77,7 +77,7 @@
   }
 
   &__content {
-    @include ds-typography
+    @include ds-typography;
   }
 
   &__action {

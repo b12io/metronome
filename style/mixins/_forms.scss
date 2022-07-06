@@ -2,7 +2,7 @@
  * these styles are used across all inputs/selects/textareas and etc.
  */
 
- @mixin ds-form-group {
+@mixin ds-form-group {
   @include ds-reset;
 
   & + &,
@@ -57,7 +57,7 @@
   &.is-locked {
     .ds-form-control {
       background: $ds-input-background;
-      padding-right: $ds-input-padding-x*3;
+      padding-right: $ds-input-padding-x * 3;
 
       &:hover {
         border: $ds-input-border;
@@ -181,7 +181,7 @@
   }
 
   &::placeholder {
-    color: fade-out($ds-display-regular-color, .8);
+    color: fade-out($ds-display-regular-color, 0.8);
     opacity: 1;
   }
 

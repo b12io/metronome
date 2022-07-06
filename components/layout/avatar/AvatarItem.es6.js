@@ -1,7 +1,6 @@
 import React from 'react'
 import classnames from 'classnames'
 
-
 function parseInitials (name) {
   const names = name.split(' ')
   let initials = names[0].substring(0, 1)
@@ -13,7 +12,16 @@ function parseInitials (name) {
   return initials
 }
 
-export default function AvatarItem ({ className, imgSrc, primaryText, secondaryText, hasHover, showIconOnly, isActive, onClick }) {
+export default function AvatarItem ({
+  className,
+  imgSrc,
+  primaryText,
+  secondaryText,
+  hasHover,
+  showIconOnly,
+  isActive,
+  onClick
+}) {
   const avatarItemClasses = classnames(
     'ds-avatar',
     {
@@ -23,24 +31,18 @@ export default function AvatarItem ({ className, imgSrc, primaryText, secondaryT
     className
   )
 
-  const avatarItemAvatarClasses = classnames(
-    'ds-avatar__avatar',
-    {'ds-avatar__avatar--has-image': imgSrc}
-  )
+  const avatarItemAvatarClasses = classnames('ds-avatar__avatar', {
+    'ds-avatar__avatar--has-image': imgSrc
+  })
 
   return (
-    <div
-      className={avatarItemClasses}
-      onClick={onClick}
-    >
+    <div className={avatarItemClasses} onClick={onClick}>
       <div
         className={avatarItemAvatarClasses}
         title={primaryText}
-        style={ imgSrc ? {backgroundImage: `url(${imgSrc})`} : null }
+        style={imgSrc ? { backgroundImage: `url(${imgSrc})` } : null}
       >
-        {!imgSrc && (
-          parseInitials(primaryText)
-        )}
+        {!imgSrc && parseInitials(primaryText)}
       </div>
       {!showIconOnly && (
         <div className="ds-avatar__text">
