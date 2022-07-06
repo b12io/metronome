@@ -276,7 +276,7 @@ function DropdownPage () {
             simple
             toggle={<Button label="Dropdown with content" chevron />}
             toggleIcon={<Customer height="16" color="#706F84" />}
-            quickActions={<>'             '<Button label="Quick action" />'             '<Button label="Quick action" />'           '</>}
+            quickActions={<React.Fragment><Button label="Quick action" /><Button label="Quick action" /></React.Fragment>}
           >
             <Group>
               <Select label="Default">
