@@ -125,6 +125,14 @@ class Inputs extends React.Component {
             </Group>
             <Group>
               <TextField
+                label="With info text"
+                info="Info message for this specific input"
+                value="The value"
+                onUpdate={() => {}}
+              />
+            </Group>
+            <Group>
+              <TextField
                 label="Search"
                 placeholder="The value"
                 onUpdate={() => {}}
