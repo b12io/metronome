@@ -9,7 +9,7 @@ import {
   Notice,
   Disabled,
   Help,
-  InfoCircle
+  InfoCircle,
   CloseMedia,
   Search
 } from '../../Icons.es6.js'
