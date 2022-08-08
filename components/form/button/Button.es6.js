@@ -31,7 +31,7 @@ function Button ({ label, badge, primary, danger, loading, superSmall, small, la
     title={title}
   >
     {iconWithLabel
-      ? `${icon} ${label}`
+      ? <React.Fragment>{icon} {label}</React.Fragment>
       : icon || (
         loading
           ? <span className="button__spinner" />
