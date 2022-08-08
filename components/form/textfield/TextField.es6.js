@@ -9,6 +9,7 @@ import {
   Notice,
   Disabled,
   Help,
+  InfoCircle,
   CloseMedia,
   Search
 } from '../../Icons.es6.js'
@@ -142,12 +143,21 @@ class TextField extends React.Component {
           color={this.props.value}
           onChange={this.onColorChange} />}
 
-        {!isEmpty(this.props.help)
-          ? <div className="ds-form-group__help-text">
+        {!isEmpty(this.props.help) && (
+          <div className="ds-form-group__help-text">
             <Help color="#ccc" />
             <span>{this.props.help}</span>
           </div>
-          : null}
+        )}
+
+        {!isEmpty(this.props.info) && (
+          <div className="ds-form-group__help-text">
+            <InfoCircle color="#84839c" />
+            <span className="ds-form-group__info-text">
+              {this.props.info}
+            </span>
+          </div>
+        )}
       </div>
     )
   }
@@ -167,6 +177,7 @@ TextField.propTypes = {
   hideIcon: PropTypes.bool,
   canClearColor: PropTypes.bool,
   help: PropTypes.string,
+  info: PropTypes.string,
   value: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number
@@ -198,6 +209,7 @@ TextField.defaultProps = {
   canClearColor: false,
   hideIcon: false,
   help: '',
+  info: '',
   placeholder: '',
   type: 'text',
   onUpdate: () => {},

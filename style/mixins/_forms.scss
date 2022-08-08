@@ -25,6 +25,10 @@
     }
   }
 
+  &__info-text {
+    color: #585769;
+  }
+
   &__error-message {
     @include ds-reset;
     font-size: 13px;
