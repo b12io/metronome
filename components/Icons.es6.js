@@ -314,6 +314,18 @@ function Calendar ({ color, className, path, viewBox, width, height, style }) {
   )
 }
 
+function CalendarThin ({ color, className, width, height, style }) {
+  return (
+    <svg className={className} style={style} width={width} height={height} viewBox="0 0 62 60" xmlns="http://www.w3.org/2000/svg">
+      <g fill={color}>
+        <path d="M16 15a1 1 0 0 1-1-1V2a1 1 0 0 1 2 0v12a1 1 0 0 1-1 1Z"/>
+        <path d="M59 7h-8v7a3 3 0 0 1-6 0V7H19v7a3 3 0 0 1-6 0V7H5a3 3 0 0 0-3 3v46a3 3 0 0 0 3 3h54a3 3 0 0 0 3-3V10a3 3 0 0 0-3-3Zm1 49a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V23h56Z"/>
+        <path d="M48 15a1 1 0 0 1-1-1V2a1 1 0 0 1 2 0v12a1 1 0 0 1-1 1Z"/>
+      </g>
+    </svg>
+  )
+}
+
 function QuestionCircle ({ color, className, path, viewBox, width, height, style, ...otherProps }) {
   return (
     <svg {...otherProps} className={className} width={width} height={height} viewBox={viewBox} style={style} xmlns="http://www.w3.org/2000/svg">
@@ -1898,6 +1910,7 @@ const icons = [
   Link,
   Unlink,
   Calendar,
+  CalendarThin,
   QuestionCircle,
   BulletPoints,
   Product,
@@ -2060,7 +2073,7 @@ each(icons, (icon) => {
 export { Check, Checkmark, Lock, Notice, Disabled, Help, Search, Draggable,
   ChevronRight, ChevronLeft, Home, TimesCircle, RemoveCircle, SolidCircle, PlusCircle, Plus, Minus, ShoppingCart, Team,
   Briefcase, Image, Video, Camera, Play, Award, Client, Testimonial, Blog,
-  Announcement, Export, Link, Unlink, Calendar, QuestionCircle, DateIcon, Clock, ImageUpload,
+  Announcement, Export, Link, Unlink, Calendar, CalendarThin, QuestionCircle, DateIcon, Clock, ImageUpload,
   AlignCenter, AlignLeft, AlignRight, Close, AppearanceLayout, AppearanceAppearance,
   AppearanceAdvanced, CloseMedia, Product, BulletPoints, Gear, Back, Desktop, Tablet,
   Mobile, PageListingSections, PageListingSeo, ClearFormatting, StrikeThrough, Underline, Bold, Italic, UnorderedList, OrderedList,
