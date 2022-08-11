@@ -8,7 +8,7 @@ import {
   Check, Lock, Notice, Disabled, Help, Search, Draggable,
   ChevronRight, Home, TimesCircle, RemoveCircle, SolidCircle, PlusCircle, Plus, Minus, ShoppingCart, Team,
   Briefcase, Image, Video, Award, Client, Testimonial, Blog,
-  Announcement, Export, Link, Calendar, QuestionCircle, DateIcon, Clock, ImageUpload,
+  Announcement, Export, Link, Calendar, CalendarThin, QuestionCircle, DateIcon, Clock, ImageUpload,
   AlignCenter, AlignLeft, AlignRight, Close, AppearanceLayout, AppearanceAppearance,
   AppearanceAdvanced, CloseMedia, Back, Product, BulletPoints, Desktop, Tablet, Mobile, Gear,
   Checkmark, CheckmarkCircle, CheckSelected, ContentIcon, Unlink, ChevronLeft, Todo, Folder,
@@ -151,6 +151,10 @@ const ICONS = [
   {
     name: 'Calendar',
     component: Calendar
+  },
+  {
+    name: 'CalendarThin',
+    component: CalendarThin
   },
   {
     name: 'QuestionCircle',

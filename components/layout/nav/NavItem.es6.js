@@ -58,7 +58,7 @@ class NavItem extends React.Component<Props> {
             {badge}
           </div>
         )}
-        {onActionClick && (
+        {actionIcon && onActionClick && (
           <div className="ds-nav__item-action" onClick={this.handleActionClick}>
             {actionIcon}
           </div>
