@@ -1,10 +1,7 @@
 import * as React from 'react'
 import classnames from 'classnames'
 import CardList from '../card-list/CardList.es6.js'
-import CollapsibleCardListItem from './CollapsibleCardListItem.es6.js'
 import { isNumber } from 'lodash'
-
-
 
 
 class CollapsibleCardList extends React.Component {

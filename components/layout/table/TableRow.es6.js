@@ -1,7 +1,5 @@
 import * as React from 'react'
-import TableCell from './TableCell.es6.js'
 import classnames from 'classnames'
-
 
 
 function TableRow ({ children, isInTableHeader, noHover, onClick, className, ...otherProps }) {
