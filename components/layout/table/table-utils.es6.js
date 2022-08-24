@@ -1,6 +1,4 @@
 import * as React from 'react'
-import TableRow from './TableRow.es6.js'
-
 
 
 const TABLE_HEAD_TAG = 'thead'
