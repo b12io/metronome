@@ -12,7 +12,9 @@ it('should render inline', () => {
 
 it('should render as block', () => {
   const component = shallow(<Switch block />)
-  expect(component.prop('className')).toEqual('buttons-group buttons-group--block')
+  expect(component.prop('className')).toEqual(
+    'buttons-group buttons-group--block'
+  )
 })
 
 it('should select second button', () => {

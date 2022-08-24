@@ -2,7 +2,10 @@ import React from 'react'
 import DemoLayoutContent from './demo-only-components/DemoLayoutContent.es6.js'
 import CodeExample from './demo-only-components/CodeExample.es6.js'
 import MetaData from './demo-only-components/MetaData.es6.js'
-import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDataProps.es6.js'
+import {
+  MetaDataProps,
+  MetaDataPropsItem
+} from './demo-only-components/MetaDataProps.es6.js'
 
 import StatusIndicator from '../../components/layout/status-indicator/StatusIndicator.es6.js'
 
@@ -26,8 +29,8 @@ const BadgeProps = [
   }
 ]
 
-function StatusIndicatorPage () {
-  const statusLabels ={
+function StatusIndicatorPage() {
+  const statusLabels = {
     success: 'Available',
     error: 'Not configured',
     default: 'Not available',
@@ -48,14 +51,19 @@ function StatusIndicatorPage () {
         <div className="ds-block__title">
           <h4>Default</h4>
         </div>
-        <CodeExample code={`<StatusIndicator />
+        <CodeExample
+          code={`<StatusIndicator />
 <StatusIndicator status="success"/>
 <StatusIndicator status="warning"/>
-<StatusIndicator status="error"/>`}>
-          <StatusIndicator /><br/>
-          <StatusIndicator status="success"/><br/>
-          <StatusIndicator status="warning"/><br/>
-          <StatusIndicator status="error"/>
+<StatusIndicator status="error"/>`}
+        >
+          <StatusIndicator />
+          <br />
+          <StatusIndicator status="success" />
+          <br />
+          <StatusIndicator status="warning" />
+          <br />
+          <StatusIndicator status="error" />
         </CodeExample>
       </div>
 
@@ -63,7 +71,8 @@ function StatusIndicatorPage () {
         <div className="ds-block__title">
           <h4>Filled</h4>
         </div>
-        <CodeExample code={`<StatusIndicator
+        <CodeExample
+          code={`<StatusIndicator
   statusLabels={{
     success: 'Available',
     error: 'Not configured',
@@ -96,11 +105,15 @@ function StatusIndicatorPage () {
     error: 'Not configured',
     default: 'Not available',
     warning: 'Warning'
-  }}/>`}>
-          <StatusIndicator statusLabels={statusLabels}/><br/>
-          <StatusIndicator status="success" statusLabels={statusLabels}/><br/>
-          <StatusIndicator status="warning" statusLabels={statusLabels}/><br/>
-          <StatusIndicator status="error" statusLabels={statusLabels}/>
+  }}/>`}
+        >
+          <StatusIndicator statusLabels={statusLabels} />
+          <br />
+          <StatusIndicator status="success" statusLabels={statusLabels} />
+          <br />
+          <StatusIndicator status="warning" statusLabels={statusLabels} />
+          <br />
+          <StatusIndicator status="error" statusLabels={statusLabels} />
         </CodeExample>
       </div>
 
@@ -110,7 +123,7 @@ function StatusIndicatorPage () {
         </div>
 
         <MetaDataProps>
-          {BadgeProps.map(prop => (
+          {BadgeProps.map((prop) => (
             <MetaDataPropsItem
               key={prop.property}
               property={prop.property}

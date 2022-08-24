@@ -17,11 +17,17 @@ import { handleSelectWithDependents } from '../../components/form/checkbox-multi
 import B12DatePicker from '../../components/form/datetime-picker/DatePicker.es6.js'
 import DatetimePicker from '../../components/form/datetime-picker/DatetimePicker.es6.js'
 const selectOptions = ['Item 1', 'Item 2', 'Item 3', 'Item 4']
-const complexSelectOptions = ['Free', 'All paid', 'Low ($)', 'Medium ($$)', 'High ($$$)']
+const complexSelectOptions = [
+  'Free',
+  'All paid',
+  'Low ($)',
+  'Medium ($$)',
+  'High ($$$)'
+]
 const CHECKBOX_MULTI_SELECT_LABEL = 'Filter by Price'
 
 class Inputs extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
       checkboxMultiSelectSelectedOptions: [],
@@ -31,18 +37,20 @@ class Inputs extends React.Component {
     this.handleFilterListChange = this.handleFilterListChange.bind(this)
   }
 
-  handleFilterListChange (value, selected) {
+  handleFilterListChange(value, selected) {
     const selectConfig = [
       {
         controlOption: 'All paid',
         dependentOptions: ['Low ($)', 'Medium ($$)', 'High ($$$)']
       }
     ]
-    const {
-      selectedOptions,
-      disabledOptions,
-      label
-    } = handleSelectWithDependents(filter(keys(selected), key => selected[key]), value, selectConfig, complexSelectOptions)
+    const { selectedOptions, disabledOptions, label } =
+      handleSelectWithDependents(
+        filter(keys(selected), (key) => selected[key]),
+        value,
+        selectConfig,
+        complexSelectOptions
+      )
     this.setState({
       checkboxMultiSelectSelectedOptions: selectedOptions,
       checkboxMultiSelectDisabledOptions: disabledOptions,
@@ -50,12 +58,17 @@ class Inputs extends React.Component {
     })
   }
 
-  render () {
+  render() {
     return (
       <DemoLayoutContent>
         <div className="app-page-title">
           <h1>Inputs</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime aliquid suscipit natus rem, ipsa molestiae voluptate vero obcaecati voluptatibus ea nobis neque necessitatibus excepturi perferendis, fuga voluptatem totam quae quas.</p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime
+            aliquid suscipit natus rem, ipsa molestiae voluptate vero obcaecati
+            voluptatibus ea nobis neque necessitatibus excepturi perferendis,
+            fuga voluptatem totam quae quas.
+          </p>
         </div>
         <div className="ds-row">
           <div className="ds-col">
@@ -140,32 +153,30 @@ class Inputs extends React.Component {
               />
             </Group>
             <Group>
-              <TextField
-                value="Without label"
-                onUpdate={() => {}}
-              />
+              <TextField value="Without label" onUpdate={() => {}} />
             </Group>
           </div>
           <div className="ds-col">
             <h4 className="u-m-b-sm">Select inputs</h4>
             <Group>
               <Select label="Default">
-                <Option label="Option 1" key="option-1" value="1" style={{ color: 'red' }} />
+                <Option
+                  label="Option 1"
+                  key="option-1"
+                  value="1"
+                  style={{ color: 'red' }}
+                />
                 <Option label="Option 2" key="option-2" value="1" />
               </Select>
             </Group>
             <Group>
-              <Select
-                label="Error"
-                error>
+              <Select label="Error" error>
                 <Option label="Option 1" key="option-1" value="1" />
                 <Option label="Option 2" key="option-2" value="1" />
               </Select>
             </Group>
             <Group>
-              <Select
-                label="Disabled"
-                disabled>
+              <Select label="Disabled" disabled>
                 <Option label="Option 1" key="option-1" value="1" />
                 <Option label="Option 2" key="option-2" value="1" />
               </Select>
@@ -173,15 +184,14 @@ class Inputs extends React.Component {
             <Group>
               <Select
                 label="With helper text"
-                help="Help message for this specific input">
+                help="Help message for this specific input"
+              >
                 <Option label="Option 1" key="option-1" value="1" />
                 <Option label="Option 2" key="option-2" value="1" />
               </Select>
             </Group>
             <Group>
-              <Select
-                label="Without search"
-                search={false}>
+              <Select label="Without search" search={false}>
                 <Option label="Option 1" key="option-1" value="1" />
                 <Option label="Option 2" key="option-2" value="1" />
               </Select>
@@ -190,12 +200,13 @@ class Inputs extends React.Component {
               <Select
                 placeholder="Search..."
                 label="Inline search"
-                inlineSearch>
+                inlineSearch
+              >
                 <Option label="Option 1" key="option-1" value="1" />
                 <Option label="Option 2" key="option-2" value="1" />
               </Select>
             </Group>
-            <br/>
+            <br />
             <h4 className="u-m-b-sm">MiniSelect</h4>
             <Group>
               <MiniSelect
@@ -229,7 +240,7 @@ class Inputs extends React.Component {
             </DatetimePicker>
           </div>
         </div>
-        <hr/>
+        <hr />
         <div className="ds-row">
           <div className="ds-col">
             <h4 className="u-m-b-sm">Textarea</h4>
@@ -237,50 +248,81 @@ class Inputs extends React.Component {
               <TextArea label="Default" />
             </Group>
             <Group>
-              <TextArea label="Default with a placeholder" placeholder="Write something" />
+              <TextArea
+                label="Default with a placeholder"
+                placeholder="Write something"
+              />
             </Group>
             <Group>
-              <TextArea label="Default with value" value="Here goes the content" />
+              <TextArea
+                label="Default with value"
+                value="Here goes the content"
+              />
             </Group>
             <Group>
-              <TextArea label="Has error" value="Here goes the content" hasError />
+              <TextArea
+                label="Has error"
+                value="Here goes the content"
+                hasError
+              />
             </Group>
             <Group>
               <TextArea label="Default 3 rows" rows={3} />
             </Group>
             <Group>
-              <TextArea label="Not resizable" resizable={false}
+              <TextArea
+                label="Not resizable"
+                resizable={false}
                 value="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime aliquid suscipit natus rem, ipsa molestiae voluptate vero obcaecati voluptatibus ea nobis neque necessitatibus excepturi perferendis, fuga voluptatem totam quae quas."
               />
             </Group>
             <Group>
-              <TextArea label="With counter" counter="20 / 100" onChange={val => { console.log(val) }}/>
+              <TextArea
+                label="With counter"
+                counter="20 / 100"
+                onChange={(val) => {
+                  console.log(val)
+                }}
+              />
             </Group>
             <Group>
-              <TextArea label="with counter error" counter="20 / 100" hasError />
+              <TextArea
+                label="with counter error"
+                counter="20 / 100"
+                hasError
+              />
             </Group>
           </div>
           <div className="ds-col">
             <h4 className="u-m-b-sm">Uploads</h4>
             <Group>
-              <FileUpload multiple showButton/>
+              <FileUpload multiple showButton />
             </Group>
             <Group>
-              <FileUpload showDropzone dropzoneLabel="Drop the file here..." showButton={false} />
+              <FileUpload
+                showDropzone
+                dropzoneLabel="Drop the file here..."
+                showButton={false}
+              />
             </Group>
             <Group>
-              <FileUpload showDropzone loading dropzoneLabel="Uploading..." showButton={false} />
+              <FileUpload
+                showDropzone
+                loading
+                dropzoneLabel="Uploading..."
+                showButton={false}
+              />
             </Group>
           </div>
         </div>
-        <hr/>
+        <hr />
         <div className="ds-row">
           <div className="ds-col">
-            <h4 className="u-m-b-sm">Special selects <i style={{color: 'red'}}>(Deprecated)</i></h4>
+            <h4 className="u-m-b-sm">
+              Special selects <i style={{ color: 'red' }}>(Deprecated)</i>
+            </h4>
             <Group>
-              <Select
-                label="Default"
-                preview="img/2-col-text-image.png">
+              <Select label="Default" preview="img/2-col-text-image.png">
                 <Option
                   label="Option 1"
                   key="option-1"
@@ -308,19 +350,24 @@ class Inputs extends React.Component {
             />
           </div>
         </div>
-        <hr/>
-        <hr/>
+        <hr />
+        <hr />
         <div className="ds-row">
           <div className="ds-col">
             <Group label="Checkbox">
               <Checkbox label="Default" />
               <Checkbox label="Checked" checked />
               <Checkbox label="Indeterminate" indeterminate />
-              <Checkbox label="Indeterminate disabled" indeterminate disabled/>
+              <Checkbox label="Indeterminate disabled" indeterminate disabled />
               <Checkbox label="Disabled" disabled />
-              <Checkbox label="Checked disabled" val="checked disabled" checked disabled />
+              <Checkbox
+                label="Checked disabled"
+                val="checked disabled"
+                checked
+                disabled
+              />
               <Checkbox label="With error" hasError />
-              <Checkbox label="With error checked" hasError checked/>
+              <Checkbox label="With error checked" hasError checked />
             </Group>
           </div>
           <div className="ds-col">
@@ -328,19 +375,26 @@ class Inputs extends React.Component {
               <Radio label="Default" val="default" />
               <Radio label="Checked" val="checked" checked />
               <Radio label="Disabled" val="disabled" disabled />
-              <Radio label="Checked disabled" val="checked disabled" checked disabled />
-              <Radio label="With description" description="Long awaited description" val="description" />
+              <Radio
+                label="Checked disabled"
+                val="checked disabled"
+                checked
+                disabled
+              />
+              <Radio
+                label="With description"
+                description="Long awaited description"
+                val="description"
+              />
             </Group>
           </div>
         </div>
-        <hr/>
+        <hr />
         <div className="ds-row">
           <div className="ds-col">
             <h4 className="u-m-b-sm">Checkbox Multiple Select</h4>
             <h5>Basic</h5>
-            <CheckboxMultipleSelect
-              options={selectOptions}
-            />
+            <CheckboxMultipleSelect options={selectOptions} />
             <Divider />
             <h5>Pass selected and disabled options</h5>
             <CheckboxMultipleSelect

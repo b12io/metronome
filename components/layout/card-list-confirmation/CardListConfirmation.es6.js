@@ -1,4 +1,3 @@
-
 import React from 'react'
 
 import Title from '../panel/title/Title.es6.js'
@@ -6,8 +5,6 @@ import Button from '../../form/button/Button.es6.js'
 
 const YES = 'yes'
 const NO = 'no'
-
-
 
 class CardListConfirmation extends React.Component {
   static defaultProps = {
@@ -22,7 +19,7 @@ class CardListConfirmation extends React.Component {
     }
   }
 
-  render () {
+  render() {
     return (
       <div className="card-list__confirmation">
         <Title

@@ -4,7 +4,7 @@ import { pick, isEqual } from 'lodash'
 class BaseComponent extends React.Component {
   propsToTrack = []
 
-  shouldComponentUpdate (nextProps, nextState) {
+  shouldComponentUpdate(nextProps, nextState) {
     if (this.propsToTrack.length === 0) {
       return true
     }

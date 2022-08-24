@@ -2,14 +2,17 @@ import React from 'react'
 import DemoLayoutContent from './demo-only-components/DemoLayoutContent.es6.js'
 import CodeExample from './demo-only-components/CodeExample.es6.js'
 import MetaData from './demo-only-components/MetaData.es6.js'
-import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDataProps.es6.js'
+import {
+  MetaDataProps,
+  MetaDataPropsItem
+} from './demo-only-components/MetaDataProps.es6.js'
 
 import { Visible } from '../../components/Icons.es6.js'
 import Info from '../../components/layout/info/Info.es6.js'
 import Grid from '../../components/layout/grid/Grid.es6.js'
 import GridCol from '../../components/layout/grid/GridCol.es6.js'
 
-export default function Tooltips () {
+export default function Tooltips() {
   return (
     <DemoLayoutContent>
       <div className="app-page-title">
@@ -49,23 +52,20 @@ export default function Tooltips () {
           <Grid justify="start">
             <GridCol col="1">
               <Grid>
-                <Info
-                  text='Icon passed as a prop'
-                  icon={Visible}
-                />
+                <Info text="Icon passed as a prop" icon={Visible} />
               </Grid>
             </GridCol>
             <GridCol col="1" align="center">
               <Grid>
-                <Info text='Icon passed a a child'>
-                  <Visible color='#766cff'/>
+                <Info text="Icon passed a a child">
+                  <Visible color="#766cff" />
                 </Info>
               </Grid>
             </GridCol>
             <GridCol col="1" align="center">
               <Grid>
                 <Info
-                  text='Tooltip with custom delay'
+                  text="Tooltip with custom delay"
                   icon={Visible}
                   delay={{ show: 500, hide: 0 }}
                 />

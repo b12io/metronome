@@ -5,46 +5,69 @@ import classnames from 'classnames'
 /**
  * Buttons trigger actions when clicked.
  */
-function Button ({ label, badge, primary, danger, loading, superSmall, small, large, wide, icon, iconWithLabel, active, block, disabled, onClick, className, buttonRef, id, alternative, chevron, type, title }) {
-  return (<button
-    className={classnames({
-      button: true,
-      'is-loading': loading,
-      'button--primary': primary,
-      'button--danger': danger,
-      'button--sm': small,
-      'button--ssm': superSmall,
-      'button--lg': large,
-      'button--wd': wide,
-      'button--block': block,
-      'button--icon': icon,
-      'button--icon-with-label': iconWithLabel,
-      'button--alternative': alternative,
-      'button--has-chevron': chevron,
-      active,
-    }, className)}
-    disabled={disabled}
-    onClick={onClick}
-    type={type}
-    ref={buttonRef}
-    id={id}
-    title={title}
-  >
-    {iconWithLabel
-      ? <React.Fragment>{icon} {label}</React.Fragment>
-      : icon || (
-        loading
-          ? <span className="button__spinner" />
-          : label
-      )
-    }
-    {badge && (
-      <span className="button__badge">{badge}</span>
-    )}
-    {chevron && (
-      <span className="button__chevron"></span>
-    )}
-  </button>)
+function Button({
+  label,
+  badge,
+  primary,
+  danger,
+  loading,
+  superSmall,
+  small,
+  large,
+  wide,
+  icon,
+  iconWithLabel,
+  active,
+  block,
+  disabled,
+  onClick,
+  className,
+  buttonRef,
+  id,
+  alternative,
+  chevron,
+  type,
+  title
+}) {
+  return (
+    <button
+      className={classnames(
+        {
+          button: true,
+          'is-loading': loading,
+          'button--primary': primary,
+          'button--danger': danger,
+          'button--sm': small,
+          'button--ssm': superSmall,
+          'button--lg': large,
+          'button--wd': wide,
+          'button--block': block,
+          'button--icon': icon,
+          'button--icon-with-label': iconWithLabel,
+          'button--alternative': alternative,
+          'button--has-chevron': chevron,
+          active
+        },
+        className
+      )}
+      disabled={disabled}
+      onClick={onClick}
+      type={type}
+      ref={buttonRef}
+      id={id}
+      title={title}
+    >
+      {iconWithLabel ? (
+        <React.Fragment>
+          {icon} {label}
+        </React.Fragment>
+      ) : (
+        icon || (loading ? <span className="button__spinner" /> : label)
+      )}
+      {badge && <span className="button__badge">{badge}</span>}
+      {chevron && <span className="button__chevron"></span>}
+    </button>
+  )
 }
 
 Button.defaultProps = {
@@ -66,7 +89,7 @@ Button.defaultProps = {
   chevron: false,
   type: 'button',
   onClick: () => {},
-  title: '',
+  title: ''
 }
 
 Button.propTypes = {
@@ -150,7 +173,7 @@ Button.propTypes = {
   /**
    * HTML title attribute of the button.
    */
-  title: PropTypes.string,
+  title: PropTypes.string
 }
 
 export default Button

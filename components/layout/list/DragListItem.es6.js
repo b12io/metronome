@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 
-const DragListItem = ({children}) => {
+const DragListItem = ({ children }) => {
   return children
 }
 

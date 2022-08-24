@@ -2,7 +2,10 @@ import React from 'react'
 import DemoLayoutContent from './demo-only-components/DemoLayoutContent.es6.js'
 import CodeExample from './demo-only-components/CodeExample.es6.js'
 import MetaData from './demo-only-components/MetaData.es6.js'
-import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDataProps.es6.js'
+import {
+  MetaDataProps,
+  MetaDataPropsItem
+} from './demo-only-components/MetaDataProps.es6.js'
 import { DemoSimpleTable } from './demo-only-components/DemoTable.es6.js'
 import DemoSmartTable from './demo-only-components/DemoSmartTable.es6.js'
 
@@ -17,7 +20,8 @@ const TABLE_PROPS = [
     property: 'padding',
     value: 'compact | comfortable',
     defaultValue: 'undefined',
-    description: '`compact` - adds slight padding for cells, `comfortable` - adds significant padding for cells for better reading experience'
+    description:
+      '`compact` - adds slight padding for cells, `comfortable` - adds significant padding for cells for better reading experience'
   },
   {
     property: 'verticalAlign',
@@ -86,11 +90,12 @@ const TABLE_PAGINATION_PROPS = [
     property: 'onChangePage',
     value: 'function',
     defaultValue: 'undefined',
-    description: 'Function to call every time buttons are clicked, passes page number to change to'
+    description:
+      'Function to call every time buttons are clicked, passes page number to change to'
   }
 ]
 
-export default function TablePage () {
+export default function TablePage() {
   return (
     <DemoLayoutContent>
       <div className="app-page-title">
@@ -113,7 +118,8 @@ import TablePagination from '@b12/metronome/components/layout/table/TablePaginat
           <h4>Default table</h4>
         </div>
 
-        <CodeExample code={`<Table>
+        <CodeExample
+          code={`<Table>
   <TableHead>
     <TableRow>
       {rows.map(row => (
@@ -135,17 +141,22 @@ import TablePagination from '@b12/metronome/components/layout/table/TablePaginat
       </TableRow>
     ))}
   </TableBody>
-</Table>`}>
+</Table>`}
+        >
           <DemoSimpleTable />
         </CodeExample>
       </div>
       <div className="ds-block">
         <div className="ds-block__title">
           <h4>Responsive table</h4>
-          <p>Adding <code>responsive</code> prop allows table to be scrollable horizontally on smaller devices.</p>
+          <p>
+            Adding <code>responsive</code> prop allows table to be scrollable
+            horizontally on smaller devices.
+          </p>
         </div>
 
-        <CodeExample code={`<Table
+        <CodeExample
+          code={`<Table
   responsive
   cardLike
 >
@@ -170,11 +181,9 @@ import TablePagination from '@b12/metronome/components/layout/table/TablePaginat
       </TableRow>
     ))}
   </TableBody>
-</Table>`}>
-          <DemoSimpleTable
-            responsive
-            cardLike
-          />
+</Table>`}
+        >
+          <DemoSimpleTable responsive cardLike />
         </CodeExample>
       </div>
       <div className="ds-block">
@@ -182,7 +191,8 @@ import TablePagination from '@b12/metronome/components/layout/table/TablePaginat
           <h4>Table with wrapper (card-like table)</h4>
         </div>
 
-        <CodeExample code={`<Table
+        <CodeExample
+          code={`<Table
   padding='compact'
   cardLike
 >
@@ -207,11 +217,9 @@ import TablePagination from '@b12/metronome/components/layout/table/TablePaginat
       </TableRow>
     ))}
   </TableBody>
-</Table>`}>
-          <DemoSimpleTable
-            padding='compact'
-            cardLike
-          />
+</Table>`}
+        >
+          <DemoSimpleTable padding="compact" cardLike />
         </CodeExample>
       </div>
       <div className="ds-block">
@@ -219,7 +227,8 @@ import TablePagination from '@b12/metronome/components/layout/table/TablePaginat
           <h4>Table with `comfortable` paddings and avatars</h4>
         </div>
 
-        <CodeExample code={`<Table
+        <CodeExample
+          code={`<Table
   padding='comfortable'
   verticalAlign='middle'
   cardLike
@@ -250,10 +259,11 @@ import TablePagination from '@b12/metronome/components/layout/table/TablePaginat
       </TableRow>
     ))}
   </TableBody>
-</Table>`}>
+</Table>`}
+        >
           <DemoSimpleTable
-            padding='comfortable'
-            verticalAlign='middle'
+            padding="comfortable"
+            verticalAlign="middle"
             cardLike
             showAvatar
           />
@@ -264,7 +274,8 @@ import TablePagination from '@b12/metronome/components/layout/table/TablePaginat
           <h4>Advanced table with column sorting and pagination</h4>
         </div>
 
-        <CodeExample code={`import React from 'react'
+        <CodeExample
+          code={`import React from 'react'
 
 import Table from '@b12/metronome/components/layout/table/Table.es6.js'
 import TableHead from '@b12/metronome/components/layout/table/TableHead.es6.js'
@@ -370,7 +381,8 @@ export default class DemoSmartTable extends React.Component {
       </div>
     )
   }
-}`}>
+}`}
+        >
           <DemoSmartTable />
         </CodeExample>
       </div>
@@ -381,10 +393,7 @@ export default class DemoSmartTable extends React.Component {
 
         <MetaDataProps>
           {TABLE_PROPS.map((props, ind) => (
-            <MetaDataPropsItem
-              key={ind}
-              {...props}
-            />
+            <MetaDataPropsItem key={ind} {...props} />
           ))}
         </MetaDataProps>
       </div>
@@ -395,10 +404,7 @@ export default class DemoSmartTable extends React.Component {
 
         <MetaDataProps>
           {TABLE_ROW_PROPS.map((props, ind) => (
-            <MetaDataPropsItem
-              key={ind}
-              {...props}
-            />
+            <MetaDataPropsItem key={ind} {...props} />
           ))}
         </MetaDataProps>
       </div>
@@ -409,10 +415,7 @@ export default class DemoSmartTable extends React.Component {
 
         <MetaDataProps>
           {TABLE_CELL_PROPS.map((props, ind) => (
-            <MetaDataPropsItem
-              key={ind}
-              {...props}
-            />
+            <MetaDataPropsItem key={ind} {...props} />
           ))}
         </MetaDataProps>
       </div>
@@ -423,10 +426,7 @@ export default class DemoSmartTable extends React.Component {
 
         <MetaDataProps>
           {TABLE_PAGINATION_PROPS.map((props, ind) => (
-            <MetaDataPropsItem
-              key={ind}
-              {...props}
-            />
+            <MetaDataPropsItem key={ind} {...props} />
           ))}
         </MetaDataProps>
       </div>

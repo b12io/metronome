@@ -2,7 +2,10 @@ import React from 'react'
 import DemoLayoutContent from './demo-only-components/DemoLayoutContent.es6.js'
 import CodeExample from './demo-only-components/CodeExample.es6.js'
 import MetaData from './demo-only-components/MetaData.es6.js'
-import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDataProps.es6.js'
+import {
+  MetaDataProps,
+  MetaDataPropsItem
+} from './demo-only-components/MetaDataProps.es6.js'
 
 import Dropdown from '../../components/layout/dropdown/Dropdown.es6.js'
 import DropdownItem from '../../components/layout/dropdown/DropdownItem.es6.js'
@@ -13,14 +16,21 @@ import Group from '../../components/layout/panel/group/Group.es6.js'
 import TextField from '../../components/form/textfield/TextField.es6.js'
 import Select from '../../components/form/select/Select.es6.js'
 import Option from '../../components/form/option/Option.es6.js'
-import { Customer, ContactInformation, Lock, Move } from '../../components/Icons.es6.js'
+import {
+  Customer,
+  ContactInformation,
+  Lock,
+  Move
+} from '../../components/Icons.es6.js'
 
-function DropdownPage () {
+function DropdownPage() {
   return (
     <DemoLayoutContent>
       <div className="app-page-title">
         <h2>Dropdown</h2>
-        <p>Toggle contextual overlays for displaying lists of links and more.</p>
+        <p>
+          Toggle contextual overlays for displaying lists of links and more.
+        </p>
 
         <MetaData
           importFrom="import Dropdown from '@b12/metronome/components/layout/dropdown/Dropdown.es6.js',
@@ -35,10 +45,14 @@ function DropdownPage () {
       <div className="ds-block">
         <div className="ds-block__title">
           <h4>Default dropdown</h4>
-          <p>By default dropdown opens on the left side of its toggler. Clicking on an item or outside of the dropdown, closes the dropdown.</p>
+          <p>
+            By default dropdown opens on the left side of its toggler. Clicking
+            on an item or outside of the dropdown, closes the dropdown.
+          </p>
         </div>
 
-        <CodeExample code={`<Dropdown
+        <CodeExample
+          code={`<Dropdown
   toggle="Account actions"
   toggleIcon={<Customer height="16" color="#706F84" />}
 >
@@ -67,7 +81,8 @@ function DropdownPage () {
     icon={<Move height="16" color="#ff7878" />}
     onClick={() => {}}
   />
-</Dropdown>`}>
+</Dropdown>`}
+        >
           <Dropdown
             toggle="Account actions"
             toggleIcon={<Customer height="16" color="#706F84" />}
@@ -84,11 +99,7 @@ function DropdownPage () {
               onClick={() => {}}
             />
             <DropdownItemHeader label="Other stuff" />
-            <DropdownItem
-              label="Menu item three"
-              disabled
-              onClick={() => {}}
-            />
+            <DropdownItem label="Menu item three" disabled onClick={() => {}} />
             <DropdownItem
               label="Menu item three and a half"
               onClick={() => {}}
@@ -107,7 +118,8 @@ function DropdownPage () {
           <h4>Use any type of toggle</h4>
           <p>You can specify any element to be a toggle, eg Button.</p>
         </div>
-        <CodeExample code={`<Dropdown
+        <CodeExample
+          code={`<Dropdown
   toggle={<Button label="Toggle me" chevron />}
   toggleIcon={<Customer height="16" color="#706F84" />}
 >
@@ -136,26 +148,17 @@ function DropdownPage () {
     icon={<Move height="16" color="#ff7878" />}
     onClick={() => {}}
   />
-</Dropdown>`}>
+</Dropdown>`}
+        >
           <Dropdown
             toggle={<Button label="Toggle me" chevron />}
             toggleIcon={<Customer height="16" color="#706F84" />}
           >
             <DropdownItemHeader label="Account" />
-            <DropdownItem
-              label="Menu item one"
-              onClick={() => {}}
-            />
-            <DropdownItem
-              label="Menu item two"
-              onClick={() => {}}
-            />
+            <DropdownItem label="Menu item one" onClick={() => {}} />
+            <DropdownItem label="Menu item two" onClick={() => {}} />
             <DropdownItemHeader label="Other stuff" />
-            <DropdownItem
-              label="Menu item three"
-              disabled
-              onClick={() => {}}
-            />
+            <DropdownItem label="Menu item three" disabled onClick={() => {}} />
             <DropdownItem
               label="Menu item three and a half"
               onClick={() => {}}
@@ -172,9 +175,13 @@ function DropdownPage () {
       <div className="ds-block">
         <div className="ds-block__title">
           <h4>Simple dropdown</h4>
-          <p>Change the style of the dropdown to be <code>simple</code>. In this case icons will not be displayed.</p>
+          <p>
+            Change the style of the dropdown to be <code>simple</code>. In this
+            case icons will not be displayed.
+          </p>
         </div>
-        <CodeExample code={`<Dropdown
+        <CodeExample
+          code={`<Dropdown
   simple
   toggle={<Button label="Toggle me" chevron />}
   toggleIcon={<Customer height="16" color="#706F84" />}
@@ -202,25 +209,17 @@ function DropdownPage () {
     icon={<Move height="16" color="#ff7878" />}
     onClick={() => {}}
   />
-</Dropdown>`}>
+</Dropdown>`}
+        >
           <Dropdown
             simple
             toggle={<Button label="Toggle me" chevron />}
             toggleIcon={<Customer height="16" color="#706F84" />}
           >
             <DropdownItemHeader label="Account" />
-            <DropdownItem
-              label="Menu item one"
-              onClick={() => {}}
-            />
-            <DropdownItem
-              label="Menu item two"
-              onClick={() => {}}
-            />
-            <DropdownItem
-              label="Menu item three"
-              onClick={() => {}}
-            />
+            <DropdownItem label="Menu item one" onClick={() => {}} />
+            <DropdownItem label="Menu item two" onClick={() => {}} />
+            <DropdownItem label="Menu item three" onClick={() => {}} />
             <DropdownItem
               label="Menu item three and a half"
               onClick={() => {}}
@@ -238,9 +237,13 @@ function DropdownPage () {
       <div className="ds-block">
         <div className="ds-block__title">
           <h4>Dropdown with content and quick actions</h4>
-          <p>You can set dropdown content to be of any type, eg. form with inputs.</p>
+          <p>
+            You can set dropdown content to be of any type, eg. form with
+            inputs.
+          </p>
         </div>
-        <CodeExample code={`<Dropdown
+        <CodeExample
+          code={`<Dropdown
   simple
   toggle={<Button label="Dropdown with content" chevron />}
   toggleIcon={<Customer height="16" color="#706F84" />}
@@ -271,12 +274,18 @@ function DropdownPage () {
     />
   </Group>
   <Button label="Apply" block primary onClick={() => {}} className="dsu-mt-xxsm" />
-</Dropdown>`}>
+</Dropdown>`}
+        >
           <Dropdown
             simple
             toggle={<Button label="Dropdown with content" chevron />}
             toggleIcon={<Customer height="16" color="#706F84" />}
-            quickActions={<React.Fragment><Button label="Quick action" /><Button label="Quick action" /></React.Fragment>}
+            quickActions={
+              <React.Fragment>
+                <Button label="Quick action" />
+                <Button label="Quick action" />
+              </React.Fragment>
+            }
           >
             <Group>
               <Select label="Default">
@@ -299,7 +308,13 @@ function DropdownPage () {
                 onUpdate={() => {}}
               />
             </Group>
-            <Button label="Apply" block primary onClick={() => {}} className="dsu-mt-xxsm" />
+            <Button
+              label="Apply"
+              block
+              primary
+              onClick={() => {}}
+              className="dsu-mt-xxsm"
+            />
           </Dropdown>
         </CodeExample>
       </div>

@@ -1,13 +1,6 @@
-
 import React from 'react'
 
-
-const Section = ({
-  slug,
-  content,
-  components,
-  sections
-}) => {
+const Section = ({ slug, content, components, sections }) => {
   return (
     <div className="app__body-content">
       {content}

@@ -20,11 +20,16 @@ import { union, without, uniq, intersection } from 'lodash'
  * ]
  * ```
  */
-export const handleSelectWithDependents = (selected, currentActionOption, selectConfig, options) => {
+export const handleSelectWithDependents = (
+  selected,
+  currentActionOption,
+  selectConfig,
+  options
+) => {
   let selectedOptions = selected
   let disabledOptions = []
   let labelOptions = selected
-  selectConfig.map(config => {
+  selectConfig.map((config) => {
     const hasControlOption = selected.indexOf(config.controlOption) !== -1
     if (currentActionOption === config.controlOption) {
       if (hasControlOption) {

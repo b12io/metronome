@@ -8,8 +8,6 @@ import Select from '../select/Select.es6.js'
 import Option from '../option/Option.es6.js'
 import Tooltip from './Tooltip.es6.js'
 
-
-
 class DimensionInput extends React.Component {
   static defaultProps = {
     units: [],
@@ -31,17 +29,17 @@ class DimensionInput extends React.Component {
     this.props.onUpdate(this.props.value, selectedUnit)
   }
 
-  render () {
+  render() {
     const { label, value, units, selectedUnit, help, fixedUnit } = this.props
 
     return (
-      <div className={classnames('ds-form-input-dimension__input', {
-        'has-error': !this.state.isValid,
-        'has-fixed-unit': fixedUnit
-      })}>
-        <div className="ds-form-input-dimension__label">
-          {label}
-        </div>
+      <div
+        className={classnames('ds-form-input-dimension__input', {
+          'has-error': !this.state.isValid,
+          'has-fixed-unit': fixedUnit
+        })}
+      >
+        <div className="ds-form-input-dimension__label">{label}</div>
         <div className="ds-form-input-dimension__textfield">
           <TextField
             type="number"
@@ -50,9 +48,7 @@ class DimensionInput extends React.Component {
           />
         </div>
         {fixedUnit ? (
-          <div className="ds-form-input-dimension__fixed-unit">
-            {fixedUnit}
-          </div>
+          <div className="ds-form-input-dimension__fixed-unit">{fixedUnit}</div>
         ) : (
           <div className="ds-form-input-dimension__select">
             <Select
@@ -60,15 +56,13 @@ class DimensionInput extends React.Component {
               onChange={this.onUnitChange}
               search={false}
             >
-              {units.map(unit => (
+              {units.map((unit) => (
                 <Option label={unit} value={unit} key={unit} />
               ))}
             </Select>
           </div>
         )}
-        {help && (
-          <Tooltip help={help} />
-        )}
+        {help && <Tooltip help={help} />}
       </div>
     )
   }

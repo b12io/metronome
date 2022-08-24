@@ -1,7 +1,6 @@
 import React from 'react'
 import classnames from 'classnames'
 
-
 class DropdownStyles extends React.Component {
   static defaultProps = {
     blurAction: () => {},
@@ -9,14 +8,16 @@ class DropdownStyles extends React.Component {
     onClick: () => {}
   }
 
-  render () {
+  render() {
     const { blurAction, isOpen, onClick, selectAction, value } = this.props
 
     return (
-      <div className={classnames({
-        'ds-form-control-select': true,
-        'ds-form-control-select--focused': isOpen
-      })}>
+      <div
+        className={classnames({
+          'ds-form-control-select': true,
+          'ds-form-control-select--focused': isOpen
+        })}
+      >
         <div
           className={classnames({
             'ds-form-control': true,
@@ -24,7 +25,10 @@ class DropdownStyles extends React.Component {
             'ds-form-control-select__toggle--empty': !value
           })}
           tabIndex="-1"
-          onClick={() => { selectAction(); onClick() }}
+          onClick={() => {
+            selectAction()
+            onClick()
+          }}
           onBlur={blurAction}
         >
           {value || 'Choose date'}

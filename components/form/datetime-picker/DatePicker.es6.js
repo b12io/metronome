@@ -4,13 +4,10 @@ import DatePicker from 'react-datepicker'
 import Toggle from '../toggle/Toggle.es6.js'
 import DropdownStyles from '../dropdown-styles/DropdownStyles.es6.js'
 
-
-function B12DatePicker ({ onChange, value, label, ...rest }) {
+function B12DatePicker({ onChange, value, label, ...rest }) {
   return (
     <div className="ds-form-control-select">
-      <div className="ds-control-label">
-        { label || 'Date' }
-      </div>
+      <div className="ds-control-label">{label || 'Date'}</div>
       <Toggle>
         {(isOpen, onToggle, onBlur) => (
           <DatePicker
@@ -20,13 +17,13 @@ function B12DatePicker ({ onChange, value, label, ...rest }) {
             selected={value}
             onChange={onChange}
             placeholderText="Choose date"
-            customInput={(
+            customInput={
               <DropdownStyles
                 isOpen={isOpen}
                 blurAction={onBlur}
                 selectAction={onToggle}
               />
-            )}
+            }
           />
         )}
       </Toggle>

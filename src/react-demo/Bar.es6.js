@@ -66,12 +66,17 @@ const previewFrameBarHtml2 = `<div className="ds-preview-frame-bar">
 </div>
 `
 
-function Dropdown () {
+function Dropdown() {
   return (
     <DemoLayoutContent>
       <div className="app-page-title">
         <h2>Composition</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime aliquid suscipit natus rem, ipsa molestiae voluptate vero obcaecati voluptatibus ea nobis neque necessitatibus excepturi perferendis, fuga voluptatem totam quae quas.</p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime
+          aliquid suscipit natus rem, ipsa molestiae voluptate vero obcaecati
+          voluptatibus ea nobis neque necessitatibus excepturi perferendis, fuga
+          voluptatem totam quae quas.
+        </p>
       </div>
 
       <div className="ds-block">
@@ -81,7 +86,7 @@ function Dropdown () {
 
         <div className="ds-example">
           <div className="ds-example__preview">
-            <div className="ds-preview-frame-bar" style={{padding: '0 10px'}}>
+            <div className="ds-preview-frame-bar" style={{ padding: '0 10px' }}>
               <div className="ds-preview-frame-bar__col">
                 <div className="ds-dropdown">
                   <div className="ds-dropdown__toggle">
@@ -102,7 +107,9 @@ function Dropdown () {
                     </li>
                   </ul>
                 </div>
-                <a className="ds-link-with-icon"><Faq height="16" color="#706F84" /> Support</a>
+                <a className="ds-link-with-icon">
+                  <Faq height="16" color="#706F84" /> Support
+                </a>
               </div>
               <div className="ds-preview-frame-bar__col">
                 <Button label="Preview" />
@@ -111,12 +118,14 @@ function Dropdown () {
             </div>
           </div>
           <div className="ds-example__code">
-            <SyntaxHighlighter language='html' style={github}>{previewFrameBarHtml}</SyntaxHighlighter>
+            <SyntaxHighlighter language="html" style={github}>
+              {previewFrameBarHtml}
+            </SyntaxHighlighter>
           </div>
         </div>
         <div className="ds-example" id="bar">
-          <div className="ds-example__preview" style={{minHeight: '260px'}}>
-            <div className="ds-preview-frame-bar" style={{padding: '0 10px'}}>
+          <div className="ds-example__preview" style={{ minHeight: '260px' }}>
+            <div className="ds-preview-frame-bar" style={{ padding: '0 10px' }}>
               <div className="ds-preview-frame-bar__col">
                 <div className="ds-dropdown ds-dropdown--menu-visible">
                   <div className="ds-dropdown__toggle">
@@ -124,7 +133,9 @@ function Dropdown () {
                   </div>
                   <ul className="ds-dropdown__menu">
                     <li className="ds-dropdown__menu-item">
-                      <span><Checkmark height="16" color="#756cf9" /> Desktop view</span>
+                      <span>
+                        <Checkmark height="16" color="#756cf9" /> Desktop view
+                      </span>
                     </li>
                     <li className="ds-dropdown__menu-item">
                       <span>Tablet view</span>
@@ -137,7 +148,9 @@ function Dropdown () {
                     </li>
                   </ul>
                 </div>
-                <a className="ds-link-with-icon"><Faq height="16" color="#706F84" /> Support</a>
+                <a className="ds-link-with-icon">
+                  <Faq height="16" color="#706F84" /> Support
+                </a>
               </div>
               <div className="ds-preview-frame-bar__col">
                 <Button label="Preview" />
@@ -146,7 +159,9 @@ function Dropdown () {
             </div>
           </div>
           <div className="ds-example__code">
-            <SyntaxHighlighter language='html' style={github}>{previewFrameBarHtml2}</SyntaxHighlighter>
+            <SyntaxHighlighter language="html" style={github}>
+              {previewFrameBarHtml2}
+            </SyntaxHighlighter>
           </div>
         </div>
       </div>

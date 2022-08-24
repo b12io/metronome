@@ -1,7 +1,5 @@
 import React from 'react'
 
-
-
 class Toggle extends React.Component {
   state = { isOpen: this.props.isOpen }
 
@@ -19,8 +17,12 @@ class Toggle extends React.Component {
     }))
   }
 
-  render () {
-    return this.props.children(this.state.isOpen, this.handleToggle, this.handleBlur)
+  render() {
+    return this.props.children(
+      this.state.isOpen,
+      this.handleToggle,
+      this.handleBlur
+    )
   }
 }
 

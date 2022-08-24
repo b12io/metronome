@@ -1,4 +1,3 @@
-
 import React from 'react'
 import classnames from 'classnames'
 
@@ -9,9 +8,6 @@ import TextField from '../textfield/TextField.es6.js'
 import Select from '../select/Select.es6.js'
 import Option from '../option/Option.es6.js'
 import Button from '../button/Button.es6.js'
-
-
-
 
 class FilterOptionItem extends React.Component {
   state = {
@@ -31,10 +27,18 @@ class FilterOptionItem extends React.Component {
     }))
   }
 
-  render () {
+  render() {
     const { isOpened } = this.state
-    const { filter, filterableFields, handleRemoveFilter, handleUpdateFilter, validOperators } = this.props
-    const selectedOperator = validOperators.find(op => op.symbol === filter.operator)
+    const {
+      filter,
+      filterableFields,
+      handleRemoveFilter,
+      handleUpdateFilter,
+      validOperators
+    } = this.props
+    const selectedOperator = validOperators.find(
+      (op) => op.symbol === filter.operator
+    )
     const deslugifiedFieldName = deslugify(filter.field_name)
     return (
       <div className="ds-filter-option__item">
@@ -47,8 +51,7 @@ class FilterOptionItem extends React.Component {
         >
           {selectedOperator && !Array.isArray(filter.value)
             ? `${deslugifiedFieldName} ${selectedOperator.display} ${filter.value}`
-            : deslugifiedFieldName
-          }
+            : deslugifiedFieldName}
         </div>
 
         {isOpened && (
@@ -56,23 +59,27 @@ class FilterOptionItem extends React.Component {
             <Group>
               <Select
                 search={false}
-                onChange={fieldName => { handleUpdateFilter({ field_name: fieldName }) }}
+                onChange={(fieldName) => {
+                  handleUpdateFilter({ field_name: fieldName })
+                }}
                 placeholder={deslugifiedFieldName}
               >
-                {filterableFields.map(field => (
-                  <Option
-                    key={field}
-                    label={deslugify(field)}
-                    value={field}
-                  />
+                {filterableFields.map((field) => (
+                  <Option key={field} label={deslugify(field)} value={field} />
                 ))}
               </Select>
             </Group>
             <Group>
               <Select
                 search={false}
-                onChange={operator => { handleUpdateFilter({ operator }) }}
-                placeholder={selectedOperator ? `${selectedOperator.display}...` : 'Please select'}
+                onChange={(operator) => {
+                  handleUpdateFilter({ operator })
+                }}
+                placeholder={
+                  selectedOperator
+                    ? `${selectedOperator.display}...`
+                    : 'Please select'
+                }
               >
                 {validOperators.map((operator, idx) => (
                   <Option
@@ -87,14 +94,18 @@ class FilterOptionItem extends React.Component {
               <TextField
                 hideIcon
                 value={filter.value || ''}
-                onUpdate={value => { handleUpdateFilter({ value }) }}
+                onUpdate={(value) => {
+                  handleUpdateFilter({ value })
+                }}
               />
             </Group>
             <Group>
               <Button
                 label="Remove filter"
                 onClick={handleRemoveFilter}
-                small block danger
+                small
+                block
+                danger
               />
             </Group>
           </div>

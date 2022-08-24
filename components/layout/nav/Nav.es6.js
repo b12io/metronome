@@ -1,7 +1,5 @@
-
 import * as React from 'react'
 import classnames from 'classnames'
-
 
 class Nav extends React.Component {
   static defaultProps = {
@@ -11,10 +9,15 @@ class Nav extends React.Component {
 
   render() {
     return (
-      <div className={classnames({
-        'ds-nav': true,
-        'ds-nav--bordered': this.props.bordered
-      }, this.props.className)}>
+      <div
+        className={classnames(
+          {
+            'ds-nav': true,
+            'ds-nav--bordered': this.props.bordered
+          },
+          this.props.className
+        )}
+      >
         {this.props.children}
       </div>
     )

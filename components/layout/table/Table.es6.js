@@ -1,8 +1,7 @@
 import * as React from 'react'
 import classnames from 'classnames'
 
-
-function Table ({
+function Table({
   className,
   cardLike,
   padding,
@@ -28,13 +27,8 @@ function Table ({
   )
 
   return (
-    <div
-      className={wrapperClasses}
-    >
-      <table
-        className={tableClasses}
-        {...otherProps}
-      >
+    <div className={wrapperClasses}>
+      <table className={tableClasses} {...otherProps}>
         {children}
       </table>
     </div>

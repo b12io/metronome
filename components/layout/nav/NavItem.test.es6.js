@@ -23,12 +23,14 @@ it('shows badge', () => {
 
 it('shows action icon if click handler for action is passed', () => {
   const onActionClick = jest.fn()
-  const component = mount(<NavItem onActionClick={onActionClick} actionIcon={<Visible />} />)
+  const component = mount(
+    <NavItem onActionClick={onActionClick} actionIcon={<Visible />} />
+  )
   expect(component.find('.ds-nav__item-action svg').exists()).toBe(true)
 })
 
 it('should add `ds-nav__item--active` classname once it is active', () => {
-  const component = mount(<NavItem active/>)
+  const component = mount(<NavItem active />)
   expect(component.find('.ds-nav__item--active').exists()).toBe(true)
 })
 
@@ -42,9 +44,12 @@ it('calls nav item click event', () => {
 it('calls nav item action click event', () => {
   const onActionClick = jest.fn()
   const component = shallow(<NavItem onActionClick={onActionClick} />)
-  component.find('.ds-nav__item-action').at(0).simulate('click', {
-    stopPropagation: () => {}
-  })
+  component
+    .find('.ds-nav__item-action')
+    .at(0)
+    .simulate('click', {
+      stopPropagation: () => {}
+    })
   expect(onActionClick.mock.calls.length).toBe(1)
 })
 

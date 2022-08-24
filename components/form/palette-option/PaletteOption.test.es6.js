@@ -32,9 +32,10 @@ it('should show block option', () => {
 it('should call onOptionClick', () => {
   const onOptionClick = jest.fn()
   const component = shallow(
-    <PaletteOption colors={colors}
+    <PaletteOption
+      colors={colors}
       onOptionClick={onOptionClick}
-      value={{slug: 'test'}}
+      value={{ slug: 'test' }}
     />
   )
   component.find('.ds-palette-option').at(0).simulate('click')

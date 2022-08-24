@@ -20,10 +20,7 @@ describe('DatetimePicker component', () => {
 
   test('should pass 3 new props to its children: value, onChange, & onChangeRaw', () => {
     const wrapper = mount(
-      <DatetimePicker
-        {...testProps}
-        value={moment('2018-03-29T12:00')}
-      >
+      <DatetimePicker {...testProps} value={moment('2018-03-29T12:00')}>
         <B12DatePicker />
         <B12TimePicker />
       </DatetimePicker>

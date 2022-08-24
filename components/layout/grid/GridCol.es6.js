@@ -1,9 +1,7 @@
 import React from 'react'
 import classnames from 'classnames'
 
-
-
-function GridCol ({ className, children, col, align }) {
+function GridCol({ className, children, col, align }) {
   const classes = classnames(
     'ds-grid__col',
     `ds-grid__col--col-${col}`,
@@ -11,11 +9,7 @@ function GridCol ({ className, children, col, align }) {
     className
   )
 
-  return (
-    <div className={classes}>
-      {children}
-    </div>
-  )
+  return <div className={classes}>{children}</div>
 }
 
 GridCol.defaultProps = {

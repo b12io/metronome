@@ -2,13 +2,16 @@ import React from 'react'
 import DemoLayoutContent from './demo-only-components/DemoLayoutContent.es6.js'
 import CodeExample from './demo-only-components/CodeExample.es6.js'
 import MetaData from './demo-only-components/MetaData.es6.js'
-import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDataProps.es6.js'
+import {
+  MetaDataProps,
+  MetaDataPropsItem
+} from './demo-only-components/MetaDataProps.es6.js'
 
 import Button from '../../components/form/button/Button.es6.js'
 import Switch from '../../components/form/switch/Switch.es6.js'
 import { Desktop, Tablet, Mobile } from '../../components/Icons.es6.js'
 
-function SwitchPage () {
+function SwitchPage() {
   return (
     <DemoLayoutContent>
       <div className="app-page-title">
@@ -26,11 +29,13 @@ function SwitchPage () {
           <h4>Default</h4>
         </div>
 
-        <CodeExample code={`<Switch selected={0}>
+        <CodeExample
+          code={`<Switch selected={0}>
   <Button label="Left" />
   <Button label="Middle" />
   <Button label="Right" />
-</Switch>`}>
+</Switch>`}
+        >
           <Switch selected={0}>
             <Button label="Left" />
             <Button label="Middle" />
@@ -47,11 +52,13 @@ function SwitchPage () {
             <Button label="Right" small />
           </Switch>
         </CodeExample>
-        <CodeExample code={`<Switch selected={0} block>
+        <CodeExample
+          code={`<Switch selected={0} block>
   <Button label="Left" />
   <Button label="Middle" />
   <Button label="Right" />
-</Switch>`}>
+</Switch>`}
+        >
           <Switch selected={0} block>
             <Button label="Left" />
             <Button label="Middle" />

@@ -4,14 +4,14 @@ import classnames from 'classnames'
 import ListItem from '../list/ListItem.es6.js'
 import ListItemContent from '../list/ListItemContent.es6.js'
 
-
 class CollapsibleCardListItem extends React.Component {
   static defaultProps = {
     isActive: false,
     onSelect: () => {}
   }
-  render () {
-    const { collapsedLayout, className, children, isActive, onSelect } = this.props
+  render() {
+    const { collapsedLayout, className, children, isActive, onSelect } =
+      this.props
     return (
       <ListItem
         cardListItem

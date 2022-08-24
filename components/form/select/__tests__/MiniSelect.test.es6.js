@@ -11,12 +11,14 @@ const selectOptions = ['px', 'rem', 'em', '%']
 beforeEach(() => {
   inputValueChange = jest.fn()
   selectValueChange = jest.fn()
-  component = shallow(<MiniSelect
-    label="Mini Select"
-    selectOptions={selectOptions}
-    inputValueChange={inputValueChange}
-    selectValueChange={selectValueChange}
-  />)
+  component = shallow(
+    <MiniSelect
+      label="Mini Select"
+      selectOptions={selectOptions}
+      inputValueChange={inputValueChange}
+      selectValueChange={selectValueChange}
+    />
+  )
 })
 
 it('should render component', () => {
@@ -44,45 +46,53 @@ it('should call selectValueChange on option click', () => {
 })
 
 it('should call inputValueChange on option click', () => {
-  component.find('input').simulate('change', { target: { value: 'My new value' } })
+  component
+    .find('input')
+    .simulate('change', { target: { value: 'My new value' } })
   expect(inputValueChange.mock.calls[0][0]).toEqual('My new value')
 })
 
 it('should render select on right', () => {
-  component = shallow(<MiniSelect
-    label="Mini Select"
-    selectPosition="right"
-  />)
-  expect(component.find('.ds-mini-select__dropdown').hasClass('ds-mini-select__dropdown--right')).toBeTruthy()
+  component = shallow(<MiniSelect label="Mini Select" selectPosition="right" />)
+  expect(
+    component
+      .find('.ds-mini-select__dropdown')
+      .hasClass('ds-mini-select__dropdown--right')
+  ).toBeTruthy()
   expect(component.instance().props.selectPosition).toBe('right')
 })
 
 it('should render input and select values', () => {
-  component = shallow(<MiniSelect
-    label="Mini Select"
-    selectOptions={selectOptions}
-    inputValue="My value"
-    selectValue="rem"
-    inputValueChange={inputValueChange}
-    selectValueChange={selectValueChange}
-  />)
+  component = shallow(
+    <MiniSelect
+      label="Mini Select"
+      selectOptions={selectOptions}
+      inputValue="My value"
+      selectValue="rem"
+      inputValueChange={inputValueChange}
+      selectValueChange={selectValueChange}
+    />
+  )
   expect(component.find('input').props().value).toBe('My value')
   expect(component.find('.ds-mini-select__dropdown-toggle').text()).toBe('rem')
 })
 
 it('should disable input and select', () => {
-  component = shallow(<MiniSelect
-    label="Mini Select"
-    inputDisabled
-    selectDisabled
-    selectOptions={selectOptions}
-    inputValue="My value"
-    selectValue="rem"
-    inputValueChange={inputValueChange}
-    selectValueChange={selectValueChange}
-  />)
-  expect(component.find('.ds-mini-select').hasClass('ds-mini-select--disabled')).toBeTruthy()
+  component = shallow(
+    <MiniSelect
+      label="Mini Select"
+      inputDisabled
+      selectDisabled
+      selectOptions={selectOptions}
+      inputValue="My value"
+      selectValue="rem"
+      inputValueChange={inputValueChange}
+      selectValueChange={selectValueChange}
+    />
+  )
+  expect(
+    component.find('.ds-mini-select').hasClass('ds-mini-select--disabled')
+  ).toBeTruthy()
   expect(component.find('input').props().disabled).toBeTruthy()
   expect(component.find('Disabled').length).toBe(1)
 })
-

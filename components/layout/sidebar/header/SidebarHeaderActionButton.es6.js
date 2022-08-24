@@ -1,8 +1,7 @@
 import React from 'react'
 import classnames from 'classnames'
 
-
-function SidebarHeaderActionButton ({ dropdown, icon, onClick }) {
+function SidebarHeaderActionButton({ dropdown, icon, onClick }) {
   return (
     <button
       type="button"

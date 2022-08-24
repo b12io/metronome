@@ -3,7 +3,6 @@ import classnames from 'classnames'
 import CardList from '../card-list/CardList.es6.js'
 import { isNumber } from 'lodash'
 
-
 class CollapsibleCardList extends React.Component {
   state = {
     activeIndex: -1
@@ -13,7 +12,7 @@ class CollapsibleCardList extends React.Component {
     bordered: true
   }
 
-  static getDerivedStateFromProps (nextProps, prevState) {
+  static getDerivedStateFromProps(nextProps, prevState) {
     if (isNumber(nextProps.activeIndex) && nextProps.activeIndex >= 0) {
       return {
         activeIndex: nextProps.activeIndex
@@ -28,7 +27,7 @@ class CollapsibleCardList extends React.Component {
     })
   }
 
-  render () {
+  render() {
     const { className, bordered, children } = this.props
     const { activeIndex } = this.state
     const childrenElements = React.Children.map(children, (child, index) => {
@@ -39,11 +38,7 @@ class CollapsibleCardList extends React.Component {
     })
     return (
       <div className={classnames('collapsible-card-list', className)}>
-        <CardList
-          bordered={bordered}
-        >
-          {childrenElements}
-        </CardList>
+        <CardList bordered={bordered}>{childrenElements}</CardList>
       </div>
     )
   }

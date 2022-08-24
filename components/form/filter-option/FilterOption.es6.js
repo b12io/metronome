@@ -1,13 +1,9 @@
-
 import React from 'react'
 import classnames from 'classnames'
 
 import Button from '../button/Button.es6.js'
 import FilterOptionSelect from './FilterOptionSelect.es6.js'
 import FilterOptionItem from './FilterOptionItem.es6.js'
-
-
-
 
 class FilterOption extends React.Component {
   state = {
@@ -19,7 +15,7 @@ class FilterOption extends React.Component {
     filters: []
   }
 
-  UNSAFE_componentWillReceiveProps ({ isOpened }) {
+  UNSAFE_componentWillReceiveProps({ isOpened }) {
     if (isOpened !== this.state.isOpened) {
       this.setState({ isOpened })
     }
@@ -31,9 +27,15 @@ class FilterOption extends React.Component {
     })
   }
 
-  render () {
-    const { filterableFields, filters, getValidOperators, handleRemoveFilter,
-      handleUpdateFilter, toggleFilterDropdown } = this.props
+  render() {
+    const {
+      filterableFields,
+      filters,
+      getValidOperators,
+      handleRemoveFilter,
+      handleUpdateFilter,
+      toggleFilterDropdown
+    } = this.props
     return (
       <div
         className={classnames({
@@ -48,7 +50,7 @@ class FilterOption extends React.Component {
               filter={filter}
               filterableFields={filterableFields}
               handleRemoveFilter={() => handleRemoveFilter(idx)}
-              handleUpdateFilter={data => handleUpdateFilter(idx, data)}
+              handleUpdateFilter={(data) => handleUpdateFilter(idx, data)}
               isOpened={idx === filters.length - 1 && this.state.filterAdded}
               validOperators={getValidOperators(idx)}
             />
@@ -64,11 +66,7 @@ class FilterOption extends React.Component {
         )}
 
         <div className="ds-filter-option__actions">
-          <Button
-            small
-            label="Add filters"
-            onClick={toggleFilterDropdown}
-          />
+          <Button small label="Add filters" onClick={toggleFilterDropdown} />
         </div>
       </div>
     )

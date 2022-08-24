@@ -1,7 +1,6 @@
 import * as React from 'react'
 
-
-function SidebarBody ({ children, handleScroll }) {
+function SidebarBody({ children, handleScroll }) {
   return (
     <div
       className="ds-sidebar__body"

@@ -1,8 +1,6 @@
 import React from 'react'
 import classnames from 'classnames'
 
-
-
 const DEFAULT_STATUS_LABELS = {
   success: 'Active',
   default: 'Inactive',
@@ -10,7 +8,7 @@ const DEFAULT_STATUS_LABELS = {
   error: 'Error'
 }
 
-function StatusIndicator ({ status, statusLabels, className }) {
+function StatusIndicator({ status, statusLabels, className }) {
   const classNames = classnames(
     'ds-status-indicator',
     `ds-status-indicator--${status}`,

@@ -1,11 +1,8 @@
-
 import React from 'react'
 import { debounce } from 'lodash'
 import classnames from 'classnames'
 
 import { Plus, Minus } from '../../Icons.es6.js'
-
-
 
 class Stepper extends React.Component {
   state = {
@@ -47,7 +44,7 @@ class Stepper extends React.Component {
       return
     }
 
-    if ((value && value >= 0)) {
+    if (value && value >= 0) {
       newVal = parseInt(value) + step
     } else {
       newVal = min + step
@@ -59,9 +56,12 @@ class Stepper extends React.Component {
   onFieldUpdate = (event) => {
     const value = parseInt(event.target.value) || -1
 
-    this.setState({
-      value
-    }, (value === -1) ? () => {} : this.onUpdate)
+    this.setState(
+      {
+        value
+      },
+      value === -1 ? () => {} : this.onUpdate
+    )
   }
 
   onUpdate = debounce(() => {
@@ -77,28 +77,24 @@ class Stepper extends React.Component {
     }
   }, 700)
 
-  componentDidUpdate (prevProps) {
+  componentDidUpdate(prevProps) {
     const { value } = this.props
     if (prevProps.value !== value && this.state.value !== value) {
       this.setState({ value })
     }
   }
 
-  render () {
+  render() {
     const { value } = this.state
     const { label } = this.props
 
     return (
-      <div className={classnames(
-        'ds-form-group',
-        'ds-form-group--stepper',
-        { 'has-error': value === -1 }
-      )}>
-        {label && (
-          <div className="ds-control-label">
-            {label}
-          </div>
-        )}
+      <div
+        className={classnames('ds-form-group', 'ds-form-group--stepper', {
+          'has-error': value === -1
+        })}
+      >
+        {label && <div className="ds-control-label">{label}</div>}
         <div className="stepper">
           <button
             className="stepper__btn stepper__btn--minus"
@@ -118,7 +114,7 @@ class Stepper extends React.Component {
             type="text"
             pattern="[0-9]"
             className="ds-form-control stepper__input"
-            value={(value === -1) ? '' : value}
+            value={value === -1 ? '' : value}
             onChange={this.onFieldUpdate}
           />
         </div>

@@ -2,7 +2,10 @@ import React from 'react'
 import DemoLayoutContent from './demo-only-components/DemoLayoutContent.es6.js'
 import CodeExample from './demo-only-components/CodeExample.es6.js'
 import MetaData from './demo-only-components/MetaData.es6.js'
-import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDataProps.es6.js'
+import {
+  MetaDataProps,
+  MetaDataPropsItem
+} from './demo-only-components/MetaDataProps.es6.js'
 
 import SimpleCard from '../../components/layout/simple-card/SimpleCard.es6.js'
 
@@ -21,7 +24,7 @@ const RangeSliderProps = [
   }
 ]
 
-export default function AvatarItemPage () {
+export default function AvatarItemPage() {
   return (
     <DemoLayoutContent>
       <div className="app-page-title">
@@ -38,10 +41,12 @@ export default function AvatarItemPage () {
           <h4>Example</h4>
         </div>
 
-        <CodeExample code={`<SimpleCard className="customize-classname" align="center">
+        <CodeExample
+          code={`<SimpleCard className="customize-classname" align="center">
   Any content
 </SimpleCard>
-`}>
+`}
+        >
           <SimpleCard className="customize-classname" align="center">
             <div>Any content</div>
           </SimpleCard>
@@ -53,7 +58,7 @@ export default function AvatarItemPage () {
         </div>
 
         <MetaDataProps>
-          {RangeSliderProps.map(prop => (
+          {RangeSliderProps.map((prop) => (
             <MetaDataPropsItem
               key={prop.property}
               property={prop.property}

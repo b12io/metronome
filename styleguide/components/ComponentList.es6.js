@@ -1,37 +1,26 @@
 import React, { Fragment } from 'react'
 
-
-const ComponentListSection = ({
-  href, 
-  visibleName,
-  content,
-  selected
-}) => {
+const ComponentListSection = ({ href, visibleName, content, selected }) => {
   return (
     <Fragment>
-      {content
-        ? (
-          <Fragment>
-            <li className="nav__header">{visibleName}</li>
-            {content}
-          </Fragment>
-        )
-        : (
-          <li key={href}>
-            <a href={href}>{visibleName}</a>
-          </li>
-        )}
+      {content ? (
+        <Fragment>
+          <li className="nav__header">{visibleName}</li>
+          {content}
+        </Fragment>
+      ) : (
+        <li key={href}>
+          <a href={href}>{visibleName}</a>
+        </li>
+      )}
     </Fragment>
   )
 }
 
-
-const ComponentList = ({
-  items
-}) => {
+const ComponentList = ({ items }) => {
   return (
     <Fragment>
-      {items.map(item => (
+      {items.map((item) => (
         <ComponentListSection key={item.slug} {...item} />
       ))}
     </Fragment>

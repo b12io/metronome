@@ -49,7 +49,9 @@ it('should render all options', () => {
 
 it('should reflect the active option', () => {
   expect(component.find(Option).at(0).prop('active')).toEqual(true)
-  expect(component.find(Select).at(0).prop('placeholder')).toEqual(option1.label)
+  expect(component.find(Select).at(0).prop('placeholder')).toEqual(
+    option1.label
+  )
 })
 
 it('should show the right checkbox label', () => {

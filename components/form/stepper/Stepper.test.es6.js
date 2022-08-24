@@ -6,7 +6,9 @@ import Stepper from './Stepper.es6.js'
 
 it('should call onUpdate', (done) => {
   const onUpdate = jest.fn()
-  const component = mount(<Stepper value="5" label="Test label" onUpdate={onUpdate} />)
+  const component = mount(
+    <Stepper value="5" label="Test label" onUpdate={onUpdate} />
+  )
   component.find('input').simulate('change', { target: { value: 6 } })
 
   setTimeout(() => {
@@ -17,7 +19,9 @@ it('should call onUpdate', (done) => {
 
 it('should reject onUpdate', (done) => {
   const onUpdate = jest.fn()
-  const component = mount(<Stepper value="5" label="Test label" onUpdate={onUpdate} />)
+  const component = mount(
+    <Stepper value="5" label="Test label" onUpdate={onUpdate} />
+  )
   component.find('input').simulate('change', { target: { value: 'abc' } })
 
   setTimeout(() => {
@@ -28,7 +32,9 @@ it('should reject onUpdate', (done) => {
 
 it('should show error state', (done) => {
   const onUpdate = jest.fn()
-  const component = mount(<Stepper value="5" label="Test label" onUpdate={onUpdate} />)
+  const component = mount(
+    <Stepper value="5" label="Test label" onUpdate={onUpdate} />
+  )
   component.find('input').simulate('change', { target: { value: '' } })
 
   setTimeout(() => {
@@ -39,24 +45,24 @@ it('should show error state', (done) => {
 
 it('should increase value', () => {
   const component = mount(<Stepper value="5" step={1} />)
-  component.find('.stepper__btn--plus').at(0).simulate('click');
+  component.find('.stepper__btn--plus').at(0).simulate('click')
   expect(component.find('input').prop('value')).toEqual(6)
 })
 
 it('should not go beyond max value', () => {
   const component = mount(<Stepper value="5" max="5" step={1} />)
-  component.find('.stepper__btn--plus').at(0).simulate('click');
+  component.find('.stepper__btn--plus').at(0).simulate('click')
   expect(component.find('input').prop('value')).toEqual('5')
 })
 
 it('should decrease value', () => {
   const component = mount(<Stepper value="5" step={1} />)
-  component.find('.stepper__btn--minus').at(0).simulate('click');
+  component.find('.stepper__btn--minus').at(0).simulate('click')
   expect(component.find('input').prop('value')).toEqual(4)
 })
 
 it('should not go below min value', () => {
   const component = mount(<Stepper value="5" min="5" step={1} />)
-  component.find('.stepper__btn--minus').at(0).simulate('click');
+  component.find('.stepper__btn--minus').at(0).simulate('click')
   expect(component.find('input').prop('value')).toEqual('5')
 })

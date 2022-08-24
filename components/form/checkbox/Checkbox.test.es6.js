@@ -6,7 +6,9 @@ import Checkbox from './Checkbox.es6.js'
 
 it('should render label', () => {
   const component = shallow(<Checkbox label="Option 1" />)
-  expect(component.find('.ds-form-control-checkbox__label').text().trim()).toEqual('Option 1')
+  expect(
+    component.find('.ds-form-control-checkbox__label').text().trim()
+  ).toEqual('Option 1')
 })
 
 it('should be checked', () => {
@@ -26,7 +28,9 @@ it('should show error', () => {
 
 it('should call onChange', () => {
   const onChange = jest.fn()
-  const component = shallow(<Checkbox label="Option 1" value="1" onChange={onChange} />)
-  component.find('input').simulate('change', {target: {checked: true}})
+  const component = shallow(
+    <Checkbox label="Option 1" value="1" onChange={onChange} />
+  )
+  component.find('input').simulate('change', { target: { checked: true } })
   expect(onChange.mock.calls[0][0]).toEqual(true)
 })

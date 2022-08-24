@@ -4,8 +4,8 @@ import PropTypes from 'prop-types'
 /**
  * Panel's content container.
  */
-function Content ({ children }) {
-  return (<div className="ds-panel__content">{children}</div>)
+function Content({ children }) {
+  return <div className="ds-panel__content">{children}</div>
 }
 
 Content.defaultProps = {

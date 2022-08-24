@@ -1,12 +1,10 @@
-
 import { useState, useEffect } from 'react'
 
-
-function useClickOutside (containerRef) {
+function useClickOutside(containerRef) {
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(function () {
-    function onDocumentClick (event) {
+    function onDocumentClick(event) {
       if (!isVisible || !containerRef.current) {
         return
       }

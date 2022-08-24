@@ -2,7 +2,10 @@ import React from 'react'
 import DemoLayoutContent from './demo-only-components/DemoLayoutContent.es6.js'
 import CodeExample from './demo-only-components/CodeExample.es6.js'
 import MetaData from './demo-only-components/MetaData.es6.js'
-import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDataProps.es6.js'
+import {
+  MetaDataProps,
+  MetaDataPropsItem
+} from './demo-only-components/MetaDataProps.es6.js'
 
 import TabbedNavigation from '../../components/layout/tabbed-navigation/TabbedNavigation.es6.js'
 import TabbedNavigationItem from '../../components/layout/tabbed-navigation/TabbedNavigationItem.es6.js'
@@ -13,7 +16,8 @@ const TabbedNavigationProps = [
     property: 'progress',
     value: 'number',
     defaultValue: '0',
-    description: 'Progress bar indicator width value if progressType is `percent` and order number if `items`'
+    description:
+      'Progress bar indicator width value if progressType is `percent` and order number if `items`'
   },
   {
     property: 'progressType',
@@ -62,7 +66,7 @@ const TabbedNavigationItemProps = [
   }
 ]
 
-function TabbedNavigationPage () {
+function TabbedNavigationPage() {
   return (
     <DemoLayoutContent>
       <div className="app-page-title">
@@ -77,7 +81,8 @@ function TabbedNavigationPage () {
         <div className="ds-block__title">
           <h4>Default</h4>
         </div>
-        <CodeExample code={`<TabbedNavigation progress={40}>
+        <CodeExample
+          code={`<TabbedNavigation progress={40}>
   <TabbedNavigationItem visited disabled>Template</TabbedNavigationItem>
   <TabbedNavigationItem visited>Design</TabbedNavigationItem>
   <TabbedNavigationItem active>Setup</TabbedNavigationItem>
@@ -95,17 +100,16 @@ function TabbedNavigationPage () {
       )}
     </B12Tooltip>
   </TabbedNavigationItem>
-</TabbedNavigation>`}>
+</TabbedNavigation>`}
+        >
           <TabbedNavigation progress={40}>
-            <TabbedNavigationItem visited disabled>Template</TabbedNavigationItem>
+            <TabbedNavigationItem visited disabled>
+              Template
+            </TabbedNavigationItem>
             <TabbedNavigationItem visited>Design</TabbedNavigationItem>
             <TabbedNavigationItem active>Setup</TabbedNavigationItem>
             <TabbedNavigationItem clickable>
-              <B12Tooltip
-                text="This is clickable"
-                target="review"
-                flip={false}
-              >
+              <B12Tooltip text="This is clickable" target="review" flip={false}>
                 {({ tooltip, target }) => (
                   <div id={target}>
                     Review
@@ -122,15 +126,21 @@ function TabbedNavigationPage () {
         <div className="ds-block__title">
           <h4>Progress based on items</h4>
         </div>
-        <CodeExample code={`<TabbedNavigation progress={3} progressType="items">
+        <CodeExample
+          code={`<TabbedNavigation progress={3} progressType="items">
   <TabbedNavigationItem visited clickable>Template</TabbedNavigationItem>
   <TabbedNavigationItem visited clickable>Design</TabbedNavigationItem>
   <TabbedNavigationItem active>Setup</TabbedNavigationItem>
   <TabbedNavigationItem disabled>Review</TabbedNavigationItem>
-</TabbedNavigation>`}>
+</TabbedNavigation>`}
+        >
           <TabbedNavigation progress={3} progressType="items">
-            <TabbedNavigationItem visited clickable>Template</TabbedNavigationItem>
-            <TabbedNavigationItem visited clickable>Design</TabbedNavigationItem>
+            <TabbedNavigationItem visited clickable>
+              Template
+            </TabbedNavigationItem>
+            <TabbedNavigationItem visited clickable>
+              Design
+            </TabbedNavigationItem>
             <TabbedNavigationItem active>Setup</TabbedNavigationItem>
             <TabbedNavigationItem disabled>Review</TabbedNavigationItem>
           </TabbedNavigation>
@@ -143,7 +153,7 @@ function TabbedNavigationPage () {
         </div>
 
         <MetaDataProps>
-          {TabbedNavigationProps.map(prop => (
+          {TabbedNavigationProps.map((prop) => (
             <MetaDataPropsItem
               key={prop.property}
               property={prop.property}
@@ -161,7 +171,7 @@ function TabbedNavigationPage () {
         </div>
 
         <MetaDataProps>
-          {TabbedNavigationItemProps.map(prop => (
+          {TabbedNavigationItemProps.map((prop) => (
             <MetaDataPropsItem
               key={prop.property}
               property={prop.property}

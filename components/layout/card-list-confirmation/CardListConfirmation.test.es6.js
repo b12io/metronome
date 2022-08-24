@@ -6,10 +6,7 @@ import CardListConfirmation from './CardListConfirmation.es6.js'
 
 it('should not show any buttons', function () {
   const component = shallow(
-    <CardListConfirmation
-      title="Title"
-      help="Help text"
-    />
+    <CardListConfirmation title="Title" help="Help text" />
   )
 
   expect(component.find(Button)).toHaveLength(0)
@@ -17,11 +14,7 @@ it('should not show any buttons', function () {
 
 it('should render only yes button', function () {
   const component = shallow(
-    <CardListConfirmation
-      title="Title"
-      help="Help text"
-      yes="OK"
-    />
+    <CardListConfirmation title="Title" help="Help text" yes="OK" />
   )
 
   expect(component.find(Button)).toHaveLength(1)
@@ -32,11 +25,7 @@ it('should render only yes button', function () {
 
 it('should render only no button', function () {
   const component = shallow(
-    <CardListConfirmation
-      title="Title"
-      help="Help text"
-      no="CANCEL"
-    />
+    <CardListConfirmation title="Title" help="Help text" no="CANCEL" />
   )
 
   expect(component.find(Button)).toHaveLength(1)
@@ -47,15 +36,12 @@ it('should render only no button', function () {
 
 it('should render yes button as primary by default', function () {
   const component = shallow(
-    <CardListConfirmation
-      title="Title"
-      help="Help text"
-      yes="OK"
-      no="CANCEL"
-    />
+    <CardListConfirmation title="Title" help="Help text" yes="OK" no="CANCEL" />
   )
 
-  const primaryButton = component.findWhere(c => c.type() === Button && c.prop('primary'))
+  const primaryButton = component.findWhere(
+    (c) => c.type() === Button && c.prop('primary')
+  )
   expect(primaryButton).toHaveLength(1)
   expect(primaryButton.at(0).prop('label')).toEqual('OK')
 })
@@ -71,7 +57,9 @@ it('should render no button as primary', function () {
     />
   )
 
-  const primaryButton = component.findWhere(c => c.type() === Button && c.prop('primary'))
+  const primaryButton = component.findWhere(
+    (c) => c.type() === Button && c.prop('primary')
+  )
   expect(primaryButton).toHaveLength(1)
   expect(primaryButton.at(0).prop('label')).toEqual('CANCEL')
 })

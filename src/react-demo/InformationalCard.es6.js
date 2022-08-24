@@ -2,11 +2,13 @@ import React from 'react'
 import DemoLayoutContent from './demo-only-components/DemoLayoutContent.es6.js'
 import CodeExample from './demo-only-components/CodeExample.es6.js'
 import MetaData from './demo-only-components/MetaData.es6.js'
-import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDataProps.es6.js'
+import {
+  MetaDataProps,
+  MetaDataPropsItem
+} from './demo-only-components/MetaDataProps.es6.js'
 
 import InformationalCard from '../../components/layout/informational-card/InformationalCard.es6.js'
 import Checkbox from '../../components/form/checkbox/Checkbox.es6.js'
-
 
 const codeExample1 = `
 <InformationalCard
@@ -35,12 +37,12 @@ class InformationalCardPage extends React.Component {
   }
 
   handleToggleCheckbox = () => {
-    this.setState(state => ({
+    this.setState((state) => ({
       isChecked: !state.isChecked
     }))
   }
 
-  render () {
+  render() {
     return (
       <DemoLayoutContent>
         <div className="app-page-title">
@@ -57,9 +59,10 @@ class InformationalCardPage extends React.Component {
           <div className="ds-block__title">
             <h4>Example</h4>
             <p>
-              This component takes an optional `children` prop that can be used to display
-              an action item or aditional content. It also optionally takes an `accentColor` prop
-              to change the color of the bar at the top of the card and the color of the info icon.
+              This component takes an optional `children` prop that can be used
+              to display an action item or aditional content. It also optionally
+              takes an `accentColor` prop to change the color of the bar at the
+              top of the card and the color of the info icon.
             </p>
           </div>
 
@@ -76,7 +79,12 @@ class InformationalCardPage extends React.Component {
               <InformationalCard
                 accentColor="#6548C7"
                 heading="Card with children and accentColor props"
-                subheading={<span>This card was passed a children prop and uses its own accent color.</span>}
+                subheading={
+                  <span>
+                    This card was passed a children prop and uses its own accent
+                    color.
+                  </span>
+                }
               >
                 <Checkbox
                   checked={this.state.isChecked}
@@ -105,10 +113,7 @@ class InformationalCardPage extends React.Component {
               value="Node"
               description="Optional"
             />
-            <MetaDataPropsItem
-              property="heading"
-              value="string | React Node"
-            />
+            <MetaDataPropsItem property="heading" value="string | React Node" />
             <MetaDataPropsItem
               property="showIcon"
               value="boolean"

@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { get } from 'lodash'
 
-
 class SidebarScroll extends React.Component {
   state = {
     isScrollingDown: false,
@@ -19,13 +18,15 @@ class SidebarScroll extends React.Component {
     }
 
     const { scrollTop } = e.target
-    this.setState(state => ({
-      isScrollingDown: scrollTop > this.props.breakpoint && scrollTop > state.lastKnownScrollPosition,
+    this.setState((state) => ({
+      isScrollingDown:
+        scrollTop > this.props.breakpoint &&
+        scrollTop > state.lastKnownScrollPosition,
       lastKnownScrollPosition: scrollTop
     }))
   }
 
-  render () {
+  render() {
     return this.props.children({
       isScrollingDown: this.state.isScrollingDown,
       handleScroll: this.handleScroll

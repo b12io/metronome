@@ -1,24 +1,24 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
 class BaseTextArea extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.autoResize = this.autoResize.bind(this)
     this.onFocus = this.onFocus.bind(this)
     this.onBlur = this.onBlur.bind(this)
   }
 
-  onFocus (e) {
+  onFocus(e) {
     this.props.onFocus && this.props.onFocus(e)
   }
 
-  onBlur (e) {
+  onBlur(e) {
     this.props.onBlur && this.props.onBlur(e)
   }
 
-  autoResize (e) {
+  autoResize(e) {
     if (this.props.contentHeight) {
       this.textarea.style.height = 'auto'
       this.textarea.style.height = this.textarea.scrollHeight + 'px'
@@ -26,15 +26,16 @@ class BaseTextArea extends Component {
     this.props.onChange && this.props.onChange(e)
   }
 
-  componentDidMount () {
+  componentDidMount() {
     if (this.props.contentHeight) {
       this.textarea.style.overflowY = 'hidden'
       this.textarea.style.height = this.textarea.scrollHeight + 'px'
     }
   }
 
-  render () {
-    const {value, className, placeholder, rows, contentHeight, disabled} = this.props
+  render() {
+    const { value, className, placeholder, rows, contentHeight, disabled } =
+      this.props
     return (
       <textarea
         placeholder={placeholder}
@@ -45,7 +46,10 @@ class BaseTextArea extends Component {
         onFocus={this.onFocus}
         onBlur={this.onBlur}
         onChange={this.autoResize}
-        ref={(t) => { this.textarea = t }}/>
+        ref={(t) => {
+          this.textarea = t
+        }}
+      />
     )
   }
 }

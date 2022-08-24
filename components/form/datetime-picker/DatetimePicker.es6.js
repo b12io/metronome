@@ -1,11 +1,8 @@
-
 import * as React from 'react'
 import moment from 'moment'
 import { debounce } from 'lodash'
 
 const UPDATE_DEBOUNCE_INTERVAL = 700
-
-
 
 class DatetimePicker extends React.Component {
   state = {
@@ -24,8 +21,8 @@ class DatetimePicker extends React.Component {
   textInput
 
   componentDidUpdate(prevProps) {
-    if(prevProps.value !== this.props.value) {
-      this.setState({datetime: this.props.value})
+    if (prevProps.value !== this.props.value) {
+      this.setState({ datetime: this.props.value })
     }
   }
 
@@ -45,7 +42,9 @@ class DatetimePicker extends React.Component {
           if (dateOnly) {
             formattedDatetime = this.state.datetime.format('YYYY-MM-DD')
           } else if (timeOnly) {
-            formattedDatetime = datetime ? this.state.datetime.format('HH:mm') : null
+            formattedDatetime = datetime
+              ? this.state.datetime.format('HH:mm')
+              : null
           } else {
             formattedDatetime = this.state.datetime.toISOString(true)
           }
@@ -70,13 +69,16 @@ class DatetimePicker extends React.Component {
     }
 
     if (newDatetime.isValid()) {
-      newDatetime.year(datetime.year()).month(datetime.month()).date(datetime.date())
+      newDatetime
+        .year(datetime.year())
+        .month(datetime.month())
+        .date(datetime.date())
       this.handleChangeDebounced(newDatetime)
     }
   }
 
-  render () {
-    const children = React.Children.map(this.props.children, child => {
+  render() {
+    const children = React.Children.map(this.props.children, (child) => {
       return React.cloneElement(child, {
         value: this.state.datetime,
         onChange: this.handleChange,
@@ -84,11 +86,7 @@ class DatetimePicker extends React.Component {
       })
     })
 
-    return (
-      <div className="datetime-picker ds-form-group">
-        {children}
-      </div>
-    )
+    return <div className="datetime-picker ds-form-group">{children}</div>
   }
 }
 

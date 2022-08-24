@@ -1,4 +1,4 @@
-import React, {Children} from 'react'
+import React, { Children } from 'react'
 import PropTypes from 'prop-types'
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
 import classnames from 'classnames'
@@ -8,18 +8,21 @@ import ListItem from './ListItem.es6.js'
 import ListItemContent from './ListItemContent.es6.js'
 import ListItemIcon from './ListItemIcon.es6.js'
 
-const getItemClassNames = (isDragging, collectionListItem, cardListItem) => classnames({
-  'card-list-item--is-dragging': cardListItem && !collectionListItem && isDragging,
-  'collection-item--is-dragging': !cardListItem && collectionListItem && isDragging
-})
+const getItemClassNames = (isDragging, collectionListItem, cardListItem) =>
+  classnames({
+    'card-list-item--is-dragging':
+      cardListItem && !collectionListItem && isDragging,
+    'collection-item--is-dragging':
+      !cardListItem && collectionListItem && isDragging
+  })
 
 class DragList extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.handleDragEnd = this.handleDragEnd.bind(this)
   }
 
-  handleDragEnd (data) {
+  handleDragEnd(data) {
     // dropped outside the list
     if (!data.destination) {
       return
@@ -27,14 +30,26 @@ class DragList extends React.Component {
     this.props.onDragEnd(data)
   }
 
-  render () {
-    const {children, droppableId, collectionList, cardList, isDragAndDropDisabled, ...otherProps} = this.props
-    const contentChildren = Children.map(children, child => {
+  render() {
+    const {
+      children,
+      droppableId,
+      collectionList,
+      cardList,
+      isDragAndDropDisabled,
+      ...otherProps
+    } = this.props
+    const contentChildren = Children.map(children, (child) => {
       if (child.type.name === 'ListItemEmpty') {
         return <ListItemContent>{child}</ListItemContent>
       }
-      const {draggableId, ...otherChildProps} = child.props
-      const content = typeof child === 'string' ? <ListItemContent>{child}</ListItemContent> : child
+      const { draggableId, ...otherChildProps } = child.props
+      const content =
+        typeof child === 'string' ? (
+          <ListItemContent>{child}</ListItemContent>
+        ) : (
+          child
+        )
       return (
         <Draggable
           key={draggableId}
@@ -47,7 +62,11 @@ class DragList extends React.Component {
               {...otherChildProps}
               listItemRef={provided.innerRef}
               dragStyles={provided.draggableStyle}
-              className={getItemClassNames(snapshot.isDragging, collectionList, cardList)}
+              className={getItemClassNames(
+                snapshot.isDragging,
+                collectionList,
+                cardList
+              )}
             >
               <ListItemIcon draggableIcon {...provided.dragHandleProps} />
               {content}
@@ -64,10 +83,7 @@ class DragList extends React.Component {
           isDropDisabled={isDragAndDropDisabled}
         >
           {(provided, snapshot) => (
-            <List
-              {...otherProps}
-              listRef={provided.innerRef}
-            >
+            <List {...otherProps} listRef={provided.innerRef}>
               {contentChildren}
               {provided.placeholder}
             </List>

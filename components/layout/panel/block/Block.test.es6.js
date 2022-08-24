@@ -18,19 +18,23 @@ it('has bottom divider', () => {
 })
 
 it('should render only title or content components', () => {
-  const component = mount(<Block>
-    <BlockTitle label="I am a title" />
-    <BlockContent>I am a content</BlockContent>
-  </Block>)
+  const component = mount(
+    <Block>
+      <BlockTitle label="I am a title" />
+      <BlockContent>I am a content</BlockContent>
+    </Block>
+  )
   expect(component.find('BlockTitle').type()).toEqual(BlockTitle)
   expect(component.find('BlockContent').type()).toEqual(BlockContent)
 })
 
 it('should not render anything rather than title or content components', () => {
-  const component = mount(<Block>
-    <h4>I am a title</h4>
-    <div>I am a content</div>
-  </Block>)
-  expect(component.findWhere(c => c.type() === BlockTitle).length).toBe(0)
-  expect(component.findWhere(c => c.type() === BlockContent).length).toBe(0)
+  const component = mount(
+    <Block>
+      <h4>I am a title</h4>
+      <div>I am a content</div>
+    </Block>
+  )
+  expect(component.findWhere((c) => c.type() === BlockTitle).length).toBe(0)
+  expect(component.findWhere((c) => c.type() === BlockContent).length).toBe(0)
 })

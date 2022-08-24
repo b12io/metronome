@@ -6,7 +6,9 @@ import Radio from './Radio.es6.js'
 
 it('should render label', () => {
   const component = shallow(<Radio label="Option 1" />)
-  expect(component.find('.ds-form-control-radio__label').at(0).text().trim()).toEqual('Option 1')
+  expect(
+    component.find('.ds-form-control-radio__label').at(0).text().trim()
+  ).toEqual('Option 1')
 })
 
 it('should be checked', () => {
@@ -27,8 +29,9 @@ it('should set the right value', () => {
 it('should call onChange', () => {
   const onChange = jest.fn()
   const value = '1'
-  const component = shallow(<Radio label="Option 1" value={value} onChange={onChange} />)
+  const component = shallow(
+    <Radio label="Option 1" value={value} onChange={onChange} />
+  )
   component.find('input').simulate('change')
   expect(onChange.mock.calls[0][0]).toEqual(value)
 })
-

@@ -1,17 +1,12 @@
 import React from 'react'
 import classnames from 'classnames'
 
-
-
 /**
  * Panel.
  */
-function Panel ({ children, styles, className }) {
+function Panel({ children, styles, className }) {
   return (
-    <div
-      className={classnames('ds-panel', className)}
-      style={styles}
-    >
+    <div className={classnames('ds-panel', className)} style={styles}>
       {children}
     </div>
   )

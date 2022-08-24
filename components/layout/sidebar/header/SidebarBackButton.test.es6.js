@@ -7,9 +7,9 @@ import SidebarBackButton from './SidebarBackButton.es6.js'
 
 describe('SidebarBackButton component', () => {
   test('renders correctly', () => {
-    const tree = renderer.create(
-      <SidebarBackButton onClick={jest.fn()} />
-    ).toJSON()
+    const tree = renderer
+      .create(<SidebarBackButton onClick={jest.fn()} />)
+      .toJSON()
     expect(tree).toMatchSnapshot()
   })
 

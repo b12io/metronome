@@ -1,41 +1,28 @@
-
 import React, { Fragment } from 'react'
 
 import B12Tooltip from '../tooltip/B12Tooltip.es6.js'
 import { generateId } from '../../lib/helpers.es6.js'
-
-
 
 class Info extends React.PureComponent {
   state = {
     uniqueClassName: 'info-' + generateId()
   }
 
-  render () {
+  render() {
     const { icon: Icon, text, children, delay } = this.props
     const { uniqueClassName } = this.state
 
     return (
-      <B12Tooltip
-        text={text}
-        target={uniqueClassName}
-        delay={delay}
-      >
+      <B12Tooltip text={text} target={uniqueClassName} delay={delay}>
         {({ tooltip, target }) => (
           <div id={target}>
             {/* It's also possible to pass an icon through a property
                 for back compatibility */}
-            {!!Icon && (
-              <Icon />
-            )}
+            {!!Icon && <Icon />}
 
             {/* This will allow to pass icons with custom
                 properties (height, width, color) */}
-            {!Icon && !!children && (
-              <Fragment>
-                {children}
-              </Fragment>
-            )}
+            {!Icon && !!children && <Fragment>{children}</Fragment>}
 
             {tooltip}
           </div>

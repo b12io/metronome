@@ -2,13 +2,16 @@ import React from 'react'
 import DemoLayoutContent from './demo-only-components/DemoLayoutContent.es6.js'
 import CodeExample from './demo-only-components/CodeExample.es6.js'
 import MetaData from './demo-only-components/MetaData.es6.js'
-import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDataProps.es6.js'
+import {
+  MetaDataProps,
+  MetaDataPropsItem
+} from './demo-only-components/MetaDataProps.es6.js'
 
 import Nav from '../../components/layout/nav/Nav.es6.js'
 import NavItem from '../../components/layout/nav/NavItem.es6.js'
 import { HomeEmpty, Client, Visible } from '../../components/Icons.es6.js'
 
-function NavPage () {
+function NavPage() {
   return (
     <DemoLayoutContent>
       <div className="app-page-title">
@@ -23,10 +26,14 @@ function NavPage () {
       <div className="ds-block">
         <div className="ds-block__title">
           <h4>Default example</h4>
-          <p>By default the navigation displays without borders, dividers, icons and etc.</p>
+          <p>
+            By default the navigation displays without borders, dividers, icons
+            and etc.
+          </p>
         </div>
 
-        <CodeExample code={`<Nav>
+        <CodeExample
+          code={`<Nav>
   <NavItem label="Nav item one" icon={<HomeEmpty />} />
   <NavItem label="Nav item two"
     icon={<Client />}
@@ -38,25 +45,37 @@ function NavPage () {
   <NavItem label="Nav item three" showArrow />
   <NavItem label="Nav item four" disabled />
   <NavItem label="Nav item five" badge="5" />
-</Nav>`}>
-          <div style={{width: '300px'}}>
+</Nav>`}
+        >
+          <div style={{ width: '300px' }}>
             <Nav>
               <NavItem label="Nav item one" icon={<HomeEmpty />} />
-              <NavItem label="Nav item two" icon={<Client />} actionIcon={<Visible width={16} height={12} viewBox="0 0 16 12" />} showArrow onClick={() => {}} onActionClick={() => {}} />
+              <NavItem
+                label="Nav item two"
+                icon={<Client />}
+                actionIcon={
+                  <Visible width={16} height={12} viewBox="0 0 16 12" />
+                }
+                showArrow
+                onClick={() => {}}
+                onActionClick={() => {}}
+              />
               <NavItem label="Nav item three" active showArrow />
               <NavItem label="Nav item four" disabled />
               <NavItem label="Nav item five" badge="5" />
             </Nav>
           </div>
         </CodeExample>
-        <CodeExample code={`<Nav bordered>
+        <CodeExample
+          code={`<Nav bordered>
   <NavItem label="Nav item one" showArrow />
   <NavItem label="Nav item two" icon={<Client />} showArrow />
   <NavItem label="Nav item three" showArrow />
   <NavItem label="Nav item four" disabled showArrow />
   <NavItem label="Nav item five" showArrow />
-</Nav>`}>
-          <div style={{width: '300px'}}>
+</Nav>`}
+        >
+          <div style={{ width: '300px' }}>
             <Nav bordered>
               <NavItem label="Nav item one" showArrow />
               <NavItem label="Nav item two" icon={<Client />} showArrow />
@@ -105,7 +124,8 @@ function NavPage () {
           <h4>Default example</h4>
         </div>
 
-        <CodeExample code={`<Nav>
+        <CodeExample
+          code={`<Nav>
   <NavItem label="Nav item two"
     icon={<Client />}
     actionIcon={<Visible width={16} height={12} viewBox="0 0 16 12" />}
@@ -113,10 +133,20 @@ function NavPage () {
     onClick={() => {}}
     onActionClick={() => {}}
   />
-</Nav>`}>
-          <div style={{width: '300px'}}>
+</Nav>`}
+        >
+          <div style={{ width: '300px' }}>
             <Nav>
-              <NavItem label="Nav item two" icon={<Client />} actionIcon={<Visible width={16} height={12} viewBox="0 0 16 12" />} showArrow onClick={() => {}} onActionClick={() => {}} />
+              <NavItem
+                label="Nav item two"
+                icon={<Client />}
+                actionIcon={
+                  <Visible width={16} height={12} viewBox="0 0 16 12" />
+                }
+                showArrow
+                onClick={() => {}}
+                onActionClick={() => {}}
+              />
             </Nav>
           </div>
         </CodeExample>

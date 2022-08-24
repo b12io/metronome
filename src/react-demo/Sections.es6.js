@@ -12,33 +12,31 @@ import TabbedNavigation from '../../components/layout/tabbed-navigation/TabbedNa
 import TabbedNavigationItem from '../../components/layout/tabbed-navigation/TabbedNavigationItem.es6.js'
 import B12Tooltip from '../../components/layout/tooltip/B12Tooltip.es6.js'
 
-function Sections () {
+function Sections() {
   return (
     <DemoLayoutContent darkBg>
       <div className="app-page-title">
         <h1>Sections</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime aliquid suscipit natus rem, ipsa molestiae voluptate vero obcaecati voluptatibus ea nobis neque necessitatibus excepturi perferendis, fuga voluptatem totam quae quas.</p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime
+          aliquid suscipit natus rem, ipsa molestiae voluptate vero obcaecati
+          voluptatibus ea nobis neque necessitatibus excepturi perferendis, fuga
+          voluptatem totam quae quas.
+        </p>
       </div>
       <div className="ds-row">
         <div className="ds-col">
           <h4 className="u-m-b-sm">Sidebar</h4>
           <Sidebar>
             <SidebarHeader title="Section Title" />
-            <SidebarBody>
-              Section Content
-            </SidebarBody>
+            <SidebarBody>Section Content</SidebarBody>
           </Sidebar>
         </div>
         <div className="ds-col">
           <h4 className="u-m-b-sm">Sidebar with back btn</h4>
           <Sidebar>
-            <SidebarHeader
-              title="Section Title"
-              backIcon={<Back />}
-            />
-            <SidebarBody>
-              Section Content
-            </SidebarBody>
+            <SidebarHeader title="Section Title" backIcon={<Back />} />
+            <SidebarBody>Section Content</SidebarBody>
           </Sidebar>
         </div>
         <div className="ds-col">
@@ -48,16 +46,9 @@ function Sections () {
               title="Section Title"
               actionIcon={<Gear height="19" width="19" />}
             />
-            <SidebarBody>
-            Section Content
-            </SidebarBody>
+            <SidebarBody>Section Content</SidebarBody>
             <SidebarActions>
-              <Button
-                label="Button"
-                primary
-                block
-                small
-              />
+              <Button label="Button" primary block small />
             </SidebarActions>
           </Sidebar>
         </div>
@@ -71,9 +62,7 @@ function Sections () {
               steps="Step 1 of 5"
               actionIcon={<Close />}
             />
-            <SidebarBody>
-            Section Content
-            </SidebarBody>
+            <SidebarBody>Section Content</SidebarBody>
           </Sidebar>
         </div>
         <div className="ds-col">
@@ -85,9 +74,7 @@ function Sections () {
               progress="20"
               actionIcon={<Close />}
             />
-            <SidebarBody>
-            Section Content
-            </SidebarBody>
+            <SidebarBody>Section Content</SidebarBody>
           </Sidebar>
         </div>
         <div className="ds-col">
@@ -98,19 +85,10 @@ function Sections () {
               steps="Step 1 of 5"
               actionIcon={<Close />}
             />
-            <SidebarBody>
-            Section Content
-            </SidebarBody>
+            <SidebarBody>Section Content</SidebarBody>
             <SidebarActions>
-              <Button
-                label="Back"
-                small
-              />
-              <Button
-                label="Continue"
-                primary
-                small
-              />
+              <Button label="Back" small />
+              <Button label="Continue" primary small />
             </SidebarActions>
           </Sidebar>
         </div>
@@ -125,19 +103,12 @@ function Sections () {
               backButton
               homeButton
               tabbedNavigation={
-                <TabbedNavigation
-                  progress={3}
-                  progressType="items"
-                  block
-                >
+                <TabbedNavigation progress={3} progressType="items" block>
                   <TabbedNavigationItem visited>Template</TabbedNavigationItem>
                   <TabbedNavigationItem visited>Design</TabbedNavigationItem>
                   <TabbedNavigationItem active>Setup</TabbedNavigationItem>
                   <TabbedNavigationItem>
-                    <B12Tooltip
-                      text="This is tooltip"
-                      target="review"
-                    >
+                    <B12Tooltip text="This is tooltip" target="review">
                       {({ tooltip, target }) => (
                         <div id={target}>
                           Review
@@ -149,9 +120,7 @@ function Sections () {
                 </TabbedNavigation>
               }
             ></SidebarHeader>
-            <SidebarBody>
-            Section Content
-            </SidebarBody>
+            <SidebarBody>Section Content</SidebarBody>
           </Sidebar>
         </div>
         <div className="ds-col">
@@ -165,13 +134,16 @@ function Sections () {
                 onQuickActionSelected={(index) => {
                   console.log('onQuickActionSelected', { index })
                 }}
-                quickActions={[{
-                  icon: null,
-                  text: 'label 1'
-                }, {
-                  icon: null,
-                  text: 'label 2'
-                }]}
+                quickActions={[
+                  {
+                    icon: null,
+                    text: 'label 1'
+                  },
+                  {
+                    icon: null,
+                    text: 'label 2'
+                  }
+                ]}
               />
               Section Content
             </SidebarBody>

@@ -7,7 +7,7 @@ import { Help, Search, Close, RemoveCircle } from '../../Icons.es6.js'
 import Option from '../option/Option.es6.js'
 
 class Select extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
 
     this.onToggle = this.onToggle.bind(this)
@@ -19,29 +19,36 @@ class Select extends React.Component {
     this.state = {
       isOpened: false,
       query: '',
-      filteredOptions: props.search ? props.filter(this.options, '') : this.options,
+      filteredOptions: props.search
+        ? props.filter(this.options, '')
+        : this.options,
       initialPlaceholder: '',
       hasInitialPlaceholderChanged: false
     }
   }
 
-  componentDidMount () {
+  componentDidMount() {
     this.setState({ initialPlaceholder: this.props.placeholder })
     document.addEventListener('click', this.handleDocumentClick, false)
     document.addEventListener('touchend', this.handleDocumentClick, false)
   }
 
-  UNSAFE_componentWillReceiveProps (nextProps) {
-    const {children, search, filter} = nextProps
+  UNSAFE_componentWillReceiveProps(nextProps) {
+    const { children, search, filter } = nextProps
     this.options = this.updateOptions(children)
     this.setState({
-      filteredOptions: search ? filter(this.options, this.state.query) : this.options
+      filteredOptions: search
+        ? filter(this.options, this.state.query)
+        : this.options
     })
   }
 
-  componentDidUpdate (prevProps) {
+  componentDidUpdate(prevProps) {
     const { placeholder, search } = this.props
-    if ((prevProps.placeholder !== placeholder) && (placeholder !== this.state.initialPlaceholder)) {
+    if (
+      prevProps.placeholder !== placeholder &&
+      placeholder !== this.state.initialPlaceholder
+    ) {
       this.setState({ hasInitialPlaceholderChanged: true })
     }
     if (search && this.state.isOpened && this.searchInput) {
@@ -49,12 +56,12 @@ class Select extends React.Component {
     }
   }
 
-  componentWillUnmount () {
+  componentWillUnmount() {
     document.removeEventListener('click', this.handleDocumentClick, false)
     document.removeEventListener('touchend', this.handleDocumentClick, false)
   }
 
-  onToggle () {
+  onToggle() {
     if (this.props.disabled) {
       return
     }
@@ -64,27 +71,30 @@ class Select extends React.Component {
     }))
   }
 
-  onSearch (value) {
+  onSearch(value) {
     const { filter } = this.props
     const query = value.replace(/^\s+/, '')
     const filteredOptions = filter(this.options, query)
-    this.setState({
-      query,
-      filteredOptions
-    }, () => {
-      if (!query) {
-        this.props.onSearchQueryClear()
+    this.setState(
+      {
+        query,
+        filteredOptions
+      },
+      () => {
+        if (!query) {
+          this.props.onSearchQueryClear()
+        }
       }
-    })
+    )
   }
 
-  shouldToggle (idx, value) {
+  shouldToggle(idx, value) {
     const { firstOptionAction, keepOpen } = this.props
     const isActionOption = firstOptionAction && idx === 0
     return !((isActionOption || keepOpen(value)) && this.state.isOpened)
   }
 
-  updateOptions (children) {
+  updateOptions(children) {
     return React.Children.map(children, (child, idx) => {
       return React.cloneElement(child, {
         onOptionClick: (value) => {
@@ -102,7 +112,7 @@ class Select extends React.Component {
     })
   }
 
-  handleDocumentClick (event) {
+  handleDocumentClick(event) {
     if (!this.mainNode) {
       return
     }
@@ -114,14 +124,17 @@ class Select extends React.Component {
     }
   }
 
-  handleClearSearch (e) {
-    this.setState({
-      query: '',
-      filteredOptions: this.options,
-      isOpened: true
-    }, () => {
-      this.props.onSearchQueryClear()
-    })
+  handleClearSearch(e) {
+    this.setState(
+      {
+        query: '',
+        filteredOptions: this.options,
+        isOpened: true
+      },
+      () => {
+        this.props.onSearchQueryClear()
+      }
+    )
   }
 
   renderCloseIcon = (query) => {
@@ -156,29 +169,44 @@ class Select extends React.Component {
     )
   }
 
-  render () {
+  render() {
     const {
-      error, disabled, className, label, preview, showResetIcon,
-      inlineSearch, placeholder, search, help
+      error,
+      disabled,
+      className,
+      label,
+      preview,
+      showResetIcon,
+      inlineSearch,
+      placeholder,
+      search,
+      help
     } = this.props
-    const {query, filteredOptions, isOpened} = this.state
+    const { query, filteredOptions, isOpened } = this.state
     return (
-      <div className={classnames({
-        'ds-form-group': true,
-        'ds-form-group--select': true,
-        'has-feedback': error || disabled,
-        'has-error': error,
-        'is-disabled': disabled
-      }, className)}
-      ref={(node) => { this.mainNode = node }}
+      <div
+        className={classnames(
+          {
+            'ds-form-group': true,
+            'ds-form-group--select': true,
+            'has-feedback': error || disabled,
+            'has-error': error,
+            'is-disabled': disabled
+          },
+          className
+        )}
+        ref={(node) => {
+          this.mainNode = node
+        }}
       >
         {label && <div className="ds-control-label">{label}</div>}
-        <div className={classnames({
-          'ds-form-control-select': true,
-          'ds-form-control-select--media': preview !== null,
-          'ds-form-control-select--focused': isOpened,
-          'ds-form-control-select--inline-search': inlineSearch
-        })}
+        <div
+          className={classnames({
+            'ds-form-control-select': true,
+            'ds-form-control-select--media': preview !== null,
+            'ds-form-control-select--focused': isOpened,
+            'ds-form-control-select--inline-search': inlineSearch
+          })}
         >
           {/* Toggle dropdown */}
           <div
@@ -193,17 +221,21 @@ class Select extends React.Component {
 
           {/* Options */}
           <div className="ds-form-control-select__dropdown">
-            {search && <div className="ds-form-control-select__search">
-              <Search color="#ddd" />
-              <input
-                type="text"
-                placeholder="Search..."
-                value={query}
-                ref={(node) => { this.searchInput = node }}
-                onChange={(e) => this.onSearch(e.target.value)}
-              />
-              {inlineSearch && this.renderCloseIcon(query)}
-            </div>}
+            {search && (
+              <div className="ds-form-control-select__search">
+                <Search color="#ddd" />
+                <input
+                  type="text"
+                  placeholder="Search..."
+                  value={query}
+                  ref={(node) => {
+                    this.searchInput = node
+                  }}
+                  onChange={(e) => this.onSearch(e.target.value)}
+                />
+                {inlineSearch && this.renderCloseIcon(query)}
+              </div>
+            )}
             <div className="ds-form-control-select__dropdown-options">
               {filteredOptions}
             </div>
@@ -211,12 +243,12 @@ class Select extends React.Component {
         </div>
 
         {/* Show help message */}
-        {!isEmpty(help)
-          ? <div className="ds-form-group__help-text">
+        {!isEmpty(help) ? (
+          <div className="ds-form-group__help-text">
             <Help color="#ddd" />
             <span>{help}</span>
           </div>
-          : null}
+        ) : null}
       </div>
     )
   }
@@ -232,7 +264,7 @@ Select.defaultProps = {
   search: true,
   disabled: false,
   onChange: () => {},
-  filter: options => options,
+  filter: (options) => options,
   children: [],
   keepOpen: () => {},
   inlineSearch: false,
@@ -244,17 +276,11 @@ Select.defaultProps = {
 Select.propTypes = {
   firstOptionAction: PropTypes.bool,
   label: PropTypes.string,
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(Option),
-    PropTypes.node
-  ]),
+  children: PropTypes.oneOfType([PropTypes.arrayOf(Option), PropTypes.node]),
   filter: PropTypes.func,
   onChange: PropTypes.func,
   onBlur: PropTypes.func,
-  placeholder: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.element
-  ]),
+  placeholder: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   help: PropTypes.string,
   error: PropTypes.bool,
   disabled: PropTypes.bool,
