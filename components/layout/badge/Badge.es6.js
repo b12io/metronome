@@ -1,28 +1,12 @@
-/* @flow */
 
 import * as React from 'react'
 import classnames from 'classnames'
 import { CloseMedia } from '../../Icons.es6.js'
 
-type Props = {
-  neutral: boolean,
-  icon: React.Node,
-  label: string,
-  uppercase: boolean,
-  filled: boolean,
-  success: boolean,
-  warning: boolean,
-  primary: boolean,
-  hasRemoveIcon: boolean,
-  size: 'small' | 'medium' | 'large',
-  className?: string | Object,
-  selected: boolean,
-  onRemoveClick(event?: any): void
-}
 
 function Badge ({ neutral, label, icon, uppercase, filled,
   success, warning, primary, hasRemoveIcon,
-  className, size, onRemoveClick, selected, ...otherProps }: Props) {
+  className, size, onRemoveClick, selected, ...otherProps }) {
   const classNames = classnames({
     'ds-badge': true,
     'ds-badge--default': neutral,

@@ -1,21 +1,9 @@
-/* @flow */
 import * as React from 'react'
 import classnames from 'classnames'
 import TableHead from './TableHead.es6.js'
 import TableBody from './TableBody.es6.js'
 
-type TableHeadType = React.Element<typeof TableHead>
-type TableBodyType = React.Element<typeof TableBody>
 
-type Props = {
-  className?: string | Object,
-  cardLike?: boolean,
-  padding?: 'compact' | 'comfortable',
-  verticalAlign: 'top' | 'middle',
-  background: 'light' | 'transparent',
-  responsive?: boolean,
-  children: React.ChildrenArray<TableHeadType | TableBodyType> | TableHeadType | TableBodyType
-}
 
 function Table ({
   className,
@@ -26,7 +14,7 @@ function Table ({
   background,
   responsive = false,
   ...otherProps
-}: Props) {
+}) {
   const wrapperClasses = classnames({
     'ds-table-wrapper': cardLike,
     'ds-table-responsive': responsive

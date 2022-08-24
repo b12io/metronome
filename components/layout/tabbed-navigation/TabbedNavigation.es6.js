@@ -1,23 +1,12 @@
-/* @flow */
 
 import React, { Children, isValidElement, Element, cloneElement } from 'react'
 import classnames from 'classnames'
 import TabbedNavigationItem from './TabbedNavigationItem.es6.js'
 
-import type { ChildrenArray } from 'react'
 
-type TabbedNavigationItemType = Element<typeof TabbedNavigationItem>
 
-type Props = {
-  progress: number,
-  spread: boolean,
-  block: boolean,
-  progressType: string,
-  children: ChildrenArray<TabbedNavigationItemType> | TabbedNavigationItemType,
-  className?: string | Object
-}
 
-const TabbedNavigation = ({ progress, spread, block, progressType, className, children }: Props) => {
+const TabbedNavigation = ({ progress, spread, block, progressType, className, children }) => {
   const componentChildren = Children.toArray(children)
   const items = componentChildren
     .filter(child => isValidElement(child))

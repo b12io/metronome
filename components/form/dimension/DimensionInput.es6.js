@@ -1,4 +1,3 @@
-// @flow
 import React from 'react'
 import classnames from 'classnames'
 
@@ -9,21 +8,9 @@ import Select from '../select/Select.es6.js'
 import Option from '../option/Option.es6.js'
 import Tooltip from './Tooltip.es6.js'
 
-type State = {|
-  isValid: boolean
-|}
 
-type Props = {|
-  label: string,
-  help?: string,
-  value: string,
-  units: Array<string>,
-  selectedUnit: ?string,
-  fixedUnit?: string,
-  onUpdate: (value: string, unit: string) => void
-|}
 
-class DimensionInput extends React.Component<Props, State> {
+class DimensionInput extends React.Component {
   static defaultProps = {
     units: [],
     selectedUnit: ''
@@ -33,14 +20,14 @@ class DimensionInput extends React.Component<Props, State> {
     isValid: true
   }
 
-  onValueChange = (value: string) => {
+  onValueChange = (value) => {
     this.setState({
       isValid: !isEmpty(value)
     })
     this.props.onUpdate(value, this.props.selectedUnit || '')
   }
 
-  onUnitChange = (selectedUnit: string) => {
+  onUnitChange = (selectedUnit) => {
     this.props.onUpdate(this.props.value, selectedUnit)
   }
 

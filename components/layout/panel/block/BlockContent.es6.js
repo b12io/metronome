@@ -1,12 +1,8 @@
-/* @flow */
 
 import * as React from 'react'
 
-type Props = {
-  children?: React.Node
-}
 
-function BlockContent (props: Props) {
+function BlockContent (props) {
   return (
     <div className="ds-content-block__body">
       {props.children}

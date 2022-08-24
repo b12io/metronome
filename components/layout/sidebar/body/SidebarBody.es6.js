@@ -1,12 +1,7 @@
-/* @flow */
 import * as React from 'react'
 
-type Props = {|
-  children: React.Node,
-  handleScroll?: (e: Object) => void
-|}
 
-function SidebarBody ({ children, handleScroll }: Props) {
+function SidebarBody ({ children, handleScroll }) {
   return (
     <div
       className="ds-sidebar__body"
