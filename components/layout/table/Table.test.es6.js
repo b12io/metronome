@@ -3,12 +3,12 @@
 import React from 'react'
 import { mount } from 'enzyme'
 
-import Table from './Table.es6'
-import TableHead from './TableHead.es6'
-import TableFoot from './TableFoot.es6'
-import TableBody from './TableBody.es6'
-import TableRow from './TableRow.es6'
-import TableCell from './TableCell.es6'
+import Table from './Table.es6.js'
+import TableHead from './TableHead.es6.js'
+import TableFoot from './TableFoot.es6.js'
+import TableBody from './TableBody.es6.js'
+import TableRow from './TableRow.es6.js'
+import TableCell from './TableCell.es6.js'
 
 function renderTable (tableProps = {}, tableCellProps = {}) {
   const columnLabels = ['Contact', 'Phone', 'Notes']
