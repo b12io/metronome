@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 import classnames from 'classnames'
-import CommonPagination from './CommonPagination.es6'
+import CommonPagination from './CommonPagination.es6.js'
 
 type Props = {
   count: number,

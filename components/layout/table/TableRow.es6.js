@@ -1,6 +1,6 @@
 /* @flow */
 import * as React from 'react'
-import TableCell from './TableCell.es6'
+import TableCell from './TableCell.es6.js'
 import classnames from 'classnames'
 
 type TableCellType = React.Element<typeof TableCell>

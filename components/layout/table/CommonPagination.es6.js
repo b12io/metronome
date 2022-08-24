@@ -2,8 +2,8 @@
 
 import React from 'react'
 import classnames from 'classnames'
-import Button from '../../../components/form/button/Button.es6'
-import { ChevronLeft, ChevronRight } from '../../../components/Icons.es6'
+import Button from '../../../components/form/button/Button.es6.js'
+import { ChevronLeft, ChevronRight } from '../../../components/Icons.es6.js'
 
 type Props = {
   paginationText: string,
