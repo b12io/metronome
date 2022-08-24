@@ -1,4 +1,3 @@
-/* @flow */
 
 import * as React from 'react'
 import classnames from 'classnames'
@@ -6,19 +5,7 @@ import QuickActions from '../header/QuickActions.es6.js'
 
 import useClickOutside from '../../../lib/useClickOutside.es6.js'
 
-import type { HeaderQuickAction } from '../header/types.es6.js'
 
-type Props = {|
-  hideOverflow: boolean,
-  text: string,
-  className?: string,
-  actionIcon?: React.Element | string,
-  onAction?: () => void,
-  quickActions?: Array<HeaderQuickAction>,
-  quickActionsLabel?: string,
-  onQuickActionSelected?: (index: number) => void,
-  quickDialog?: React.Element
-|}
 
 function SidebarBodyHeader ({
   className,
@@ -30,7 +17,7 @@ function SidebarBodyHeader ({
   quickActionsLabel,
   onQuickActionSelected,
   quickDialog
-}: Props) {
+}) {
   const actionsAvailable = Array.isArray(quickActions) && quickActions.length > 0
   const actionsRef = React.useRef(null)
   const {

@@ -1,17 +1,6 @@
-/* @flow */
 import React from 'react'
-import type { Node } from 'react'
 import MetaData from './MetaData.es6.js'
 
-type ReactComponentProps = {|
-  examples: Node,
-  heading: string,
-  pathLine: string,
-  description: string,
-  docs: Node,
-  tabButtons: Node,
-  tabBody: Node
-|}
 
 const ReactComponent = ({
   examples,
@@ -21,7 +10,7 @@ const ReactComponent = ({
   docs,
   tabButtons,
   tabBody
-}: ReactComponentProps) => {
+}) => {
   return (
     <React.Fragment>
       <div className="app-page-title">

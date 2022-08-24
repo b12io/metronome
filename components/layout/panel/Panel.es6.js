@@ -1,19 +1,12 @@
-/* @flow */
 import React from 'react'
 import classnames from 'classnames'
 
-import type { Node } from 'react'
 
-type Props = {|
-  className?: string,
-  children: Node,
-  styles: { [attr: string]: number | string }
-|}
 
 /**
  * Panel.
  */
-function Panel ({ children, styles, className }: Props) {
+function Panel ({ children, styles, className }) {
   return (
     <div
       className={classnames('ds-panel', className)}

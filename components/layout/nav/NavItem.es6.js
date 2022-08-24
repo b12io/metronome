@@ -1,26 +1,11 @@
-/* @flow */
 
 import React from 'react'
 import classnames from 'classnames'
 import { ChevronRight } from '../../Icons.es6.js'
 
-import type { Node } from 'react'
 
-type Props = {
-  className?: string | Object,
-  label: string,
-  disabled: boolean,
-  showArrow: boolean,
-  icon?: Node,
-  innerRef: { current: null | HTMLDivElement } | ((null | HTMLDivElement) => mixed),
-  actionIcon?: Node,
-  badge?: string | number,
-  active: boolean,
-  onClick: () => void,
-  onActionClick: () => void
-}
 
-class NavItem extends React.Component<Props> {
+class NavItem extends React.Component {
   static defaultProps = {
     label: '',
     disabled: false,
@@ -30,7 +15,7 @@ class NavItem extends React.Component<Props> {
     onActionClick: () => {}
   }
 
-  handleActionClick = (event: SyntheticEvent<*>) => {
+  handleActionClick = (event) => {
     event.stopPropagation()
 
     this.props.onActionClick()
@@ -78,6 +63,6 @@ class NavItem extends React.Component<Props> {
   }
 }
 
-export default React.forwardRef<Props, HTMLDivElement>((props, ref) => (
+export default React.forwardRef((props, ref) => (
   <NavItem innerRef={ref} {...props} />
 ))

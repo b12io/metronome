@@ -1,22 +1,8 @@
-// @flow
 import React from 'react'
 import classnames from 'classnames'
 
-type Props = {
-  label?: string,
-  min?: string,
-  max?: string,
-  value: string | number,
-  step?: string | number,
-  minCaption?: string,
-  maxCaption?: string,
-  centerCaption?: string,
-  disabled?: boolean,
-  className?: string | Object,
-  onChange: (value: string) => any
-}
 
-export default class RangeSlider extends React.Component<Props> {
+export default class RangeSlider extends React.Component {
   render () {
     const { value, label, min, max, step, disabled,
       onChange, className, minCaption, maxCaption,

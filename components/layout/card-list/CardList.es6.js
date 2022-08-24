@@ -1,18 +1,10 @@
-// @flow
 
 import React from 'react'
 import classnames from 'classnames'
 
-import type { Node } from 'react'
 
-type Props = {
-  bordered: boolean,
-  clickable: boolean,
-  children?: Node,
-  className?: string | Object
-}
 
-class CardList extends React.Component<Props> {
+class CardList extends React.Component {
   static defaultProps = {
     bordered: false,
     clickable: true

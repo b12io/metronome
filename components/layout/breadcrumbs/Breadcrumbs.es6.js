@@ -1,29 +1,16 @@
-// @flow
 
 import * as React from 'react'
 import classnames from 'classnames'
 
 import BreadcrumbEntry from './BreadcrumbEntry.es6.js'
 
-type EntryRef = { current: null | HTMLDivElement }
-type Entry = { label: string | React.Element }
 
-type IndexedEntry = {
-  entry: Entry,
-  index: number,
-  width: number
-}
 
-type Props = {
-  maxEntryWidth: number,
-  entries: Array<Entry>,
-  onClick: (entry: Entry, index: number) => void,
-}
 
 const EXPAND_MENU_WIDTH = 60
 const SEPARATOR_WIDTH = 16
 
-function getEntryWidth (entry: ?EntryRef): number {
+function getEntryWidth (entry) {
   if (!entry || !entry.current) {
     return 0
   }
@@ -31,10 +18,10 @@ function getEntryWidth (entry: ?EntryRef): number {
   return entry.current.getBoundingClientRect().width
 }
 
-function Breadcrumbs ({ entries, onClick, maxEntryWidth = 90 }: Props) {
+function Breadcrumbs ({ entries, onClick, maxEntryWidth = 90 }) {
   const lastIndex = entries.length - 1
   const containerRef = React.useRef(null)
-  const entriesRefs: Array<EntryRef> = entries.map(entry => React.useRef(null))
+  const entriesRefs = entries.map(entry => React.useRef(null))
   const expandRef = React.useRef(null)
 
   const [visibleEntries, setVisibleEntries] = React.useState([])
@@ -42,7 +29,7 @@ function Breadcrumbs ({ entries, onClick, maxEntryWidth = 90 }: Props) {
   const [isCollapseCalculated, setIsCollapseCalculated] = React.useState(false)
   const [isMenuOpened, setIsMenuOpened] = React.useState(false)
 
-  function onClickEntryWithIndex (index: number): () => void {
+  function onClickEntryWithIndex (index) {
     return function () {
       if (lastIndex !== index) {
         onClick(entries[index], index)
@@ -59,7 +46,7 @@ function Breadcrumbs ({ entries, onClick, maxEntryWidth = 90 }: Props) {
   }
 
   React.useEffect(function () {
-    function onDocumentClick (event: MouseEvent | TouchEvent) {
+    function onDocumentClick (event) {
       if (!isMenuOpened || !expandRef || !expandRef.current) {
         return
       }
@@ -120,7 +107,7 @@ function Breadcrumbs ({ entries, onClick, maxEntryWidth = 90 }: Props) {
     // 2. Add visible entries to the visible list
     // 3. Add entries we should hide to the hidden list
 
-    const indexedEntries = entries.map((entry: Entry, index: number) => ({ index, entry, width: getEntryWidth(entriesRefs[index]) }))
+    const indexedEntries = entries.map((entry, index) => ({ index, entry, width: getEntryWidth(entriesRefs[index]) }))
     const visible = indexedEntries.slice(indexedEntries.length - visibleEntriesCount)
     const hidden = indexedEntries.slice(1, indexedEntries.length - visibleEntriesCount)
 
@@ -137,7 +124,7 @@ function Breadcrumbs ({ entries, onClick, maxEntryWidth = 90 }: Props) {
       <div className="ds-tabbed-nav">
         {!isCollapseCalculated && (
           <div className="ds-tabbed-nav__breadcrumbs-container ds-tabbed-nav__breadcrumbs-container--not-calculated">
-            {entries.map((entry: Entry, index: number) => (
+            {entries.map((entry, index) => (
               <BreadcrumbEntry
                 key={`${entry.label}-${index}`}
                 showSeparator={index !== 0}
@@ -177,7 +164,7 @@ function Breadcrumbs ({ entries, onClick, maxEntryWidth = 90 }: Props) {
                     'ds-tabbed-nav__breadcrumbs-entry-menu': true,
                     'ds-tabbed-nav__breadcrumbs-entry-menu--opened': isMenuOpened
                   })}>
-                    {hiddenEntries.map((entry: IndexedEntry, index: number) => (
+                    {hiddenEntries.map((entry, index) => (
                       <div
                         className="ds-tabbed-nav__breadcrumbs-entry-menu-item"
                         onClick={onClickEntryWithIndex(entry.index)}
@@ -198,7 +185,7 @@ function Breadcrumbs ({ entries, onClick, maxEntryWidth = 90 }: Props) {
               </div>
             )}
 
-            {visibleEntries.map((entry: IndexedEntry, index: number) => (
+            {visibleEntries.map((entry, index) => (
               <BreadcrumbEntry
                 clickable={(visibleEntries.length - 1) !== index}
                 width={maxEntryWidth}
