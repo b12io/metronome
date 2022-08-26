@@ -200,7 +200,7 @@
     cursor: pointer;
 
     & + & {
-      margin-left: spacing(xxxsm) / 2;
+      margin-left: spacing(xxxsm) * 0.5;
     }
 
     &:hover,

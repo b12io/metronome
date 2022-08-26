@@ -42,7 +42,7 @@
   
     &-header {
       @include ds-control-label;
-      padding: (spacing(xxxsm)/2) spacing(xxxsm);
+      padding: (spacing(xxxsm)* 0.5) spacing(xxxsm);
     }
   
     &-item {
