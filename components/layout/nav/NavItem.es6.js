@@ -12,7 +12,7 @@ type Props = {
   disabled: boolean,
   showArrow: boolean,
   icon?: Node,
-  innerRef: { current: null | React$ElementRef<React$ElementType> },
+  innerRef: { current: null | HTMLDivElement } | ((null | HTMLDivElement) => mixed),
   actionIcon?: Node,
   badge?: string | number,
   active: boolean,
@@ -78,6 +78,6 @@ class NavItem extends React.Component<Props> {
   }
 }
 
-export default React.forwardRef((props, ref) => (
+export default React.forwardRef<Props, HTMLDivElement>((props, ref) => (
   <NavItem innerRef={ref} {...props} />
 ))
