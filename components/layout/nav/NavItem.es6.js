@@ -12,7 +12,7 @@ type Props = {
   disabled: boolean,
   showArrow: boolean,
   icon?: Node,
-  innerRef: { current: null | React$ElementRef<ElementType> },
+  innerRef: { current: null | React$ElementRef<React$ElementType> },
   actionIcon?: Node,
   badge?: string | number,
   active: boolean,
