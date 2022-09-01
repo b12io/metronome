@@ -41,6 +41,7 @@ import StatusIndicator from './react-demo/StatusIndicator.es6.js'
 import TabbedNavigation from './react-demo/TabbedNavigation.es6.js'
 import Breadcrumbs from './react-demo/Breadcrumbs.es6.js'
 import ButtonGroup from './react-demo/ButtonGroup.es6.js'
+import ToggleButton from './react-demo/ToggleButton.es6.js'
 
 const uiStates = [
   {
@@ -187,6 +188,11 @@ const uiStates = [
     name: 'buttonGroup',
     url: 'button-group',
     component: ButtonGroup
+  },
+  {
+    name: 'toggleButton',
+    url: 'toggle-button',
+    component: ToggleButton
   }
 ]
 
@@ -330,6 +336,11 @@ ReactDOM.render(
           <UISrefActive class="active">
             <UISref to="statusIndicator">
               <li><a>StatusIndicator</a></li>
+            </UISref>
+          </UISrefActive>
+          <UISrefActive class="active">
+            <UISref to="toggleButton">
+              <li><a>ToggleButton</a></li>
             </UISref>
           </UISrefActive>
           <li className="nav__header">Composition</li>

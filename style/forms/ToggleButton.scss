@@ -1,0 +1,43 @@
+.ds-form-control-toggle {
+  position: relative;
+  align-items: center;
+  display: inline-flex;
+
+  input {
+    display: none;
+  }
+
+  &__slider {
+    position: relative;
+    overflow: hidden;
+    // float: left;
+    border-radius: 37px;
+    cursor: pointer;
+    width: 26.4px;
+    height: 16px;
+    background-color: #d7d7de;
+    transition: 0.4s;
+    margin-right: 4px;
+
+    input:checked + & {
+      background-color: $ds-brand-medium-color;
+    }
+
+    &:before {
+      border-radius: 37px;
+      position: absolute;
+      content: '';
+      height: 12.8px;
+      width: 12.8px;
+      left: 2.2px;
+      bottom: 1.6px;
+      background-color: $ds-ui-lightest-color;
+      transition: 0.4s;
+
+      input:checked + & {
+        transform: translate(-100%);
+        left: calc(100% - 2.2px);
+      }
+    }
+  }
+}
