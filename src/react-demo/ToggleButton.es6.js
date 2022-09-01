@@ -21,7 +21,7 @@ function Buttons () {
       </div>
 
       <div className="ds-block">
-        <CodeExample code={`<ToggleButton checked={checked} onChange={setChecked} label={checked ? 'Checked' : 'Unchecked'} />`}>
+        <CodeExample code={'<ToggleButton checked={checked} onChange={setChecked} label={checked ? "Checked" : "Unchecked"} />'}>
           <ToggleButton checked={checked} onChange={setChecked} label={checked ? 'Checked' : 'Unchecked'} />
         </CodeExample>
       </div>
