@@ -1,13 +1,13 @@
 /* eslint-disable */
 import React from 'react'
 
-import Table from '../../../components/layout/table/Table.es6'
-import TableHead from '../../../components/layout/table/TableHead.es6'
-import TableBody from '../../../components/layout/table/TableBody.es6'
-import TableRow from '../../../components/layout/table/TableRow.es6'
-import TableCell from '../../../components/layout/table/TableCell.es6'
-import TableFoot from '../../../components/layout/table/TableFoot.es6'
-import AvatarItem from '../../../components/layout/avatar/AvatarItem.es6'
+import Table from '../../../components/layout/table/Table.es6.js'
+import TableHead from '../../../components/layout/table/TableHead.es6.js'
+import TableBody from '../../../components/layout/table/TableBody.es6.js'
+import TableRow from '../../../components/layout/table/TableRow.es6.js'
+import TableCell from '../../../components/layout/table/TableCell.es6.js'
+import TableFoot from '../../../components/layout/table/TableFoot.es6.js'
+import AvatarItem from '../../../components/layout/avatar/AvatarItem.es6.js'
 
 let counter = 0
 function createData (name, calories, fat, carbs, protein) {

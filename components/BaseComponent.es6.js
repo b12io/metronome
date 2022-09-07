@@ -1,11 +1,10 @@
-/* @flow */
 import React from 'react'
 import { pick, isEqual } from 'lodash'
 
-class BaseComponent<P: Object, S: ?Object = void> extends React.Component<P, S> {
-  propsToTrack: Array<string> = []
+class BaseComponent extends React.Component {
+  propsToTrack = []
 
-  shouldComponentUpdate (nextProps: P, nextState: S) {
+  shouldComponentUpdate (nextProps, nextState) {
     if (this.propsToTrack.length === 0) {
       return true
     }

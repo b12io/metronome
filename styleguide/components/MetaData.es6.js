@@ -1,11 +1,7 @@
-/* @flow */
 import React from 'react'
 
-type MetaDataProps = {|
-  children: string,
-|}
 
-function MetaData ({ children = '...' }: MetaDataProps) {
+function MetaData ({ children = '...' }) {
   return (
     <div className="ds-metadata">
       <div className="ds-metadata__di">

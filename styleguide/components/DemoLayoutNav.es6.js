@@ -1,13 +1,8 @@
-/* @flow */
 import React from 'react'
-import type { Node } from 'react'
 import { B12Logo } from '../../components/Icons.es6.js'
 
-type DemoLayoutNavProps = {|
-  children: Node
-|}
 
-function DemoLayoutNav ({ children }: DemoLayoutNavProps) {
+function DemoLayoutNav ({ children }) {
   return (
     <div className="app__nav">
       <a className="app__nav-head">

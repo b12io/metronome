@@ -1,15 +1,8 @@
-/* @flow */
 
 import * as React from 'react'
 
-type Props = {
-  label: string,
-  description?: string | React.Element<*>,
-  icon?: React.Node,
-  button?: React.Node
-}
 
-function BlockTitle (props: Props) {
+function BlockTitle (props) {
   const { label, description, icon, button } = props
 
   return (

@@ -1,12 +1,8 @@
-/* @flow */
 
 import React from 'react'
 
-type Props = {
-  label: string
-}
 
-function DropdownItemHeader ({ label }: Props) {
+function DropdownItemHeader ({ label }) {
   return (
     <li className="ds-dropdown__menu-header">
       {label}
