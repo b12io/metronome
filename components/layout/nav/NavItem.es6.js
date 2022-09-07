@@ -1,9 +1,6 @@
-
 import React from 'react'
 import classnames from 'classnames'
 import { ChevronRight } from '../../Icons.es6.js'
-
-
 
 class NavItem extends React.Component {
   static defaultProps = {
