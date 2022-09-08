@@ -1,22 +1,25 @@
+$slider-transition: 0.4s;
+
 .ds-form-control-toggle {
   position: relative;
   align-items: center;
   display: inline-flex;
 
   input {
-    display: none;
+    opacity: 0;
+    width: 0;
+    height: 0;
   }
 
   &__slider {
     position: relative;
-    overflow: hidden;
-    // float: left;
+    display: inline-block;
     border-radius: 37px;
     cursor: pointer;
-    width: 26.4px;
-    height: 16px;
+    width: 28px;
+    height: 18px;
     background-color: #d7d7de;
-    transition: 0.4s;
+    transition: $slider-transition;
     margin-right: 4px;
 
     input:checked + & {
@@ -24,19 +27,19 @@
     }
 
     &:before {
-      border-radius: 37px;
+      border-radius: 50%;
       position: absolute;
+      display: inline-block;
       content: '';
-      height: 12.8px;
-      width: 12.8px;
-      left: 2.2px;
-      bottom: 1.6px;
+      height: 14px;
+      width: 14px;
+      left: 2px;
+      bottom: 2px;
       background-color: $ds-ui-lightest-color;
-      transition: 0.4s;
+      transition: $slider-transition;
 
       input:checked + & {
-        transform: translate(-100%);
-        left: calc(100% - 2.2px);
+        left: calc(50% - 2px);
       }
     }
   }
