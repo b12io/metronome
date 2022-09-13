@@ -1,15 +1,9 @@
-/* @flow */
 
 import * as React from 'react'
 import classnames from 'classnames'
 
-type Props = {
-  className?: string | Object,
-  vertical?: boolean,
-  children: React.Node
-}
 
-function InputGroup (props: Props) {
+function InputGroup (props) {
   return (
     <div className={classnames({
       'ds-input-group': true,

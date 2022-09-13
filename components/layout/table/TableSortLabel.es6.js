@@ -1,17 +1,9 @@
-/* @flow */
 import * as React from 'react'
 import classnames from 'classnames'
-import { CaretDown } from '../../../components/Icons.es6'
+import { CaretDown } from '../../../components/Icons.es6.js'
 
-type Props = {
-  label: string,
-  active: boolean,
-  className?: string | Object,
-  direction: 'asc' | 'desc',
-  icon?: React.Element<'svg'>
-}
 
-function TableSortLabel ({ className, active, direction, icon, label, ...otherProps }: Props) {
+function TableSortLabel ({ className, active, direction, icon, label, ...otherProps }) {
   const classNames = classnames(
     'ds-table__sort-label',
     {'ds-table__sort-label--active': active},

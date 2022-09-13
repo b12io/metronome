@@ -1,21 +1,10 @@
-/* @flow */
 import React from 'react'
 import classnames from 'classnames'
-import type { Element } from 'react'
 
 import { Checkmark } from '../../Icons.es6.js'
 
-type Props = {|
-  label: string | Element <*>,
-  name: string,
-  checked: boolean,
-  indeterminate: boolean,
-  disabled: boolean,
-  hasError: boolean,
-  onChange: (val: boolean) => void
-|}
 
-function Checkbox ({ disabled, checked, indeterminate, label, name, onChange, hasError }: Props) {
+function Checkbox ({ disabled, checked, indeterminate, label, name, onChange, hasError }) {
   const setCheckboxRef = checkbox => {
     if (checkbox) {
       checkbox.indeterminate = indeterminate

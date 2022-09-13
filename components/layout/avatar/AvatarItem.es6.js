@@ -1,17 +1,6 @@
-/* @flow */
 import React from 'react'
 import classnames from 'classnames'
 
-type Props = {
-  className?: string | Object,
-  imgSrc?: string,
-  primaryText: string,
-  secondaryText?: string,
-  hasHover?: boolean,
-  showIconOnly?: boolean,
-  isActive?: boolean,
-  onClick?: () => void
-}
 
 function parseInitials (name) {
   const names = name.split(' ')
@@ -24,7 +13,7 @@ function parseInitials (name) {
   return initials
 }
 
-export default function AvatarItem ({ className, imgSrc, primaryText, secondaryText, hasHover, showIconOnly, isActive, onClick }: Props) {
+export default function AvatarItem ({ className, imgSrc, primaryText, secondaryText, hasHover, showIconOnly, isActive, onClick }) {
   const avatarItemClasses = classnames(
     'ds-avatar',
     {

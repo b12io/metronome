@@ -1,39 +1,13 @@
-/* @flow */
 import React from 'react'
-import type { Key, Node } from 'react'
 import classnames from 'classnames'
 
 import {
   Check
 } from '../../Icons.es6.js'
 
-type Props = {|
-  key?: Key,
-  label: string,
-  onOptionClick: (event: SyntheticEvent<HTMLDivElement>, value: string) => *,
-  onFocus: (event: SyntheticEvent<HTMLDivElement>, value: string) => *,
-  selected: boolean,
-  thumbnail: string,
-  thumbnailCover: boolean,
-  isVideo: boolean,
-  videoType?: string,
-  videoUrl?: string,
-  rounded?: boolean,
-  shadowed?: boolean,
-  text?: string,
-  value: string,
-  children?: Node,
-  className?: string | Object,
-  tabIndex?: number
-|}
 
-type ImageThumbnailType = {|
-  thumbnailCover: boolean,
-  thumbnail: string,
-  label: string
-|}
 
-function ImageThumbnail ({ thumbnail, thumbnailCover, label }: ImageThumbnailType) {
+function ImageThumbnail ({ thumbnail, thumbnailCover, label }) {
   return (
     <img
       className={classnames({
@@ -48,7 +22,7 @@ function ImageThumbnail ({ thumbnail, thumbnailCover, label }: ImageThumbnailTyp
 
 function ThumbnailOption ({ label, onOptionClick, onFocus, selected, thumbnail,
   thumbnailCover, value, isVideo, videoType, videoUrl, rounded,
-  shadowed, text, tabIndex, className, children }: Props) {
+  shadowed, text, tabIndex, className, children }) {
   return (
     <div className={classnames({
       'ds-thumbnail-option': true,

@@ -3,8 +3,8 @@ import DemoLayoutContent from './demo-only-components/DemoLayoutContent.es6.js'
 import CodeExample from './demo-only-components/CodeExample.es6.js'
 import MetaData from './demo-only-components/MetaData.es6.js'
 import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDataProps.es6.js'
-import { DemoSimpleTable } from './demo-only-components/DemoTable.es6'
-import DemoSmartTable from './demo-only-components/DemoSmartTable.es6'
+import { DemoSimpleTable } from './demo-only-components/DemoTable.es6.js'
+import DemoSmartTable from './demo-only-components/DemoSmartTable.es6.js'
 
 const TABLE_PROPS = [
   {
@@ -266,13 +266,13 @@ import TablePagination from '@b12/metronome/components/layout/table/TablePaginat
 
         <CodeExample code={`import React from 'react'
 
-import Table from '@b12/metronome/components/layout/table/Table.es6'
-import TableHead from '@b12/metronome/components/layout/table/TableHead.es6'
-import TableBody from '@b12/metronome/components/layout/table/TableBody.es6'
-import TableRow from '@b12/metronome/components/layout/table/TableRow.es6'
-import TableCell from '@b12/metronome/components/layout/table/TableCell.es6'
-import AvatarItem from '@b12/metronome/components/layout/avatar/AvatarItem.es6'
-import TablePagination from '@b12/metronome/components/layout/table/TablePagination.es6'
+import Table from '@b12/metronome/components/layout/table/Table.es6.js'
+import TableHead from '@b12/metronome/components/layout/table/TableHead.es6.js'
+import TableBody from '@b12/metronome/components/layout/table/TableBody.es6.js'
+import TableRow from '@b12/metronome/components/layout/table/TableRow.es6.js'
+import TableCell from '@b12/metronome/components/layout/table/TableCell.es6.js'
+import AvatarItem from '@b12/metronome/components/layout/avatar/AvatarItem.es6.js'
+import TablePagination from '@b12/metronome/components/layout/table/TablePagination.es6.js'
 import Grid from '@b12/metronome/components/layout/grid/Grid.es6.js'
 
 let counter = 0

@@ -1,16 +1,7 @@
-// @flow
 import React from 'react'
 import classnames from 'classnames'
 
-type StatusType = 'success' | 'default' | 'error' | 'warning'
 
-type Props = {
-  status: StatusType,
-  statusLabels: {
-    [StatusType]: string
-  },
-  className?: string | Object
-}
 
 const DEFAULT_STATUS_LABELS = {
   success: 'Active',
@@ -19,7 +10,7 @@ const DEFAULT_STATUS_LABELS = {
   error: 'Error'
 }
 
-function StatusIndicator ({ status, statusLabels, className }: Props) {
+function StatusIndicator ({ status, statusLabels, className }) {
   const classNames = classnames(
     'ds-status-indicator',
     `ds-status-indicator--${status}`,

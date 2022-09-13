@@ -1,17 +1,8 @@
-/* @flow */
 import React from 'react'
-import type { Node } from 'react'
 
-type Props = {|
-  children: (isOpen: boolean, onToggle: () => void, onBlur: () => void) => Node,
-  isOpen: boolean
-|}
 
-type State = {|
-  isOpen: boolean
-|}
 
-class Toggle extends React.Component<Props, State> {
+class Toggle extends React.Component {
   state = { isOpen: this.props.isOpen }
 
   static defaultProps = {

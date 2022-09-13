@@ -1,16 +1,10 @@
-/* @flow */
 import React from 'react'
 
 import { deslugify } from '../../lib/string-utils.es6.js'
 
-type Props = {|
-  filterableFields: Array<string>,
-  onBlur: () => void,
-  onFilterSelect: (fieldName: string) => void
-|}
 
-class FilterOptionSelect extends React.Component<Props> {
-  dropdown: ?HTMLDivElement
+class FilterOptionSelect extends React.Component {
+  dropdown
 
   static defaultProps = {
     filterableFields: [],

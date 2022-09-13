@@ -1,22 +1,13 @@
-// @flow
 
 import React from 'react'
 import classnames from 'classnames'
-import Button from '../../../components/form/button/Button.es6'
-import { ChevronLeft, ChevronRight } from '../../../components/Icons.es6'
+import Button from '../../../components/form/button/Button.es6.js'
+import { ChevronLeft, ChevronRight } from '../../../components/Icons.es6.js'
 
-type Props = {
-  paginationText: string,
-  onGoBack: () => void,
-  onGoForward: () => void,
-  canGoBack: boolean,
-  canGoForward: boolean,
-  className?: string | Object,
-}
 
 function CommonPagination ({
   paginationText, className, canGoBack, canGoForward, onGoBack, onGoForward
-}: Props) {
+}) {
   const classNames = classnames(
     'ds-table__pagination',
     className

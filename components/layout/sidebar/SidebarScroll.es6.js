@@ -1,20 +1,8 @@
-/* @flow */
 import * as React from 'react'
 import { get } from 'lodash'
-import Sidebar from './Sidebar.es6.js'
 
-type HandleScroll = (e: Object) => void
-type Props = {|
-  breakpoint: number,
-  children({ isScrollingDown: boolean, handleScroll: HandleScroll }): React$Element<typeof Sidebar>
-|}
 
-type State = {|
-  isScrollingDown: boolean,
-  lastKnownScrollPosition: number
-|}
-
-class SidebarScroll extends React.Component<Props, State> {
+class SidebarScroll extends React.Component {
   state = {
     isScrollingDown: false,
     lastKnownScrollPosition: 0
@@ -25,7 +13,7 @@ class SidebarScroll extends React.Component<Props, State> {
   }
 
   // TODO(bryan): Figure out better way to type event.
-  handleScroll = (e: Object) => {
+  handleScroll = (e) => {
     if (get(e, 'target.scrollTop') === undefined) {
       return
     }

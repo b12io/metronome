@@ -1,4 +1,3 @@
-/* @flow */
 
 import React from 'react'
 import classnames from 'classnames'
@@ -11,22 +10,10 @@ import Select from '../select/Select.es6.js'
 import Option from '../option/Option.es6.js'
 import Button from '../button/Button.es6.js'
 
-import type { Filter, Operator } from './types.es6.js'
 
-type Props = {|
-  filter: Filter,
-  filterableFields: Array<string>,
-  handleRemoveFilter: () => void,
-  handleUpdateFilter: (data: Object) => void,
-  isOpened: boolean,
-  validOperators: Array<Operator>
-|}
 
-type State = {|
-  isOpened: boolean
-|}
 
-class FilterOptionItem extends React.Component<Props, State> {
+class FilterOptionItem extends React.Component {
   state = {
     isOpened: this.props.isOpened
   }

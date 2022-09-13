@@ -1,4 +1,3 @@
-/* @flow */
 import React from 'react'
 import classnames from 'classnames'
 
@@ -6,17 +5,9 @@ import {
   Check
 } from '../../Icons.es6.js'
 
-type Props = {|
-  block: boolean,
-  border: boolean,
-  colors: Array<string>,
-  onOptionClick: (event: SyntheticEvent<HTMLDivElement>, value: string) => ?Promise<void>,
-  selected: boolean,
-  value: string
-|}
 
 function PaletteOption ({ block, colors, onOptionClick, selected,
-  value, border }: Props) {
+  value, border }) {
   const swatches = colors.map((color, index) => {
     return (
       <div key={`${color}-${index}`}

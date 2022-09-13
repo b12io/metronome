@@ -1,20 +1,9 @@
-/* @flow */
 
 import * as React from 'react'
 import classnames from 'classnames'
 
-type Props = {
-  active: boolean,
-  visited: boolean,
-  showProgress: boolean,
-  clickable: boolean,
-  disabled: boolean,
-  onClick: () => void,
-  children: React.Node,
-  className?: string | Object
-}
 
-const TabbedNavigationItem = ({ active, visited, showProgress, clickable, disabled, className, onClick, children }: Props) => {
+const TabbedNavigationItem = ({ active, visited, showProgress, clickable, disabled, className, onClick, children }) => {
   return (
     <React.Fragment>
       <li
