@@ -5,19 +5,20 @@ import { shallow } from 'enzyme'
 import ToggleButton from './ToggleButton.es6.js'
 
 describe('DatetimePicker component', () => {
-  let testProps, component
+  let component
+
+  const testProps = {
+    label: 'My toggle button',
+    checked: false,
+    onChange: jest.fn()
+  }
 
   beforeEach(() => {
-    testProps = {
-      label: 'My toggle button',
-      checked: false,
-      onChange: jest.fn()
-    }
     component = shallow(<ToggleButton {...testProps} />)
   })
 
   it('should render label', () => {
-    expect(component.find('.ds-form-control-toggle__label').at(0).text().trim()).toEqual('My toggle button')
+    expect(component.find('.ds-form-control-toggle__label').at(0).text().trim()).toEqual(testProps.label)
   })
 
   it('should be toggled off by default', () => {

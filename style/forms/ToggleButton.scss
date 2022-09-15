@@ -1,4 +1,5 @@
 $slider-transition: 0.4s;
+$slider-width: 28px;
 
 .ds-form-control-toggle {
   position: relative;
@@ -16,7 +17,7 @@ $slider-transition: 0.4s;
     display: inline-block;
     border-radius: 37px;
     cursor: pointer;
-    width: 28px;
+    width: $slider-width;
     height: 18px;
     background-color: #d7d7de;
     transition: $slider-transition;
@@ -31,8 +32,8 @@ $slider-transition: 0.4s;
       position: absolute;
       display: inline-block;
       content: '';
-      height: 14px;
-      width: 14px;
+      height: calc(#{$slider-width} / 2);
+      width: calc(#{$slider-width} / 2);
       left: 2px;
       bottom: 2px;
       background-color: $ds-ui-lightest-color;
