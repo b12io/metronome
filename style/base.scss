@@ -31,6 +31,7 @@
 @import 'forms/input-group';
 @import 'forms/RangeSlider';
 @import 'forms/ButtonGroup';
+@import 'forms/ToggleButton';
 
 // Custom datetime picker css needs to be imported after react-datepicker
 // library css file so custom css is not overwritten by defaults.
