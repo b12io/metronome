@@ -49,7 +49,7 @@ class DragList extends React.Component {
               dragStyles={provided.draggableStyle}
               className={getItemClassNames(snapshot.isDragging, collectionList, cardList)}
             >
-              <ListItemIcon draggableIcon {...provided.dragHandleProps} />
+              {!isDragAndDropDisabled && <ListItemIcon draggableIcon {...provided.dragHandleProps} />}
               {content}
             </ListItem>,
             <div key={`key-${draggableId}`}>{provided.placeholder}</div>
