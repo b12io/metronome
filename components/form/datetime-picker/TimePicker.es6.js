@@ -14,7 +14,7 @@ function B12TimePicker ({ label, onChange, onChangeRaw, value, placeholderText, 
         showTimeSelectOnly
         className="datetime-picker__time-picker"
         dateFormat="LT"
-        placeholderText={placeholderText || "Choose time"}
+        placeholderText={placeholderText || 'Choose time'}
         selected={value}
         onChange={onChange}
         onChangeRaw={event => {
