@@ -68,13 +68,13 @@
 }
 
 @mixin ds-tooltip {
-  max-width: 210px;
+  max-width: 270px;
   padding: 9px 10px;
-  background-color: fade-out($ds-display-dark-color, .1);
+  background-color: $ds-display-dark-color;
 
   + .arrow::before {
-    border-bottom-color: fade-out($ds-display-dark-color, .1);
-    border-top-color: fade-out($ds-display-dark-color, .1);
+    border-bottom-color: $ds-display-dark-color;
+    border-top-color: $ds-display-dark-color;
   }
 }
 
