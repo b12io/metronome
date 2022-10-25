@@ -101,23 +101,25 @@
   &__time-list {
     width: 122% !important;
     padding: 0 !important;
+    text-align: left;
   }
 
   &__time-list-item {
-    margin-bottom: 0;
+    margin-bottom: 0 !important;
+    line-height: 30px;
+    border-bottom: $ds-card-border;
     padding: 5px 10px !important;
     font-size: $display-xsmall-font-size;
     color: $ds-display-regular-color;
 
     &--selected {
-      background: no-repeat url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iOCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4gIDxwYXRoIGQ9Ik05LjQgMkw4IC42bC00IDQtMi0yTC42IDQgNCA3LjR6IiBmaWxsPSIjNzY2Q0ZGIiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48L3N2Zz4=) 7px 12px !important;
-      background-clip: padding-box;
-      color: $ds-display-regular-color !important;
+      background: $ds-ui-background-dark-color !important;
+      color: $ds-ui-lightest-color !important;
       font-weight: normal !important;
     }
 
     &:hover {
-      background-color: rgba($ds-brand-light-color, 0.2) !important;
+      background-color: $ds-brand-lightest-hover-color;
     }
   }
 
