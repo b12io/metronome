@@ -27,7 +27,9 @@ class Collapse extends React.Component {
     })
   }
 
-  toggleCollapse () {
+  toggleCollapse (event) {
+    event.stopPropagation()
+
     this.setState({
       isCollapsed: !this.state.isCollapsed
     })
