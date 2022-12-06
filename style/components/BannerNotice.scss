@@ -1,0 +1,67 @@
+.ds-banner-notice {
+  background: #f6f5fe;
+  border-radius: $ds-input-border-radius;
+  padding: spacing('xxsm');
+  display: grid;
+  grid-template-areas:
+    'icon content'
+    'icon content';
+  grid-template-columns: 16px 1fr;
+  gap: 8px;
+  row-gap: 2px;
+
+  &--success {
+    background: #f4fff1;
+
+    .ds-banner-notice__icon {
+      path {
+        fill: #8fc980;
+      }
+    }
+  }
+
+  &--warning {
+    background: #fff9ec;
+
+    .ds-banner-notice__icon {
+      path {
+        fill: #f5be33;
+      }
+    }
+  }
+
+  &--danger {
+    background: #f8e8e8;
+
+    .ds-banner-notice__icon {
+      path {
+        fill: #f05e5e;
+      }
+    }
+  }
+
+  &__icon {
+    grid-area: icon;
+    padding-top: 2px;
+
+    path {
+      fill: $ds-ui-background-dark-color;
+    }
+  }
+
+  &__title {
+    @include display-xsmall-font;
+    font-weight: 600;
+    color: $ds-display-regular-color;
+  }
+
+  &__text {
+    @include display-xsmall-font;
+    color: #585769;
+
+    a {
+      color: #585769;
+      text-decoration: underline;
+    }
+  }
+}
