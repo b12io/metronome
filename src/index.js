@@ -32,6 +32,7 @@ import Bar from './react-demo/Bar.es6.js'
 import Sections from './react-demo/Sections.es6.js'
 import Table from './react-demo/Table.es6.js'
 import AvatarItem from './react-demo/AvatarItem.es6.js'
+import BannerNoticePage from './react-demo/BannerNotice.es6.js'
 import InformationalCard from './react-demo/InformationalCard.es6.js'
 import RangeSlider from './react-demo/RangeSlider.es6.js'
 import Cards from './react-demo/Cards.es6.js'
@@ -133,6 +134,11 @@ const uiStates = [
     name: 'informationalCard',
     url: 'informationalCard',
     component: InformationalCard
+  },
+  {
+    name: 'bannerNotice',
+    url: 'bannerNotice',
+    component: BannerNoticePage
   },
   {
     name: 'miscellaneous',
@@ -311,6 +317,11 @@ ReactDOM.render(
           <UISrefActive class="active">
             <UISref to="informationalCard">
               <li><a>InformationalCard</a></li>
+            </UISref>
+          </UISrefActive>
+          <UISrefActive class="active">
+            <UISref to="bannerNotice">
+              <li><a>BannerNotice</a></li>
             </UISref>
           </UISrefActive>
           <UISrefActive class="active">
