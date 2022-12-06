@@ -67,8 +67,8 @@
   }
 
   &__close {
-    width: 30px;
-    height: 30px;
+    width: 24px;
+    height: 24px;
     display: grid;
     place-content: center;
     border: 0;
@@ -76,8 +76,8 @@
     margin: 0;
     padding: 0;
     position: absolute;
-    top: spacing('xxsm') / 2;
-    right: spacing('xxsm') / 2;
+    top: spacing('xxxsm');
+    right: spacing('xxxsm');
     cursor: pointer;
     z-index: 10;
 
