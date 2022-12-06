@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import DemoLayoutContent from './demo-only-components/DemoLayoutContent.es6.js'
 import CodeExample from './demo-only-components/CodeExample.es6.js'
 import MetaData from './demo-only-components/MetaData.es6.js'
@@ -45,7 +45,21 @@ const codeExample2 = `
 />
 `
 
+const codeExample3 = `
+<BannerNotice
+  icon="tip"
+  title="You can dismiss me"
+  text="It would be really great if you add some text"
+  showClose
+  onCloseClick={() => {
+    setVisible(false)
+  }}
+/>
+`
+
 const BannerNoticePage = () => {
+  const [visible, setVisible] = useState(true)
+
   return (
     <DemoLayoutContent>
       <div className="app-page-title">
@@ -56,12 +70,6 @@ const BannerNoticePage = () => {
           flow="Yes"
           tests="Yes"
         />
-      </div>
-
-      <div className="ds-block">
-        <div className="ds-block__title">
-          <h2>Examples</h2>
-        </div>
       </div>
 
       <div className="ds-block">
@@ -97,6 +105,7 @@ const BannerNoticePage = () => {
           </div>
         </CodeExample>
       </div>
+
       <div className="ds-block">
         <div className="ds-block__title">
           <h3>Color and Icon variations</h3>
@@ -140,6 +149,66 @@ const BannerNoticePage = () => {
 
       <div className="ds-block">
         <div className="ds-block__title">
+          <h3>Dismissing banner notice</h3>
+          <p>
+            You can pass <code>onCloseClick</code> function to dismiss notice.
+            Please be advised that you should handle cookies on your own.
+          </p>
+        </div>
+        <CodeExample code={codeExample3}>
+          <div
+            style={{
+              width: 350,
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '10px'
+            }}
+          >
+            {visible && (
+              <BannerNotice
+                icon="tip"
+                title="You can dismiss me"
+                text="It would be really great if you add some text here"
+                showClose
+                onCloseClick={() => {
+                  setVisible(false)
+                }}
+              />
+            )}
+          </div>
+        </CodeExample>
+      </div>
+
+      <div className="ds-block">
+        <div className="ds-block__title">
+          <h3>Guides and restrictions</h3>
+          <ul>
+            <li>
+              Banner notices are displayed inline, in the sidebar or main
+              content area, to indicate if something is wrong or needs
+              attention. They are ideally placed at the top of their respective
+              area so that they can be easily noticed when the page loads.
+            </li>
+            <li>
+              If something is wrong, we should always explain how to fix it and
+              can optionally include an action as a shortcut.
+            </li>
+            <li>
+              In the event that there are multiple notices, we can stack them in
+              order of priority with the most important issue appearing at the
+              top.
+            </li>
+            <li>
+              We can optionally offer a dismissal button for notices that don’t
+              need to persist after their first viewing.
+            </li>
+            <li>No images / multiple controls </li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="ds-block">
+        <div className="ds-block__title">
           <h4>Props</h4>
         </div>
 
@@ -167,6 +236,18 @@ const BannerNoticePage = () => {
             value="string | React.Node"
             defaultValue=""
             description="Required"
+          />
+          <MetaDataPropsItem
+            property="showClose"
+            value="boolean"
+            defaultValue="false"
+            description="Optional. Show dismiss button"
+          />
+          <MetaDataPropsItem
+            property="onCloseClick"
+            value="function"
+            defaultValue="false"
+            description="Optional. Remove banner notice."
           />
           <MetaDataPropsItem
             property="className"

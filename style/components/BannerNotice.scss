@@ -1,7 +1,7 @@
 .ds-banner-notice {
   background: #f6f5fe;
   border-radius: $ds-input-border-radius;
-  padding: spacing('xxsm');
+  padding: spacing('xxsm') spacing('xlg') spacing('xxsm') spacing('xxsm');
   display: grid;
   grid-template-areas:
     'icon content'
@@ -9,6 +9,7 @@
   grid-template-columns: 16px 1fr;
   gap: 8px;
   row-gap: 2px;
+  position: relative;
 
   &--success {
     background: #f4fff1;
@@ -62,6 +63,31 @@
     a {
       color: #585769;
       text-decoration: underline;
+    }
+  }
+
+  &__close {
+    width: 30px;
+    height: 30px;
+    display: grid;
+    place-content: center;
+    border: 0;
+    background: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: spacing('xxsm') / 2;
+    right: spacing('xxsm') / 2;
+    cursor: pointer;
+    z-index: 10;
+
+    svg {
+      width: 8px;
+      height: 8px;
+
+      path {
+        fill: $ds-body-lighter-color;
+      }
     }
   }
 }

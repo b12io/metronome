@@ -2,13 +2,15 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
-import { InfoCircle, Tip, Check } from '../../Icons.es6.js'
+import { InfoCircle, Tip, Check, Close } from '../../Icons.es6.js'
 
 const BannerNotice = ({
   type = 'default',
   icon = 'infoCircle',
   title = '',
   text = '',
+  showClose = false,
+  onCloseClick,
   className = ''
 }) => {
   const renderIcon = (type) => {
@@ -36,6 +38,16 @@ const BannerNotice = ({
       </div>
       {title && <div className="ds-banner-notice__title">{title}</div>}
       <div className="ds-banner-notice__text">{text}</div>
+      {showClose && (
+        <button
+          type="button"
+          aria-label="Dismiss notice"
+          className="ds-banner-notice__close"
+          onClick={onCloseClick}
+        >
+          <Close />
+        </button>
+      )}
     </div>
   )
 }
@@ -48,6 +60,8 @@ BannerNotice.propTypes = {
   ]),
   title: PropTypes.string,
   text: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
+  showClose: PropTypes.bool,
+  onCloseClick: PropTypes.func,
   className: PropTypes.string
 }
 
