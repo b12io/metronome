@@ -58,6 +58,7 @@
 
   &__text {
     @include display-xsmall-font;
+    font-weight: 400;
     color: #585769;
 
     a {
