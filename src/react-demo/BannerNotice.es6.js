@@ -95,11 +95,11 @@ const BannerNoticePage = () => {
             <BannerNotice
               title="Want to fix your file?"
               text={
-                <>
+                <React.Fragment>
                   Take a minute to{' '}
                   <a href="#somewhere">view errors and solutions</a>, edit file
                   and upload again.
-                </>
+                </React.Fragment>
               }
             />
           </div>
