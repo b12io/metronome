@@ -1,6 +1,6 @@
 {
   "name": "@b12/metronome",
-  "version": "1.1.9",
+  "version": "1.1.10",
   "description": "",
   "main": "index.es6.js",
   "scripts": {
@@ -55,12 +55,10 @@
     "@babel/register": "7.0.0",
     "@babel/runtime": "7.2.0",
     "@uirouter/react": "0.6.2",
-    "angular-mocks": "1.4.8",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "10.0.1",
     "babel-jest": "24.1.0",
     "babel-loader": "8.0.4",
-    "babel-plugin-angularjs-annotate": "0.9.0",
     "babel-plugin-istanbul": "4.0.0",
     "babel-plugin-lodash": "3.3.4",
     "babel-plugin-transform-builtin-extend": "1.1.2",
