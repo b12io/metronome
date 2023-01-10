@@ -107,7 +107,8 @@ ThumbnailOption.defaultProps = {
   shadowed: false,
   text: '',
   value: '',
-  tabIndex: 0
+  tabIndex: 0,
+  preloader: null
 }
 
 export default ThumbnailOption
