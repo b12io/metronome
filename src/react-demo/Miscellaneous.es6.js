@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 
 import DemoLayoutContent from './demo-only-components/DemoLayoutContent.es6.js'
 import Divider from '../../components/layout/panel/divider/Divider.es6.js'
@@ -22,15 +22,24 @@ import Card from '../../components/layout/card/Card.es6.js'
 import Collapse from '../../components/layout/collapse/Collapse.es6.js'
 import NotificationCard from '../../components/layout/notification-card/NotificationCard.es6.js'
 import FilterOption from '../../components/form/filter-option/FilterOption.es6.js'
-import { Notice, Lock, ChevronRight, Home, TimesCircle, PlusCircle, Disabled } from '../../components/Icons.es6.js'
+import {
+  Notice,
+  Lock,
+  ChevronRight,
+  Home,
+  TimesCircle,
+  PlusCircle,
+  Disabled
+} from '../../components/Icons.es6.js'
 import CollapsibleCardList from '../../components/layout/collapsible-card-list/CollapsibleCardList.es6.js'
 import CollapsibleCardListItem from '../../components/layout/collapsible-card-list/CollapsibleCardListItem.es6.js'
+import ThumbnailOption from '../../components/form/thumbnail-option/ThumbnailOption.es6.js'
 
 // fake data generator for demo
-const getItems = count =>
-  Array.from({ length: count }, (v, k) => k).map(k => ({
+const getItems = (count) =>
+  Array.from({ length: count }, (v, k) => k).map((k) => ({
     id: `item-${k}`,
-    content: `item ${k}`,
+    content: `item ${k}`
   }))
 
 // function to help with reordering the result
@@ -43,49 +52,54 @@ const reorder = (list, startIndex, endIndex) => {
 }
 
 class Miscellaneous extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
       cardListItems: getItems(6),
-      collectionListItems: getItems(7),
+      collectionListItems: getItems(7)
     }
     this.onDragEnd = this.onDragEnd.bind(this)
     this.onCollectionListDragEnd = this.onCollectionListDragEnd.bind(this)
     this.onCardListDragEnd = this.onCardListDragEnd.bind(this)
   }
 
-  onDragEnd (name, list, result) {
+  onDragEnd(name, list, result) {
     // dropped outside the list
     if (!result.destination) {
       return
     }
 
-    const items = reorder(
-      list,
-      result.source.index,
-      result.destination.index
-    )
+    const items = reorder(list, result.source.index, result.destination.index)
 
     this.setState({
       [name]: items
     })
   }
 
-  onCardListDragEnd (result) {
+  onCardListDragEnd(result) {
     this.onDragEnd('cardListItems', this.state.cardListItems, result)
   }
 
-  onCollectionListDragEnd (result) {
-    this.onDragEnd('collectionListItems', this.state.collectionListItems, result)
+  onCollectionListDragEnd(result) {
+    this.onDragEnd(
+      'collectionListItems',
+      this.state.collectionListItems,
+      result
+    )
   }
 
-  render () {
+  render() {
     return (
       <DemoLayoutContent>
         <Panel>
           <div className="app-page-title">
             <h1>Miscellaneous</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime aliquid suscipit natus rem, ipsa molestiae voluptate vero obcaecati voluptatibus ea nobis neque necessitatibus excepturi perferendis, fuga voluptatem totam quae quas.</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime
+              aliquid suscipit natus rem, ipsa molestiae voluptate vero
+              obcaecati voluptatibus ea nobis neque necessitatibus excepturi
+              perferendis, fuga voluptatem totam quae quas.
+            </p>
           </div>
           <div className="ds-row">
             <div className="ds-col">
@@ -110,7 +124,7 @@ class Miscellaneous extends Component {
                   yes="Override colors"
                   no="Cancel"
                 />
-                {this.state.collectionListItems.map(item => (
+                {this.state.collectionListItems.map((item) => (
                   <ListItem cardListItem key={item.id}>
                     <ListItemContent>{item.content}</ListItemContent>
                   </ListItem>
@@ -121,16 +135,23 @@ class Miscellaneous extends Component {
 
               <Collection>
                 <CollectionLabel>Collection</CollectionLabel>
-                <ListSearch collectionSearch value={''} onInputChange={() => {}} placeholder="Search" />
+                <ListSearch
+                  collectionSearch
+                  value={''}
+                  onInputChange={() => {}}
+                  placeholder="Search"
+                />
                 <DragList
                   onDragEnd={this.onCollectionListDragEnd}
                   droppableId="collection"
-                  collectionList>
-                  {this.state.collectionListItems.map(item => (
+                  collectionList
+                >
+                  {this.state.collectionListItems.map((item) => (
                     <DragListItem
                       key={item.id}
                       draggableId={item.id}
-                      collectionListItem>
+                      collectionListItem
+                    >
                       <ListItemContent>{item.content}</ListItemContent>
                       <ListItemAction collectionListItemAction>
                         <TimesCircle color="#ccc" />
@@ -147,7 +168,12 @@ class Miscellaneous extends Component {
             <div className="ds-col">
               <h4 className="u-m-b-sm">Card lists</h4>
               <CardList>
-                <ListSearch cardSearch value={''} onInputChange={() => {}} placeholder="Search" />
+                <ListSearch
+                  cardSearch
+                  value={''}
+                  onInputChange={() => {}}
+                  placeholder="Search"
+                />
                 <List cardList>
                   <ListItem cardListItem>
                     <ListItemIcon icon={<Home color="#ccc" />} />
@@ -201,13 +227,17 @@ class Miscellaneous extends Component {
               <CardList>
                 <List cardList>
                   <ListItem cardListItem>
-                    <ListItemContent subtitle="Logo and navigation links">Header</ListItemContent>
+                    <ListItemContent subtitle="Logo and navigation links">
+                      Header
+                    </ListItemContent>
                     <ListItemAction cardListItemAction>
                       <ChevronRight color="#ccc" width={7} height={11} />
                     </ListItemAction>
                   </ListItem>
                   <ListItem cardListItem>
-                    <ListItemContent subtitle="Links, contact info, map">Footer</ListItemContent>
+                    <ListItemContent subtitle="Links, contact info, map">
+                      Footer
+                    </ListItemContent>
                     <ListItemAction cardListItemAction>
                       <ChevronRight color="#ccc" width={7} height={11} />
                     </ListItemAction>
@@ -225,12 +255,14 @@ class Miscellaneous extends Component {
                 <DragList
                   onDragEnd={this.onCardListDragEnd}
                   droppableId="cardList"
-                  cardList>
-                  {this.state.cardListItems.map(item => (
+                  cardList
+                >
+                  {this.state.cardListItems.map((item) => (
                     <DragListItem
                       key={item.id}
                       draggableId={item.id}
-                      cardListItem>
+                      cardListItem
+                    >
                       <ListItemContent>{item.content}</ListItemContent>
                       <ListItemAction cardListItemAction>
                         <TimesCircle color="#ccc" />
@@ -268,19 +300,14 @@ class Miscellaneous extends Component {
               <Divider />
 
               <h4 className="u-m-b-sm">Collapse</h4>
-              <Collapse
-                collapseHeight={60}
-                isCollapsed={true}
-              >
+              <Collapse collapseHeight={60} isCollapsed={true}>
                 <p>A very long lorem ipsum text here.</p>
               </Collapse>
 
               <Divider />
 
               <h4 className="u-m-b-sm">NotificationCard</h4>
-              <NotificationCard
-                label="Successful notification!"
-              />
+              <NotificationCard label="Successful notification!" />
 
               <Divider />
 
@@ -288,37 +315,54 @@ class Miscellaneous extends Component {
               <CollapsibleCardList activeIndex={0}>
                 <CollapsibleCardListItem
                   collapsedLayout={
-                    (<div>
+                    <div>
                       <h1>Title</h1>
                       <h4>Subtitle</h4>
-                    </div>)
+                    </div>
                   }
                 >
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, odio.</p>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Aperiam, odio.
+                  </p>
                 </CollapsibleCardListItem>
-                <CollapsibleCardListItem
-                  collapsedLayout="Label 2"
-                >
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, odio.</p>
+                <CollapsibleCardListItem collapsedLayout="Label 2">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Aperiam, odio.
+                  </p>
                 </CollapsibleCardListItem>
-                <CollapsibleCardListItem
-                  collapsedLayout="Label 3"
-                >
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, odio.</p>
+                <CollapsibleCardListItem collapsedLayout="Label 3">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Aperiam, odio.
+                  </p>
                 </CollapsibleCardListItem>
               </CollapsibleCardList>
             </div>
           </div>
-          <hr/>
+          <hr />
           <div className="ds-row">
-            <div className="ds-col" style={{minHeight: '300px'}}>
+            <div className="ds-col" style={{ minHeight: '300px' }}>
               <h4 className="u-m-b-sm">Filter Option</h4>
               <FilterOption />
             </div>
             <div className="ds-col">
+              <h4 className="u-m-b-sm">ThumbnailOption with preloader</h4>
+              <ThumbnailOption
+                label="Some stuff"
+                thumbnail="http://placekitten.com/2800/2800"
+                selected={true}
+                preloader={
+                  <h3 style={{
+                    minHeight: '200px',
+                    display: 'grid',
+                    placeContent: 'center',
+                  }}>Loading image...</h3>
+                }
+              />
             </div>
-            <div className="ds-col">
-            </div>
+            <div className="ds-col"></div>
           </div>
         </Panel>
       </DemoLayoutContent>

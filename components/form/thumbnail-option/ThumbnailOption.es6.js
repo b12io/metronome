@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import classnames from 'classnames'
 
 import {
@@ -7,22 +7,39 @@ import {
 
 
 
-function ImageThumbnail ({ thumbnail, thumbnailCover, label }) {
+function ImageThumbnail ({ thumbnail, thumbnailCover, label, preloader }) {
+  const [loaded, setLoaded] = useState(false)
+
   return (
-    <img
-      className={classnames({
-        'ds-thumbnail-option__thumbnail': true,
-        'ds-thumbnail-option__thumbnail--cover': thumbnailCover,
-      })}
-      src={thumbnail}
-      alt={label}
-    />
+    <React.Fragment>
+      {preloader
+        ? (loaded
+          ? null
+          : preloader)
+        : null
+      }
+      <img
+        className={classnames({
+          'ds-thumbnail-option__thumbnail': true,
+          'ds-thumbnail-option__thumbnail--cover': thumbnailCover,
+        })}
+        style={preloader
+          ? (loaded
+            ? {}
+            : { display: 'none' })
+          : {}
+        }
+        onLoad={() => setLoaded(true)}
+        src={thumbnail}
+        alt={label}
+      />
+    </React.Fragment>
   )
 }
 
 function ThumbnailOption ({ label, onOptionClick, onFocus, selected, thumbnail,
   thumbnailCover, value, isVideo, videoType, videoUrl, rounded,
-  shadowed, text, tabIndex, className, children }) {
+  shadowed, text, tabIndex, className, children, preloader }) {
   return (
     <div className={classnames({
       'ds-thumbnail-option': true,
@@ -52,6 +69,7 @@ function ThumbnailOption ({ label, onOptionClick, onFocus, selected, thumbnail,
               thumbnailCover={thumbnailCover}
               thumbnail={thumbnail}
               label={label}
+              preloader={preloader}
             />
           </video>
         ) : (
@@ -60,6 +78,7 @@ function ThumbnailOption ({ label, onOptionClick, onFocus, selected, thumbnail,
               thumbnailCover={thumbnailCover}
               thumbnail={thumbnail}
               label={label}
+              preloader={preloader}
             />
             : children
         )}
