@@ -12,13 +12,17 @@ class Info extends React.PureComponent {
   }
 
   render () {
-    const { icon: Icon, text, children, delay } = this.props
+    const { icon: Icon, text, children, delay, innerClassNames } = this.props
     const { uniqueClassName } = this.state
-
+    const innerClassName = 'ds-tooltip'
+    if (innerClassNames) {
+      innerClassName += ' '.innerClassNames
+    }
     return (
       <B12Tooltip
         text={text}
         target={uniqueClassName}
+        innerClassName={innerClassNames}
         delay={delay}
       >
         {({ tooltip, target }) => (
