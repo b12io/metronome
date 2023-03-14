@@ -14,15 +14,15 @@ class Info extends React.PureComponent {
   render () {
     const { icon: Icon, text, children, delay, innerClassNames } = this.props
     const { uniqueClassName } = this.state
-    const innerClassName = 'ds-tooltip'
+    let innerClassName = 'ds-tooltip'
     if (innerClassNames) {
-      innerClassName += ' '.innerClassNames
+      innerClassName += ' ' + innerClassNames
     }
     return (
       <B12Tooltip
         text={text}
         target={uniqueClassName}
-        innerClassName={innerClassNames}
+        innerClassName={innerClassName}
         delay={delay}
       >
         {({ tooltip, target }) => (
