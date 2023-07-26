@@ -45,6 +45,11 @@ function Icon ({ color, className, path, viewBox, width, height, style }) {
   )
 }
 
+function AiAssist (props) {
+  const path = 'M13 6a.75.75 0 0 1-.75-.75 1.5 1.5 0 0 0-1.5-1.5.75.75 0 1 1 0-1.5 1.5 1.5 0 0 0 1.5-1.5.75.75 0 1 1 1.5 0 1.5 1.5 0 0 0 1.5 1.5.75.75 0 1 1 0 1.5 1.5 1.5 0 0 0-1.5 1.5A.75.75 0 0 1 13 6ZM6 16a1 1 0 0 1-1-1 4 4 0 0 0-4-4 1 1 0 0 1 0-2 4 4 0 0 0 4-4 1 1 0 0 1 2 0 4 4 0 0 0 4 4 1 1 0 1 1 0 2 4 4 0 0 0-4 4 1 1 0 0 1-1 1Z'
+  return <Icon path={path} {...props} />
+}
+
 function Check (props) {
   const path = 'M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zM7 11.4L3.6 8 5 6.6l2 2 4-4L12.4 6 7 11.4z'
   return <Icon path={path} {...props} />
@@ -2088,7 +2093,8 @@ const icons = [
   Tip,
   Webpage,
   LayoutAlternative,
-  GlobeAlternative
+  GlobeAlternative,
+  AiAssist
 ]
 
 each(icons, (icon) => {
@@ -2115,5 +2121,5 @@ export { Check, Checkmark, Lock, Notice, Disabled, Help, Search, Draggable,
   Flag, Testimonials, Chart, Pause, HubspotLogo, AlignLeftV2, AlignRightV2, AlignCenterV2, AlignJustifyV2, Sidebar, Palette, Lightbox, Filter, Slider,
   Flash, Dashboard, Guides, Article, Pulse, Edit, ContentApproved, Dragger, PaperClip, Invoicing, Banking, Checkbox, Circle, Bank, Card, Contract,
   MinusCircle, RepeatCircle, BadgeCard, HeadphonesMic, CheckmarkLarge, NoticeOutlined, Archive, Questionnaire, Upload, ShareFeedback, Spaceship, Zap, Tip,
-  Webpage, LayoutAlternative, GlobeAlternative
+  Webpage, LayoutAlternative, GlobeAlternative, AiAssist
 }
