@@ -9,13 +9,20 @@ class NavItem extends React.Component {
     showArrow: false,
     active: false,
     onClick: () => {},
-    onActionClick: () => {}
+    onActionClick: () => {},
+    onBadgeClick: () => {}
   }
 
   handleActionClick = (event) => {
     event.stopPropagation()
 
     this.props.onActionClick()
+  }
+
+  handleBadgeClick = (event) => {
+    event.stopPropagation()
+
+    this.props.onBadgeClick()
   }
 
   render() {
@@ -29,6 +36,7 @@ class NavItem extends React.Component {
       active,
       onClick,
       onActionClick,
+      onBadgeClick,
       actionIcon,
       badge
     } = this.props
@@ -44,7 +52,7 @@ class NavItem extends React.Component {
       <div className={classNames} onClick={onClick} ref={innerRef}>
         {icon && <div className="ds-nav__item-icon">{icon}</div>}
         <div className="ds-nav__item-label">{label}</div>
-        {badge && <div className="ds-nav__item-badge">{badge}</div>}
+        {badge && <div className="ds-nav__item-badge" onClick={onBadgeClick ? this.handleBadgeClick : null}>{badge}</div>}
         {actionIcon && onActionClick && (
           <div className="ds-nav__item-action" onClick={this.handleActionClick}>
             {actionIcon}
