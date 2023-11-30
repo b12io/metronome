@@ -4,11 +4,7 @@ import classnames from 'classnames'
 
 import BreadcrumbEntry from './BreadcrumbEntry.es6.js'
 
-
-
-
 const EXPAND_MENU_WIDTH = 60
-const SEPARATOR_WIDTH = 16
 
 function getEntryWidth (entry) {
   if (!entry || !entry.current) {
@@ -18,7 +14,7 @@ function getEntryWidth (entry) {
   return entry.current.getBoundingClientRect().width
 }
 
-function Breadcrumbs ({ entries, onClick, maxEntryWidth = 90 }) {
+function Breadcrumbs ({ entries, onClick }) {
   const lastIndex = entries.length - 1
   const containerRef = React.useRef(null)
   const entriesRefs = entries.map(entry => React.useRef(null))
@@ -87,10 +83,6 @@ function Breadcrumbs ({ entries, onClick, maxEntryWidth = 90 }) {
       }
 
       let entryWidth = getEntryWidth(entryRef)
-      if (entryWidth > maxEntryWidth) {
-        // We're applying max-width to the entry without icon
-        entryWidth = maxEntryWidth + SEPARATOR_WIDTH
-      }
       totalWidth += entryWidth
 
       if (containerWidth >= totalWidth) {
@@ -188,8 +180,6 @@ function Breadcrumbs ({ entries, onClick, maxEntryWidth = 90 }) {
             {visibleEntries.map((entry, index) => (
               <BreadcrumbEntry
                 clickable={(visibleEntries.length - 1) !== index}
-                width={maxEntryWidth}
-                showTooltip={(maxEntryWidth < entry.width)}
                 showSeparator={index !== 0}
                 key={`${entry.entry.label}-${index}`}
                 label={entry.entry.label}
