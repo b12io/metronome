@@ -1905,6 +1905,22 @@ function GlobeAlternative ({ className, width='16', height='16', color='#766bff'
   )
 }
 
+function Flows ({ className, width='16', height='16', color = '#766bff', viewBox='0 0 16 16' }) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} fill={color} className={className} viewBox={viewBox}>
+      <g fill={color} clipPath="url(#a)">
+        <path d="M2.666 16.5a2.667 2.667 0 1 0 0-5.333 2.667 2.667 0 0 0 0 5.333ZM13.332 5.833a2.667 2.667 0 1 0 0-5.333 2.667 2.667 0 0 0 0 5.333Z" />
+        <path d="M13.332 6.833a1 1 0 0 0-1 1v4a1.667 1.667 0 1 1-3.333 0V5.167a3.667 3.667 0 1 0-7.333 0v4a1 1 0 0 0 2 0v-4a1.667 1.667 0 0 1 3.333 0v6.666a3.667 3.667 0 0 0 7.333 0v-4a1 1 0 0 0-1-1Z" />
+      </g>
+      <defs>
+        <clipPath id="a">
+          <path fill="#fff" d="M-.001.5h16v16h-16z" />
+        </clipPath>
+      </defs>
+    </svg>
+  )
+}
+
 const icons = [
   Check,
   Checkmark,
@@ -2094,7 +2110,8 @@ const icons = [
   Webpage,
   LayoutAlternative,
   GlobeAlternative,
-  AiAssist
+  AiAssist,
+  Flows
 ]
 
 each(icons, (icon) => {
@@ -2121,5 +2138,5 @@ export { Check, Checkmark, Lock, Notice, Disabled, Help, Search, Draggable,
   Flag, Testimonials, Chart, Pause, HubspotLogo, AlignLeftV2, AlignRightV2, AlignCenterV2, AlignJustifyV2, Sidebar, Palette, Lightbox, Filter, Slider,
   Flash, Dashboard, Guides, Article, Pulse, Edit, ContentApproved, Dragger, PaperClip, Invoicing, Banking, Checkbox, Circle, Bank, Card, Contract,
   MinusCircle, RepeatCircle, BadgeCard, HeadphonesMic, CheckmarkLarge, NoticeOutlined, Archive, Questionnaire, Upload, ShareFeedback, Spaceship, Zap, Tip,
-  Webpage, LayoutAlternative, GlobeAlternative, AiAssist
+  Webpage, LayoutAlternative, GlobeAlternative, AiAssist, Flows
 }
