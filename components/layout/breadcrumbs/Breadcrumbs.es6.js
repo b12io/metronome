@@ -18,7 +18,7 @@ function getEntryWidth (entry) {
   return entry.current.getBoundingClientRect().width
 }
 
-function Breadcrumbs ({ entries, onClick, maxEntryWidth = 90 }) {
+function Breadcrumbs ({ entries, onClick, maxEntryWidth }) {
   const lastIndex = entries.length - 1
   const containerRef = React.useRef(null)
   const entriesRefs = entries.map(entry => React.useRef(null))
