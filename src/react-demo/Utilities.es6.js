@@ -36,6 +36,7 @@ function UtilitiesPage () {
           </ul>
           <p>Where <i>size</i> is one of:</p>
           <Highlighter language='scss'>{`$spacing: (
+  'null': 0,
   'xxxxsm': 5px,
   'xxxsm':  10px,
   'xxsm':   15px,
