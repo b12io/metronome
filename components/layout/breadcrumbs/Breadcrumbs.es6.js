@@ -109,7 +109,7 @@ function Breadcrumbs ({ entries, onClick, maxEntryWidth }) {
     // 3. Add entries we should hide to the hidden list
 
     const indexedEntries = entries.map((entry, index) => ({ index, entry, width: getEntryWidth(entriesRefs[index]) }))
-    console.log('visibleEntriesCount', visibleEntriesCount)
+    // In case if we have a really long last breadcrumb item
     if (!maxEntryWidth && visibleEntriesCount === 0 && indexedEntries.length > 1) {
       visibleEntriesCount = 1
       setShouldHandleOverflow(true)
