@@ -4,7 +4,7 @@ import classnames from 'classnames'
 
 import BreadcrumbEntry from './BreadcrumbEntry.es6.js'
 
-
+import './Breadcrumbs.scss'
 
 
 const EXPAND_MENU_WIDTH = 60
@@ -28,6 +28,7 @@ function Breadcrumbs ({ entries, onClick, maxEntryWidth }) {
   const [hiddenEntries, setHiddenEntries] = React.useState([])
   const [isCollapseCalculated, setIsCollapseCalculated] = React.useState(false)
   const [isMenuOpened, setIsMenuOpened] = React.useState(false)
+  const [shouldHandleOverflow, setShouldHandleOverflow] = React.useState(false)
 
   function onClickEntryWithIndex (index) {
     return function () {
@@ -108,9 +109,13 @@ function Breadcrumbs ({ entries, onClick, maxEntryWidth }) {
     // 3. Add entries we should hide to the hidden list
 
     const indexedEntries = entries.map((entry, index) => ({ index, entry, width: getEntryWidth(entriesRefs[index]) }))
+    console.log('visibleEntriesCount', visibleEntriesCount)
+    if (!maxEntryWidth && visibleEntriesCount === 0 && indexedEntries.length > 1) {
+      visibleEntriesCount = 1
+      setShouldHandleOverflow(true)
+    }
     const visible = indexedEntries.slice(indexedEntries.length - visibleEntriesCount)
     const hidden = indexedEntries.slice(1, indexedEntries.length - visibleEntriesCount)
-
     setIsCollapseCalculated(true)
     setVisibleEntries(visible)
     setHiddenEntries(hidden)
@@ -118,7 +123,7 @@ function Breadcrumbs ({ entries, onClick, maxEntryWidth }) {
 
   return (
     <div
-      className="ds-tabbed-nav-wrapper ds-tabbed-nav-wrapper__breadcrumbs"
+      className={classnames('ds-tabbed-nav-wrapper ds-tabbed-nav-wrapper__breadcrumbs', { 'handle-overflow': shouldHandleOverflow })}
       ref={containerRef}
     >
       <div className="ds-tabbed-nav">

@@ -1,0 +1,12 @@
+.ds-tabbed-nav-wrapper__breadcrumbs {
+  &.handle-overflow {
+    .ds-tabbed-nav {
+      max-width: 100%;
+    }
+    .ds-tabbed-nav__breadcrumbs-container {
+      .ds-tabbed-nav__breadcrumbs-entry:last-child {
+        overflow-x: hidden;
+      }
+    }
+  }
+}
