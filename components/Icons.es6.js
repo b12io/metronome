@@ -1921,6 +1921,16 @@ function Flows ({ className, width='16', height='16', color = '#766bff', viewBox
   )
 }
 
+function Highlight ({ className, width='16', height='16', color = '#766bff', viewBox='0 0 16 16' }) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} fill="none" viewBox={viewBox}>
+      <path fill={color} d="m28.898 58.611-26.24.06A2.669 2.669 0 0 0 0 61.344 2.663 2.663 0 0 0 2.658 64l26.24-.06a2.669 2.669 0 0 0 2.657-2.674 2.663 2.663 0 0 0-2.657-2.655Z"/>
+      <path fill={color} d="M28.996 49.978a2.667 2.667 0 0 0-3.582 1.2l-4.469 8.888a2.663 2.663 0 0 0 2.382 3.855l5.571.02a2.668 2.668 0 0 0 2.382-1.475l3.346-6.667a2.662 2.662 0 0 0-1.18-3.579 2.669 2.669 0 0 0-3.21 1.062 2.662 2.662 0 0 0-1.24-3.304ZM47.296.001c-2.739.06-5.371 1.59-6.672 4.184L28.744 27.85a2.432 2.432 0 0 0 1.084 3.265l18.222 9.13a2.438 2.438 0 0 0 3.27-1.085L63.201 15.49c1.868-3.723.342-8.341-3.385-10.208l-8.98-4.48A7.525 7.525 0 0 0 47.297 0Z"/>
+      <path fill={color} d="M25.906 34.363c-.89 2.923-1.089 5.437-1.188 7.577-.146 3.133-.128 5.314-1.537 8.122a2.663 2.663 0 0 0 1.182 3.56l8.917 4.463a2.668 2.668 0 0 0 3.584-1.175c1.408-2.808 3.142-4.107 5.567-6.099 1.657-1.36 3.553-3.025 5.363-5.487.657-.893.32-2.067-.676-2.566L28.37 33.363c-.996-.5-2.14-.065-2.464 1Z"/>
+    </svg>
+  )
+}
+
 const icons = [
   Check,
   Checkmark,
@@ -2111,7 +2121,8 @@ const icons = [
   LayoutAlternative,
   GlobeAlternative,
   AiAssist,
-  Flows
+  Flows,
+  Highlight
 ]
 
 each(icons, (icon) => {
@@ -2138,5 +2149,5 @@ export { Check, Checkmark, Lock, Notice, Disabled, Help, Search, Draggable,
   Flag, Testimonials, Chart, Pause, HubspotLogo, AlignLeftV2, AlignRightV2, AlignCenterV2, AlignJustifyV2, Sidebar, Palette, Lightbox, Filter, Slider,
   Flash, Dashboard, Guides, Article, Pulse, Edit, ContentApproved, Dragger, PaperClip, Invoicing, Banking, Checkbox, Circle, Bank, Card, Contract,
   MinusCircle, RepeatCircle, BadgeCard, HeadphonesMic, CheckmarkLarge, NoticeOutlined, Archive, Questionnaire, Upload, ShareFeedback, Spaceship, Zap, Tip,
-  Webpage, LayoutAlternative, GlobeAlternative, AiAssist, Flows
+  Webpage, LayoutAlternative, GlobeAlternative, AiAssist, Flows, Highlight
 }
