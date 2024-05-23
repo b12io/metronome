@@ -18,7 +18,7 @@ function QuickActions ({ actions, onSelect, label }) {
     <ul className="ds-dropdown__menu">
       <DropdownMenuLabel label={label} />
       {actions.map(({ icon, text, divider, actionLabel, action, hidden, disabled, onActionSelect }, index) => (
-        <Fragment key={text}>
+        <Fragment key={`${text}-${index}`}>
           {actionLabel && <DropdownMenuLabel label={actionLabel} />}
           <li
             className={classnames({

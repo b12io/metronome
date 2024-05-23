@@ -20,8 +20,8 @@ class DimensionSelect extends React.Component {
             onChange={onChange}
             search={false}
           >
-            {choices.map(choice => (
-              <Option label={choice} value={choice} key={choice} />
+            {choices.map((choice, index) => (
+              <Option label={choice} value={choice} key={`${choice}-${index}`} />
             ))}
           </Select>
         </div>

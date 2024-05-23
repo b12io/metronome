@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 
 
 const ComponentListSection = ({
-  href, 
+  href,
   visibleName,
   content,
   selected
@@ -31,8 +31,8 @@ const ComponentList = ({
 }) => {
   return (
     <Fragment>
-      {items.map(item => (
-        <ComponentListSection key={item.slug} {...item} />
+      {items.map((item, index) => (
+        <ComponentListSection key={`${item.slug}-${index}`} {...item} />
       ))}
     </Fragment>
   )

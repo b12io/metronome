@@ -37,13 +37,13 @@ class DragList extends React.Component {
       const content = typeof child === 'string' ? <ListItemContent>{child}</ListItemContent> : child
       return (
         <Draggable
-          key={draggableId}
+          key={`draggable-element-${draggableId}`}
           isDragDisabled={isDragAndDropDisabled}
           draggableId={draggableId}
         >
           {(provided, snapshot) => [
             <ListItem
-              key={draggableId}
+              key={`draggable-list-item-${draggableId}`}
               {...otherChildProps}
               listItemRef={provided.innerRef}
               dragStyles={provided.draggableStyle}
@@ -52,7 +52,7 @@ class DragList extends React.Component {
               {!isDragAndDropDisabled && <ListItemIcon draggableIcon {...provided.dragHandleProps} />}
               {content}
             </ListItem>,
-            <div key={`key-${draggableId}`}>{provided.placeholder}</div>
+            <div key={`draggable-element-placeholder-${draggableId}`}>{provided.placeholder}</div>
           ]}
         </Draggable>
       )

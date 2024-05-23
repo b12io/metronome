@@ -13,7 +13,7 @@ function NavIndicator ({ currentStep, totalSteps }) {
         (isActive, index) => (
           <span
             className={classnames({ 'nav-indicator__active': isActive })}
-            key={index}
+            key={`nav-indicator-${index}`}
           ></span>
         )
       )}

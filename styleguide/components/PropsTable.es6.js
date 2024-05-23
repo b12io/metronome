@@ -12,8 +12,8 @@ const PropsTable = ({ columns, rows, getRowKey }) => {
     <Table>
       <TableHead>
         <TableRow>
-          {columns.map(({ caption }) => (
-            <TableCell key={caption} align="left">
+          {columns.map(({ caption }, index) => (
+            <TableCell key={`${caption}-${index}`} align="left">
               {caption}
             </TableCell>
           ))}
@@ -23,9 +23,9 @@ const PropsTable = ({ columns, rows, getRowKey }) => {
         {rows.map(row => (
           <TableRow key={getRowKey(row)}>
             {columns.map(({ render }, index) => (
-              <TableCell key={index}>{render(row)}</TableCell>
+              <TableCell key={`table-cell-${index}`}>{render(row)}</TableCell>
             ))}
-          </TableRow> 
+          </TableRow>
         ))}
       </TableBody>
     </Table>

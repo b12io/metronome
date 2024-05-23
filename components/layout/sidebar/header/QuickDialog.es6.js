@@ -17,7 +17,7 @@ function QuickDialog ({ title, body, buttons, onButtonClicked }) {
         onClick={() => {
           onButtonClicked(index)
         }}
-        key={button.label}
+        key={`${button.label}-${index}`}
       >{button.label}</button>)}
     </div>}
   </div>)

@@ -44,7 +44,7 @@ class FilterOption extends React.Component {
         <div className="ds-filter-option__items">
           {filters.map((filter, idx) => (
             <FilterOptionItem
-              key={idx}
+              key={`filter-option-item-${idx}`}
               filter={filter}
               filterableFields={filterableFields}
               handleRemoveFilter={() => handleRemoveFilter(idx)}

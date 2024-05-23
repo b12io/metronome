@@ -62,9 +62,9 @@ class MiniSelect extends React.Component {
       <div className={classNames} ref={(node) => { this.selectNode = node }}>
         <div className="ds-mini-select__dropdown-toggle" onClick={this.onToggle}>{selectValue}</div>
         {isOpened && <ul className="ds-mini-select__dropdown-menu">
-          {selectOptions.map(option => (<li
+          {selectOptions.map((option, index) => (<li
             onClick={e => this.handleSelect(option)}
-            key={option}>{option}</li>))}
+            key={`${option}-${index}`}>{option}</li>))}
         </ul>}
       </div>
     )
