@@ -27,9 +27,9 @@ class FilterOptionSelect extends React.Component {
         <div className="ds-filter-option__select-header">
           Filter by...
         </div>
-        {filterableFields.map(field => (
+        {filterableFields.map((field, index) => (
           <div
-            key={field}
+            key={`${field}-${index}`}
             className="ds-filter-option__select-item"
             onClick={() => onFilterSelect(field)}
           >
