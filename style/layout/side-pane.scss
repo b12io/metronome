@@ -48,7 +48,7 @@
         font-family: $ds-font-family-base;
       }
 
-      h2 + h4 {
+      h2+h4 {
         font-weight: normal;
         color: $ds-display-light-color;
         margin-bottom: spacing(xsm);
@@ -78,6 +78,17 @@
 
     @include breakpoint-tablet-portrait-up {
       box-shadow: none;
+    }
+
+    &--b12-home-icon {
+      .ds-sidebar__header-divider {
+        margin: 0 8px;
+      }
+
+      .ds-sidebar__header-home {
+        margin-left: 0;
+        padding: 0 !important;
+      }
     }
 
     &-title {
@@ -124,6 +135,10 @@
         svg path {
           fill: $ds-brand-light-color;
         }
+
+        #b12-logo path {
+          fill: #5048c7;
+        }
       }
     }
 
@@ -157,7 +172,7 @@
       }
 
       &-text {
-        color: $ds-display-light-color;
+        color: #585769;
         font-size: $header-small-font-size;
         font-weight: normal;
         padding-left: spacing('xxxxsm');
