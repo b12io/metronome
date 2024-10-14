@@ -80,17 +80,6 @@
       box-shadow: none;
     }
 
-    &--b12-home-icon {
-      .ds-sidebar__header-divider {
-        margin: 0 8px;
-      }
-
-      .ds-sidebar__header-home {
-        margin-left: 0;
-        padding: 0 !important;
-      }
-    }
-
     &-title {
       font-family: $ds-font-family-base;
       font-size: 20px;
@@ -118,14 +107,15 @@
       width: 1px;
       height: 16px;
       background: #eee;
-      margin: 0 spacing(xxsm);
+      margin: 0 8px;
     }
 
     &-home {
       border: 0 none !important;
       box-shadow: none !important;
       background: $ds-ui-lightest-color;
-      margin-left: -11px;
+      margin-left: 0;
+      padding: 0 !important;
 
       &:hover,
       &:focus,

@@ -6,7 +6,7 @@ import QuickActions from './QuickActions.es6.js'
 import SidebarBackButton from './SidebarBackButton.es6.js'
 import SidebarHeaderActionButton from './SidebarHeaderActionButton.es6.js'
 import Button from '../../../form/button/Button.es6.js'
-import { Home, B12Logo } from '../../../Icons.es6.js'
+import { B12Logo } from '../../../Icons.es6.js'
 
 class SidebarHeader extends React.Component {
   state = {
@@ -74,15 +74,13 @@ class SidebarHeader extends React.Component {
       quickDialog,
       showLogo,
       steps,
-      title,
-      b12Button,
-      onB12Click
+      title
     } = this.props
     const { actionsAvailable, actionsVisible } = this.state
 
     return (
       <Fragment>
-        <div className={classnames('ds-sidebar__header', { 'ds-sidebar__header--b12-home-icon': b12Button })}>
+        <div className="ds-sidebar__header">
           <div className="ds-sidebar__header-back">
             {showLogo && <B12Logo color="#6548c7" width={46} height={20} viewBox="0 0 200 80" className="ds-sidebar__header-logo" />}
 
@@ -103,22 +101,8 @@ class SidebarHeader extends React.Component {
                   <Button
                     small
                     className="ds-sidebar__header-home"
-                    icon={<Home />}
-                    onClick={onHomeClick}
-                  />
-                )}
-              </React.Fragment>
-            )}
-
-            {b12Button && (
-              <React.Fragment>
-                <div className="ds-sidebar__header-divider" />
-                {!isScrollingDown && (
-                  <Button
-                    small
-                    className="ds-sidebar__header-home"
                     icon={<B12Logo width={30} height={20} color="#84839c" viewBox="0 0 200 80" />}
-                    onClick={onB12Click}
+                    onClick={onHomeClick}
                   />
                 )}
               </React.Fragment>
@@ -193,9 +177,7 @@ SidebarHeader.defaultProps = {
   quickActions: [],
   showLogo: false,
   quickDialog: null,
-  tabbedNavigation: null,
-  b12Button: false,
-  onB12Click: () => {}
+  tabbedNavigation: null
 }
 
 SidebarHeader.propTypes = {
@@ -220,9 +202,7 @@ SidebarHeader.propTypes = {
   onQuickActionSelected: PropTypes.func,
   showLogo: PropTypes.bool,
   quickDialog: PropTypes.element,
-  tabbedNavigation: PropTypes.element,
-  b12Button: PropTypes.bool,
-  onB12Click: PropTypes.func
+  tabbedNavigation: PropTypes.element
 }
 
 export default SidebarHeader
