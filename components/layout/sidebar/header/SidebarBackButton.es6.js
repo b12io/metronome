@@ -25,7 +25,6 @@ class SidebarBackButton extends React.Component {
       <div
         className="ds-sidebar__header-back-button-container"
         onClick={this.handleClick}
-        onTouchStart={this.handleClick}
         ref={this.backButtonRef}
         tabIndex="-1"
       >
