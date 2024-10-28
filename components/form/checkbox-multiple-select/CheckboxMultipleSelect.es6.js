@@ -99,8 +99,8 @@ class CheckboxMultipleSelect extends React.Component {
           }
         </div>
         {this.state.isOpened && (<div className="ds-checkbox-select__dropdown">
-          {options.map(option => (
-            <div className="ds-checkbox-select__item" key={option}>
+          {options.map((option, index) => (
+            <div className="ds-checkbox-select__item" key={`${option}-${index}`}>
               <Checkbox
                 checked={selected[option]}
                 disabled={disabled[option]}

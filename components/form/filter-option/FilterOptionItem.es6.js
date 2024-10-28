@@ -59,9 +59,9 @@ class FilterOptionItem extends React.Component {
                 onChange={fieldName => { handleUpdateFilter({ field_name: fieldName }) }}
                 placeholder={deslugifiedFieldName}
               >
-                {filterableFields.map(field => (
+                {filterableFields.map((field, index) => (
                   <Option
-                    key={field}
+                    key={`${field}-${index}`}
                     label={deslugify(field)}
                     value={field}
                   />
@@ -76,7 +76,7 @@ class FilterOptionItem extends React.Component {
               >
                 {validOperators.map((operator, idx) => (
                   <Option
-                    key={idx}
+                    key={`valid-operator-${idx}`}
                     label={`${operator.display}...`}
                     value={operator.symbol}
                   />

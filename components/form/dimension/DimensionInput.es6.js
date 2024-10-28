@@ -60,8 +60,8 @@ class DimensionInput extends React.Component {
               onChange={this.onUnitChange}
               search={false}
             >
-              {units.map(unit => (
-                <Option label={unit} value={unit} key={unit} />
+              {units.map((unit, index) => (
+                <Option label={unit} value={unit} key={`${unit}-${index}`} />
               ))}
             </Select>
           </div>
