@@ -1931,6 +1931,16 @@ function Highlight ({ className, width='16', height='16', color = '#766bff', vie
   )
 }
 
+function ArrowCircleUp ({ className, width='16', height='16', color = '#766bff', viewBox='0 0 16 16' }) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} fill="none" viewBox={viewBox} className={className}>
+      <path fill={color} fillRule="evenodd" d="M9 4.818v7H7v-7h2Z" clipRule="evenodd"/>
+      <path fill={color} fillRule="evenodd" d="m8 3.404 3.96 3.96-1.415 1.414L8 6.232 5.455 8.778 4.04 7.364 8 3.404Z" clipRule="evenodd"/>
+      <path fill={color} fillRule="evenodd" d="M8 2a6 6 0 1 0 0 12A6 6 0 0 0 8 2ZM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Z" clipRule="evenodd"/>
+    </svg>
+  )
+}
+
 const icons = [
   Check,
   Checkmark,
@@ -2122,7 +2132,8 @@ const icons = [
   GlobeAlternative,
   AiAssist,
   Flows,
-  Highlight
+  Highlight,
+  ArrowCircleUp
 ]
 
 each(icons, (icon) => {
@@ -2149,5 +2160,5 @@ export { Check, Checkmark, Lock, Notice, Disabled, Help, Search, Draggable,
   Flag, Testimonials, Chart, Pause, HubspotLogo, AlignLeftV2, AlignRightV2, AlignCenterV2, AlignJustifyV2, Sidebar, Palette, Lightbox, Filter, Slider,
   Flash, Dashboard, Guides, Article, Pulse, Edit, ContentApproved, Dragger, PaperClip, Invoicing, Banking, Checkbox, Circle, Bank, Card, Contract,
   MinusCircle, RepeatCircle, BadgeCard, HeadphonesMic, CheckmarkLarge, NoticeOutlined, Archive, Questionnaire, Upload, ShareFeedback, Spaceship, Zap, Tip,
-  Webpage, LayoutAlternative, GlobeAlternative, AiAssist, Flows, Highlight
+  Webpage, LayoutAlternative, GlobeAlternative, AiAssist, Flows, Highlight, ArrowCircleUp
 }
