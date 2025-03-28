@@ -1988,7 +1988,7 @@ function Microphone ({ className, width='16', height='16', color = '#766bff', vi
   )
 }
 
-function More ({ className, width='16', height='16', color = '#766bff', viewBox='0 0 16 16' }) {
+function ThreeDots ({ className, width='16', height='16', color = '#766bff', viewBox='0 0 16 16' }) {
   return (
     <svg width={width} height={height} viewBox={viewBox} fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
       <circle cx="3" cy="8" r="1.5" fill={color} />
@@ -2002,14 +2002,6 @@ function PencilFilled ({ className, width='16', height='16', color = '#766bff', 
   return (
     <svg width={width} height={height} viewBox={viewBox} fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
       <path d="M11.4944 0.171376C11.4402 0.117052 11.3758 0.0739523 11.3049 0.0445448C11.2341 0.0151373 11.1581 0 11.0814 0C11.0046 0 10.9287 0.0151373 10.8578 0.0445448C10.7869 0.0739523 10.7225 0.117052 10.6684 0.171376L1.33503 9.50471C1.27062 9.57036 1.22265 9.65032 1.19503 9.73804L0.0283591 13.238C7.2835e-05 13.3254 -0.00718461 13.4182 0.00717742 13.5089C0.0215394 13.5996 0.0571151 13.6857 0.111009 13.76C0.164903 13.8344 0.235593 13.895 0.317325 13.9369C0.399057 13.9787 0.489523 14.0007 0.581359 14.001C0.644069 14.0013 0.70638 13.9911 0.765693 13.9707L4.26569 12.804C4.35342 12.7764 4.43337 12.7285 4.49903 12.664L13.8324 3.33071C13.8867 3.27652 13.9298 3.21215 13.9592 3.14128C13.9886 3.07041 14.0037 2.99444 14.0037 2.91771C14.0037 2.84098 13.9886 2.76501 13.9592 2.69414C13.9298 2.62327 13.8867 2.5589 13.8324 2.50471L11.4944 0.171376Z" fill={color}/>
-    </svg>
-  )
-}
-
-function Nav ({ className, width='16', height='16', color = '#766bff', viewBox='0 0 16 16' }) {
-  return (
-    <svg width={width} height={height} viewBox={viewBox} fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-      <path fillRule="evenodd" clipRule="evenodd" d="M11.2 4.375H13.125C13.65 4.375 14 4.725 14 5.25V13.125C14 13.65 13.65 14 13.125 14H5.25C4.725 14 4.375 13.65 4.375 13.125V11.2C1.8375 10.5875 0 8.4 0 5.6875C0 2.5375 2.5375 0 5.6875 0C8.3125 0 10.5875 1.8375 11.2 4.375ZM5.6875 1.75C3.5 1.75 1.75 3.5 1.75 5.6875C1.75 7.4375 2.8875 8.8375 4.375 9.3625V5.25C4.375 4.725 4.725 4.375 5.25 4.375H9.3625C8.8375 2.8875 7.4375 1.75 5.6875 1.75ZM9.5375 6.125C9.3625 7.9625 7.875 9.3625 6.125 9.5375V6.125H9.5375ZM6.125 12.25H12.25V6.125H11.375C11.1125 8.925 8.925 11.2 6.125 11.375V12.25Z" fill={color}/>
     </svg>
   )
 }
@@ -2212,9 +2204,8 @@ const icons = [
   AiImage,
   AiLogo,
   Microphone,
-  More,
-  PencilFilled,
-  Nav
+  ThreeDots,
+  PencilFilled
 ]
 
 each(icons, (icon) => {
@@ -2242,5 +2233,5 @@ export { Check, Checkmark, Lock, Notice, Disabled, Help, Search, Draggable,
   Flash, Dashboard, Guides, Article, Pulse, Edit, ContentApproved, Dragger, PaperClip, Invoicing, Banking, Checkbox, Circle, Bank, Card, Contract,
   MinusCircle, RepeatCircle, BadgeCard, HeadphonesMic, CheckmarkLarge, NoticeOutlined, Archive, Questionnaire, Upload, ShareFeedback, Spaceship, Zap, Tip,
   Webpage, LayoutAlternative, GlobeAlternative, AiAssist, Flows, Highlight, ArrowCircleUp, ArrowUp, EditColor, AiImage,
-  AiLogo, Microphone, More, PencilFilled, Nav
+  AiLogo, Microphone, ThreeDots, PencilFilled
 }
