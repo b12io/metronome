@@ -1941,6 +1941,71 @@ function ArrowCircleUp ({ className, width='16', height='16', color = '#766bff',
   )
 }
 
+function ArrowUp ({ className, width='16', height='16', color = '#766bff', viewBox='0 0 16 16' }) {
+  return (
+    <svg width={width} height={height} viewBox={viewBox} fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+      <path d="M6.0001 12.8811V1.42867M6.0001 1.42867V1.7382M6.0001 1.42867L10.3334 5.76203M6.0001 1.42867L1.66677 5.76203" stroke={color} strokeWidth="2" strokeMiterlimit="10" strokeLinecap={color} />
+    </svg>
+  )
+}
+
+function EditColor ({ className, width='16', height='16', color = '#766bff', viewBox='0 0 16 16' }) {
+  return (
+    <svg width={width} height={height} viewBox={viewBox} fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+      <path d="M11.9501 2.04984C10.971 1.07099 9.72376 0.40442 8.36593 0.134419C7.00809 -0.135581 5.60069 0.00311166 4.32167 0.53296C3.04266 1.06281 1.94948 1.96002 1.18036 3.11113C0.411245 4.26225 0.000732422 5.61558 0.000732422 7C0.000732422 8.38442 0.411245 9.73775 1.18036 10.8889C1.94948 12.04 3.04266 12.9372 4.32167 13.467C5.60069 13.9969 7.00809 14.1356 8.36593 13.8656C9.72376 13.5956 10.971 12.929 11.9501 11.9502C12.6002 11.3001 13.1159 10.5284 13.4678 9.67906C13.8196 8.8297 14.0007 7.91936 14.0007 7C14.0007 6.08065 13.8196 5.1703 13.4678 4.32095C13.1159 3.47159 12.6002 2.69986 11.9501 2.04984ZM3.70056 3.70067C4.57569 2.8258 5.76246 2.33433 6.99989 2.33433C8.23733 2.33433 9.4241 2.8258 10.2992 3.70067L3.70056 10.2993C2.8257 9.42421 2.33422 8.23744 2.33422 7C2.33422 5.76257 2.8257 4.5758 3.70056 3.70067Z" fill={color}/>
+    </svg>
+  )
+}
+
+function AiImage ({ className, width='16', height='16', color = '#766bff', viewBox='0 0 16 16' }) {
+  return (
+    <svg width={width} height={height} viewBox={viewBox} fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+      <path d="M10.0624 9.42705H4.4478C4.24159 9.42705 4.05529 9.30302 3.97617 9.11212C3.89706 8.92123 3.94095 8.70175 4.08693 8.55577L7.65983 4.98287C7.77212 4.87007 7.92882 4.81597 8.08858 4.83792C8.2463 4.85884 8.38513 4.95276 8.46373 5.09057L10.5054 8.66347C10.5957 8.8217 10.5952 9.01515 10.5039 9.17286C10.4125 9.33058 10.2446 9.42705 10.0624 9.42705Z" fill={color} />
+      <path d="M4.4479 5.85414C5.01169 5.85414 5.46873 5.3971 5.46873 4.83331C5.46873 4.26952 5.01169 3.81248 4.4479 3.81248C3.88411 3.81248 3.42707 4.26952 3.42707 4.83331C3.42707 5.3971 3.88411 5.85414 4.4479 5.85414Z" fill={color}/>
+      <path d="M11.5937 11.4687H2.40624C1.56202 11.4687 0.875 10.7817 0.875 9.93745V2.79166C0.875 1.94743 1.56202 1.26041 2.40624 1.26041H7.51038C7.79213 1.26041 8.0208 1.48857 8.0208 1.77083C8.0208 2.05309 7.79213 2.28124 7.51038 2.28124H2.40624C2.125 2.28124 1.89583 2.50991 1.89583 2.79166V9.93745C1.89583 10.2192 2.125 10.4479 2.40624 10.4479H11.5937C11.8749 10.4479 12.1041 10.2192 12.1041 9.93745V5.85414C12.1041 5.57188 12.3328 5.34373 12.6145 5.34373C12.8963 5.34373 13.1249 5.57188 13.1249 5.85414V9.93745C13.1249 10.7817 12.4379 11.4687 11.5937 11.4687Z" fill={color} />
+      <path d="M12.6145 2.28124C12.0505 2.28124 11.5937 1.82442 11.5937 1.26041C11.5937 0.978666 11.365 0.75 11.0833 0.75C10.8015 0.75 10.5729 0.978666 10.5729 1.26041C10.5729 1.82442 10.116 2.28124 9.55204 2.28124C9.27029 2.28124 9.04163 2.50991 9.04163 2.79166C9.04163 3.07341 9.27029 3.30207 9.55204 3.30207C10.116 3.30207 10.5729 3.75889 10.5729 4.3229C10.5729 4.60465 10.8015 4.83331 11.0833 4.83331C11.365 4.83331 11.5937 4.60465 11.5937 4.3229C11.5937 3.75889 12.0505 3.30207 12.6145 3.30207C12.8963 3.30207 13.1249 3.07341 13.1249 2.79166C13.1249 2.50991 12.8963 2.28124 12.6145 2.28124Z" fill={color}/>
+    </svg>
+  )
+}
+
+function AiLogo ({ className, width='16', height='16', color = '#766bff', viewBox='0 0 16 16' }) {
+  return (
+    <svg width={width} height={height} viewBox={viewBox} fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+      <path d="M4.95837 10.8496C7.16751 10.8496 8.95837 9.05875 8.95837 6.84961C8.95837 4.64047 7.16751 2.84961 4.95837 2.84961C2.74924 2.84961 0.958374 4.64047 0.958374 6.84961C0.958374 9.05875 2.74924 10.8496 4.95837 10.8496Z" fill={color}/>
+      <path d="M4.95837 11.7452C4.22504 11.7452 3.55837 11.4898 2.95837 11.1494V15.1494L4.95837 13.4473L6.95837 15.1494V11.1494C6.35837 11.4898 5.69171 11.7452 4.95837 11.7452Z" fill={color} />
+      <path d="M11.5313 2.38085C10.9673 2.38085 10.5104 1.92403 10.5104 1.36002C10.5104 1.07827 10.2818 0.849609 10 0.849609C9.71828 0.849609 9.48962 1.07827 9.48962 1.36002C9.48962 1.92403 9.0328 2.38085 8.46879 2.38085C8.18704 2.38085 7.95837 2.60952 7.95837 2.89127C7.95837 3.17301 8.18704 3.40168 8.46879 3.40168C9.0328 3.40168 9.48962 3.8585 9.48962 4.42251C9.48962 4.70426 9.71828 4.93292 10 4.93292C10.2818 4.93292 10.5104 4.70426 10.5104 4.42251C10.5104 3.8585 10.9673 3.40168 11.5313 3.40168C11.813 3.40168 12.0417 3.17301 12.0417 2.89127C12.0417 2.60952 11.813 2.38085 11.5313 2.38085Z" fill={color}/>
+    </svg>
+  )
+}
+
+function Microphone ({ className, width='16', height='16', color = '#766bff', viewBox='0 0 16 16' }) {
+  return (
+    <svg width={width} height={height} viewBox={viewBox} fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+      <path fillRule="evenodd" clipRule="evenodd" d="M8.16667 2.91667V5.83333C8.16667 7.44415 6.86082 8.75 5.25 8.75C3.63917 8.75 2.33333 7.44415 2.33333 5.83333V2.91667C2.33333 1.30584 3.63917 0 5.25 0C6.86082 0 8.16667 1.30584 8.16667 2.91667Z" fill={color}/>
+      <path fillRule="evenodd" clipRule="evenodd" d="M9.91667 5.25C10.2388 5.25 10.5 5.51117 10.5 5.83333C10.5 8.73285 8.14952 11.0833 5.25 11.0833C2.35051 11.0833 0 8.73285 0 5.83333C0 5.51117 0.261167 5.25 0.583333 5.25C0.905499 5.25 1.16667 5.51117 1.16667 5.83333C1.16667 8.0885 2.99484 9.91667 5.25 9.91667C7.50517 9.91667 9.33333 8.0885 9.33333 5.83333C9.33333 5.51117 9.5945 5.25 9.91667 5.25Z" fill={color}/>
+      <path fillRule="evenodd" clipRule="evenodd" d="M5.25 9.91667C5.57217 9.91667 5.83333 10.1778 5.83333 10.5V12.25C5.83333 12.5722 5.57217 12.8333 5.25 12.8333C4.92783 12.8333 4.66667 12.5722 4.66667 12.25V10.5C4.66667 10.1778 4.92783 9.91667 5.25 9.91667Z" fill={color}/>
+    </svg>
+  )
+}
+
+function ThreeDots ({ className, width='16', height='16', color = '#766bff', viewBox='0 0 16 16' }) {
+  return (
+    <svg width={width} height={height} viewBox={viewBox} fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+      <circle cx="3" cy="8" r="1.5" fill={color} />
+      <circle cx="8" cy="8" r="1.5" fill={color} />
+      <circle cx="13" cy="8" r="1.5" fill={color} />
+    </svg>
+  )
+}
+
+function PencilFilled ({ className, width='16', height='16', color = '#766bff', viewBox='0 0 16 16' }) {
+  return (
+    <svg width={width} height={height} viewBox={viewBox} fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+      <path d="M11.4944 0.171376C11.4402 0.117052 11.3758 0.0739523 11.3049 0.0445448C11.2341 0.0151373 11.1581 0 11.0814 0C11.0046 0 10.9287 0.0151373 10.8578 0.0445448C10.7869 0.0739523 10.7225 0.117052 10.6684 0.171376L1.33503 9.50471C1.27062 9.57036 1.22265 9.65032 1.19503 9.73804L0.0283591 13.238C7.2835e-05 13.3254 -0.00718461 13.4182 0.00717742 13.5089C0.0215394 13.5996 0.0571151 13.6857 0.111009 13.76C0.164903 13.8344 0.235593 13.895 0.317325 13.9369C0.399057 13.9787 0.489523 14.0007 0.581359 14.001C0.644069 14.0013 0.70638 13.9911 0.765693 13.9707L4.26569 12.804C4.35342 12.7764 4.43337 12.7285 4.49903 12.664L13.8324 3.33071C13.8867 3.27652 13.9298 3.21215 13.9592 3.14128C13.9886 3.07041 14.0037 2.99444 14.0037 2.91771C14.0037 2.84098 13.9886 2.76501 13.9592 2.69414C13.9298 2.62327 13.8867 2.5589 13.8324 2.50471L11.4944 0.171376Z" fill={color}/>
+    </svg>
+  )
+}
+
 const icons = [
   Check,
   Checkmark,
@@ -2133,7 +2198,14 @@ const icons = [
   AiAssist,
   Flows,
   Highlight,
-  ArrowCircleUp
+  ArrowCircleUp,
+  ArrowUp,
+  EditColor,
+  AiImage,
+  AiLogo,
+  Microphone,
+  ThreeDots,
+  PencilFilled
 ]
 
 each(icons, (icon) => {
@@ -2160,5 +2232,6 @@ export { Check, Checkmark, Lock, Notice, Disabled, Help, Search, Draggable,
   Flag, Testimonials, Chart, Pause, HubspotLogo, AlignLeftV2, AlignRightV2, AlignCenterV2, AlignJustifyV2, Sidebar, Palette, Lightbox, Filter, Slider,
   Flash, Dashboard, Guides, Article, Pulse, Edit, ContentApproved, Dragger, PaperClip, Invoicing, Banking, Checkbox, Circle, Bank, Card, Contract,
   MinusCircle, RepeatCircle, BadgeCard, HeadphonesMic, CheckmarkLarge, NoticeOutlined, Archive, Questionnaire, Upload, ShareFeedback, Spaceship, Zap, Tip,
-  Webpage, LayoutAlternative, GlobeAlternative, AiAssist, Flows, Highlight, ArrowCircleUp
+  Webpage, LayoutAlternative, GlobeAlternative, AiAssist, Flows, Highlight, ArrowCircleUp, ArrowUp, EditColor, AiImage,
+  AiLogo, Microphone, ThreeDots, PencilFilled
 }

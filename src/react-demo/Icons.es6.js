@@ -21,7 +21,7 @@ import {
   Flag, Testimonials, Chart, Play, Pause, AlignLeftV2, AlignCenterV2, AlignRightV2, AlignJustifyV2, Sidebar, ArrowCircle, Palette, Lightbox, Filter, Slider,
   Flash, Dashboard, Guides, Article, Pulse, Edit, ContentApproved, Dragger, PaperClip, Invoicing, Banking, Checkbox, Circle, Bank, Card, Contract,
   MinusCircle, RepeatCircle, BadgeCard, HeadphonesMic, CheckmarkLarge, NoticeOutlined, Archive, Questionnaire, Upload, ShareFeedback, Spaceship, Zap, Tip, Webpage, LayoutAlternative, GlobeAlternative,
-  AiAssist, Flows, Highlight, ArrowCircleUp,
+  AiAssist, Flows, Highlight, ArrowCircleUp, ArrowUp, EditColor, AiImage, AiLogo, Microphone, ThreeDots, PencilFilled
 } from '../../components/Icons.es6.js'
 
 const ICONS = [
@@ -747,6 +747,34 @@ const ICONS = [
   {
     name: 'ArrowCircleUp',
     component: ArrowCircleUp
+  },
+  {
+    name: 'ArrowUp',
+    component: ArrowUp
+  },
+  {
+    name: 'EditColor',
+    component: EditColor
+  },
+  {
+    name: 'AiImage',
+    component: AiImage
+  },
+  {
+    name: 'AiLogo',
+    component: AiLogo
+  },
+  {
+    name: 'Microphone',
+    component: Microphone
+  },
+  {
+    name: 'ThreeDots',
+    component: ThreeDots
+  },
+  {
+    name: 'PencilFilled',
+    component: PencilFilled
   }
 ]
 
