@@ -1941,6 +1941,92 @@ function ArrowCircleUp ({ className, width='16', height='16', color = '#766bff',
   )
 }
 
+function ArrowUp ({ className, width='16', height='16', color = '#766bff', viewBox='0 0 16 16' }) {
+  return (
+    <svg width={width} height={height} viewBox={viewBox} fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+      <g clipPath="url(#clip0_130_15802)">
+        <path d="M7.00012 12.8811V1.42871V1.73823" stroke={color} strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round"/>
+        <path d="M11.3334 5.76204L7.00008 1.42871L2.66675 5.76204" stroke={color} strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round"/>
+      </g>
+      <defs>
+        <clipPath id="clip0_130_15802">
+          <rect width={width} height={height} fill={color} />
+        </clipPath>
+      </defs>
+    </svg>
+  )
+}
+
+function EditColor ({ className, width='16', height='16', color = '#766bff', viewBox='0 0 16 16' }) {
+  return (
+    <svg width={width} height={height} viewBox={viewBox} fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+      <g clipPath="url(#clip0_130_15846)">
+        <path d="M11.9501 2.04984C10.971 1.07099 9.72376 0.40442 8.36593 0.134419C7.00809 -0.135581 5.60069 0.00311162 4.32167 0.53296C3.04266 1.06281 1.94948 1.96002 1.18036 3.11113C0.411245 4.26225 0.000732422 5.61558 0.000732422 7C0.000732422 8.38442 0.411245 9.73775 1.18036 10.8889C1.94948 12.04 3.04266 12.9372 4.32167 13.467C5.60069 13.9969 7.00809 14.1356 8.36593 13.8656C9.72376 13.5956 10.971 12.929 11.9501 11.9502C12.6002 11.3001 13.1159 10.5284 13.4678 9.67906C13.8196 8.8297 14.0007 7.91936 14.0007 7C14.0007 6.08065 13.8196 5.1703 13.4678 4.32095C13.1159 3.47159 12.6002 2.69986 11.9501 2.04984ZM3.70056 3.70067C4.57569 2.8258 5.76246 2.33433 6.99989 2.33433C8.23733 2.33433 9.4241 2.8258 10.2992 3.70067L3.70056 10.2993C2.8257 9.42421 2.33422 8.23744 2.33422 7C2.33422 5.76257 2.8257 4.5758 3.70056 3.70067Z" fill="#5048C7"/>
+      </g>
+      <defs>
+      <clipPath id="clip0_130_15846">
+        <rect width={width} height={height} fill={color} />
+      </clipPath>
+      </defs>
+    </svg>
+  )
+}
+
+function AiImage ({ className, width='16', height='16', color = '#766bff', viewBox='0 0 16 16' }) {
+  return (
+    <svg width={width} height={height} viewBox={viewBox} fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+      <g clipPath="url(#clip0_ai_image)">
+        <path d="M10.0623 10.4269H4.44777C4.24156 10.4269 4.05526 10.3029 3.97614 10.112C3.89703 9.92112 3.94093 9.70165 4.0869 9.55567L7.6598 5.98277C7.77209 5.86997 7.92879 5.81586 8.08855 5.83781C8.24627 5.85874 8.3851 5.95265 8.4637 6.09047L10.5054 9.66337C10.5957 9.82159 10.5952 10.015 10.5038 10.1728C10.4125 10.3305 10.2445 10.4269 10.0623 10.4269Z" fill={color}/>
+        <path d="M4.44795 6.85416C5.01174 6.85416 5.46878 6.39712 5.46878 5.83333C5.46878 5.26954 5.01174 4.8125 4.44795 4.8125C3.88416 4.8125 3.42712 5.26954 3.42712 5.83333C3.42712 6.39712 3.88416 6.85416 4.44795 6.85416Z" fill={color}/>
+        <path d="M2.40624 12.719H11.5937C12.576 12.719 13.3749 11.9201 13.3749 10.9378V6.85447C13.3749 6.43398 13.0342 6.09405 12.6145 6.09405C12.1949 6.09405 11.8541 6.43398 11.8541 6.85447V10.9378C11.8541 11.0813 11.737 11.1982 11.5937 11.1982H2.40624C2.26291 11.1982 2.14583 11.0813 2.14583 10.9378V3.79198C2.14583 3.64847 2.26291 3.53157 2.40624 3.53157H7.51038C7.93004 3.53157 8.2708 3.19165 8.2708 2.77116C8.2708 2.35066 7.93004 2.01074 7.51038 2.01074H2.40624C1.42395 2.01074 0.625 2.80969 0.625 3.79198V10.9378C0.625 11.9201 1.42395 12.719 2.40624 12.719Z" fill={color}/>
+        <path d="M12.6145 3.28124C12.0505 3.28124 11.5937 2.82442 11.5937 2.26041C11.5937 1.97867 11.365 1.75 11.0833 1.75C10.8015 1.75 10.5729 1.97867 10.5729 2.26041C10.5729 2.82442 10.116 3.28124 9.55204 3.28124C9.27029 3.28124 9.04163 3.50991 9.04163 3.79166C9.04163 4.07341 9.27029 4.30207 9.55204 4.30207C10.116 4.30207 10.5729 4.75889 10.5729 5.3229C10.5729 5.60465 10.8015 5.83331 11.0833 5.83331C11.365 5.83331 11.5937 5.60465 11.5937 5.3229C11.5937 4.75889 12.0505 4.30207 12.6145 4.30207C12.8963 4.30207 13.1249 4.07341 13.1249 3.79166C13.1249 3.50991 12.8963 3.28124 12.6145 3.28124Z" fill={color}/>
+      </g>
+      <defs>
+        <clipPath id="clip0_ai_image">
+          <rect width={width} height={height} fill={color}/>
+        </clipPath>
+      </defs>
+    </svg>
+  )
+}
+
+function AiLogo ({ className, width='16', height='16', color = '#766bff', viewBox='0 0 16 16' }) {
+  return (
+    <svg width={width} height={height} viewBox={viewBox} fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+      <path d="M4.95837 10.8496C7.16751 10.8496 8.95837 9.05875 8.95837 6.84961C8.95837 4.64047 7.16751 2.84961 4.95837 2.84961C2.74924 2.84961 0.958374 4.64047 0.958374 6.84961C0.958374 9.05875 2.74924 10.8496 4.95837 10.8496Z" fill={color}/>
+      <path d="M4.95837 11.7452C4.22504 11.7452 3.55837 11.4898 2.95837 11.1494V15.1494L4.95837 13.4473L6.95837 15.1494V11.1494C6.35837 11.4898 5.69171 11.7452 4.95837 11.7452Z" fill={color} />
+      <path d="M11.5313 2.38085C10.9673 2.38085 10.5104 1.92403 10.5104 1.36002C10.5104 1.07827 10.2818 0.849609 10 0.849609C9.71828 0.849609 9.48962 1.07827 9.48962 1.36002C9.48962 1.92403 9.0328 2.38085 8.46879 2.38085C8.18704 2.38085 7.95837 2.60952 7.95837 2.89127C7.95837 3.17301 8.18704 3.40168 8.46879 3.40168C9.0328 3.40168 9.48962 3.8585 9.48962 4.42251C9.48962 4.70426 9.71828 4.93292 10 4.93292C10.2818 4.93292 10.5104 4.70426 10.5104 4.42251C10.5104 3.8585 10.9673 3.40168 11.5313 3.40168C11.813 3.40168 12.0417 3.17301 12.0417 2.89127C12.0417 2.60952 11.813 2.38085 11.5313 2.38085Z" fill={color}/>
+    </svg>
+  )
+}
+
+function Microphone ({ className, width='16', height='16', color = '#766bff', viewBox='0 0 16 16' }) {
+  return (
+    <svg width={width} height={height} viewBox={viewBox} fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+      <g clipPath="url(#clip0_microphone)">
+        <path fillRule="evenodd" clipRule="evenodd" d="M9.91671 3.49967V6.41634C9.91671 8.02716 8.61086 9.33301 7.00004 9.33301C5.38921 9.33301 4.08337 8.02716 4.08337 6.41634V3.49967C4.08337 1.88885 5.38921 0.583008 7.00004 0.583008C8.61086 0.583008 9.91671 1.88885 9.91671 3.49967Z" fill={color}/>
+        <path fillRule="evenodd" clipRule="evenodd" d="M11.6667 5.83301C11.9888 5.83301 12.25 6.09418 12.25 6.41634C12.25 9.31586 9.89952 11.6663 7 11.6663C4.10051 11.6663 1.75 9.31586 1.75 6.41634C1.75 6.09418 2.01117 5.83301 2.33333 5.83301C2.6555 5.83301 2.91667 6.09418 2.91667 6.41634C2.91667 8.67151 4.74484 10.4997 7 10.4997C9.25517 10.4997 11.0833 8.67151 11.0833 6.41634C11.0833 6.09418 11.3445 5.83301 11.6667 5.83301Z" fill={color}/>
+        <path fillRule="evenodd" clipRule="evenodd" d="M6.99996 10.5C7.32213 10.5 7.58329 10.7612 7.58329 11.0833V12.8333C7.58329 13.1555 7.32213 13.4167 6.99996 13.4167C6.67779 13.4167 6.41663 13.1555 6.41663 12.8333V11.0833C6.41663 10.7612 6.67779 10.5 6.99996 10.5Z" fill={color}/>
+      </g>
+      <defs>
+        <clipPath id="clip0_microphone">
+          <rect width={width} height={height} fill={color}/>
+        </clipPath>
+      </defs>
+    </svg>
+  )
+}
+
+function More ({ className, width='16', height='16', color = '#766bff', viewBox='0 0 16 16' }) {
+  return (
+    <svg width={width} height={height} viewBox={viewBox} fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+      <circle cx="3" cy="8" r="1.5" fill={color} />
+      <circle cx="8" cy="8" r="1.5" fill={color} />
+      <circle cx="13" cy="8" r="1.5" fill={color} />
+    </svg>
+  )
+}
+
 const icons = [
   Check,
   Checkmark,
@@ -2133,7 +2219,13 @@ const icons = [
   AiAssist,
   Flows,
   Highlight,
-  ArrowCircleUp
+  ArrowCircleUp,
+  ArrowUp,
+  EditColor,
+  AiImage,
+  AiLogo,
+  Microphone,
+  More
 ]
 
 each(icons, (icon) => {
@@ -2160,5 +2252,6 @@ export { Check, Checkmark, Lock, Notice, Disabled, Help, Search, Draggable,
   Flag, Testimonials, Chart, Pause, HubspotLogo, AlignLeftV2, AlignRightV2, AlignCenterV2, AlignJustifyV2, Sidebar, Palette, Lightbox, Filter, Slider,
   Flash, Dashboard, Guides, Article, Pulse, Edit, ContentApproved, Dragger, PaperClip, Invoicing, Banking, Checkbox, Circle, Bank, Card, Contract,
   MinusCircle, RepeatCircle, BadgeCard, HeadphonesMic, CheckmarkLarge, NoticeOutlined, Archive, Questionnaire, Upload, ShareFeedback, Spaceship, Zap, Tip,
-  Webpage, LayoutAlternative, GlobeAlternative, AiAssist, Flows, Highlight, ArrowCircleUp
+  Webpage, LayoutAlternative, GlobeAlternative, AiAssist, Flows, Highlight, ArrowCircleUp, ArrowUp, EditColor, AiImage,
+  AiLogo, Microphone, More
 }
