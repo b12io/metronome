@@ -98,6 +98,149 @@
   }
 }
 
+.button.button--round {
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  padding: 4px;
+  background-color: $ds-body-lighter-color;
+  border: none;
+
+  &:enabled {
+    background: $ds-brand-medium-color;
+    border-color: none;
+    box-shadow: none;
+
+    &:hover {
+      background-color: lighten($ds-brand-medium-color, 10%);
+    }
+  }
+
+  &.button--round-light {
+    &:enabled {
+      background: $ds-ui-background-color;
+      border-color: none;
+      box-shadow: none;
+
+      > svg {
+        path, rect, circle {
+          fill: $ds-body-lighter-color;
+        }
+      }
+
+      &:hover {
+        background-color: darken($ds-ui-background-color, 5%);
+
+        > svg {
+          path, rect, circle {
+            fill: $ds-brand-medium-color;
+          }
+        }
+      }
+    }
+  }
+
+  &.is-loading {
+    cursor: default;
+    padding-top: 7px;
+    padding-bottom: 7px;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background: $ds-brand-medium-color;
+      border-color: #fff;
+      box-shadow: none;
+    }
+  }
+
+  .button__spinner {
+    background: $ds-ui-lightest-color;
+
+    &::before {
+      background: $ds-brand-medium-color;
+    }
+
+    &::after {
+      background: $ds-brand-medium-color;
+    }
+  }
+
+  &.button--recording-indicator {
+    > svg {
+      path, rect, circle {
+        fill: $ds-brand-medium-color !important;
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      bottom: -4px;
+      left: -4px;
+      border: 2px solid rgba(105, 95, 246, 0.6);
+      border-radius: 50%;
+      animation: pulse-animation 2s infinite;
+      pointer-events: none;
+    }
+  }
+}
+
+.button.button--rounded-rectangle {
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: 0;
+  color: $ds-body-lighter-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  background-color: $ds-ui-background-color;
+
+  &:enabled {
+    border-color: none;
+    box-shadow: none;
+
+    &:hover {
+      color: $ds-brand-medium-color;
+      background-color: #F6F5FE;
+
+      > svg {
+        path, rect, circle {
+          fill: $ds-brand-medium-color;
+        }
+      }
+    }
+  }
+
+  &:active {
+    border: 1px solid $ds-brand-medium-color;
+    color: $ds-brand-medium-color;
+    background-color: #F6F5FE;
+  }
+
+  &.button--has-selection {
+    border: 1px solid $ds-body-lighter-color;
+  }
+
+  &.button--selected {
+    background-color: #f5f6fe;
+    color: $ds-brand-medium-color;
+    border: 1px solid #695ff6;
+
+    > svg {
+      path, rect, circle {
+        fill: $ds-brand-medium-color;
+      }
+    }
+  }
+}
+
 /* Sizes
  */
 
@@ -289,5 +432,19 @@
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse-animation {
+  0% {
+    transform: scale(0.95);
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.15);
+    opacity: 0;
   }
 }

@@ -2006,6 +2006,14 @@ function PencilFilled ({ className, width='16', height='16', color = '#766bff', 
   )
 }
 
+function Stop ({ className, width='16', height='16', color = '#766bff', viewBox='0 0 10 10' }) {
+  return (
+    <svg width={width} height={height} viewBox={viewBox} fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+    <path d="M0 2C0 0.89543 0.895431 0 2 0H8C9.10457 0 10 0.895431 10 2V8C10 9.10457 9.10457 10 8 10H2C0.89543 10 0 9.10457 0 8V2Z" fill={color} />
+    </svg>
+  )
+}
+
 const icons = [
   Check,
   Checkmark,
@@ -2205,7 +2213,8 @@ const icons = [
   AiLogo,
   Microphone,
   ThreeDots,
-  PencilFilled
+  PencilFilled,
+  Stop
 ]
 
 each(icons, (icon) => {
@@ -2232,6 +2241,5 @@ export { Check, Checkmark, Lock, Notice, Disabled, Help, Search, Draggable,
   Flag, Testimonials, Chart, Pause, HubspotLogo, AlignLeftV2, AlignRightV2, AlignCenterV2, AlignJustifyV2, Sidebar, Palette, Lightbox, Filter, Slider,
   Flash, Dashboard, Guides, Article, Pulse, Edit, ContentApproved, Dragger, PaperClip, Invoicing, Banking, Checkbox, Circle, Bank, Card, Contract,
   MinusCircle, RepeatCircle, BadgeCard, HeadphonesMic, CheckmarkLarge, NoticeOutlined, Archive, Questionnaire, Upload, ShareFeedback, Spaceship, Zap, Tip,
-  Webpage, LayoutAlternative, GlobeAlternative, AiAssist, Flows, Highlight, ArrowCircleUp, ArrowUp, EditColor, AiImage,
-  AiLogo, Microphone, ThreeDots, PencilFilled
+  Webpage, LayoutAlternative, GlobeAlternative, AiAssist, Flows, Highlight, ArrowCircleUp, ArrowUp, EditColor, AiImage, AiLogo, Microphone, ThreeDots, PencilFilled, Stop
 }

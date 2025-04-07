@@ -5,7 +5,7 @@ import MetaData from './demo-only-components/MetaData.es6.js'
 import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDataProps.es6.js'
 
 import Button from '../../components/form/button/Button.es6.js'
-import { Tablet } from '../../components/Icons.es6.js'
+import { Tablet, ArrowUp, Microphone, Website, Stop } from '../../components/Icons.es6.js'
 
 function Buttons () {
   return (
@@ -85,6 +85,52 @@ function Buttons () {
           </div>
         </CodeExample>
       </div>
+
+      <div className="ds-block">
+        <div className="ds-block__title">
+          <h4>Round button - icon only</h4>
+        </div>
+
+        <CodeExample code={`
+          <Button round disabled icon={<ArrowUp width={14} height={14} viewBox="0 0 12 14" />} />
+          <Button round icon={<ArrowUp width={14} height={14} viewBox="0 0 12 14" />} />
+          <Button round loading icon={<ArrowUp width={14} height={14} viewBox="0 0 12 14" />} />
+          <Button round icon={<Stop width={10} height={10} viewBox="0 0 10 10" />} />
+          <Button roundLight disabled icon={<Microphone width={14} height={14} viewBox="0 0 11 13" />} />
+          <Button roundLight icon={<Microphone width={14} height={14} viewBox="0 0 11 13" />} />
+          <Button roundLight recording icon={<Microphone width={14} height={14} viewBox="0 0 11 13" />} />
+        `}
+        >
+            <Button round disabled icon={<ArrowUp width={14} height={14} viewBox="0 0 12 14" />} />
+            <Button round icon={<ArrowUp width={14} height={14} viewBox="0 0 12 14" />} />
+            <Button round loading icon={<ArrowUp width={14} height={14} viewBox="0 0 12 14" />} />
+            <Button round icon={<Stop width={10} height={10} viewBox="0 0 10 10" />} />
+            <Button roundLight disabled icon={<Microphone width={14} height={14} viewBox="0 0 11 13" />} />
+            <Button roundLight icon={<Microphone width={14} height={14} viewBox="0 0 11 13" />} />
+            <Button roundLight recording icon={<Microphone width={14} height={14} viewBox="0 0 11 13" />} />
+          <br /><br />
+        </CodeExample>
+      </div>
+
+      <div className="ds-block">
+        <div className="ds-block__title">
+          <h4>Rounded rectangle button </h4>
+        </div>
+
+        <CodeExample code={`
+          <Button roundedRectangle iconWithLabel icon={<Website width={14} height={14} />} label="Label" />
+          <Button roundedRectangle iconWithLabel icon={<Website width={14} height={14} />} label="Label" hasSelection />
+          <Button roundedRectangle iconWithLabel icon={<Website width={14} height={14} />} label="Label" selected />
+        `}
+        >
+          <div style={{ display: 'flex', gap: '10px'}}>
+          <Button roundedRectangle iconWithLabel icon={<Website width={14} height={14} />} label="Label" />
+          <Button roundedRectangle iconWithLabel icon={<Website width={14} height={14} />} label="Label" hasSelection />
+          <Button roundedRectangle iconWithLabel icon={<Website width={14} height={14} />} label="Label" selected />
+          </div>
+        </CodeExample>
+      </div>
+
       <div className="ds-block">
         <div className="ds-block__title">
           <h4>Props</h4>
