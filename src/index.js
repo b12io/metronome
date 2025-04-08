@@ -43,6 +43,7 @@ import TabbedNavigation from './react-demo/TabbedNavigation.es6.js'
 import Breadcrumbs from './react-demo/Breadcrumbs.es6.js'
 import ButtonGroup from './react-demo/ButtonGroup.es6.js'
 import ToggleButton from './react-demo/ToggleButton.es6.js'
+import PromptInput from './react-demo/PromptInput.js'
 
 const uiStates = [
   {
@@ -199,6 +200,11 @@ const uiStates = [
     name: 'toggleButton',
     url: 'toggle-button',
     component: ToggleButton
+  },
+  {
+    name: 'promptInput',
+    url: 'prompt-input',
+    component: PromptInput
   }
 ]
 
@@ -352,6 +358,11 @@ ReactDOM.render(
           <UISrefActive class="active">
             <UISref to="toggleButton">
               <li><a>ToggleButton</a></li>
+            </UISref>
+          </UISrefActive>
+          <UISrefActive class="active">
+            <UISref to="promptInput">
+              <li><a>PromptInput</a></li>
             </UISref>
           </UISrefActive>
           <li className="nav__header">Composition</li>

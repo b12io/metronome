@@ -20,7 +20,7 @@
   }
 
   &:hover {
-    background: darken($ds-ui-light-color, .25);
+    background: darken($ds-ui-light-color, 0.25);
     text-decoration: none;
   }
 
@@ -35,7 +35,7 @@
 
   &.disabled,
   &:disabled {
-    opacity: .3;
+    opacity: 0.3;
     pointer-events: none;
     cursor: default;
   }
@@ -123,7 +123,9 @@
       box-shadow: none;
 
       > svg {
-        path, rect, circle {
+        path,
+        rect,
+        circle {
           fill: $ds-body-lighter-color;
         }
       }
@@ -132,7 +134,9 @@
         background-color: darken($ds-ui-background-color, 5%);
 
         > svg {
-          path, rect, circle {
+          path,
+          rect,
+          circle {
             fill: $ds-brand-medium-color;
           }
         }
@@ -168,7 +172,9 @@
 
   &.button--recording-indicator {
     > svg {
-      path, rect, circle {
+      path,
+      rect,
+      circle {
         fill: $ds-brand-medium-color !important;
       }
     }
@@ -190,7 +196,7 @@
 
 .button.button--rounded-rectangle {
   border-radius: 20px;
-  padding: 6px 16px;
+  padding: 4px 16px;
   font-size: 14px;
   font-weight: 400;
   line-height: 14px;
@@ -208,10 +214,12 @@
 
     &:hover {
       color: $ds-brand-medium-color;
-      background-color: #F6F5FE;
+      background-color: #f6f5fe;
 
       > svg {
-        path, rect, circle {
+        path,
+        rect,
+        circle {
           fill: $ds-brand-medium-color;
         }
       }
@@ -221,7 +229,7 @@
   &:active {
     border: 1px solid $ds-brand-medium-color;
     color: $ds-brand-medium-color;
-    background-color: #F6F5FE;
+    background-color: #f6f5fe;
   }
 
   &.button--has-selection {
@@ -234,7 +242,9 @@
     border: 1px solid #695ff6;
 
     > svg {
-      path, rect, circle {
+      path,
+      rect,
+      circle {
         fill: $ds-brand-medium-color;
       }
     }
