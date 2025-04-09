@@ -145,7 +145,7 @@
     &:focus,
     &:active {
       background: $ds-brand-medium-color;
-      border-color: #fff;
+      border-color: $ds-ui-lightest-color;
       box-shadow: none;
     }
   }
@@ -153,10 +153,7 @@
   .button__spinner {
     background: $ds-ui-lightest-color;
 
-    &::before {
-      background: $ds-brand-medium-color;
-    }
-
+    &::before,
     &::after {
       background: $ds-brand-medium-color;
     }
@@ -204,6 +201,13 @@
         rect,
         circle {
           fill: $ds-ui-lightest-color;
+        }
+      }
+
+      .button__spinner {
+        &::before,
+        &::after {
+          background: lighten($ds-brand-medium-color, 10%);
         }
       }
     }
@@ -255,7 +259,7 @@
   &.button--selected {
     background-color: #f5f6fe;
     color: $ds-brand-medium-color;
-    border: 1px solid #695ff6;
+    border: 1px solid $ds-ui-background-dark-color !important;
 
     > svg {
       path,
@@ -386,7 +390,7 @@
   &:hover,
   &:focus,
   &:active {
-    background: #fff;
+    background: $ds-ui-lightest-color;
     border-color: $ds-ui-dark-color;
     box-shadow: none;
   }
@@ -419,7 +423,7 @@
   &::before {
     width: 14px;
     height: 6px;
-    background: #fff;
+    background: $ds-ui-lightest-color;
     position: absolute;
     display: block;
     top: 0;
@@ -428,7 +432,7 @@
   }
 
   &::after {
-    background: #fff;
+    background: $ds-ui-lightest-color;
     width: 10px;
     height: 10px;
     border-radius: 50%;
@@ -442,7 +446,7 @@
   }
 
   .button--primary & {
-    background: #fff;
+    background: $ds-ui-lightest-color;
 
     &::before {
       background: $ds-brand-regular-color;
