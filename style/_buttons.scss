@@ -106,39 +106,31 @@
   background-color: $ds-body-lighter-color;
   border: none;
 
+  &:disabled {
+    background: $ds-body-lighter-color;
+  }
+
   &:enabled {
-    background: $ds-brand-medium-color;
+    background: $ds-ui-background-color;
     border-color: none;
     box-shadow: none;
 
-    &:hover {
-      background-color: lighten($ds-brand-medium-color, 10%);
+    > svg {
+      path,
+      rect,
+      circle {
+        fill: $ds-body-lighter-color;
+      }
     }
-  }
 
-  &.button--round-light {
-    &:enabled {
-      background: $ds-ui-background-color;
-      border-color: none;
-      box-shadow: none;
+    &:hover {
+      background-color: darken($ds-ui-background-color, 5%);
 
       > svg {
         path,
         rect,
         circle {
-          fill: $ds-body-lighter-color;
-        }
-      }
-
-      &:hover {
-        background-color: darken($ds-ui-background-color, 5%);
-
-        > svg {
-          path,
-          rect,
-          circle {
-            fill: $ds-brand-medium-color;
-          }
+          fill: $ds-brand-medium-color;
         }
       }
     }
@@ -192,6 +184,30 @@
       pointer-events: none;
     }
   }
+
+  &.button--highlighted {
+    background: $ds-brand-medium-color;
+
+    > svg {
+      path,
+      rect,
+      circle {
+        fill: $ds-ui-lightest-color;
+      }
+    }
+
+    &:hover {
+      background-color: lighten($ds-brand-medium-color, 10%);
+
+      > svg {
+        path,
+        rect,
+        circle {
+          fill: $ds-ui-lightest-color;
+        }
+      }
+    }
+  }
 }
 
 .button.button--rounded-rectangle {
@@ -240,6 +256,20 @@
     background-color: #f5f6fe;
     color: $ds-brand-medium-color;
     border: 1px solid #695ff6;
+
+    > svg {
+      path,
+      rect,
+      circle {
+        fill: $ds-brand-medium-color;
+      }
+    }
+  }
+
+  &.button--highlighted {
+    background-color: #f5f6fe;
+    color: $ds-brand-medium-color;
+    border: 1px solid transparent;
 
     > svg {
       path,

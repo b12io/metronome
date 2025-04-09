@@ -93,21 +93,21 @@ function Buttons () {
 
         <CodeExample code={`
           <Button round disabled icon={<ArrowUp width={14} height={14} viewBox="0 0 12 14" />} />
-          <Button round icon={<ArrowUp width={14} height={14} viewBox="0 0 12 14" />} />
-          <Button round loading icon={<ArrowUp width={14} height={14} viewBox="0 0 12 14" />} />
-          <Button round icon={<Stop width={10} height={10} viewBox="0 0 10 10" />} />
-          <Button roundLight disabled icon={<Microphone width={14} height={14} viewBox="0 0 11 13" />} />
-          <Button roundLight icon={<Microphone width={14} height={14} viewBox="0 0 11 13" />} />
-          <Button roundLight recording icon={<Microphone width={14} height={14} viewBox="0 0 11 13" />} />
+          <Button round highlighted icon={<ArrowUp width={14} height={14} viewBox="0 0 12 14" />} />
+          <Button round loading highlighted icon={<ArrowUp width={14} height={14} viewBox="0 0 12 14" />} />
+          <Button round highlighted icon={<Stop width={10} height={10} viewBox="0 0 10 10" />} />
+          <Button round disabled icon={<Microphone width={14} height={14} viewBox="0 0 11 13" />} />
+          <Button round icon={<Microphone width={14} height={14} viewBox="0 0 11 13" />} />
+          <Button round recording icon={<Microphone width={14} height={14} viewBox="0 0 11 13" />} />
         `}
         >
             <Button round disabled icon={<ArrowUp width={14} height={14} viewBox="0 0 12 14" />} />
-            <Button round icon={<ArrowUp width={14} height={14} viewBox="0 0 12 14" />} />
-            <Button round loading icon={<ArrowUp width={14} height={14} viewBox="0 0 12 14" />} />
-            <Button round icon={<Stop width={10} height={10} viewBox="0 0 10 10" />} />
-            <Button roundLight disabled icon={<Microphone width={14} height={14} viewBox="0 0 11 13" />} />
-            <Button roundLight icon={<Microphone width={14} height={14} viewBox="0 0 11 13" />} />
-            <Button roundLight recording icon={<Microphone width={14} height={14} viewBox="0 0 11 13" />} />
+            <Button round highlighted icon={<ArrowUp width={14} height={14} viewBox="0 0 12 14" />} />
+            <Button round loading highlighted icon={<ArrowUp width={14} height={14} viewBox="0 0 12 14" />} />
+            <Button round highlighted icon={<Stop width={10} height={10} viewBox="0 0 10 10" />} />
+            <Button round disabled icon={<Microphone width={14} height={14} viewBox="0 0 11 13" />} />
+            <Button round icon={<Microphone width={14} height={14} viewBox="0 0 11 13" />} />
+            <Button round recording icon={<Microphone width={14} height={14} viewBox="0 0 11 13" />} />
           <br /><br />
         </CodeExample>
       </div>
@@ -120,12 +120,14 @@ function Buttons () {
         <CodeExample code={`
           <Button roundedRectangle iconWithLabel icon={<Website width={14} height={14} />} label="Label" />
           <Button roundedRectangle iconWithLabel icon={<Website width={14} height={14} />} label="Label" hasSelection />
+          <Button roundedRectangle iconWithLabel icon={<Website width={14} height={14} />} label="Label" highlighted />
           <Button roundedRectangle iconWithLabel icon={<Website width={14} height={14} />} label="Label" selected />
         `}
         >
           <div style={{ display: 'flex', gap: '10px'}}>
           <Button roundedRectangle iconWithLabel icon={<Website width={14} height={14} />} label="Label" />
           <Button roundedRectangle iconWithLabel icon={<Website width={14} height={14} />} label="Label" hasSelection />
+          <Button roundedRectangle iconWithLabel icon={<Website width={14} height={14} />} label="Label" highlighted />
           <Button roundedRectangle iconWithLabel icon={<Website width={14} height={14} />} label="Label" selected />
           </div>
         </CodeExample>

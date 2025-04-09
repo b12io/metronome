@@ -5,7 +5,7 @@ import classnames from 'classnames'
 /**
  * Buttons trigger actions when clicked.
  */
-function Button ({ label, badge, primary, danger, loading, superSmall, small, large, wide, icon, iconWithLabel, active, block, disabled, onClick, className, buttonRef, id, alternative, chevron, type, title, round, roundLight, roundedRectangle, hasSelection, selected, recording }) {
+function Button ({ label, badge, primary, danger, loading, superSmall, small, large, wide, icon, iconWithLabel, active, block, disabled, onClick, className, buttonRef, id, alternative, chevron, type, title, round, roundedRectangle, hasSelection, selected, recording, highlighted }) {
   return (<button
     className={classnames({
       button: true,
@@ -21,12 +21,12 @@ function Button ({ label, badge, primary, danger, loading, superSmall, small, la
       'button--icon-with-label': iconWithLabel,
       'button--alternative': alternative,
       'button--has-chevron': chevron,
-      'button--round': round || roundLight,
-      'button--round-light': roundLight,
+      'button--round': round,
       'button--rounded-rectangle': roundedRectangle,
       'button--has-selection': hasSelection,
       'button--selected': selected,
-      'button--recording-indicator': recording && (round || roundLight),
+      'button--recording-indicator': recording && round,
+      'button--highlighted': highlighted && (round || roundedRectangle),
       active,
     }, className)}
     disabled={disabled}
@@ -38,13 +38,13 @@ function Button ({ label, badge, primary, danger, loading, superSmall, small, la
   >
     {iconWithLabel ? (
         <React.Fragment>{icon} {label}</React.Fragment>
-        ) : ((round || roundLight) ? (
+        ) : (round ? (
           loading ? (
             <span className="button__spinner" />
           ) : (
             icon
           )
-        ) : (
+        ) : icon || (
         loading
           ? <span className="button__spinner" />
           : label
@@ -81,11 +81,11 @@ Button.defaultProps = {
   onClick: () => {},
   title: '',
   round: false,
-  roundLight: false,
   roundedRectangle: false,
   hasSelection: false,
   selected: false,
   recording: false,
+  highlighted: false,
 }
 
 Button.propTypes = {
@@ -175,10 +175,6 @@ Button.propTypes = {
    */
   round: PropTypes.bool,
   /**
-   * Whether this rounded button should use the light variant style. Automatically applies `round` when true.
-   */
-  roundLight: PropTypes.bool,
-  /**
    * Whether this should be a rounded-rectangle button.
    */
   roundedRectangle: PropTypes.bool,
@@ -194,6 +190,11 @@ Button.propTypes = {
    * Whether this button is recording
    */
   recording: PropTypes.bool,
+
+  /**
+   * Whether this button is highlighted
+   */
+  highlighted: PropTypes.bool,
 }
 
 export default Button
