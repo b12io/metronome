@@ -1,0 +1,22 @@
+.ds-popover-container {
+  position: relative;
+  display: inline-block;
+}
+
+.ds-popover {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  margin-bottom: 8px;
+  background: white;
+  border: 1px solid #d7d7de;
+  border-radius: 6px;
+  box-shadow: 0 12px 23.2px rgba(0, 0, 0, 0.05);
+  padding: 0;
+  min-width: 160px;
+  z-index: 100;
+
+  @media (min-width: 993px) {
+    padding: 12px;
+  }
+}

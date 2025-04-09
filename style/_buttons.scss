@@ -247,7 +247,7 @@
   }
 
   &:active {
-    border: 1px solid $ds-brand-medium-color;
+    border: 1px solid transparent;
     color: $ds-brand-medium-color;
     background-color: #f6f5fe;
   }
