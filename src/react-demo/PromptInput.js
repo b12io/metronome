@@ -11,6 +11,7 @@ import {
   PromptInput, PromptInputTextarea, PromptInputActions,
   PromptInputSelectors, PromptInputCommands
 } from '../../components/form/prompt-input'
+import ColorSwatchPickerDesktop from '../../components/form/color-swatch-picker/ColorSwatchPickerDesktop.es6.js'
 
 import { ArrowUp, Microphone, Website, EditColor, AiAssist, AiImage, Stop } from '../../components/Icons.es6.js'
 
@@ -55,6 +56,19 @@ Content to include on website:
 - Contact: The store is located at 123 Kiddo Lane, Playtown, USA. You can reach us by phone at (555) 123-4567 or via email at support@littlesteps.com.
 - Schedule appointment: A form is available to book a personalized shoe fitting session. It includes fields for the parent’s name, child’s name, preferred date and time, and contact information.`
 
+const mockColorOptions = [
+  { value: 'gray', color: '#787878' },
+  { value: 'black', color: '#000000' },
+  { value: 'red', color: '#F50904' },
+  { value: 'orange', color: '#F89A06' },
+  { value: 'yellow', color: '#FEFF06' },
+  { value: 'green', color: '#4AFF01' },
+  { value: 'teal', color: '#53FFFF' },
+  { value: 'blue', color: '#2024FB' },
+  { value: 'pink', color: '#F703FF' },
+  { value: 'purple', color: '#9900FF' },
+]
+
 const mockWebsiteStyleOptions = [
   { value: 'None', label: 'None' },
   { value: 'Bold', label: 'Bold' },
@@ -69,6 +83,7 @@ const mockWebsiteStyleOptions = [
 export default function PromptInputPage () {
   const [message, setMessage ] = useState('')
   const [selectedWebsiteStyle, setSelectedWebsiteStyle] = useState(mockWebsiteStyleOptions[0].value)
+  const [selectedColor, setSelectedColor] = useState(null)
   const [canTriggerSend, setCanTriggerSend] = useState(true)
   const [isEnhancingPrompt, setIsEnhancingPrompt] = useState(false)
   const [isRecording, setIsRecording] = useState(false)
@@ -161,6 +176,12 @@ export default function PromptInputPage () {
   const handleWebsiteStyleChange = (style) => {
     if (isProcessing || isRecording) return
     setSelectedWebsiteStyle(style)
+  }
+
+  const handleColorChange = (color) => {
+    if (isProcessing || isRecording) return
+
+    setSelectedColor(color)
   }
 
   const handleEnhancePrompt = () => {
@@ -265,10 +286,11 @@ export default function PromptInputPage () {
           <h4>Example</h4>
         </div>
 
-        <CodeExample code={`<SimpleCard className="customize-classname" align="center">
-  Any content
-</SimpleCard>
-`}>
+        <CodeExample code={
+          `<SimpleCard className="customize-classname" align="center">
+            Any content
+          </SimpleCard>`
+        }>
           <PromptInput>
             <PromptInputTextarea
               placeholder="Share your business name and a description of your website, or start with an example below..."
@@ -285,7 +307,14 @@ export default function PromptInputPage () {
                 onToggle={() => togglePopover('websiteStyle')}
                 isSelected={selectedWebsiteStyle !== mockWebsiteStyleOptions[0].value}
                 trigger={
-                  <Button className="desktop-only" roundedRectangle disabled={isProcessing || isRecording} iconWithLabel icon={<Website width={14} height={14} />} label="Website style" />
+                  <Button
+                    className="desktop-only"
+                    roundedRectangle
+                    disabled={isProcessing || isRecording}
+                    iconWithLabel
+                    icon={<Website width={14} height={14} />}
+                    label="Website style"
+                  />
                 }
               >
                 {mockWebsiteStyleOptions.map((option) => (
@@ -299,8 +328,35 @@ export default function PromptInputPage () {
                   />
                 ))}
               </Popover>
-              <Button className="desktop-only" roundedRectangle disabled={isProcessing || isRecording} iconWithLabel icon={<EditColor width={14} height={14} />} label="Color" viewBox="0 0 14 14" />
-              <Button className="desktop-only" roundedRectangle disabled={isProcessing || isRecording} iconWithLabel icon={<AiImage width={14} height={12} viewBox='0 0 14 12' />} label="Image style" />
+              <Popover
+                isOpen={activePopover === 'color'}
+                onToggle={() => togglePopover('color')}
+                isSelected={selectedColor !== null}
+                trigger={
+                  <Button
+                    className="desktop-only"
+                    roundedRectangle
+                    disabled={isProcessing || isRecording}
+                    iconWithLabel
+                    icon={<EditColor width={14} height={14} />}
+                    label="Color" viewBox="0 0 14 14"
+                  />
+                }
+              >
+                <ColorSwatchPickerDesktop
+                  colors={mockColorOptions}
+                  selectedColor={selectedColor}
+                  onChange={handleColorChange}
+                />
+              </Popover>
+              <Button
+                className="desktop-only"
+                roundedRectangle
+                disabled={isProcessing || isRecording}
+                iconWithLabel
+                icon={<AiImage width={14} height={14} viewBox='0 0 14 12' />}
+                label="Image style"
+              />
               <Button
                 roundedRectangle
                 disabled={isTextareaEmpty && (isProcessing || isRecording || !isEnhancingPrompt)}
@@ -308,19 +364,27 @@ export default function PromptInputPage () {
                 selected={isEnhancingPrompt || (isTypingPrompt && !isTypingFromRecording)}
                 onClick={handleEnhancePrompt}
                 iconWithLabel
-                icon={<AiAssist width={14} height={14} />} label="Enhance Prompt"
+                icon={<AiAssist width={14} height={14} />}
+                label="Enhance Prompt"
                 className="desktop-only"
               />
             </PromptInputSelectors>
             <PromptInputCommands>
-              <Button round disabled={isProcessing && !isTypingFromRecording} recording={isRecording} onClick={handleMicrophoneClick} icon={<Microphone width={14} height={14} viewBox="0 0 11 13" />} />
+              <Button
+                round
+                disabled={isProcessing && !isTypingFromRecording}
+                recording={isRecording}
+                onClick={handleMicrophoneClick}
+                icon={<Microphone width={14} height={14} viewBox="0 0 11 13" />}
+              />
               <Button
                 round
                 disabled={!isSubmitButtonActive || isRecording || isTypingFromRecording}
                 loading={isSubmitting && !isTypingPrompt }
                 highlighted={isSubmitButtonActive}
                 icon={ isSubmitting ? <Stop width={10} height={10} viewBox="0 0 10 10" /> :<ArrowUp width={14} height={14} viewBox="0 0 12 14" />}
-                onClick={handleSubmitButtonClick} />
+                onClick={handleSubmitButtonClick}
+              />
             </PromptInputCommands>
             </PromptInputActions>
           </PromptInput>
