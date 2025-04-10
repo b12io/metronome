@@ -5,6 +5,7 @@ import MetaData from './demo-only-components/MetaData.es6.js'
 import Button from '../../components/form/button/Button.es6.js'
 import Popover from '../../components/layout/popover/Popover.es6.js'
 import Radio from '../../components/form/radio/Radio.es6.js'
+import SwitchTabPicker from '../../components/form/switch-tab-picker/SwitchTabPicker.es6.js'
 
 import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDataProps.es6.js'
 import {
@@ -13,7 +14,10 @@ import {
 } from '../../components/form/prompt-input'
 import ColorSwatchPickerDesktop from '../../components/form/color-swatch-picker/ColorSwatchPickerDesktop.es6.js'
 
-import { ArrowUp, Microphone, Website, EditColor, AiAssist, AiImage, Stop } from '../../components/Icons.es6.js'
+import {
+  ArrowUp, Microphone, Website, EditColor,
+  AiAssist, AiImage, Stop, Image as ImageIcon, Disabled
+} from '../../components/Icons.es6.js'
 
 import useAutoResizeTextarea from '../../components/lib/useAutoResizeTextarea.js'
 import useTypingSimulation, { TypingStatus } from '../../components/lib/useTypingSimulation.js'
@@ -80,10 +84,50 @@ const mockWebsiteStyleOptions = [
   { value: 'Sophisticated', label: 'Sophisticated' },
 ]
 
+const imageStyleTabs = [
+  { id: 'photography', label: 'Photography' },
+  { id: 'illustration', label: 'Illustration' },
+]
+
+const mockImageStyleOptions = [
+  { id: 'no-photography', label: 'No Photography', category: 'photography', icon: Disabled },
+  { id: 'abstract-photo', label: 'Abstract', category: 'photography', icon: ImageIcon },
+  { id: 'black-and-white', label: 'Black and white', category: 'photography', icon: ImageIcon },
+  { id: 'cool', label: 'Cool', category: 'photography', icon: ImageIcon },
+  { id: 'earthy', label: 'Earthy', category: 'photography', icon: ImageIcon },
+  { id: 'grainy', label: 'Grainy', category: 'photography', icon: ImageIcon },
+  { id: 'high-contrast', label: 'High-contrast', category: 'photography', icon: ImageIcon },
+  { id: 'minimalist-photo', label: 'Minimalist', category: 'photography', icon: ImageIcon },
+  { id: 'monochromatic', label: 'Monochromatic', category: 'photography', icon: ImageIcon },
+  { id: 'moody', label: 'Moody', category: 'photography', icon: ImageIcon },
+  { id: 'professional', label: 'Professional', category: 'photography', icon: ImageIcon },
+  { id: 'sepia', label: 'Sepia', category: 'photography', icon: ImageIcon },
+  { id: 'serene', label: 'Serene', category: 'photography', icon: ImageIcon },
+  { id: 'vibrant', label: 'Vibrant', category: 'photography', icon: ImageIcon },
+  { id: 'warm', label: 'Warm', category: 'photography', icon: ImageIcon },
+  { id: 'no-illustration', label: 'No Illustration', category: 'illustration', icon: Disabled },
+  { id: 'abstract-illust', label: 'Abstract', category: 'illustration', icon: ImageIcon },
+  { id: 'acrylic', label: 'Acrylic', category: 'illustration', icon: ImageIcon },
+  { id: 'anime-manga', label: 'Anime / Manga', category: 'illustration', icon: ImageIcon },
+  { id: 'charcoal', label: 'Charcoal', category: 'illustration', icon: ImageIcon },
+  { id: 'comic-cartoon', label: 'Comic / cartoon', category: 'illustration', icon: ImageIcon },
+  { id: 'flat-vector', label: 'Flat vector', category: 'illustration', icon: ImageIcon },
+  { id: 'geometric', label: 'Geometric', category: 'illustration', icon: ImageIcon },
+  { id: 'ink', label: 'Ink', category: 'illustration', icon: ImageIcon },
+  { id: 'line-art', label: 'Line art', category: 'illustration', icon: ImageIcon },
+  { id: 'minimalist-illust', label: 'Minimalist', category: 'illustration', icon: ImageIcon },
+  { id: 'pencil', label: 'Pencil', category: 'illustration', icon: ImageIcon },
+  { id: 'realism', label: 'Realism', category: 'illustration', icon: ImageIcon },
+  { id: 'surreal', label: 'Surreal', category: 'illustration', icon: ImageIcon },
+  { id: 'watercolor', label: 'Watercolor', category: 'illustration', icon: ImageIcon },
+]
+
 export default function PromptInputPage () {
   const [message, setMessage ] = useState('')
   const [selectedWebsiteStyle, setSelectedWebsiteStyle] = useState(mockWebsiteStyleOptions[0].value)
   const [selectedColor, setSelectedColor] = useState(null)
+  const [selectedImageStyle, setSelectedImageStyle] = useState('')
+  const [selectedImageStyleTab, setSelectedImageStyleTab] = useState(0)
   const [canTriggerSend, setCanTriggerSend] = useState(true)
   const [isEnhancingPrompt, setIsEnhancingPrompt] = useState(false)
   const [isRecording, setIsRecording] = useState(false)
@@ -182,6 +226,15 @@ export default function PromptInputPage () {
     if (isProcessing || isRecording) return
 
     setSelectedColor(color)
+  }
+
+  const handleImageStyleChange = (styleId) => {
+    if (isProcessing || isRecording) return
+    setSelectedImageStyle(styleId)
+  }
+
+  const handleImageTabSwitch = (tabId) => {
+    setSelectedImageStyleTab(tabId)
   }
 
   const handleEnhancePrompt = () => {
@@ -349,14 +402,30 @@ export default function PromptInputPage () {
                   onChange={handleColorChange}
                 />
               </Popover>
-              <Button
-                className="desktop-only"
-                roundedRectangle
-                disabled={isProcessing || isRecording}
-                iconWithLabel
-                icon={<AiImage width={14} height={14} viewBox='0 0 14 12' />}
-                label="Image style"
-              />
+              <Popover
+                isOpen={activePopover === 'imageStyle'}
+                onToggle={() => togglePopover('imageStyle')}
+                isSelected={selectedImageStyle !== ''}
+                trigger={
+                  <Button
+                    className="desktop-only"
+                    roundedRectangle
+                    disabled={isProcessing || isRecording}
+                    iconWithLabel
+                    icon={<AiImage width={14} height={14} viewBox='0 0 14 12' />}
+                    label="Image style"
+                  />
+                }
+              >
+                <SwitchTabPicker
+                  tabs={imageStyleTabs}
+                  options={mockImageStyleOptions}
+                  selectedOptionId={selectedImageStyle}
+                  selectedTabId={selectedImageStyleTab}
+                  onTabChange={handleImageTabSwitch}
+                  onOptionChange={handleImageStyleChange}
+                />
+              </Popover>
               <Button
                 roundedRectangle
                 disabled={isTextareaEmpty && (isProcessing || isRecording || !isEnhancingPrompt)}

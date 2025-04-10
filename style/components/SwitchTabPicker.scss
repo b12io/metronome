@@ -1,0 +1,56 @@
+.switch-tab-picker {
+  width: 100%;
+  min-width: 220px;
+  box-sizing: border-box;
+
+  &__options {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__option {
+    display: flex;
+    align-items: center;
+    padding: 4px 0;
+    border-radius: 3px;
+    cursor: pointer;
+
+    &--selected {
+      .switch-tab-picker__option-label {
+        color: $ds-brand-medium-color;
+      }
+    }
+  }
+
+  &__option-thumbnail {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    background-color: #f5f5f7;
+    margin-right: 12px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__option-label {
+    font-size: 12px;
+    color: $ds-display-regular-color;
+  }
+
+  &__content {
+    margin-top: 4px;
+    padding: 6px 0;
+    min-height: 150px;
+    max-height: 180px;
+    overflow-y: auto;
+  }
+
+  .button {
+    font-size: 10px;
+    font-weight: 600;
+    padding: 6px 0;
+  }
+}
