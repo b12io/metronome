@@ -6,6 +6,7 @@ import Button from '../../components/form/button/Button.es6.js'
 import Popover from '../../components/layout/popover/Popover.es6.js'
 import Radio from '../../components/form/radio/Radio.es6.js'
 import SwitchTabPicker from '../../components/form/switch-tab-picker/SwitchTabPicker.es6.js'
+import MobileOptionsPopover from '../../components/layout/popover/MobileOptionsPopover.es6.js'
 
 import { MetaDataProps, MetaDataPropsItem } from './demo-only-components/MetaDataProps.es6.js'
 import {
@@ -16,12 +17,14 @@ import ColorSwatchPickerDesktop from '../../components/form/color-swatch-picker/
 
 import {
   ArrowUp, Microphone, Website, EditColor,
-  AiAssist, AiImage, Stop, Image as ImageIcon, Disabled
+  AiAssist, AiImage, Stop, ThreeDots
 } from '../../components/Icons.es6.js'
 
 import useAutoResizeTextarea from '../../components/lib/useAutoResizeTextarea.js'
 import useTypingSimulation, { TypingStatus } from '../../components/lib/useTypingSimulation.js'
 import usePopover from '../../components/lib/usePopover.es6.js'
+
+import { mockTypingPrompt, mockImprovedPrompt, mockColorOptions, mockWebsiteStyleOptions, imageStyleTabs, mockImageStyleOptions } from './demo-data/promptInputMockData.js'
 
 const RangeSliderProps = [
   {
@@ -36,90 +39,6 @@ const RangeSliderProps = [
     defaultValue: '-',
     description: 'Apply classes if needed'
   }
-]
-
-// eslint-disable-next-line quotes
-const mockTypingPrompt = `Little Steps Shoe Shop is a specialty store offering a wide range of high-quality, stylish, and comfortable footwear for kids of all ages`
-
-const mockImprovedPrompt = `Business/Project Name:
-Little Steps Shoe Shop
-
-Description:
-Little Steps Shoe Shop is a specialty store offering a wide range of high-quality, stylish, and comfortable footwear for kids of all ages.
-
-Style:
-- Playful and cheerful design
-- Bright, kid-friendly colors like yellow, green, and orange
-- Incorporates fun shapes and whimsical illustrations.
-
-Content to include on website:
-- About: Little Steps Shoe Shop has been dedicated to helping children take their first steps in comfort and style for over 15 years. We offer expert advice on proper shoe fitting and prioritize the health and happiness of little feet.
-- Products: The shop offers sneakers, sandals, boots, dress shoes, and slippers, ensuring a variety of options to suit every occasion and preference.
-- Services: Services include professional shoe fitting and personalized style consultations to help parents find the perfect footwear for their children.
-- Customers often ask if we offer wide-size shoes for kids and whether shoes can be returned or exchanged if they don’t fit.
-- Contact: The store is located at 123 Kiddo Lane, Playtown, USA. You can reach us by phone at (555) 123-4567 or via email at support@littlesteps.com.
-- Schedule appointment: A form is available to book a personalized shoe fitting session. It includes fields for the parent’s name, child’s name, preferred date and time, and contact information.`
-
-const mockColorOptions = [
-  { value: 'gray', color: '#787878' },
-  { value: 'black', color: '#000000' },
-  { value: 'red', color: '#F50904' },
-  { value: 'orange', color: '#F89A06' },
-  { value: 'yellow', color: '#FEFF06' },
-  { value: 'green', color: '#4AFF01' },
-  { value: 'teal', color: '#53FFFF' },
-  { value: 'blue', color: '#2024FB' },
-  { value: 'pink', color: '#F703FF' },
-  { value: 'purple', color: '#9900FF' },
-]
-
-const mockWebsiteStyleOptions = [
-  { value: 'None', label: 'None' },
-  { value: 'Bold', label: 'Bold' },
-  { value: 'Calm', label: 'Calm' },
-  { value: 'Classic', label: 'Classic' },
-  { value: 'Clean', label: 'Clean' },
-  { value: 'Elegant', label: 'Elegant' },
-  { value: 'Futuristic', label: 'Futuristic' },
-  { value: 'Sophisticated', label: 'Sophisticated' },
-]
-
-const imageStyleTabs = [
-  { id: 'photography', label: 'Photography' },
-  { id: 'illustration', label: 'Illustration' },
-]
-
-const mockImageStyleOptions = [
-  { id: 'no-photography', label: 'No Photography', category: 'photography', icon: Disabled },
-  { id: 'abstract-photo', label: 'Abstract', category: 'photography', icon: ImageIcon },
-  { id: 'black-and-white', label: 'Black and white', category: 'photography', icon: ImageIcon },
-  { id: 'cool', label: 'Cool', category: 'photography', icon: ImageIcon },
-  { id: 'earthy', label: 'Earthy', category: 'photography', icon: ImageIcon },
-  { id: 'grainy', label: 'Grainy', category: 'photography', icon: ImageIcon },
-  { id: 'high-contrast', label: 'High-contrast', category: 'photography', icon: ImageIcon },
-  { id: 'minimalist-photo', label: 'Minimalist', category: 'photography', icon: ImageIcon },
-  { id: 'monochromatic', label: 'Monochromatic', category: 'photography', icon: ImageIcon },
-  { id: 'moody', label: 'Moody', category: 'photography', icon: ImageIcon },
-  { id: 'professional', label: 'Professional', category: 'photography', icon: ImageIcon },
-  { id: 'sepia', label: 'Sepia', category: 'photography', icon: ImageIcon },
-  { id: 'serene', label: 'Serene', category: 'photography', icon: ImageIcon },
-  { id: 'vibrant', label: 'Vibrant', category: 'photography', icon: ImageIcon },
-  { id: 'warm', label: 'Warm', category: 'photography', icon: ImageIcon },
-  { id: 'no-illustration', label: 'No Illustration', category: 'illustration', icon: Disabled },
-  { id: 'abstract-illust', label: 'Abstract', category: 'illustration', icon: ImageIcon },
-  { id: 'acrylic', label: 'Acrylic', category: 'illustration', icon: ImageIcon },
-  { id: 'anime-manga', label: 'Anime / Manga', category: 'illustration', icon: ImageIcon },
-  { id: 'charcoal', label: 'Charcoal', category: 'illustration', icon: ImageIcon },
-  { id: 'comic-cartoon', label: 'Comic / cartoon', category: 'illustration', icon: ImageIcon },
-  { id: 'flat-vector', label: 'Flat vector', category: 'illustration', icon: ImageIcon },
-  { id: 'geometric', label: 'Geometric', category: 'illustration', icon: ImageIcon },
-  { id: 'ink', label: 'Ink', category: 'illustration', icon: ImageIcon },
-  { id: 'line-art', label: 'Line art', category: 'illustration', icon: ImageIcon },
-  { id: 'minimalist-illust', label: 'Minimalist', category: 'illustration', icon: ImageIcon },
-  { id: 'pencil', label: 'Pencil', category: 'illustration', icon: ImageIcon },
-  { id: 'realism', label: 'Realism', category: 'illustration', icon: ImageIcon },
-  { id: 'surreal', label: 'Surreal', category: 'illustration', icon: ImageIcon },
-  { id: 'watercolor', label: 'Watercolor', category: 'illustration', icon: ImageIcon },
 ]
 
 export default function PromptInputPage () {
@@ -173,6 +92,38 @@ export default function PromptInputPage () {
   const isSubmitButtonActive = !isTextareaEmpty && (canTriggerSend || isSubmitting || isTypingPrompt) && !(isRecording || isTypingFromRecording)
 
   const { activePopover, togglePopover } = usePopover(isProcessing || isRecording)
+
+  const mobileOptions = [
+    {
+      id: 'website-style',
+      label: 'Website style',
+      icon: <Website width={14} height={14} />,
+      itemOptions: mockWebsiteStyleOptions,
+      disabled: isProcessing || isRecording,
+    },
+    {
+      id: 'color',
+      label: 'Color',
+      icon: <EditColor width={14} height={14} />,
+      itemOptions: [{ value: 'none', color: null, label: 'None' }, ...mockColorOptions],
+      disabled: isProcessing || isRecording,
+    },
+    {
+      id: 'image-style',
+      label: 'Image style',
+      icon: <AiImage width={14} height={14} viewBox='0 0 14 12' />,
+      itemOptions: mockImageStyleOptions,
+      disabled: isProcessing || isRecording,
+    },
+    {
+      id: 'enhance-prompt',
+      label: 'Enhance prompt',
+      icon: <AiAssist width={14} height={14} />,
+      disabled: isTextareaEmpty || isProcessing || isRecording,
+      isActive: !isTextareaEmpty,
+      isEnhancing: isEnhancingPrompt || (isTypingPrompt && !isTypingFromRecording),
+    }
+  ]
 
   useEffect(() => {
     if (isTypingPrompt && typedText) {
@@ -384,7 +335,7 @@ export default function PromptInputPage () {
               <Popover
                 isOpen={activePopover === 'color'}
                 onToggle={() => togglePopover('color')}
-                isSelected={selectedColor !== null}
+                isSelected={(selectedColor !== null && selectedColor !== 'none')}
                 trigger={
                   <Button
                     className="desktop-only"
@@ -437,6 +388,34 @@ export default function PromptInputPage () {
                 label="Enhance Prompt"
                 className="desktop-only"
               />
+              <Popover
+                isOpen={activePopover === 'mobileOptions'}
+                onToggle={() => togglePopover('mobileOptions')}
+                isSelected={selectedWebsiteStyle !== mockWebsiteStyleOptions[0].value || selectedImageStyle !== '' || (selectedColor !== null && selectedColor !== 'none')}
+                trigger={
+                  <Button
+                    className="mobile-only"
+                    roundedRectangle
+                    disabled={isProcessing || isRecording}
+                    icon={<ThreeDots viewBox="0 0 23 7" width="16" height="5" />}
+                  />
+                }
+              >
+                <MobileOptionsPopover
+                  options={mobileOptions}
+                  selectedWebsiteStyle={selectedWebsiteStyle}
+                  onWebsiteStyleChange={handleWebsiteStyleChange}
+                  selectedColor={selectedColor}
+                  onColorChange={handleColorChange}
+                  imageStyleTabs={imageStyleTabs}
+                  selectedImageStyle={selectedImageStyle}
+                  selectedTabId={selectedImageStyleTab}
+                  onImageStyleTabChange={handleImageTabSwitch}
+                  onImageStyleChange={handleImageStyleChange}
+                  onEnhancePrompt={handleEnhancePrompt}
+                  onClose={() => togglePopover('mobileOptions')}
+                />
+              </Popover>
             </PromptInputSelectors>
             <PromptInputCommands>
               <Button
