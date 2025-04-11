@@ -200,7 +200,18 @@ export default function PromptInputPage () {
 
     enhancePromptTimerRef.current = window.setTimeout(() => {
       setIsEnhancingPrompt(false)
-      startTyping(mockImprovedPrompt)
+      setIsSubmitting(false)
+      setMessage(mockImprovedPrompt)
+
+      if (textareaRef.current) {
+        textareaRef.current.classList.add('text-fade-in')
+
+        setTimeout(() => {
+          if (textareaRef.current) {
+            textareaRef.current.classList.remove('text-fade-in')
+          }
+        }, 500)
+      }
 
       enhancePromptTimerRef.current = null
     }, 1000)
@@ -487,7 +498,7 @@ export default function PromptInputPage () {
               <Button
                 round
                 disabled={!isSubmitButtonActive || isRecording || isTypingFromRecording}
-                loading={isSubmitting && !isTypingPrompt }
+                loading={isSubmitting && !isEnhancingPrompt}
                 highlighted={isSubmitButtonActive}
                 icon={ isSubmitting ? <Stop width={10} height={10} viewBox="0 0 10 10" /> :<ArrowUp width={14} height={14} viewBox="0 0 12 14" />}
                 onClick={handleSubmitButtonClick}
