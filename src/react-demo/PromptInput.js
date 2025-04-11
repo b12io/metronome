@@ -291,9 +291,63 @@ export default function PromptInputPage () {
         </div>
 
         <CodeExample code={
-          `<SimpleCard className="customize-classname" align="center">
-            Any content
-          </SimpleCard>`
+          `<PromptInput>
+            <PromptInputTextarea
+              placeholder="Share your business name and a description of your website, or start with an example below..."
+              rows={3}
+              textareaRef={ref}
+              value={message}
+              onChange={handle}
+              disabled={condition}
+            />
+            <PromptInputActions>
+            <PromptInputSelectors>
+              <Popover
+                isOpen={condition}
+                onToggle={() => togglePopover('popoverName')}
+                isSelected={condition}
+                trigger={
+                  <Button
+                    className="desktop-only"
+                    roundedRectangle
+                    disabled={condition}
+                    iconWithLabel
+                    icon={<Website width={14} height={14} />}
+                    label="Website style"
+                  />
+                }
+              >
+                {mockWebsiteStyleOptions.map((option) => (
+                  <Radio
+                    key={option.value}
+                    name="websiteStyle"
+                    label={option.label}
+                    value={option.value}
+                    checked={selectedWebsiteStyle === option.value}
+                    onChange={() => handleWebsiteStyleChange(option.value)}
+                  />
+                ))}
+              </Popover>
+            </PromptInputSelectors>
+            <PromptInputCommands>
+              <Button
+                round
+                disabled={isProcessing && !isTypingFromRecording}
+                recording={isRecording}
+                onClick={handleMicrophoneClick}
+                icon={<Microphone width={14} height={14} viewBox="0 0 11 13" />}
+              />
+              <Button
+                round
+                disabled={!isSubmitButtonActive || isRecording || isTypingFromRecording}
+                loading={isSubmitting && !isTypingPrompt }
+                highlighted={isSubmitButtonActive}
+                icon={ isSubmitting ? <Stop width={10} height={10} viewBox="0 0 10 10" /> :<ArrowUp width={14} height={14} viewBox="0 0 12 14" />}
+                onClick={handleSubmitButtonClick}
+              />
+            </PromptInputCommands>
+            </PromptInputActions>
+          </PromptInput>`
         }>
           <PromptInput>
             <PromptInputTextarea
@@ -318,6 +372,7 @@ export default function PromptInputPage () {
                     iconWithLabel
                     icon={<Website width={14} height={14} />}
                     label="Website style"
+                    selected={activePopover === 'websiteStyle'}
                   />
                 }
               >
@@ -344,6 +399,7 @@ export default function PromptInputPage () {
                     iconWithLabel
                     icon={<EditColor width={14} height={14} />}
                     label="Color" viewBox="0 0 14 14"
+                    selected={activePopover === 'color'}
                   />
                 }
               >
@@ -365,6 +421,7 @@ export default function PromptInputPage () {
                     iconWithLabel
                     icon={<AiImage width={14} height={14} viewBox='0 0 14 12' />}
                     label="Image style"
+                    selected={activePopover === 'imageStyle'}
                   />
                 }
               >
@@ -399,6 +456,7 @@ export default function PromptInputPage () {
                     roundedRectangle
                     disabled={isProcessing || isRecording}
                     icon={<ThreeDots viewBox="0 0 23 7" width="16" height="5" />}
+                    selected={activePopover === 'mobileOptions'}
                   />
                 }
               >
