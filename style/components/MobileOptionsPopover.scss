@@ -1,0 +1,124 @@
+.mobile-options-popover {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__list-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    cursor: pointer;
+    color: #585769;
+    border-bottom: 1px solid #d7d7de;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:hover {
+      background-color: $ds-ui-background-color;
+
+      .mobile-options-popover__list-item-label {
+        color: $ds-brand-medium-color;
+      }
+
+      svg {
+        path,
+        rect,
+        circle {
+          fill: $ds-brand-medium-color !important;
+        }
+      }
+    }
+
+    &--disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+
+  &__list-item-content {
+    display: flex;
+    align-items: center;
+  }
+
+  &__list-item-icon {
+    margin-right: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      path,
+      rect,
+      circle {
+        fill: $ds-body-lighter-color;
+      }
+    }
+  }
+
+  &__list-item-label {
+    font-size: 14px;
+    color: #585769;
+  }
+
+  &__list-item-chevron {
+    path,
+    rect,
+    circle {
+      fill: $ds-body-lighter-color;
+    }
+  }
+
+  &__content {
+    width: 100%;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 12px 16px;
+    border-bottom: 1px solid #d7d7de;
+  }
+
+  &__title {
+    font-size: 12px;
+    font-weight: 400;
+    color: #585769;
+  }
+
+  &__back-button {
+    background: none;
+    border: none;
+    padding: 0 10px 0 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid $ds-body-lighter-color;
+    margin-right: 10px;
+
+    &:focus {
+      outline: none;
+    }
+
+    svg {
+      path,
+      rect,
+      circle {
+        fill: $ds-body-lighter-color;
+      }
+    }
+  }
+
+  &__body {
+    padding: 8px 12px;
+  }
+}
