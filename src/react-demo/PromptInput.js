@@ -391,6 +391,7 @@ export default function PromptInputPage () {
               <Popover
                 isOpen={activePopover === 'mobileOptions'}
                 onToggle={() => togglePopover('mobileOptions')}
+                className="ds-popover-container--mobile-options"
                 isSelected={selectedWebsiteStyle !== mockWebsiteStyleOptions[0].value || selectedImageStyle !== '' || (selectedColor !== null && selectedColor !== 'none')}
                 trigger={
                   <Button

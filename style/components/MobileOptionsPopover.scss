@@ -1,3 +1,18 @@
+.ds-popover-container--mobile-options {
+  position: static !important;
+
+  .ds-popover {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    box-sizing: border-box;
+    margin-left: 0;
+    margin-right: 0;
+    z-index: 110;
+  }
+}
+
 .mobile-options-popover {
   width: 100%;
   max-width: 100%;
