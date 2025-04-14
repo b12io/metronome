@@ -4,9 +4,7 @@ import PropTypes from 'prop-types'
 
 function PromptInputSelectors ({ children, className }) {
   return (
-    <div className={classnames({
-      'ds-prompt-input__actions-selectors': true,
-    }, className)}>
+    <div className={classnames('ds-prompt-input__actions-selectors', className)}>
       {children}
     </div>
   )

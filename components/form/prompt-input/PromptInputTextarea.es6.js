@@ -5,7 +5,7 @@ import classnames from 'classnames'
 function PromptInputTextarea ({ className, placeholder, rows, textareaRef, value, onChange, disabled }) {
   return (
     <textarea
-      className={classnames({'ds-prompt-input__textarea': true,}, className)}
+      className={classnames('ds-prompt-input__textarea', className)}
       placeholder={placeholder}
       rows={rows}
       ref={textareaRef}
