@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
+import classnames from 'classnames'
 import { ChevronRight, Back } from '../../Icons.es6'
 import Radio from '../../form/radio/Radio.es6'
 import SwitchTabPicker from '../../form/switch-tab-picker/SwitchTabPicker.es6'
@@ -41,9 +42,12 @@ const MobileOptionsPopover = ({
       {options.map((option) => (
         <div
           key={option.id}
-          className={`mobile-options-popover__list-item ${
-            option.disabled ? 'mobile-options-popover__list-item--disabled' : ''
-          }`}
+          className={classnames(
+            'mobile-options-popover__list-item',
+            {
+              'mobile-options-popover__list-item--disabled': option.disabled
+            }
+          )}
           onClick={() => !option.disabled && handleOptionClick(option.id)}
         >
           <div className="mobile-options-popover__list-item-content">
