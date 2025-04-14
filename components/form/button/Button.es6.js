@@ -6,6 +6,36 @@ import classnames from 'classnames'
  * Buttons trigger actions when clicked.
  */
 function Button ({ label, badge, primary, danger, loading, superSmall, small, large, wide, icon, iconWithLabel, active, block, disabled, onClick, className, buttonRef, id, alternative, chevron, type, title, round, roundedRectangle, hasSelection, selected, recording, highlighted }) {
+
+  const renderButtonContent = () => {
+    // Icon with label
+    if (iconWithLabel) {
+      return (
+        <React.Fragment>{icon} {label}</React.Fragment>
+      )
+    }
+
+    // Round button
+    if (round) {
+      // Show spinner if loading, otherwise show icon
+      if (loading) {
+        return <span className="button__spinner" />
+      } else {
+        return icon
+      }
+    }
+
+    // Regular button
+    // Show icon if provided, otherwise show spinner or label
+    if (icon) {
+      return icon
+    } else if (loading) {
+      return <span className="button__spinner" />
+    } else {
+      return label
+    }
+  }
+
   return (<button
     className={classnames({
       button: true,
@@ -36,24 +66,12 @@ function Button ({ label, badge, primary, danger, loading, superSmall, small, la
     id={id}
     title={title}
   >
-    {iconWithLabel ? (
-        <React.Fragment>{icon} {label}</React.Fragment>
-        ) : (round ? (
-          loading ? (
-            <span className="button__spinner" />
-          ) : (
-            icon
-          )
-        ) : icon || (
-        loading
-          ? <span className="button__spinner" />
-          : label
-        )
-      )
-    }
+    {renderButtonContent()}
+
     {badge && (
       <span className="button__badge">{badge}</span>
     )}
+
     {chevron && (
       <span className="button__chevron"></span>
     )}
