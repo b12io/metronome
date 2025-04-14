@@ -8,7 +8,7 @@
   flex-direction: column;
   align-items: flex-end;
   padding: 16px;
-  background: #fff;
+  background: $ds-ui-lightest-color;
   box-shadow: 0 12px 23.2px rgba(0, 0, 0, 0.05);
   flex: 1;
   position: relative;
@@ -24,7 +24,7 @@
     resize: none;
     border: 0;
     margin-bottom: 12px;
-    color: #110f33;
+    color: $ds-display-regular-color;
 
     @media (min-width: 768px) {
       max-height: 400px;
@@ -45,7 +45,7 @@
     }
 
     &::-webkit-scrollbar-thumb:hover {
-      background: #b3b3b3;
+      background: $ds-ui-darkest-color;
     }
 
     &:focus {
@@ -53,11 +53,11 @@
     }
 
     &::placeholder {
-      color: #84839c;
+      color: $ds-body-lighter-color;
     }
 
     &:disabled {
-      background-color: #ffffff;
+      background-color: $ds-ui-lightest-color;
     }
   }
 

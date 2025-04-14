@@ -30,7 +30,7 @@
     padding: 12px;
     cursor: pointer;
     color: #585769;
-    border-bottom: 1px solid #d7d7de;
+    border-bottom: $ds-card-border;
 
     &:last-child {
       border-bottom: none;
@@ -101,7 +101,7 @@
     align-items: center;
     justify-content: flex-start;
     padding: 12px 16px;
-    border-bottom: 1px solid #d7d7de;
+    border-bottom: $ds-card-border;
   }
 
   &__title {
