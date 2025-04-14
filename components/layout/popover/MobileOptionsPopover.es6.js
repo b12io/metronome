@@ -26,9 +26,7 @@ const MobileOptionsPopover = ({
         onClose()
       }
 
-      setTimeout(() => {
-        onEnhancePrompt()
-      }, 50)
+      onEnhancePrompt()
 
       return
     }
