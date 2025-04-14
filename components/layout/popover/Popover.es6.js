@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, cloneElement, isValidElement } from 'react'
 import PropTypes from 'prop-types'
+import classnames from 'classnames' // Make sure to add this import
 
 function Popover({
   trigger,
@@ -27,11 +28,9 @@ function Popover({
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (isOpen && popoverRef.current && !popoverRef.current.contains(event.target)) {
-        if (isControlled) {
-          if (onToggle) {
-            onToggle()
-          }
-        } else {
+        if (isControlled && onToggle) {
+          onToggle()
+        } else if (!isControlled) {
           setInternalIsOpen(false)
         }
       }
@@ -48,14 +47,17 @@ function Popover({
 
   const triggerWithClasses = isValidElement(trigger)
     ? cloneElement(trigger, {
-        className: `${(trigger).props.className || ''} ${
-          isOpen ? '' : isSelected ? 'button--has-selection' : ''
-        }`.trim(),
+        className: classnames(
+          trigger.props.className,
+          {
+            'button--has-selection': !isOpen && isSelected
+          }
+        )
       })
     : trigger
 
   return (
-    <div className={`ds-popover-container ${className}`} ref={popoverRef}>
+    <div className={classnames('ds-popover-container', className)} ref={popoverRef}>
       <div onClick={handleToggle}>{triggerWithClasses}</div>
       {isOpen && <div className="ds-popover">{children}</div>}
     </div>
