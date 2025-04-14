@@ -3,7 +3,7 @@
   box-sizing: border-box;
   width: 100%;
   border-radius: 20px;
-  border: 1px solid #d7d7de;
+  border: $ds-card-border;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
