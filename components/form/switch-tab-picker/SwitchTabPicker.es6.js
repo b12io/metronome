@@ -21,9 +21,12 @@ function SwitchTabPicker({
             return (
               <div
                 key={option.id}
-                className={`switch-tab-picker__option ${
-                  selectedOptionId === option.id ? 'switch-tab-picker__option--selected' : ''
-                }`}
+                className={classnames(
+                  'switch-tab-picker__option',
+                  {
+                    'switch-tab-picker__option--selected': selectedOptionId === option.id
+                  }
+                )}
                 onClick={() => onOptionChange(option.id)}
               >
                 <div className="switch-tab-picker__option-thumbnail">
@@ -40,7 +43,7 @@ function SwitchTabPicker({
 
   return (
     <div
-      className={classnames({'switch-tab-picker': true}, className)}
+      className={classnames('switch-tab-picker', className)}
     >
       <Switch block selected={selectedTabId} onChange={onTabChange}>
         {
