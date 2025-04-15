@@ -5,7 +5,37 @@ import classnames from 'classnames'
 /**
  * Buttons trigger actions when clicked.
  */
-function Button ({ label, badge, primary, danger, loading, superSmall, small, large, wide, icon, iconWithLabel, active, block, disabled, onClick, className, buttonRef, id, alternative, chevron, type, title }) {
+function Button ({ label, badge, primary, danger, loading, superSmall, small, large, wide, icon, iconWithLabel, active, block, disabled, onClick, className, buttonRef, id, alternative, chevron, type, title, round, roundedRectangle, hasSelection, selected, recording, highlighted }) {
+
+  const renderButtonContent = () => {
+    // Icon with label
+    if (iconWithLabel) {
+      return (
+        <React.Fragment>{icon} {label}</React.Fragment>
+      )
+    }
+
+    // Round button
+    if (round) {
+      // Show spinner if loading, otherwise show icon
+      if (loading) {
+        return <span className="button__spinner" />
+      } else {
+        return icon
+      }
+    }
+
+    // Regular button
+    // Show icon if provided, otherwise show spinner or label
+    if (icon) {
+      return icon
+    } else if (loading) {
+      return <span className="button__spinner" />
+    } else {
+      return label
+    }
+  }
+
   return (<button
     className={classnames({
       button: true,
@@ -21,6 +51,12 @@ function Button ({ label, badge, primary, danger, loading, superSmall, small, la
       'button--icon-with-label': iconWithLabel,
       'button--alternative': alternative,
       'button--has-chevron': chevron,
+      'button--round': round,
+      'button--rounded-rectangle': roundedRectangle,
+      'button--has-selection': hasSelection,
+      'button--selected': selected,
+      'button--recording-indicator': recording && round,
+      'button--highlighted': highlighted && (round || roundedRectangle),
       active,
     }, className)}
     disabled={disabled}
@@ -30,17 +66,12 @@ function Button ({ label, badge, primary, danger, loading, superSmall, small, la
     id={id}
     title={title}
   >
-    {iconWithLabel
-      ? <React.Fragment>{icon} {label}</React.Fragment>
-      : icon || (
-        loading
-          ? <span className="button__spinner" />
-          : label
-      )
-    }
+    {renderButtonContent()}
+
     {badge && (
       <span className="button__badge">{badge}</span>
     )}
+
     {chevron && (
       <span className="button__chevron"></span>
     )}
@@ -67,6 +98,12 @@ Button.defaultProps = {
   type: 'button',
   onClick: () => {},
   title: '',
+  round: false,
+  roundedRectangle: false,
+  hasSelection: false,
+  selected: false,
+  recording: false,
+  highlighted: false,
 }
 
 Button.propTypes = {
@@ -151,6 +188,31 @@ Button.propTypes = {
    * HTML title attribute of the button.
    */
   title: PropTypes.string,
+  /**
+   * Whether this should be a rounded button.
+   */
+  round: PropTypes.bool,
+  /**
+   * Whether this should be a rounded-rectangle button.
+   */
+  roundedRectangle: PropTypes.bool,
+  /**
+   * Whether this should have a selected item.
+   */
+  hasSelection: PropTypes.bool,
+  /**
+   * Whether this is actively selected.
+   */
+  selected: PropTypes.bool,
+  /**
+   * Whether this button is recording
+   */
+  recording: PropTypes.bool,
+
+  /**
+   * Whether this button is highlighted
+   */
+  highlighted: PropTypes.bool,
 }
 
 export default Button

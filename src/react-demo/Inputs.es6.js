@@ -330,6 +330,8 @@ class Inputs extends React.Component {
               <Radio label="Disabled" val="disabled" disabled />
               <Radio label="Checked disabled" val="checked disabled" checked disabled />
               <Radio label="With description" description="Long awaited description" val="description" />
+              <Radio label="Blue" val="blue" color='#2024FB' />
+              <Radio label="Purple" val="purple" color='#9900FF' description="The quick brown fox jumps over the lazy dog." />
             </Group>
           </div>
         </div>

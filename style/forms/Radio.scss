@@ -52,26 +52,25 @@
     &:disabled {
       ~ .ds-form-control-checkbox__indicator,
       ~ .ds-form-control-radio__indicator {
-
         &::after {
-          background: fade-out($ds-display-light-color, .5);
+          background: fade-out($ds-display-light-color, 0.5);
         }
 
         svg path {
-          fill: fade-out($ds-display-light-color, .5);
+          fill: fade-out($ds-display-light-color, 0.5);
         }
       }
 
       ~ .ds-form-control-checkbox__label,
       ~ .ds-form-control-radio__label {
-        color: fade-out($ds-display-light-color, .5);
+        color: fade-out($ds-display-light-color, 0.5);
       }
     }
   }
 
   &__indicator {
     position: absolute;
-    top: 0;
+    top: 50%;
     left: 0;
     display: block;
     width: 20px;
@@ -85,6 +84,7 @@
     background-position: center center;
     background-size: 20px 20px;
     box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    transform: translateY(-50%);
     transition: $ds-transition;
     cursor: pointer;
 
@@ -96,7 +96,7 @@
       position: absolute;
       left: 50%;
       top: 50%;
-      transform: translate(-50%,-50%);
+      transform: translate(-50%, -50%);
 
       path {
         fill: $ds-brand-regular-color;
@@ -107,6 +107,7 @@
   &__label-group {
     display: flex;
     flex-direction: column;
+    justify-content: center;
   }
 
   &__label {
@@ -121,7 +122,6 @@
   }
 
   &.has-error {
-
     input {
       &:checked ~ .ds-form-control-checkbox__indicator,
       &:checked ~ .ds-form-control-radio__indicator {
@@ -142,6 +142,22 @@
     .ds-form-control-checkbox__label {
       color: $ds-error-regular-color;
     }
+  }
+
+  &__color-swatch-container {
+    min-height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+  }
+
+  &__color-swatch {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
   }
 }
 

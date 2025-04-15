@@ -1,0 +1,112 @@
+.ds-prompt-input {
+  max-width: 864px;
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 20px;
+  border: $ds-card-border;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 16px;
+  background: $ds-ui-lightest-color;
+  box-shadow: 0 12px 23.2px rgba(0, 0, 0, 0.05);
+  flex: 1;
+  position: relative;
+
+  &__textarea {
+    width: 100%;
+    min-height: 40px;
+    max-height: 160px;
+    overflow-y: auto;
+    padding: 0;
+    font-size: 14px;
+    line-height: 20px;
+    resize: none;
+    border: 0;
+    margin-bottom: 12px;
+    color: $ds-display-regular-color;
+
+    @media (min-width: 768px) {
+      max-height: 400px;
+    }
+
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 3px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #d7d7de;
+      border-radius: 3px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: $ds-ui-darkest-color;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: $ds-body-lighter-color;
+    }
+
+    &:disabled {
+      background-color: $ds-ui-lightest-color;
+    }
+  }
+
+  &__actions {
+    position: relative;
+    width: 100%;
+    min-height: 20px;
+    display: flex;
+
+    &-selectors {
+      flex: 3;
+      gap: 0px;
+      display: flex;
+
+      @media (min-width: 993px) {
+        gap: 6px;
+      }
+    }
+
+    &-commands {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      gap: 6px;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .desktop-only {
+      display: none;
+    }
+  }
+
+  @media (min-width: 993px) {
+    .mobile-only {
+      display: none;
+    }
+  }
+
+  .text-fade-in {
+    animation: fadeIn 0.5s ease-in-out forwards;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

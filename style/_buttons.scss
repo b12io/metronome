@@ -20,7 +20,7 @@
   }
 
   &:hover {
-    background: darken($ds-ui-light-color, .25);
+    background: darken($ds-ui-light-color, 0.25);
     text-decoration: none;
   }
 
@@ -35,7 +35,7 @@
 
   &.disabled,
   &:disabled {
-    opacity: .3;
+    opacity: 0.3;
     pointer-events: none;
     cursor: default;
   }
@@ -95,6 +95,193 @@
     border-color: $ds-brand-medium-color;
     background: $ds-brand-medium-color;
     color: $ds-ui-lightest-color;
+  }
+}
+
+.button.button--round {
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  padding: 4px;
+  background-color: $ds-body-lighter-color;
+  border: none;
+
+  &:disabled {
+    background: $ds-body-lighter-color;
+  }
+
+  &:enabled {
+    background: $ds-ui-background-color;
+    border-color: none;
+    box-shadow: none;
+
+    > svg {
+      path,
+      rect,
+      circle {
+        fill: $ds-body-lighter-color;
+      }
+    }
+
+    &:hover {
+      background-color: darken($ds-ui-background-color, 5%);
+
+      > svg {
+        path,
+        rect,
+        circle {
+          fill: $ds-brand-medium-color;
+        }
+      }
+    }
+  }
+
+  &.is-loading {
+    cursor: default;
+    padding-top: 7px;
+    padding-bottom: 7px;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background: $ds-brand-medium-color;
+      border-color: $ds-ui-lightest-color;
+      box-shadow: none;
+    }
+  }
+
+  .button__spinner {
+    background: $ds-ui-lightest-color;
+
+    &::before,
+    &::after {
+      background: $ds-brand-medium-color;
+    }
+  }
+
+  &.button--recording-indicator {
+    > svg {
+      path,
+      rect,
+      circle {
+        fill: $ds-brand-medium-color !important;
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      bottom: -4px;
+      left: -4px;
+      border: 2px solid rgba(105, 95, 246, 0.6);
+      border-radius: 50%;
+      animation: pulse-animation 2s infinite;
+      pointer-events: none;
+    }
+  }
+
+  &.button--highlighted {
+    background: $ds-brand-medium-color;
+
+    > svg {
+      path,
+      rect,
+      circle {
+        fill: $ds-ui-lightest-color;
+      }
+    }
+
+    &:hover {
+      background-color: lighten($ds-brand-medium-color, 10%);
+
+      > svg {
+        path,
+        rect,
+        circle {
+          fill: $ds-ui-lightest-color;
+        }
+      }
+
+      .button__spinner {
+        &::before,
+        &::after {
+          background: lighten($ds-brand-medium-color, 10%);
+        }
+      }
+    }
+  }
+}
+
+.button.button--rounded-rectangle {
+  border-radius: 20px;
+  padding: 4px 16px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: 0;
+  color: $ds-body-lighter-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  background-color: $ds-ui-background-color;
+
+  &:enabled {
+    border-color: none;
+    box-shadow: none;
+
+    &:hover {
+      color: $ds-brand-medium-color;
+      background-color: #f6f5fe;
+
+      > svg {
+        path,
+        rect,
+        circle {
+          fill: $ds-brand-medium-color;
+        }
+      }
+    }
+  }
+
+  &:active {
+    border: 1px solid transparent;
+    color: $ds-brand-medium-color;
+    background-color: #f6f5fe;
+  }
+
+  &.button--has-selection {
+    border: 1px solid $ds-body-lighter-color;
+  }
+
+  &.button--selected {
+    background-color: #f5f6fe;
+    color: $ds-brand-medium-color;
+    border: 1px solid $ds-ui-background-dark-color !important;
+
+    > svg {
+      path,
+      rect,
+      circle {
+        fill: $ds-brand-medium-color;
+      }
+    }
+  }
+
+  &.button--highlighted {
+    background-color: #f5f6fe;
+    color: $ds-brand-medium-color;
+    border: 1px solid transparent;
+
+    > svg {
+      path,
+      rect,
+      circle {
+        fill: $ds-brand-medium-color;
+      }
+    }
   }
 }
 
@@ -203,7 +390,7 @@
   &:hover,
   &:focus,
   &:active {
-    background: #fff;
+    background: $ds-ui-lightest-color;
     border-color: $ds-ui-dark-color;
     box-shadow: none;
   }
@@ -236,7 +423,7 @@
   &::before {
     width: 14px;
     height: 6px;
-    background: #fff;
+    background: $ds-ui-lightest-color;
     position: absolute;
     display: block;
     top: 0;
@@ -245,7 +432,7 @@
   }
 
   &::after {
-    background: #fff;
+    background: $ds-ui-lightest-color;
     width: 10px;
     height: 10px;
     border-radius: 50%;
@@ -259,7 +446,7 @@
   }
 
   .button--primary & {
-    background: #fff;
+    background: $ds-ui-lightest-color;
 
     &::before {
       background: $ds-brand-regular-color;
@@ -289,5 +476,19 @@
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse-animation {
+  0% {
+    transform: scale(0.95);
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.15);
+    opacity: 0;
   }
 }

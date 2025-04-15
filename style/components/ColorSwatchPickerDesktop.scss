@@ -1,0 +1,23 @@
+.color-swatch-picker-desktop {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+
+  &__color-swatch {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+
+    &:hover {
+      transform: scale(1.1);
+      transition: transform 0.15s ease;
+    }
+
+    &.selected {
+      box-shadow: 0 0 0 3px $ds-ui-lightest-color,
+        0 0 0 5px $ds-body-lighter-color;
+    }
+  }
+}
