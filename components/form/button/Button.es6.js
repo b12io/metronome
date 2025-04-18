@@ -5,7 +5,14 @@ import classnames from 'classnames'
 /**
  * Buttons trigger actions when clicked.
  */
-function Button ({ label, badge, primary, danger, loading, superSmall, small, large, wide, icon, iconWithLabel, active, block, disabled, onClick, className, buttonRef, id, alternative, chevron, type, title, round, roundedRectangle, hasSelection, selected, recording, highlighted }) {
+function Button({ label, badge, primary, danger,
+  loading, superSmall, small, large, wide,
+  icon, iconWithLabel, active, block, disabled,
+  onClick, className, buttonRef, id, alternative,
+  chevron, type, title, round, roundedRectangle,
+  hasSelection, selected, recording, processing,
+  highlighted, disabledStyle,
+}) {
 
   const renderButtonContent = () => {
     // Icon with label
@@ -56,7 +63,10 @@ function Button ({ label, badge, primary, danger, loading, superSmall, small, la
       'button--has-selection': hasSelection,
       'button--selected': selected,
       'button--recording-indicator': recording && round,
+      'button--processing-indicator': processing && round,
       'button--highlighted': highlighted && (round || roundedRectangle),
+      'button--disabled-dark': disabled && disabledStyle === 'dark' && (roundedRectangle || round),
+      'button--disabled-light': disabled && disabledStyle === 'light' && (roundedRectangle || round),
       active,
     }, className)}
     disabled={disabled}
@@ -74,6 +84,10 @@ function Button ({ label, badge, primary, danger, loading, superSmall, small, la
 
     {chevron && (
       <span className="button__chevron"></span>
+    )}
+
+    {processing && round && (
+      <span className="button__processing-indicator"></span>
     )}
   </button>)
 }
@@ -103,7 +117,9 @@ Button.defaultProps = {
   hasSelection: false,
   selected: false,
   recording: false,
+  processing: false,
   highlighted: false,
+  disabledStyle: 'light',
 }
 
 Button.propTypes = {
@@ -210,9 +226,19 @@ Button.propTypes = {
   recording: PropTypes.bool,
 
   /**
+   * Whether this button is processing
+   */
+  processing: PropTypes.bool,
+
+  /**
    * Whether this button is highlighted
    */
   highlighted: PropTypes.bool,
+
+  /**
+   * Style for the disabled button
+   */
+  disabledStyle: PropTypes.oneOf(['dark', 'light']),
 }
 
 export default Button

@@ -97,28 +97,28 @@ export default function PromptInputPage () {
     {
       id: 'website-style',
       label: 'Website style',
-      icon: <Website width={14} height={14} />,
+      icon: <Website width={14} height={14} color="#84839c" />,
       itemOptions: mockWebsiteStyleOptions,
       disabled: isProcessing || isRecording,
     },
     {
       id: 'color',
       label: 'Color',
-      icon: <EditColor width={14} height={14} />,
+      icon: <EditColor width={14} height={14} color="#84839c" />,
       itemOptions: [{ value: 'none', color: null, label: 'None' }, ...mockColorOptions],
       disabled: isProcessing || isRecording,
     },
     {
       id: 'image-style',
       label: 'Image style',
-      icon: <AiImage width={14} height={14} viewBox='0 0 14 12' />,
+      icon: <AiImage width={14} height={14} viewBox='0 0 14 12' color="#84839c" />,
       itemOptions: mockImageStyleOptions,
       disabled: isProcessing || isRecording,
     },
     {
       id: 'enhance-prompt',
       label: 'Enhance prompt',
-      icon: <AiAssist width={14} height={14} />,
+      icon: <AiAssist width={14} height={14} color="#84839c" />,
       disabled: isTextareaEmpty || isProcessing || isRecording,
       isActive: !isTextareaEmpty,
       isEnhancing: isEnhancingPrompt || (isTypingPrompt && !isTypingFromRecording),
@@ -188,15 +188,21 @@ export default function PromptInputPage () {
     setSelectedImageStyleTab(tabId)
   }
 
+  // No need to add a progress state - the CSS animation handles the visual progress
+
   const handleEnhancePrompt = () => {
     if (isProcessing || isRecording) return
 
     resetTyping()
-
     setCanTriggerSend(false)
-
     setIsEnhancingPrompt(true)
     setIsSubmitting(true)
+
+    // The duration of the CSS animation (process-circle) should match this timeout
+    const processDuration = 1000
+
+    // Update the CSS variable for animation duration dynamically to match the process time
+    document.documentElement.style.setProperty('--processing-duration', `${processDuration}ms`)
 
     enhancePromptTimerRef.current = window.setTimeout(() => {
       setIsEnhancingPrompt(false)
@@ -214,7 +220,7 @@ export default function PromptInputPage () {
       }
 
       enhancePromptTimerRef.current = null
-    }, 1000)
+    }, processDuration)
   }
 
   const handleMicrophoneClick = () => {
@@ -381,7 +387,7 @@ export default function PromptInputPage () {
                     roundedRectangle
                     disabled={isProcessing || isRecording}
                     iconWithLabel
-                    icon={<Website width={14} height={14} />}
+                    icon={<Website width={14} height={14} color="#84839c" />}
                     label="Website style"
                     selected={activePopover === 'websiteStyle'}
                   />
@@ -408,7 +414,7 @@ export default function PromptInputPage () {
                     roundedRectangle
                     disabled={isProcessing || isRecording}
                     iconWithLabel
-                    icon={<EditColor width={14} height={14} />}
+                    icon={<EditColor width={14} height={14} color="#84839c"/>}
                     label="Color" viewBox="0 0 14 14"
                     selected={activePopover === 'color'}
                   />
@@ -430,7 +436,7 @@ export default function PromptInputPage () {
                     roundedRectangle
                     disabled={isProcessing || isRecording}
                     iconWithLabel
-                    icon={<AiImage width={14} height={14} viewBox='0 0 14 12' />}
+                    icon={<AiImage width={14} height={14} viewBox='0 0 14 12' color="#84839c" />}
                     label="Image style"
                     selected={activePopover === 'imageStyle'}
                   />
@@ -452,7 +458,7 @@ export default function PromptInputPage () {
                 selected={isEnhancingPrompt || (isTypingPrompt && !isTypingFromRecording)}
                 onClick={handleEnhancePrompt}
                 iconWithLabel
-                icon={<AiAssist width={14} height={14} />}
+                icon={<AiAssist width={14} height={14} color="#84839c" />}
                 label="Enhance Prompt"
                 className="desktop-only"
               />
@@ -466,8 +472,7 @@ export default function PromptInputPage () {
                     className="mobile-only"
                     roundedRectangle
                     disabled={isProcessing || isRecording}
-                    icon={<ThreeDots viewBox="0 0 23 7" width="16" height="5" />}
-                    selected={activePopover === 'mobileOptions'}
+                    icon={<ThreeDots viewBox="0 0 23 7" width="16" height="5" color="#84839c" />}
                   />
                 }
               >
@@ -493,14 +498,16 @@ export default function PromptInputPage () {
                 disabled={isProcessing && !isTypingFromRecording}
                 recording={isRecording}
                 onClick={handleMicrophoneClick}
-                icon={<Microphone width={14} height={14} viewBox="0 0 11 13" />}
+                icon={<Microphone width={14} height={14} viewBox="0 0 11 13" color="#ffffff" />}
               />
               <Button
                 round
                 disabled={!isSubmitButtonActive || isRecording || isTypingFromRecording}
                 loading={isSubmitting && !isEnhancingPrompt}
                 highlighted={isSubmitButtonActive}
-                icon={ isSubmitting ? <Stop width={10} height={10} viewBox="0 0 10 10" /> :<ArrowUp width={14} height={14} viewBox="0 0 12 14" />}
+                disabledStyle="dark"
+                processing={isEnhancingPrompt}
+                icon={ isSubmitting ? <Stop width={10} height={10} viewBox="0 0 10 10" color="#ffffff" /> : <ArrowUp width={14} height={14} viewBox="0 0 12 14" color="#ffffff" />}
                 onClick={handleSubmitButtonClick}
               />
             </PromptInputCommands>
