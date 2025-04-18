@@ -1944,8 +1944,9 @@ function ArrowCircleUp ({ className, width='16', height='16', color = '#766bff',
 function ArrowUp ({ className, width='16', height='16', color = '#766bff', viewBox='0 0 16 16' }) {
   return (
     <svg width={width} height={height} viewBox={viewBox} fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-      <path d="M6.0001 12.8811V1.42867M6.0001 1.42867V1.7382M6.0001 1.42867L10.3334 5.76203M6.0001 1.42867L1.66677 5.76203" stroke={color} strokeWidth="2" strokeMiterlimit="10" strokeLinecap={color} />
+      <path d="M6.0001 12.8811V1.42867M6.0001 1.42867V1.7382M6.0001 1.42867L10.3334 5.76203M6.0001 1.42867L1.66677 5.76203" stroke={color} strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" />
     </svg>
+
   )
 }
 
