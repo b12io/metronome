@@ -32,7 +32,7 @@
 @import 'forms/RangeSlider';
 @import 'forms/ButtonGroup';
 @import 'forms/ToggleButton';
-@import 'forms/PromptInput.scss';
+@import 'forms/PromptInput';
 
 // Custom datetime picker css needs to be imported after react-datepicker
 // library css file so custom css is not overwritten by defaults.
@@ -60,7 +60,7 @@
 @import 'components/StatusIndicator';
 @import 'components/TabbedNavigation';
 @import 'components/NavIndicator';
-@import 'components/Popover.scss';
-@import 'components/ColorSwatchPickerDesktop.scss';
-@import 'components/SwitchTabPicker.scss';
-@import 'components/MobileOptionsPopover.scss';
+@import 'components/Popover';
+@import 'components/ColorSwatchPickerDesktop';
+@import 'components/SwitchTabPicker';
+@import 'components/MobileOptionsPopover';

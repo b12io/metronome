@@ -92,20 +92,20 @@ function Buttons () {
         </div>
 
         <CodeExample code={`
-          <Button round disabled icon={<ArrowUp width={14} height={14} viewBox="0 0 12 14" />} />
-          <Button round highlighted icon={<ArrowUp width={14} height={14} viewBox="0 0 12 14" />} />
+          <Button round disabled disabledStyle="dark" icon={<ArrowUp width={14} height={14} viewBox="0 0 12 14" color="#ffffff" />} />
+          <Button round highlighted icon={<ArrowUp width={14} height={14} viewBox="0 0 12 14" color="#ffffff" />} />
           <Button round loading highlighted icon={<ArrowUp width={14} height={14} viewBox="0 0 12 14" />} />
           <Button round highlighted icon={<Stop width={10} height={10} viewBox="0 0 10 10" />} />
-          <Button round disabled icon={<Microphone width={14} height={14} viewBox="0 0 11 13" />} />
+          <Button round disabled disabledStyle="light" icon={<Microphone width={14} height={14} viewBox="0 0 11 13" />} />
           <Button round icon={<Microphone width={14} height={14} viewBox="0 0 11 13" />} />
           <Button round recording icon={<Microphone width={14} height={14} viewBox="0 0 11 13" />} />
         `}
         >
-            <Button round disabled icon={<ArrowUp width={14} height={14} viewBox="0 0 12 14" />} />
-            <Button round highlighted icon={<ArrowUp width={14} height={14} viewBox="0 0 12 14" />} />
+            <Button round disabled disabledStyle="dark" icon={<ArrowUp width={14} height={14} viewBox="0 0 12 14" color="#ffffff" />} />
+            <Button round highlighted icon={<ArrowUp width={14} height={14} viewBox="0 0 12 14" color="#ffffff" />} />
             <Button round loading highlighted icon={<ArrowUp width={14} height={14} viewBox="0 0 12 14" />} />
             <Button round highlighted icon={<Stop width={10} height={10} viewBox="0 0 10 10" />} />
-            <Button round disabled icon={<Microphone width={14} height={14} viewBox="0 0 11 13" />} />
+            <Button round disabled disabledStyle="light" icon={<Microphone width={14} height={14} viewBox="0 0 11 13" />} />
             <Button round icon={<Microphone width={14} height={14} viewBox="0 0 11 13" />} />
             <Button round recording icon={<Microphone width={14} height={14} viewBox="0 0 11 13" />} />
           <br /><br />

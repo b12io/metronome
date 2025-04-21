@@ -108,6 +108,7 @@
 
   &:disabled {
     background: $ds-body-lighter-color;
+    opacity: 0.5;
   }
 
   &:enabled {
@@ -281,6 +282,32 @@
       circle {
         fill: $ds-brand-medium-color;
       }
+    }
+
+    &:not(.button--selected):hover {
+      color: $ds-body-lighter-color;
+    }
+  }
+}
+
+// Disabled styles for round buttons
+.button--round.button--disabled-dark {
+  opacity: 1 !important;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.button--round.button--disabled-light {
+  background-color: $ds-ui-background-color !important;
+  color: $ds-body-lighter-color;
+  opacity: 1 !important;
+  pointer-events: none;
+  cursor: not-allowed;
+  > svg {
+    path,
+    rect,
+    circle {
+      fill: $ds-body-lighter-color;
     }
   }
 }
@@ -490,5 +517,54 @@
   100% {
     transform: scale(1.15);
     opacity: 0;
+  }
+}
+
+.button__processing-indicator {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  width: calc(100% + 8px);
+  height: calc(100% + 8px);
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top-color: $ds-brand-medium-color;
+  animation: process-circle var(--processing-duration) linear forwards;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+
+@keyframes process-circle {
+  0% {
+    transform: rotate(0deg);
+    border-top-color: $ds-brand-medium-color;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+  25% {
+    transform: rotate(90deg);
+    border-top-color: $ds-brand-medium-color;
+    border-right-color: $ds-brand-medium-color;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+  50% {
+    transform: rotate(180deg);
+    border-top-color: $ds-brand-medium-color;
+    border-right-color: $ds-brand-medium-color;
+    border-bottom-color: $ds-brand-medium-color;
+    border-left-color: transparent;
+  }
+  75% {
+    transform: rotate(270deg);
+    border-top-color: $ds-brand-medium-color;
+    border-right-color: $ds-brand-medium-color;
+    border-bottom-color: $ds-brand-medium-color;
+    border-left-color: $ds-brand-medium-color;
+  }
+  100% {
+    transform: rotate(360deg);
+    border-color: $ds-brand-medium-color;
   }
 }
