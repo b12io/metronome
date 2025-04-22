@@ -97,7 +97,7 @@ export default function PromptInputPage () {
     {
       id: 'website-style',
       label: 'Website style',
-      icon: <Website width={14} height={14} color="#84839c" />,
+      icon: <Website width={12} height={12} color="#84839c" />,
       itemOptions: mockWebsiteStyleOptions,
       disabled: isProcessing || isRecording,
     },
@@ -329,7 +329,7 @@ export default function PromptInputPage () {
                     roundedRectangle
                     disabled={condition}
                     iconWithLabel
-                    icon={<Website width={14} height={14} />}
+                    icon={<Website width={12} height={12} />}
                     label="Website style"
                   />
                 }
@@ -387,7 +387,7 @@ export default function PromptInputPage () {
                     roundedRectangle
                     disabled={isProcessing || isRecording}
                     iconWithLabel
-                    icon={<Website width={14} height={14} color="#84839c" />}
+                    icon={<Website width={12} height={12} color="#84839c" />}
                     label="Website style"
                     selected={activePopover === 'websiteStyle'}
                   />
