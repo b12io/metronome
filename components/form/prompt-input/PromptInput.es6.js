@@ -1,11 +1,36 @@
 import React from 'react'
-import classnames from 'classnames'
 import PropTypes from 'prop-types'
+import classnames from 'classnames'
 
-function PromptInput ({ children, className }) {
+function PromptInput ({ className, children }) {
+
+  let textarea = null
+  let actions = null
+  let overlay = null
+
+  React.Children.forEach(children, child => {
+    if (child.type && child.type.displayName === 'PromptInputTextarea') {
+      textarea = child
+    } else if (child.type && child.type.displayName === 'PromptInputActions') {
+      actions = child
+    } else if (child.type && child.type.name === 'TextRevealOverlay') {
+      overlay = child
+    }
+  })
+
   return (
     <div className={classnames('ds-prompt-input', className)}>
-      {children}
+      {textarea}
+      {overlay}
+      {actions}
+      {React.Children.map(children, child => {
+        if ((child.type && child.type.displayName !== 'PromptInputTextarea' &&
+             child.type.displayName !== 'PromptInputActions') &&
+            (child.type && child.type.name !== 'TextRevealOverlay')) {
+          return child
+        }
+        return null
+      })}
     </div>
   )
 }
@@ -13,11 +38,6 @@ function PromptInput ({ children, className }) {
 PromptInput.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node
-}
-
-PromptInput.defaultProps = {
-  className: '',
-  children: null
 }
 
 export default PromptInput

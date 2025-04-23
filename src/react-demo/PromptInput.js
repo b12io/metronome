@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback, useEffect } from 'react'
+import React, { useState, useRef, useCallback, useEffect, useMemo } from 'react'
 import DemoLayoutContent from './demo-only-components/DemoLayoutContent.es6.js'
 import CodeExample from './demo-only-components/CodeExample.es6.js'
 import MetaData from './demo-only-components/MetaData.es6.js'
@@ -23,6 +23,9 @@ import {
 import useAutoResizeTextarea from '../../components/lib/useAutoResizeTextarea.js'
 import useTypingSimulation, { TypingStatus } from '../../components/lib/useTypingSimulation.js'
 import usePopover from '../../components/lib/usePopover.es6.js'
+import useProgressiveTextReveal from '../../components/lib/useProgressiveTextReveal.es6.js'
+
+import TextRevealOverlay from '../../components/form/prompt-input/TextRevealOverlay.es6.js'
 
 import { mockTypingPrompt, mockImprovedPrompt, mockColorOptions, mockWebsiteStyleOptions, imageStyleTabs, mockImageStyleOptions } from './demo-data/promptInputMockData.js'
 
@@ -52,6 +55,7 @@ export default function PromptInputPage () {
   const [isRecording, setIsRecording] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isTypingFromRecording, setIsTypingFromRecording] = useState(false)
+  const [animationInProgress, setAnimationInProgress] = useState(false)
 
   const submitTimerRef = useRef(null)
   const enhancePromptTimerRef = useRef(null)
@@ -86,8 +90,50 @@ export default function PromptInputPage () {
     status: typingStatus,
   } = useTypingSimulation(handleTypingStatusChange)
 
+  const {
+      revealText,
+      resetTextReveal,
+      currentText,
+      isRevealing,
+      lastParagraphIndex
+    } = useProgressiveTextReveal({
+      paragraphDelay: 400,
+      onParagraphAdded: () => {
+        resizeTextarea()
+      }
+    })
+
+  const resetAnimationState = useCallback(() => {
+      setAnimationInProgress(false)
+      setIsSubmitting(false)
+      setIsEnhancingPrompt(false)
+      setCanTriggerSend(true)
+
+      if (resetTextReveal) {
+        resetTextReveal()
+      }
+
+      if (isTypingPrompt && resetTyping) {
+        resetTyping()
+      }
+    }, [resetTextReveal, resetTyping, isTypingPrompt])
+
+  const handleAnimationComplete = useCallback(() => {
+      setAnimationInProgress(false)
+      setIsSubmitting(false)
+      setIsEnhancingPrompt(false)
+      setCanTriggerSend(true)
+      setMessage(currentText)
+      resizeTextarea()
+      resetTextReveal()
+    }, [currentText, resizeTextarea, resetTextReveal])
+
   const isTextareaEmpty = message.trim() === ''
-  const isProcessing = isSubmitting || (isTypingPrompt && !isTypingFromRecording)
+  const isProcessing = useMemo(() => {
+      return isSubmitting ||
+        (isTypingPrompt && !isTypingFromRecording) ||
+        (isRevealing && animationInProgress)
+  }, [isSubmitting, isTypingPrompt, isTypingFromRecording, isRevealing, animationInProgress])
 
   const isSubmitButtonActive = !isTextareaEmpty && (canTriggerSend || isSubmitting || isTypingPrompt) && !(isRecording || isTypingFromRecording)
 
@@ -163,6 +209,29 @@ export default function PromptInputPage () {
     }
   }, [])
 
+  useEffect(() => {
+      if (currentText) {
+        // Update message with current revealed text
+        setMessage(currentText)
+        resizeTextarea()
+      }
+    }, [currentText, resizeTextarea])
+
+  useEffect(() => {
+      if (isTypingFromRecording) return
+      if (!isRevealing && textareaRef.current) {
+        // When reveal animation completes, do a complete reset after a small delay
+        setTimeout(() => {
+          resetAnimationState()
+
+          if (currentText) {
+            setMessage(currentText)
+            resizeTextarea()
+          }
+        }, 100)
+      }
+    }, [isRevealing, resetAnimationState, currentText, resizeTextarea, isTypingFromRecording])
+
   const handleInputChange = (e) => {
     const newMessage = e.target.value
     setMessage(newMessage)
@@ -188,39 +257,38 @@ export default function PromptInputPage () {
     setSelectedImageStyleTab(tabId)
   }
 
-  // No need to add a progress state - the CSS animation handles the visual progress
-
   const handleEnhancePrompt = () => {
     if (isProcessing || isRecording) return
 
     resetTyping()
-    setCanTriggerSend(false)
-    setIsEnhancingPrompt(true)
-    setIsSubmitting(true)
+    resetAnimationState()
 
-    // The duration of the CSS animation (process-circle) should match this timeout
-    const processDuration = 1000
+    setTimeout(() => {
+      setCanTriggerSend(false)
+      setIsEnhancingPrompt(true)
+      setIsSubmitting(true)
 
-    // Update the CSS variable for animation duration dynamically to match the process time
-    document.documentElement.style.setProperty('--processing-duration', `${processDuration}ms`)
-
-    enhancePromptTimerRef.current = window.setTimeout(() => {
-      setIsEnhancingPrompt(false)
-      setIsSubmitting(false)
-      setMessage(mockImprovedPrompt)
-
-      if (textareaRef.current) {
-        textareaRef.current.classList.add('text-fade-in')
-
-        setTimeout(() => {
-          if (textareaRef.current) {
-            textareaRef.current.classList.remove('text-fade-in')
-          }
-        }, 500)
+      if (enhancePromptTimerRef.current) {
+        clearTimeout(enhancePromptTimerRef.current)
       }
 
-      enhancePromptTimerRef.current = null
-    }, processDuration)
+      // The duration of the CSS animation (process-circle) should match this timeout
+      const processDuration = 1000
+
+      // Update the CSS variable for animation duration dynamically to match the process time
+      document.documentElement.style.setProperty('--processing-duration', `${processDuration}ms`)
+
+      enhancePromptTimerRef.current = window.setTimeout(() => {
+        setIsEnhancingPrompt(false)
+        setIsSubmitting(false)
+
+        if (revealText) {
+          revealText(mockImprovedPrompt)
+        }
+
+        enhancePromptTimerRef.current = null
+      }, processDuration)
+    }, 10)
   }
 
   const handleMicrophoneClick = () => {
@@ -275,8 +343,7 @@ export default function PromptInputPage () {
         const completeText = stopTyping(true)
         if (completeText) {
           setMessage(completeText)
-          // Schedule a resize after the state update
-          setTimeout(resizeTextarea, 50)
+          resizeTextarea()
         }
       }
 
@@ -375,6 +442,13 @@ export default function PromptInputPage () {
               onChange={handleInputChange}
               disabled={isTypingPrompt || isRecording || isSubmitting }
             />
+            <TextRevealOverlay
+              text={currentText}
+              isRevealing={isRevealing}
+              lastParagraphIndex={lastParagraphIndex}
+              textareaRef={textareaRef}
+              onAnimationComplete={handleAnimationComplete}
+            />
             <PromptInputActions>
             <PromptInputSelectors>
               <Popover
@@ -455,7 +529,7 @@ export default function PromptInputPage () {
                 roundedRectangle
                 disabled={isTextareaEmpty && (isProcessing || isRecording || !isEnhancingPrompt)}
                 highlighted={!isTextareaEmpty}
-                selected={isEnhancingPrompt || (isTypingPrompt && !isTypingFromRecording)}
+                selected={isEnhancingPrompt || isRevealing || (isTypingPrompt && !isTypingFromRecording)}
                 onClick={handleEnhancePrompt}
                 iconWithLabel
                 icon={<AiAssist width={14} height={14} color="#84839c" />}
@@ -506,8 +580,8 @@ export default function PromptInputPage () {
                 loading={isSubmitting && !isEnhancingPrompt}
                 highlighted={isSubmitButtonActive}
                 disabledStyle="dark"
-                processing={isEnhancingPrompt}
-                icon={ isSubmitting ? <Stop width={10} height={10} viewBox="0 0 10 10" color="#ffffff" /> : <ArrowUp width={14} height={14} viewBox="0 0 12 14" color="#ffffff" />}
+                processing={isEnhancingPrompt || isRevealing}
+                icon={ isSubmitting || isRevealing ? <Stop width={10} height={10} viewBox="0 0 10 10" color="#ffffff" /> : <ArrowUp width={14} height={14} viewBox="0 0 12 14" color="#ffffff" />}
                 onClick={handleSubmitButtonClick}
               />
             </PromptInputCommands>
