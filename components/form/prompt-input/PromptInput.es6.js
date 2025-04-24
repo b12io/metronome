@@ -1,11 +1,36 @@
 import React from 'react'
-import classnames from 'classnames'
 import PropTypes from 'prop-types'
+import classnames from 'classnames'
+import get from 'lodash/get'
 
-function PromptInput ({ children, className }) {
+function PromptInput ({ className, children }) {
+  let textarea = null
+  let actions = null
+  let overlay = null
+  const otherChildren = []
+
+  React.Children.forEach(children, child => {
+    const isTextarea = get(child, 'type.displayName') === 'PromptInputTextarea'
+    const isActions = get(child, 'type.displayName') === 'PromptInputActions'
+    const isOverlay = get(child, 'type.name') === 'TextRevealOverlay'
+
+    if (isTextarea) {
+      textarea = child
+    } else if (isActions) {
+      actions = child
+    } else if (isOverlay) {
+      overlay = child
+    } else if (child) {
+      otherChildren.push(child)
+    }
+  })
+
   return (
     <div className={classnames('ds-prompt-input', className)}>
-      {children}
+      {textarea}
+      {overlay}
+      {actions}
+      {otherChildren}
     </div>
   )
 }
@@ -13,11 +38,6 @@ function PromptInput ({ children, className }) {
 PromptInput.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node
-}
-
-PromptInput.defaultProps = {
-  className: '',
-  children: null
 }
 
 export default PromptInput

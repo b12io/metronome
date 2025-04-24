@@ -7,17 +7,16 @@
   position: absolute;
   bottom: 100%;
   left: 0;
-  margin-bottom: 2px;
+  margin-bottom: 6px;
   background: $ds-ui-lightest-color;
   border: $ds-card-border;
   border-radius: 6px;
-  box-shadow: 0 12px 23.2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 7px 0 rgba(17, 15, 51, 0.3);
   padding: 0;
   min-width: 160px;
   z-index: 100;
 
   @media (min-width: 993px) {
     padding: 12px;
-    margin-bottom: 8px;
   }
 }

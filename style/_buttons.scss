@@ -285,7 +285,8 @@
     }
 
     &:not(.button--selected):hover {
-      color: $ds-body-lighter-color;
+      color: $ds-brand-medium-color;
+      background-color: #ebe8ff;
     }
   }
 }
