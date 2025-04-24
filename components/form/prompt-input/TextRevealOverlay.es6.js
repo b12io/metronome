@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react'
 import PropTypes from 'prop-types'
+import classnames from 'classnames'
 
 function TextRevealOverlay({
   text,
@@ -25,6 +26,7 @@ function TextRevealOverlay({
     }
   }, [text])
 
+  // Handle animation completion when the last paragraph finishes animating
   useEffect(() => {
     if (isAnimatingLastParagraph && lastParagraphIndex === paragraphs.length - 1) {
       const timer = setTimeout(() => {
@@ -38,14 +40,14 @@ function TextRevealOverlay({
     }
   }, [isAnimatingLastParagraph, lastParagraphIndex, paragraphs.length, onAnimationComplete])
 
-
+  // Detect when the last paragraph appears and mark it for animation
   useEffect(() => {
     if (lastParagraphIndex === paragraphs.length - 1 && paragraphs.length > 0) {
       setIsAnimatingLastParagraph(true)
     }
   }, [lastParagraphIndex, paragraphs.length])
 
-
+  // Sync overlay dimensions, positioning and scrolling with the textarea
   useEffect(() => {
     if (!textareaRef || !textareaRef.current || !overlayRef.current || !isRevealing) return
 
@@ -84,7 +86,8 @@ function TextRevealOverlay({
       overlay.style.position = 'absolute'
       overlay.style.top = paddingTop
       overlay.style.left = paddingLeft
-      overlay.style.width = 'calc(100% - ' + (parseInt(paddingLeft) * 2) + 'px)'
+      overlay.style.width = `calc(100% - ${parseInt(paddingLeft) * 2}px)`
+
 
       // Set max-height to match textarea max-height
       overlay.style.maxHeight = textareaStyles.maxHeight
@@ -143,15 +146,21 @@ function TextRevealOverlay({
   return (
     <div
       ref={overlayRef}
-      className={`ds-prompt-input__text-reveal-overlay ${className || ''}`}
+      className={classnames(
+        'ds-prompt-input__text-reveal-overlay',
+        className
+      )}
       aria-hidden="true"
     >
       {paragraphs.map((paragraph, index) => (
         <p
           key={index}
-          className={`ds-prompt-input__text-reveal-paragraph ${
-            index === lastParagraphIndex ? 'ds-prompt-input__text-reveal-paragraph--animating' : ''
-          }`}
+          className={classnames(
+            'ds-prompt-input__text-reveal-paragraph',
+            {
+              'ds-prompt-input__text-reveal-paragraph--animating': index === lastParagraphIndex
+            }
+          )}
         >
           {paragraph}
         </p>
