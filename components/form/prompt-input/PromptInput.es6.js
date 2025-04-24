@@ -3,18 +3,44 @@ import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
 function PromptInput ({ className, children }) {
-
   let textarea = null
   let actions = null
   let overlay = null
+  const otherChildren = []
+
+  const identifyChildComponent = (child) => {
+    if (child && child.type) {
+      if (child.type.displayName === 'PromptInputTextarea') {
+        return 'textarea'
+      } else if (child.type.displayName === 'PromptInputActions') {
+        return 'actions'
+      } else if (child.type.name === 'TextRevealOverlay') {
+        return 'overlay'
+      } else {
+        return 'other'
+      }
+    }
+    return null
+  }
 
   React.Children.forEach(children, child => {
-    if (child.type && child.type.displayName === 'PromptInputTextarea') {
-      textarea = child
-    } else if (child.type && child.type.displayName === 'PromptInputActions') {
-      actions = child
-    } else if (child.type && child.type.name === 'TextRevealOverlay') {
-      overlay = child
+    const componentType = identifyChildComponent(child)
+
+    switch (componentType) {
+      case 'textarea':
+        textarea = child
+        break
+      case 'actions':
+        actions = child
+        break
+      case 'overlay':
+        overlay = child
+        break
+      case 'other':
+        otherChildren.push(child)
+        break
+      default:
+        break
     }
   })
 
@@ -23,14 +49,7 @@ function PromptInput ({ className, children }) {
       {textarea}
       {overlay}
       {actions}
-      {React.Children.map(children, child => {
-        if ((child.type && child.type.displayName !== 'PromptInputTextarea' &&
-             child.type.displayName !== 'PromptInputActions') &&
-            (child.type && child.type.name !== 'TextRevealOverlay')) {
-          return child
-        }
-        return null
-      })}
+      {otherChildren}
     </div>
   )
 }
