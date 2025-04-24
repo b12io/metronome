@@ -171,18 +171,21 @@ export default function PromptInputPage () {
     }
   ]
 
+  // Update message when typing animation generates new text
   useEffect(() => {
     if (isTypingPrompt && typedText) {
       setMessage(typedText)
     }
   }, [isTypingPrompt, typedText])
 
+  // Enable send button when typing animation completes
   useEffect(() => {
     if (!isTypingPrompt) {
       setCanTriggerSend(true)
     }
   }, [message, isTypingPrompt])
 
+  // Reset recording state when typing from recording completes
   useEffect(() => {
     if (isRecording && typingStatus === TypingStatus.COMPLETED && isTypingFromRecording) {
       setIsRecording(false)
@@ -190,6 +193,7 @@ export default function PromptInputPage () {
     }
   }, [isRecording, typingStatus, isTypingFromRecording])
 
+  // Cleanup timeouts when component unmounts
   useEffect(() => {
     return () => {
       if (submitTimerRef.current) {
@@ -209,6 +213,7 @@ export default function PromptInputPage () {
     }
   }, [])
 
+  // Update textarea with revealed text during paragraph animation
   useEffect(() => {
       if (currentText) {
         // Update message with current revealed text
@@ -217,6 +222,7 @@ export default function PromptInputPage () {
       }
     }, [currentText, resizeTextarea])
 
+  // Reset animation state when text reveal completes
   useEffect(() => {
       if (isTypingFromRecording) return
       if (!isRevealing && textareaRef.current) {
