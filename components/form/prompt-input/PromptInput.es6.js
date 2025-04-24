@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
+import get from 'lodash/get'
 
 function PromptInput ({ className, children }) {
   let textarea = null
@@ -8,39 +9,19 @@ function PromptInput ({ className, children }) {
   let overlay = null
   const otherChildren = []
 
-  const identifyChildComponent = (child) => {
-    if (child && child.type) {
-      if (child.type.displayName === 'PromptInputTextarea') {
-        return 'textarea'
-      } else if (child.type.displayName === 'PromptInputActions') {
-        return 'actions'
-      } else if (child.type.name === 'TextRevealOverlay') {
-        return 'overlay'
-      } else {
-        return 'other'
-      }
-    }
-    return null
-  }
-
   React.Children.forEach(children, child => {
-    const componentType = identifyChildComponent(child)
+    const isTextarea = get(child, 'type.displayName') === 'PromptInputTextarea'
+    const isActions = get(child, 'type.displayName') === 'PromptInputActions'
+    const isOverlay = get(child, 'type.name') === 'TextRevealOverlay'
 
-    switch (componentType) {
-      case 'textarea':
-        textarea = child
-        break
-      case 'actions':
-        actions = child
-        break
-      case 'overlay':
-        overlay = child
-        break
-      case 'other':
-        otherChildren.push(child)
-        break
-      default:
-        break
+    if (isTextarea) {
+      textarea = child
+    } else if (isActions) {
+      actions = child
+    } else if (isOverlay) {
+      overlay = child
+    } else if (child) {
+      otherChildren.push(child)
     }
   })
 
