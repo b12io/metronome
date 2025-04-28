@@ -31,7 +31,7 @@ PromptInputTextarea.propTypes = {
   rows: PropTypes.number,
   textareaRef: PropTypes.oneOfType([
     PropTypes.func,
-    PropTypes.shape({ current: PropTypes.instanceOf(Element) })
+    PropTypes.shape({ current: PropTypes.object })
   ]),
   value: PropTypes.string,
   onChange: PropTypes.func,
