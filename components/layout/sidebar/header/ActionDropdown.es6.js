@@ -1,0 +1,52 @@
+import React, { forwardRef } from 'react'
+import QuickActions from './QuickActions.es6.js'
+import SidebarHeaderActionButton from './SidebarHeaderActionButton.es6.js'
+
+import classnames from 'classnames'
+
+const ActionDropdown = forwardRef(({
+    icon,
+    actionsAvailable,
+    actionsVisible,
+    quickDialog,
+    quickActions,
+    onClick,
+    dropdownMenuLabel,
+    onQuickActionSelected,
+    isLogoDropDown,
+}, ref) => (
+    <div
+        className={classnames({
+            'ds-dropdown': actionsAvailable && icon,
+            'ds-dropdown--right': actionsAvailable && icon && !isLogoDropDown,
+            'ds-dropdown--left': isLogoDropDown,
+            'ds-dropdown--menu-visible': actionsAvailable && actionsVisible,
+            'ds-sidebar__header-action': !actionsAvailable
+        })}
+        ref={ref}
+    >
+        {icon && (
+            <SidebarHeaderActionButton
+                dropdown={actionsAvailable}
+                icon={icon}
+                onClick={onClick}
+            />
+        )}
+
+        {quickDialog}
+
+        {actionsVisible && (
+            <QuickActions
+                actions={quickActions}
+                label={dropdownMenuLabel}
+                onSelect={(idx) => {
+                    this.setState({ actionsVisible: false }, () => {
+                        onQuickActionSelected && onQuickActionSelected(idx)
+                    })
+                }}
+            />
+        )}
+    </div>
+))
+
+export default ActionDropdown

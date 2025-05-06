@@ -2007,10 +2007,46 @@ function PencilFilled ({ className, width='16', height='16', color = '#766bff', 
   )
 }
 
-function Stop ({ className, width='16', height='16', color = '#766bff', viewBox='0 0 10 10' }) {
+function Stop ({ className, width='16', height='16', color='#766bff', viewBox='0 0 10 10' }) {
   return (
     <svg width={width} height={height} viewBox={viewBox} fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
     <path d="M0 2C0 0.89543 0.895431 0 2 0H8C9.10457 0 10 0.895431 10 2V8C10 9.10457 9.10457 10 8 10H2C0.89543 10 0 9.10457 0 8V2Z" fill={color} />
+    </svg>
+  )
+}
+
+function Revert ({ className, color='#84839C', width='18', height='16', viewBox='0 0 18 16' }) {
+  return (
+    <svg fill="none" viewBox={viewBox} className={className} width={width} height={height} xmlns="http://www.w3.org/2000/svg">
+      <path d="m3.1123 6.2038 3.0848 3.048c0.50104 0.85788-0.43091 1.7637-1.2765 1.2264l-4.6233-4.503c-0.33048-0.35062-0.42362-0.87182-0.084162-1.2537l4.5369-4.4639c0.71987-0.67672 1.8443 0.094764 1.4661 0.99781-0.15317 0.36567-0.77597 0.82054-1.0677 1.1087-0.68452 0.67505-1.3696 1.3523-2.0356 2.0452l9.4306-0.00167c4.8152 0.3261 7.2307 6.0716 3.9467 9.6832-1.8673 2.053-4.1997 1.9694-6.7942 1.8668-0.86687-0.1638-0.89436-1.5429-0.03366-1.7241 0.61491-0.1293 1.7304 0.0167 2.4188-0.0167 2.8234-0.1366 4.8141-2.5531 3.895-5.3335-0.4163-1.2604-1.9649-2.6796-3.3508-2.6796h-9.5131z" fill={color} />
+    </svg>
+  )
+}
+
+function ThumbUp ({ className, color='#84839C', width='16', height='16', viewBox='0 0 16 16' }) {
+  return (
+    <svg fill="none" viewBox={viewBox} className={className} width={width} height={height} xmlns="http://www.w3.org/2000/svg">
+      <path d="m3.5386 15h-2.5455v-6.3636h2.5455" stroke={color} strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"/>
+      <path d="m3.5386 8.6364 2.5455-7.6364h0.63636c0.50632 0 0.99191 0.20114 1.3499 0.55916 0.35803 0.35802 0.55916 0.84361 0.55916 1.3499v3.1818h4.1618c0.2735-1e-5 0.5438 0.05875 0.7927 0.1723 0.2488 0.11355 0.4703 0.27925 0.6495 0.48586s0.312 0.44932 0.3892 0.7117c0.0773 0.26237 0.0973 0.53828 0.0586 0.80905l-0.7267 5.0909c-0.065 0.4548-0.2917 0.8709-0.6386 1.172s-0.7908 0.467-1.2502 0.4673h-8.5272v-6.3636z" stroke={color} strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"/>
+    </svg>
+  )
+}
+
+function ThumbDown ({ className, color='#84839C', width='16', height='16', viewBox='0 0 16 16' }) {
+  return (
+    <svg fill="none" viewBox={viewBox} className={className} width={width} height={height} xmlns="http://www.w3.org/2000/svg">
+      <g stroke={color}>
+        <path d="m12.461 0.99989h2.5454v6.3636h-2.5454" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"/>
+        <path d="m12.461 7.3636-2.5454 7.6364h-0.63636c-0.50632 0-0.99191-0.2011-1.3499-0.5592-0.35803-0.358-0.55916-0.8436-0.55916-1.3499v-3.1818h-4.1618c-0.27351 1e-5 -0.54383-0.05875-0.79266-0.1723s-0.47035-0.27924-0.64956-0.48586c-0.17922-0.20661-0.31195-0.44932-0.38921-0.7117-0.07725-0.26237-0.09723-0.53828-0.05857-0.80905l0.72672-5.0909c0.06493-0.45475 0.29165-0.87086 0.63858-1.172 0.34692-0.3011 0.79078-0.46702 1.2502-0.46731h8.5272v6.3636z" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"/>
+      </g>
+    </svg>
+  )
+}
+
+function Forward ({ className, color='#84839C', width='12', height='12', viewBox='0 0 12 12' }) {
+  return (
+    <svg fill="none" viewBox={viewBox} className={className} width={width} height={height} xmlns="http://www.w3.org/2000/svg">
+      <path d="m-4.5897e-7 6.75h9.1275l-4.1925 4.1925 1.065 1.0575 6-6-6-6-1.0575 1.0575 4.185 4.1925h-9.1275l1.3113e-7 1.5z" fill={color} />
     </svg>
   )
 }
@@ -2215,7 +2251,11 @@ const icons = [
   Microphone,
   ThreeDots,
   PencilFilled,
-  Stop
+  Stop,
+  Revert,
+  ThumbUp,
+  ThumbDown,
+  Forward,
 ]
 
 each(icons, (icon) => {
@@ -2242,5 +2282,5 @@ export { Check, Checkmark, Lock, Notice, Disabled, Help, Search, Draggable,
   Flag, Testimonials, Chart, Pause, HubspotLogo, AlignLeftV2, AlignRightV2, AlignCenterV2, AlignJustifyV2, Sidebar, Palette, Lightbox, Filter, Slider,
   Flash, Dashboard, Guides, Article, Pulse, Edit, ContentApproved, Dragger, PaperClip, Invoicing, Banking, Checkbox, Circle, Bank, Card, Contract,
   MinusCircle, RepeatCircle, BadgeCard, HeadphonesMic, CheckmarkLarge, NoticeOutlined, Archive, Questionnaire, Upload, ShareFeedback, Spaceship, Zap, Tip,
-  Webpage, LayoutAlternative, GlobeAlternative, AiAssist, Flows, Highlight, ArrowCircleUp, ArrowUp, EditColor, AiImage, AiLogo, Microphone, ThreeDots, PencilFilled, Stop
+  Webpage, LayoutAlternative, GlobeAlternative, AiAssist, Flows, Highlight, ArrowCircleUp, ArrowUp, EditColor, AiImage, AiLogo, Microphone, ThreeDots, PencilFilled, Stop, Revert, ThumbUp, ThumbDown, Forward,
 }

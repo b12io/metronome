@@ -1422,11 +1422,6 @@ amdefine@>=0.0.4:
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
   integrity sha1-SlKCrBZHKek2Gbz9OtFR+BfOkfU=
 
-angular-mocks@1.4.8:
-  version "1.4.8"
-  resolved "https://registry.yarnpkg.com/angular-mocks/-/angular-mocks-1.4.8.tgz#1497426d480862ca8b1f637e9c2fc1a1df664208"
-  integrity sha1-FJdCbUgIYsqLH2N+nC/Bod9mQgg=
-
 ansi-colors@^3.0.0:
   version "3.2.4"
   resolved "https://registry.yarnpkg.com/ansi-colors/-/ansi-colors-3.2.4.tgz#e3a3da4bfbae6c86a9c285625de124a234026fbf"
@@ -2125,15 +2120,6 @@ babel-messages@^6.23.0:
   integrity sha1-8830cDhYA1sqKVHG7F7fbGLyYw4=
   dependencies:
     babel-runtime "^6.22.0"
-
-babel-plugin-angularjs-annotate@0.9.0:
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/babel-plugin-angularjs-annotate/-/babel-plugin-angularjs-annotate-0.9.0.tgz#5c499bb04d9ae5802b31e1068aedb8b2286a83af"
-  integrity sha512-erYvZAJgnrgeyEZqIJOAiK6vUK44HsVb0+Tid4zTBcsvdQuas0Z5Teh0w/hcINKW3G0xweqA5LGfg2ZWlp3nMA==
-  dependencies:
-    babel-code-frame "^6.26.0"
-    babel-types "^6.26.0"
-    simple-is "~0.2.0"
 
 babel-plugin-check-es2015-constants@^6.22.0:
   version "6.22.0"
@@ -12519,11 +12505,6 @@ signal-exit@^3.0.0, signal-exit@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.2.tgz#b5fdc08f1287ea1178628e415e25132b73646c6d"
   integrity sha1-tf3AjxKH6hF4Yo5BXiUTK3NkbG0=
-
-simple-is@~0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/simple-is/-/simple-is-0.2.0.tgz#2abb75aade39deb5cc815ce10e6191164850baf0"
-  integrity sha1-Krt1qt453rXMgVzhDmGRFkhQuvA=
 
 sisteransi@^1.0.0:
   version "1.0.0"

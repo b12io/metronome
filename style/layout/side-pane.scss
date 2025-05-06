@@ -76,6 +76,19 @@
     background-color: $ds-ui-lightest-color;
     padding: 0 spacing('md');
 
+    &--website-manager {
+      justify-content: flex-start;
+
+      &>.ds-dropdown {
+        flex-grow: unset !important;
+        justify-content: unset !important;
+      }
+
+      .ds-dropdown__toggle:after {
+        right: -10px;
+      }
+    }
+
     @include breakpoint-tablet-portrait-up {
       box-shadow: none;
     }
