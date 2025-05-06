@@ -22,7 +22,7 @@ import {
   Flash, Dashboard, Guides, Article, Pulse, Edit, ContentApproved, Dragger, PaperClip, Invoicing, Banking, Checkbox, Circle, Bank, Card, Contract,
   MinusCircle, RepeatCircle, BadgeCard, HeadphonesMic, CheckmarkLarge, NoticeOutlined, Archive, Questionnaire, Upload, ShareFeedback, Spaceship, Zap, Tip, Webpage, LayoutAlternative, GlobeAlternative,
   AiAssist, Flows, Highlight, ArrowCircleUp, ArrowUp, EditColor, AiImage, AiLogo, Microphone, ThreeDots, PencilFilled,
-  Stop
+  Stop, Revert, ThumbUp, ThumbDown, Forward,
 } from '../../components/Icons.es6.js'
 
 const ICONS = [
@@ -780,7 +780,23 @@ const ICONS = [
   {
     name: 'Stop',
     component: Stop
-  }
+  },
+  {
+    name: 'Revert',
+    component: Revert
+  },
+  {
+    name: 'ThumbUp',
+    component: ThumbUp
+  },
+  {
+    name: 'ThumbDown',
+    component: ThumbDown
+  },
+  {
+    name: 'Forward',
+    component: Forward
+  },
 ]
 
 function Icons () {
