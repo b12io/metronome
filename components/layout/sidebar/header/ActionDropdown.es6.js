@@ -8,6 +8,7 @@ const ActionDropdown = forwardRef(({
     icon,
     actionsAvailable,
     actionsVisible,
+    setActionsVisibility,
     quickDialog,
     quickActions,
     onClick,
@@ -40,9 +41,8 @@ const ActionDropdown = forwardRef(({
                 actions={quickActions}
                 label={dropdownMenuLabel}
                 onSelect={(idx) => {
-                    this.setState({ actionsVisible: false }, () => {
-                        onQuickActionSelected && onQuickActionSelected(idx)
-                    })
+                    setActionsVisibility(false)
+                    onQuickActionSelected && onQuickActionSelected(idx)
                 }}
             />
         )}

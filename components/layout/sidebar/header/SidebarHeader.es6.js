@@ -121,6 +121,7 @@ class SidebarHeader extends React.Component {
               onClick={this.onAction}
               actionsAvailable={actionsAvailable}
               actionsVisible={actionsVisible}
+              setActionsVisibility={(state) => this.setState({ actionsVisible: state })}
               quickDialog={quickDialog}
               quickActions={quickActions}
               dropdownMenuLabel={dropdownMenuLabel}
@@ -145,6 +146,7 @@ class SidebarHeader extends React.Component {
               onClick={this.onAction}
               actionsAvailable={actionsAvailable}
               actionsVisible={actionsVisible}
+              setActionsVisibility={(state) => this.setState({ actionsVisible: state })}
               quickDialog={quickDialog}
               quickActions={quickActions}
               dropdownMenuLabel={dropdownMenuLabel}
