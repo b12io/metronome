@@ -2,11 +2,10 @@ import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
-import QuickActions from './QuickActions.es6.js'
 import SidebarBackButton from './SidebarBackButton.es6.js'
-import SidebarHeaderActionButton from './SidebarHeaderActionButton.es6.js'
 import Button from '../../../form/button/Button.es6.js'
 import { B12Logo } from '../../../Icons.es6.js'
+import ActionDropdown from './ActionDropdown.es6.js'
 
 class SidebarHeader extends React.Component {
   state = {
@@ -74,42 +73,62 @@ class SidebarHeader extends React.Component {
       quickDialog,
       showLogo,
       steps,
-      title
+      title,
+      showManagerSwitcher,
     } = this.props
     const { actionsAvailable, actionsVisible } = this.state
 
     return (
       <Fragment>
-        <div className="ds-sidebar__header">
-          <div className="ds-sidebar__header-back">
-            {showLogo && <B12Logo color="#6548c7" width={46} height={20} viewBox="0 0 200 80" className="ds-sidebar__header-logo" />}
+        <div className={classnames('ds-sidebar__header', { 'ds-sidebar__header--website-manager': showManagerSwitcher })}>
+          {!showManagerSwitcher && (
+            <div className="ds-sidebar__header-back">
+              {showLogo && <B12Logo color="#6548c7" width={46} height={20} viewBox="0 0 200 80" className="ds-sidebar__header-logo" />}
 
-            {!showLogo && backButton && onBack && (
-              <SidebarBackButton
-                text={backButtonText}
-                hideText={isScrollingDown}
-                onClick={onBack}
-              />
-            )}
+              {!showLogo && backButton && onBack && (
+                <SidebarBackButton
+                  text={backButtonText}
+                  hideText={isScrollingDown}
+                  onClick={onBack}
+                />
+              )}
 
-            {!showLogo && !backButton && leftAction}
+              {!showLogo && !backButton && leftAction}
 
-            {homeButton && (
-              <React.Fragment>
-                <div className="ds-sidebar__header-divider" />
-                {!isScrollingDown && (
-                  <Button
-                    small
-                    className="ds-sidebar__header-home"
-                    icon={<B12Logo width={30} height={20} color="#84839c" viewBox="0 0 200 80" />}
-                    onClick={onHomeClick}
-                  />
-                )}
-              </React.Fragment>
-            )}
+              {homeButton && (
+                <React.Fragment>
+                  <div className="ds-sidebar__header-divider" />
+                  {!isScrollingDown && (
+                    <Button
+                      small
+                      className="ds-sidebar__header-home"
+                      icon={<B12Logo width={30} height={20} color="#84839c" viewBox="0 0 200 80" />}
+                      onClick={onHomeClick}
+                    />
+                  )}
+                </React.Fragment>
+              )}
 
-            {isScrollingDown && <div>{title}</div>}
-          </div>
+              {isScrollingDown && <div>{title}</div>}
+            </div>
+          )}
+
+          {/* Show actions dropdown under B12 logo if AI website manager is available */}
+          {showManagerSwitcher && (
+            <ActionDropdown
+              ref={this.actionsRef}
+              icon={<B12Logo color="#6548c7" width={46} height={20} viewBox="0 0 200 80" className="ds-sidebar__header-logo" />}
+              onClick={this.onAction}
+              actionsAvailable={actionsAvailable}
+              actionsVisible={actionsVisible}
+              setActionsVisibility={(state) => this.setState({ actionsVisible: state })}
+              quickDialog={quickDialog}
+              quickActions={quickActions}
+              dropdownMenuLabel={dropdownMenuLabel}
+              onQuickActionSelected={onQuickActionSelected}
+              isLogoDropDown
+            />)
+          }
 
           {!children && steps && (
             <div className="ds-sidebar__header-title">
@@ -120,37 +139,21 @@ class SidebarHeader extends React.Component {
 
           {children}
 
-          <div
-            className={classnames({
-              'ds-dropdown': actionsAvailable && actionIcon,
-              'ds-dropdown--right': actionsAvailable && actionIcon,
-              'ds-dropdown--menu-visible': actionsAvailable && actionsVisible,
-              'ds-sidebar__header-action': !actionsAvailable
-            })}
-            ref={this.actionsRef}
-          >
-            {actionIcon && (
-              <SidebarHeaderActionButton
-                dropdown={actionsAvailable}
-                icon={actionIcon}
-                onClick={this.onAction}
-              />
-            )}
+          {!showManagerSwitcher && (
+            <ActionDropdown
+              ref={this.actionsRef}
+              icon={actionIcon}
+              onClick={this.onAction}
+              actionsAvailable={actionsAvailable}
+              actionsVisible={actionsVisible}
+              setActionsVisibility={(state) => this.setState({ actionsVisible: state })}
+              quickDialog={quickDialog}
+              quickActions={quickActions}
+              dropdownMenuLabel={dropdownMenuLabel}
+              onQuickActionSelected={onQuickActionSelected}
+            />)
+          }
 
-            {quickDialog}
-
-            {actionsVisible && (
-              <QuickActions
-                actions={quickActions}
-                label={dropdownMenuLabel}
-                onSelect={(idx) => {
-                  this.setState({ actionsVisible: false }, () => {
-                    onQuickActionSelected && onQuickActionSelected(idx)
-                  })
-                }}
-              />
-            )}
-          </div>
           <div
             className="ds-sidebar__header-progress"
             style={{width: `${progress}%`}}
@@ -177,7 +180,8 @@ SidebarHeader.defaultProps = {
   quickActions: [],
   showLogo: false,
   quickDialog: null,
-  tabbedNavigation: null
+  tabbedNavigation: null,
+  showManagerSwitcher: false,
 }
 
 SidebarHeader.propTypes = {
@@ -202,7 +206,8 @@ SidebarHeader.propTypes = {
   onQuickActionSelected: PropTypes.func,
   showLogo: PropTypes.bool,
   quickDialog: PropTypes.element,
-  tabbedNavigation: PropTypes.element
+  tabbedNavigation: PropTypes.element,
+  showManagerSwitcher: PropTypes.bool,
 }
 
 export default SidebarHeader
