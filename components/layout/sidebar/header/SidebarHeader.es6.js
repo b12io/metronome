@@ -127,6 +127,7 @@ class SidebarHeader extends React.Component {
               dropdownMenuLabel={dropdownMenuLabel}
               onQuickActionSelected={onQuickActionSelected}
               isLogoDropDown
+              handleHover
             />)
           }
 

@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 
-const CHARS_PER_SEC = 50 // Simulated typing speed
+const ANIMATION_TIME = 2000 // Type text in 2 seconds
 
 export const TypingStatus = {
   IDLE: 'idle',
@@ -25,7 +25,7 @@ function useTypingSimulation(onStatusChange) {
   )
 
   const startTyping = useCallback(
-    (text, charactersPerSecond = CHARS_PER_SEC) => {
+    (text) => {
       if (intervalRef.current) {
         clearInterval(intervalRef.current)
         intervalRef.current = null
@@ -39,25 +39,19 @@ function useTypingSimulation(onStatusChange) {
       setIsTyping(true)
       updateStatus(TypingStatus.TYPING)
 
-      const typingInterval = 1000 / charactersPerSecond
+      const intervalMs = ANIMATION_TIME / text.length
 
       intervalRef.current = window.setInterval(() => {
         charIndexRef.current++
-
-        if (charIndexRef.current > text.length) {
-          if (intervalRef.current) {
-            clearInterval(intervalRef.current)
-            intervalRef.current = null
-          }
-
-          setIsTyping(false)
-          updateStatus(TypingStatus.COMPLETED)
-          return
-        }
-
         const partialText = text.substring(0, charIndexRef.current)
         setTypedText(partialText)
-      }, typingInterval)
+
+        if (charIndexRef.current >= fullTextRef.current.length) {
+          clearInterval(intervalRef.current)
+          setIsTyping(false)
+          updateStatus(TypingStatus.COMPLETED)
+        }
+      }, intervalMs)
 
       return text
     },
