@@ -11,7 +11,7 @@ function Button({ label, badge, primary, danger,
   onClick, className, buttonRef, id, alternative,
   chevron, type, title, round, roundedRectangle,
   hasSelection, selected, recording, processing,
-  highlighted, disabledStyle,
+  highlighted, disabledStyle, tabIndex
 }) {
 
   const renderButtonContent = () => {
@@ -75,6 +75,7 @@ function Button({ label, badge, primary, danger,
     ref={buttonRef}
     id={id}
     title={title}
+    tabIndex={tabIndex}
   >
     {renderButtonContent()}
 
@@ -120,6 +121,7 @@ Button.defaultProps = {
   processing: false,
   highlighted: false,
   disabledStyle: 'light',
+  tabIndex: 0
 }
 
 Button.propTypes = {
@@ -239,6 +241,11 @@ Button.propTypes = {
    * Style for the disabled button
    */
   disabledStyle: PropTypes.oneOf(['dark', 'light']),
+
+   /**
+   * Sets the tabIndex
+   */
+  tabIndex: PropTypes.number
 }
 
 export default Button
