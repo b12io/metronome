@@ -22,7 +22,7 @@ import {
   Flash, Dashboard, Guides, Article, Pulse, Edit, ContentApproved, Dragger, PaperClip, Invoicing, Banking, Checkbox, Circle, Bank, Card, Contract,
   MinusCircle, RepeatCircle, BadgeCard, HeadphonesMic, CheckmarkLarge, NoticeOutlined, Archive, Questionnaire, Upload, ShareFeedback, Spaceship, Zap, Tip, Webpage, LayoutAlternative, GlobeAlternative,
   AiAssist, Flows, Highlight, ArrowCircleUp, ArrowUp, EditColor, AiImage, AiLogo, Microphone, ThreeDots, PencilFilled,
-  Stop, Revert, ThumbUp, ThumbDown, Forward,
+  Stop, Revert, ThumbUp, ThumbDown, Forward, Bell, Plug, Blockquote, BlogPostSection, Cup, Case, Receipt, Feed, Introduction, Press,
 } from '../../components/Icons.es6.js'
 
 const ICONS = [
@@ -796,6 +796,46 @@ const ICONS = [
   {
     name: 'Forward',
     component: Forward
+  },
+  {
+    name: 'Bell',
+    component: Bell
+  },
+  {
+    name: 'Plug',
+    component: Plug
+  },
+  {
+    name: 'Blockquote',
+    component: Blockquote
+  },
+  {
+    name: 'BlogPostSection',
+    component: BlogPostSection
+  },
+  {
+    name: 'Cup',
+    component: Cup
+  },
+  {
+    name: 'Case',
+    component: Case
+  },
+  {
+    name: 'Receipt',
+    component: Receipt
+  },
+  {
+    name: 'Feed',
+    component: Feed
+  },
+  {
+    name: 'Introduction',
+    component: Introduction
+  },
+  {
+    name: 'Press',
+    component: Press
   },
 ]
 
