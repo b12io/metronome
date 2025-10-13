@@ -50,12 +50,11 @@ function AiAssist (props) {
   return <Icon path={path} {...props} />
 }
 
-function Check ({ color, className, viewBox, width, height, style, checkColor }) {
-  checkColor = checkColor ?? 'transparent';
+function Check ({ color, className, path, viewBox, width, height, style, checkColor }) {
   return (
     <svg className={className} width={width} height={height} viewBox={viewBox} style={style} xmlns="http://www.w3.org/2000/svg">
       <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8z" fill={color} />
-      <path d="M7 11.4L3.6 8 5 6.6l2 2 4-4L12.4 6 7 11.4z" fill={checkColor} />
+      <path d="M7 11.4L3.6 8 5 6.6l2 2 4-4L12.4 6 7 11.4z" fill={checkColor || 'transparent'} />
     </svg>
   )
 }
