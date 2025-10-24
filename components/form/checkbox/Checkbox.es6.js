@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
 import { Checkmark } from '../../Icons.es6.js'
@@ -32,6 +33,16 @@ function Checkbox ({ disabled, checked, indeterminate, label, name, onChange, ha
       </label>
     </div>
   )
+}
+
+Checkbox.propTypes = {
+  disabled: PropTypes.bool,
+  checked: PropTypes.bool,
+  indeterminate: PropTypes.bool,
+  label: PropTypes.string,
+  name: PropTypes.string,
+  onChange: PropTypes.func,
+  hasError: PropTypes.bool
 }
 
 Checkbox.defaultProps = {
