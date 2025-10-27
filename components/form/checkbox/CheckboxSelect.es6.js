@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { isEqual } from 'lodash'
 
 import Checkbox from '../checkbox/Checkbox.es6.js'
@@ -45,6 +46,16 @@ function CheckboxSelect ({ checked, disabled, label, onChange, onSelectChange,
       }
     </div>
   )
+}
+
+CheckboxSelect.propTypes = {
+  checked: PropTypes.bool,
+  disabled: PropTypes.bool,
+  label: PropTypes.string,
+  onChange: PropTypes.func,
+  onSelectChange: PropTypes.func,
+  selectOptions: PropTypes.array,
+  selectedOption: PropTypes.object
 }
 
 CheckboxSelect.defaultProps = {
