@@ -50,13 +50,7 @@ function AiAssist (props) {
   return <Icon path={path} {...props} />
 }
 
-function Check (props) {
-  const path = 'M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zM7 11.4L3.6 8 5 6.6l2 2 4-4L12.4 6 7 11.4z'
-  return <Icon path={path} {...props} />
-}
-
-function ColoredCheck ({ color, className, path, viewBox, width, height, style, checkColor }) {
-  // ColoredCheck allows you to control the color of the check icon.
+function Check ({ color, className, path, viewBox, width, height, style, checkColor }) {
   return (
     <svg className={className} width={width} height={height} viewBox={viewBox} style={style} xmlns="http://www.w3.org/2000/svg">
       <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8z" fill={color} />
@@ -2171,7 +2165,6 @@ function Press ({ className, width='16', height='16', color = '#84839C', viewBox
 
 const icons = [
   Check,
-  ColoredCheck,
   Checkmark,
   Lock,
   Notice,
@@ -2392,7 +2385,7 @@ each(icons, (icon) => {
   icon.propTypes = assign({}, defaultPropTypes)
 })
 
-export { Check, ColoredCheck, Checkmark, Lock, Notice, Disabled, Help, Search, Draggable,
+export { Check, Checkmark, Lock, Notice, Disabled, Help, Search, Draggable,
   ChevronRight, ChevronLeft, Home, TimesCircle, RemoveCircle, SolidCircle, PlusCircle, Plus, Minus, ShoppingCart, Team,
   Briefcase, Image, Video, Camera, Play, Award, Client, Testimonial, Blog,
   Announcement, Export, Link, Unlink, Calendar, CalendarThin, QuestionCircle, DateIcon, Clock, ImageUpload,
