@@ -10,7 +10,7 @@ const DEFAULT_STATUS_LABELS = {
   error: 'Error'
 }
 
-function StatusIndicator ({ status, statusLabels, className }) {
+function StatusIndicator ({ status = 'default', statusLabels = {}, className }) {
   const classNames = classnames(
     'ds-status-indicator',
     `ds-status-indicator--${status}`,
@@ -26,11 +26,6 @@ function StatusIndicator ({ status, statusLabels, className }) {
       <div className="ds-status-indicator__label">{labels[status]}</div>
     </div>
   )
-}
-
-StatusIndicator.defaultProps = {
-  status: 'default',
-  statusLabels: {}
 }
 
 export default StatusIndicator

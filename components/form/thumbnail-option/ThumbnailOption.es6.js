@@ -37,9 +37,9 @@ function ImageThumbnail ({ thumbnail, thumbnailCover, label, preloader }) {
   )
 }
 
-function ThumbnailOption ({ label, onOptionClick, onFocus, selected, thumbnail,
-  thumbnailCover, value, isVideo, videoType, videoUrl, rounded,
-  shadowed, text, tabIndex, className, children, preloader }) {
+function ThumbnailOption ({ label = '', onOptionClick = () => {}, onFocus = () => {}, selected = false, thumbnail = '',
+  thumbnailCover = false, value = '', isVideo = false, videoType, videoUrl, rounded = false,
+  shadowed = false, text = '', tabIndex = 0, className, children, preloader = null }) {
   return (
     <div className={classnames({
       'ds-thumbnail-option': true,
@@ -93,22 +93,6 @@ function ThumbnailOption ({ label, onOptionClick, onFocus, selected, thumbnail,
       />}
     </div>
   )
-}
-
-ThumbnailOption.defaultProps = {
-  label: '',
-  onOptionClick: () => {},
-  onFocus: () => {},
-  selected: false,
-  thumbnail: '',
-  thumbnailCover: false,
-  isVideo: false,
-  rounded: false,
-  shadowed: false,
-  text: '',
-  value: '',
-  tabIndex: 0,
-  preloader: null
 }
 
 export default ThumbnailOption

@@ -2,8 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
-const ListAction = props => {
-  const {className, children, cardListAction, collectionAction, onClick} = props
+const ListAction = ({ className, children, cardListAction, collectionAction, onClick = () => {} }) => {
   const classes = classnames({
     'card-list__actions': cardListAction && !collectionAction,
     'collection__actions': !cardListAction && collectionAction
@@ -13,10 +12,6 @@ const ListAction = props => {
       {children}
     </div>
   )
-}
-
-ListAction.defaultProps = {
-  onClick: () => {}
 }
 
 ListAction.propTypes = {

@@ -4,7 +4,7 @@ import classnames from 'classnames'
 import CommonPagination from './CommonPagination.es6.js'
 
 
-function TablePagination ({ count, className, rowsPerPage, page, backgroundType, onChangePage }) {
+function TablePagination ({ count, className, rowsPerPage, page, backgroundType = 'light', onChangePage }) {
   const classNames = classnames(
     `ds-table__pagination--${backgroundType}`,
     className
@@ -23,10 +23,6 @@ function TablePagination ({ count, className, rowsPerPage, page, backgroundType,
       className={classNames}
     />
   )
-}
-
-TablePagination.defaultProps = {
-  backgroundType: 'light'
 }
 
 export default TablePagination

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import { Checkmark } from '../../Icons.es6.js'
 
-function NotificationCard ({ label, icon, success, error, warning, hideIcon, alignCenter, children }) {
+function NotificationCard ({ label = '', icon = null, success = true, error = false, warning = false, hideIcon = false, alignCenter = false, children }) {
   const classNames = classnames({
     'ds-notification': true,
     'ds-notification--success': success,
@@ -20,16 +20,6 @@ function NotificationCard ({ label, icon, success, error, warning, hideIcon, ali
       </div>
     </div>
   )
-}
-
-NotificationCard.defaultProps = {
-  icon: null,
-  label: '',
-  success: true,
-  error: false,
-  warning: false,
-  hideIcon: false,
-  alignCenter: false
 }
 
 /**

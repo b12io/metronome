@@ -5,8 +5,8 @@ import classnames from 'classnames'
 import Button from '../../../components/form/button/Button.es6.js'
 
 
-function SelectionCard ({ children, label, value,
-  thumbnail, thumbnailCover, onClick, preview, scroll, buttonLabel }) {
+function SelectionCard ({ children, label = '', value = '',
+  thumbnail = '', thumbnailCover = true, onClick = () => {}, preview = null, scroll = false, buttonLabel = '' }) {
   return (
     <div
       className={classnames({
@@ -37,17 +37,6 @@ function SelectionCard ({ children, label, value,
       </div>
     </div>
   )
-}
-
-SelectionCard.defaultProps = {
-  label: '',
-  value: '',
-  thumbnail: '',
-  thumbnailCover: true,
-  preview: null,
-  scroll: false,
-  onClick: () => {},
-  buttonLabel: '',
 }
 
 export default SelectionCard

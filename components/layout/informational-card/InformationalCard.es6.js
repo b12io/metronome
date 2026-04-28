@@ -3,7 +3,7 @@ import classnames from 'classnames'
 import { InfoCircle } from '../../Icons.es6.js'
 
 
-function InformationalCard ({ accentColor, children, heading, showIcon, icon, iconStyle, subheading, className }) {
+function InformationalCard ({ accentColor = '#F5BE33', children, heading, showIcon = true, icon = <InfoCircle />, iconStyle = { marginTop: 2, marginRight: 5, minWidth: 16 }, subheading, className }) {
   const iconElement = React.cloneElement(icon, {
     color: accentColor,
     style: iconStyle
@@ -28,17 +28,6 @@ function InformationalCard ({ accentColor, children, heading, showIcon, icon, ic
       )}
     </div>
   )
-}
-
-InformationalCard.defaultProps = {
-  accentColor: '#F5BE33',
-  showIcon: true,
-  icon: <InfoCircle />,
-  iconStyle: {
-    marginTop: 2,
-    marginRight: 5,
-    minWidth: 16
-  }
 }
 
 export default InformationalCard

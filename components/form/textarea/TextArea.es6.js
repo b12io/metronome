@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import BaseTextArea from '../base/BaseTextArea.es6.js'
 
-function TextArea ({label, value, placeholder, rows, hasFeedback, hasError, resizable, counter, onUpdate, onFocus, onBlur, contentHeight, disabled}) {
+function TextArea ({label = '', value = '', placeholder = '', rows = 5, hasFeedback = false, hasError = false, resizable = true, counter = '', onUpdate = () => {}, onFocus = () => {}, onBlur = () => {}, contentHeight = false, disabled = false}) {
   const counterDiv = counter ? (<div className="ds-control-label__counter">{counter}</div>) : null
   return (
     <div className={classnames({
@@ -48,22 +48,6 @@ TextArea.propTypes = {
   onFocus: PropTypes.func,
   onBlur: PropTypes.func,
   onUpdate: PropTypes.func
-}
-
-TextArea.defaultProps = {
-  label: '',
-  value: '',
-  placeholder: '',
-  rows: 5,
-  hasFeedback: false,
-  hasError: false,
-  resizable: true,
-  counter: '',
-  contentHeight: false,
-  disabled: false,
-  onFocus: () => {},
-  onBlur: () => {},
-  onUpdate: () => {}
 }
 
 export default TextArea

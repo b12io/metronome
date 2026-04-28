@@ -5,7 +5,7 @@ import classnames from 'classnames'
 /**
  * Form group
  */
-function Group ({ label, children, icon }) {
+function Group ({ label = null, children, icon = null }) {
   return (
     <div className="ds-form-group">
       {(label || icon) && (
@@ -21,11 +21,6 @@ function Group ({ label, children, icon }) {
       {children}
     </div>
   )
-}
-
-Group.defaultProps = {
-  icon: null,
-  label: null
 }
 
 export default Group

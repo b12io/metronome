@@ -3,7 +3,7 @@ import classnames from 'classnames'
 
 
 
-function GridCol ({ className, children, col, align }) {
+function GridCol ({ className, children, col = 'auto', align = 'center' }) {
   const classes = classnames(
     'ds-grid__col',
     `ds-grid__col--col-${col}`,
@@ -16,11 +16,6 @@ function GridCol ({ className, children, col, align }) {
       {children}
     </div>
   )
-}
-
-GridCol.defaultProps = {
-  col: 'auto', // 1 | 2 | 3 | 4 | 5 | 6
-  align: 'center' // start | end
 }
 
 export default GridCol

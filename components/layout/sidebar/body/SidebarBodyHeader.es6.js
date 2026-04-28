@@ -9,7 +9,7 @@ import useClickOutside from '../../../lib/useClickOutside.es6.js'
 
 function SidebarBodyHeader ({
   className,
-  hideOverflow,
+  hideOverflow = false,
   text,
   actionIcon,
   onAction,
@@ -72,10 +72,6 @@ function SidebarBodyHeader ({
       </div>
     </div>
   )
-}
-
-SidebarBodyHeader.defaultProps = {
-  hideOverflow: false
 }
 
 export default SidebarBodyHeader

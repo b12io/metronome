@@ -2,7 +2,7 @@ import * as React from 'react'
 import classnames from 'classnames'
 
 
-function TableRow ({ children, isInTableHeader, noHover, onClick, className, ...otherProps }) {
+function TableRow ({ children, isInTableHeader, noHover, onClick = () => {}, className, ...otherProps }) {
   const classNames = classnames({
     'ds-table__row-no-hover': noHover,
     'ds-table__row-clickable': onClick
@@ -30,10 +30,6 @@ function TableRow ({ children, isInTableHeader, noHover, onClick, className, ...
       {children}
     </tr>
   )
-}
-
-TableRow.defaultProps = {
-  onClick: () => {}
 }
 
 export default TableRow

@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
-function ToggleButton ({ className, label, checked, onChange }) {
+function ToggleButton ({ className = '', label = '', checked = false, onChange = () => {} }) {
   return (
     <div className={classnames('ds-form-group', className)}>
       <label className="ds-form-control-toggle">
@@ -15,13 +15,6 @@ function ToggleButton ({ className, label, checked, onChange }) {
       </label>
     </div>
   )
-}
-
-ToggleButton.defaultProps = {
-  className: '',
-  label: '',
-  checked: false,
-  onChange: () => {}
 }
 
 ToggleButton.propTypes = {

@@ -2,7 +2,7 @@ import React from 'react'
 import classnames from 'classnames'
 
 
-function SidebarHeaderActionButton ({ dropdown, icon, onClick }) {
+function SidebarHeaderActionButton ({ dropdown = false, icon = '', onClick }) {
   return (
     <button
       type="button"
@@ -15,11 +15,6 @@ function SidebarHeaderActionButton ({ dropdown, icon, onClick }) {
       {icon}
     </button>
   )
-}
-
-SidebarHeaderActionButton.defaultProps = {
-  dropdown: false,
-  icon: ''
 }
 
 export default SidebarHeaderActionButton

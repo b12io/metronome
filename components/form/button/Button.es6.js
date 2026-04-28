@@ -5,13 +5,13 @@ import classnames from 'classnames'
 /**
  * Buttons trigger actions when clicked.
  */
-function Button({ label, badge, primary, danger,
-  loading, superSmall, small, large, wide,
-  icon, iconWithLabel, active, block, disabled,
-  onClick, className, buttonRef, id, alternative,
-  chevron, type, title, round, roundedRectangle,
-  hasSelection, selected, recording, processing,
-  highlighted, disabledStyle, tabIndex
+function Button({ label = '', badge = '', primary = false, danger = false,
+  loading = false, superSmall = false, small = false, large = false, wide = false,
+  icon = null, iconWithLabel = false, active = false, block = false, disabled = false,
+  onClick = () => {}, className, buttonRef, id, alternative = false,
+  chevron = false, type = 'button', title = '', round = false, roundedRectangle = false,
+  hasSelection = false, selected = false, recording = false, processing = false,
+  highlighted = false, disabledStyle = 'light', tabIndex = 0
 }) {
 
   const renderButtonContent = () => {
@@ -91,37 +91,6 @@ function Button({ label, badge, primary, danger,
       <span className="button__processing-indicator"></span>
     )}
   </button>)
-}
-
-Button.defaultProps = {
-  label: '',
-  badge: '',
-  primary: false,
-  danger: false,
-  loading: false,
-  small: false,
-  superSmall: false,
-  large: false,
-  wide: false,
-  active: false,
-  block: false,
-  alternative: false,
-  disabled: false,
-  icon: null,
-  iconWithLabel: false,
-  chevron: false,
-  type: 'button',
-  onClick: () => {},
-  title: '',
-  round: false,
-  roundedRectangle: false,
-  hasSelection: false,
-  selected: false,
-  recording: false,
-  processing: false,
-  highlighted: false,
-  disabledStyle: 'light',
-  tabIndex: 0
 }
 
 Button.propTypes = {

@@ -2,7 +2,7 @@ import React from 'react'
 import classnames from 'classnames'
 
 
-function SidebarActions ({ children, alignRight, alignLeft }) {
+function SidebarActions ({ children = [], alignRight, alignLeft }) {
   return (
     <div className={classnames({
       'ds-sidebar__actions': true,
@@ -13,10 +13,6 @@ function SidebarActions ({ children, alignRight, alignLeft }) {
       {children}
     </div>
   )
-}
-
-SidebarActions.defaultProps = {
-  children: []
 }
 
 export default SidebarActions

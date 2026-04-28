@@ -5,7 +5,7 @@ import classnames from 'classnames'
 import { Checkmark } from '../../Icons.es6.js'
 
 
-function Checkbox ({ disabled, checked, indeterminate, label, name, onChange, hasError }) {
+function Checkbox ({ disabled = false, checked = false, indeterminate = false, label = '', name = '', onChange = () => {}, hasError = false }) {
   const setCheckboxRef = checkbox => {
     if (checkbox) {
       checkbox.indeterminate = indeterminate
@@ -39,20 +39,10 @@ Checkbox.propTypes = {
   disabled: PropTypes.bool,
   checked: PropTypes.bool,
   indeterminate: PropTypes.bool,
-  label: PropTypes.string,
+  label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   name: PropTypes.string,
   onChange: PropTypes.func,
   hasError: PropTypes.bool
-}
-
-Checkbox.defaultProps = {
-  label: '',
-  name: '',
-  checked: false,
-  disabled: false,
-  indeterminate: false,
-  hasError: false,
-  onChange: () => {}
 }
 
 export default Checkbox

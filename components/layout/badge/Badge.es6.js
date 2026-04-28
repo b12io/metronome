@@ -4,9 +4,9 @@ import classnames from 'classnames'
 import { CloseMedia } from '../../Icons.es6.js'
 
 
-function Badge ({ neutral, label, icon, uppercase, filled,
-  success, warning, primary, hasRemoveIcon,
-  className, size, onRemoveClick, selected, ...otherProps }) {
+function Badge ({ neutral = false, label = '', icon = null, uppercase = false, filled = false,
+  success = false, warning = false, primary = false, hasRemoveIcon = false,
+  className, size = 'small', onRemoveClick = () => {}, selected = false, ...otherProps }) {
   const classNames = classnames({
     'ds-badge': true,
     'ds-badge--default': neutral,
@@ -35,21 +35,6 @@ function Badge ({ neutral, label, icon, uppercase, filled,
       )}
     </div>
   )
-}
-
-Badge.defaultProps = {
-  neutral: false,
-  icon: null,
-  label: '',
-  filled: false,
-  uppercase: false,
-  success: false,
-  warning: false,
-  primary: false,
-  selected: false,
-  size: 'small',
-  hasRemoveIcon: false,
-  onRemoveClick: () => {}
 }
 
 export default Badge

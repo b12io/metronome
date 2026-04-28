@@ -3,12 +3,12 @@ import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
 function TextRevealOverlay({
-  text,
-  isRevealing,
-  lastParagraphIndex,
-  className,
-  textareaRef,
-  onAnimationComplete
+  text = '',
+  isRevealing = false,
+  lastParagraphIndex = -1,
+  className = '',
+  textareaRef = null,
+  onAnimationComplete = null
 }) {
   const [paragraphs, setParagraphs] = useState([])
   const [isAnimatingLastParagraph, setIsAnimatingLastParagraph] = useState(false)
@@ -176,15 +176,6 @@ TextRevealOverlay.propTypes = {
   className: PropTypes.string,
   textareaRef: PropTypes.object,
   onAnimationComplete: PropTypes.func
-}
-
-TextRevealOverlay.defaultProps = {
-  text: '',
-  isRevealing: false,
-  lastParagraphIndex: -1,
-  className: '',
-  textareaRef: null,
-  onAnimationComplete: null
 }
 
 export default TextRevealOverlay

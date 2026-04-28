@@ -3,17 +3,16 @@ import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import ListItemContent from './ListItemContent.es6.js'
 
-const ListItem = props => {
-  const {
-    className,
-    cardListItem,
-    collectionListItem,
-    listItemRef,
-    dragStyles,
-    onClick,
-    md,
-    clickable,
-    ...otherProps} = props
+const ListItem = ({
+  className,
+  cardListItem,
+  collectionListItem,
+  listItemRef,
+  dragStyles,
+  onClick,
+  md = false,
+  clickable,
+  ...otherProps}) => {
 
   const classes = classnames({
     'card-list-item': cardListItem,
@@ -41,10 +40,6 @@ const ListItem = props => {
       {children}
     </div>
   )
-}
-
-ListItem.defaultProps = {
-  md: false
 }
 
 ListItem.propTypes = {

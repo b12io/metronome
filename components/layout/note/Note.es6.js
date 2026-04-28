@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
-function Note ({icon, bordered, shadowed, padded, children, className}) {
+function Note ({icon = null, bordered = true, shadowed = true, padded = true, children = null, className = ''}) {
   const classNames = classnames('ds-note', className, {
     'ds-note--has-icon': !!icon,
     'ds-note--bordered': bordered,
@@ -17,15 +17,6 @@ function Note ({icon, bordered, shadowed, padded, children, className}) {
       {children}
     </div>
   )
-}
-
-Note.defaultProps = {
-  icon: null,
-  bordered: true,
-  shadowed: true,
-  padded: true,
-  children: null,
-  className: ''
 }
 
 Note.propTypes = {

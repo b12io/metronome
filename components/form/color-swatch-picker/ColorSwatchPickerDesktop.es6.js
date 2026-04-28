@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-function ColorSwatchPickerDesktop ({ colors, selectedColor, onChange }) {
+function ColorSwatchPickerDesktop ({ colors = [], selectedColor = null, onChange = () => {} }) {
   const handleColorClick = (value) => {
     if (selectedColor === value) {
       onChange(null)
@@ -35,12 +35,6 @@ ColorSwatchPickerDesktop.propTypes = {
   ).isRequired,
   selectedColor: PropTypes.string,
   onChange: PropTypes.func.isRequired
-}
-
-ColorSwatchPickerDesktop.defaultProps = {
-  colors: [],
-  selectedColor: null,
-  onChange: () => {}
 }
 
 export default ColorSwatchPickerDesktop

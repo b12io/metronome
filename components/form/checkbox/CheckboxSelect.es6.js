@@ -12,8 +12,8 @@ import Select from '../select/Select.es6.js'
  * CheckboxSelect - a checkbox that when checked, reveals additional options
  * underneath in a Select component dropdown.
  */
-function CheckboxSelect ({ checked, disabled, label, onChange, onSelectChange,
-  selectOptions, selectedOption }) {
+function CheckboxSelect ({ checked = false, disabled = false, label = '', onChange = () => {}, onSelectChange = () => {},
+  selectOptions = [], selectedOption = null }) {
   const placeholder = selectedOption ? selectedOption.label : 'Please select'
   const options = selectOptions.map((option, index) => {
     const isActive = selectedOption ? isEqual(option.value,
@@ -56,16 +56,6 @@ CheckboxSelect.propTypes = {
   onSelectChange: PropTypes.func,
   selectOptions: PropTypes.array,
   selectedOption: PropTypes.object
-}
-
-CheckboxSelect.defaultProps = {
-  checked: false,
-  disabled: false,
-  label: '',
-  onChange: () => {},
-  onSelectChange: () => {},
-  selectOptions: [],
-  selectedOption: null
 }
 
 export default CheckboxSelect

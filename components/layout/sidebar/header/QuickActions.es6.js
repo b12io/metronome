@@ -5,7 +5,7 @@ import { isEmpty } from 'lodash'
 
 
 
-function QuickActions ({ actions, onSelect, label }) {
+function QuickActions ({ actions = null, onSelect, label = '' }) {
   if (isEmpty(actions) || !Array.isArray(actions)) {
     return null
   }
@@ -18,7 +18,7 @@ function QuickActions ({ actions, onSelect, label }) {
     <ul className="ds-dropdown__menu">
       <DropdownMenuLabel label={label} />
       {actions.map(({ icon, text, divider, actionLabel, action, hidden, disabled, onActionSelect }, index) => (
-        <Fragment key={text}>
+        <Fragment key={text || `dropdown-item-${index}`}>
           {actionLabel && <DropdownMenuLabel label={actionLabel} />}
           <li
             className={classnames({
@@ -45,11 +45,6 @@ function QuickActions ({ actions, onSelect, label }) {
       ))}
     </ul>
   )
-}
-
-QuickActions.defaultProps = {
-  actions: null,
-  label: ''
 }
 
 export default QuickActions

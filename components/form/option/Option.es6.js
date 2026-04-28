@@ -4,9 +4,9 @@ import { FileHelper } from '../../lib/helpers.es6.js'
 
 
 
-function Option ({ actionOption, active, collectionOption, contentTypeOption, disabled,
-  folderOption, icon, iconRight, label, mappingOption, onOptionClick, value, preview,
-  style, children }) {
+function Option ({ actionOption, active = false, collectionOption = false, contentTypeOption = false, disabled = false,
+  folderOption = false, icon = null, iconRight, label, mappingOption = false, onOptionClick = () => {}, value = undefined, preview = null,
+  style = {}, children }) {
   const iconLeft = mappingOption || folderOption || actionOption
   const fileInfo = preview ? FileHelper(preview) : null
   const optionPreview = (
@@ -49,20 +49,6 @@ function Option ({ actionOption, active, collectionOption, contentTypeOption, di
       {children}
     </div>
   )
-}
-
-Option.defaultProps = {
-  active: false,
-  collectionOption: false,
-  contentTypeOption: false,
-  disabled: false,
-  folderOption: false,
-  icon: null,
-  mappingOption: false,
-  onOptionClick: () => {},
-  preview: null,
-  style: {},
-  value: undefined
 }
 
 export default Option

@@ -3,7 +3,7 @@ import * as React from 'react'
 import classnames from 'classnames'
 
 
-const TabbedNavigationItem = ({ active, visited, showProgress, clickable, disabled, className, onClick, children }) => {
+const TabbedNavigationItem = ({ active = false, visited = false, showProgress = false, clickable = false, disabled = false, className, onClick = () => {}, children }) => {
   return (
     <React.Fragment>
       <li
@@ -29,15 +29,6 @@ const TabbedNavigationItem = ({ active, visited, showProgress, clickable, disabl
       )}></li>
     </React.Fragment>
   )
-}
-
-TabbedNavigationItem.defaultProps = {
-  active: false,
-  visited: false,
-  showProgress: false,
-  clickable: false,
-  disabled: false,
-  onClick: () => {}
 }
 
 export default TabbedNavigationItem

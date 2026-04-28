@@ -6,7 +6,7 @@ import classnames from 'classnames'
 /**
  * Panel.
  */
-function Panel ({ children, styles, className }) {
+function Panel ({ children = [], styles = {}, className }) {
   return (
     <div
       className={classnames('ds-panel', className)}
@@ -15,11 +15,6 @@ function Panel ({ children, styles, className }) {
       {children}
     </div>
   )
-}
-
-Panel.defaultProps = {
-  children: [],
-  styles: {}
 }
 
 export default Panel

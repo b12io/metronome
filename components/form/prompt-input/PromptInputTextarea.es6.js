@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
-function PromptInputTextarea ({ className, placeholder, rows, textareaRef, value, onChange, disabled, tabIndex }) {
+function PromptInputTextarea ({ className, placeholder = 'placeholder', rows = 3, textareaRef = null, value = '', onChange = () => {}, disabled = false, tabIndex = 0 }) {
   return (
     <textarea
       className={classnames('ds-prompt-input__textarea', className)}
@@ -15,16 +15,6 @@ function PromptInputTextarea ({ className, placeholder, rows, textareaRef, value
       tabIndex={tabIndex}
     />
   )
-}
-
-PromptInputTextarea.defaultProps = {
-  placeholder: 'placeholder',
-  rows: 3,
-  textareaRef: null,
-  value: '',
-  onChange: () => {},
-  disabled: false,
-  tabIndex: 0
 }
 
 PromptInputTextarea.propTypes = {

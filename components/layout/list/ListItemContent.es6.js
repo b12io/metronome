@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
-const ListItemContent = ({children, className, subtitle, suptitle, hasDescription, widthAuto, clickable, ...otherProps}) => {
+const ListItemContent = ({children, className, subtitle, suptitle, hasDescription = false, widthAuto = false, clickable, ...otherProps}) => {
   const classes = classNames('card-list-item__content', {
     'card-list-item__content--with-description': hasDescription,
     'card-list-item__content--clickable': clickable,
@@ -18,11 +18,6 @@ const ListItemContent = ({children, className, subtitle, suptitle, hasDescriptio
       {subtitleElement}
     </div>
   )
-}
-
-ListItemContent.defaultProps = {
-  widthAuto: false,
-  hasDescription: false
 }
 
 ListItemContent.propTypes = {
