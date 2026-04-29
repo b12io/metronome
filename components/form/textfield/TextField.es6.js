@@ -96,7 +96,7 @@ class TextField extends React.Component {
             type={this.props.type}
             className="ds-form-control"
             placeholder={this.props.placeholder}
-            value={this.props.value ?? ''}
+            value={this.props.value != null ? this.props.value : ''}
             disabled={this.props.locked || this.props.disabled}
             ref={this.props.inputRef}
             onChange={(event) => {
