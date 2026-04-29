@@ -12,6 +12,7 @@ const ListItem = ({
   onClick,
   md = false,
   clickable,
+  children: childrenProp,
   ...otherProps}) => {
 
   const classes = classnames({
@@ -23,7 +24,7 @@ const ListItem = ({
     'collection-item--draggable': collectionListItem && dragStyles
   }, className)
 
-  const children = Children.map(otherProps.children, child => {
+  const children = Children.map(childrenProp, child => {
     if (typeof child === 'string') {
       return <ListItemContent>{child}</ListItemContent>
     }
@@ -32,6 +33,7 @@ const ListItem = ({
 
   return (
     <div
+      {...otherProps}
       className={classes}
       ref={listItemRef}
       onClick={onClick}
