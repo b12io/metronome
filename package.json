@@ -109,7 +109,6 @@
     "react-color": "2.13.1",
     "react-datepicker": "1.7.0",
     "react-dropzone": "4.2.1",
-    "reactstrap": "5.0.0",
     "tlds": "1.199.0",
     "union-class-names": "1.0.0"
   },
