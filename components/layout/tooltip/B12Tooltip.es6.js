@@ -186,7 +186,7 @@ class B12Tooltip extends React.Component {
   render() {
     if (this.state.hasError) return null
 
-    const { children, target, text, simple, controlled, showTapToDismissText, tapToDismiss, onClick, placement } = this.props
+    const { children, target, text, simple, showTapToDismissText, tapToDismiss, onClick, placement } = this.props
 
     if (simple) {
       return (
