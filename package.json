@@ -114,5 +114,8 @@
   },
   "peerDependencies": {
     "react": "16.8.0"
+  },
+  "publishConfig": {
+    "tag": "beta"
   }
 }
