@@ -3,13 +3,14 @@ import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
 const List = props => {
-  const {className, children, cardList, collectionList, listRef} = props
+  const {className, children, cardList, collectionList, listRef, ...otherProps} = props
   const classes = classnames({
     'card-list__items': cardList && !collectionList,
     'collection__items': !cardList && collectionList
   }, className)
   return (
     <div
+      {...otherProps}
       className={classes}
       ref={listRef}>
       {children}

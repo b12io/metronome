@@ -7,16 +7,16 @@ import SwitchTabPicker from '../../form/switch-tab-picker/SwitchTabPicker.es6'
 
 const MobileOptionsPopover = ({
   options,
-  selectedWebsiteStyle,
-  onWebsiteStyleChange,
-  selectedColor,
-  onColorChange,
-  imageStyleTabs,
-  selectedTabId,
-  selectedImageStyle,
-  onImageStyleTabChange,
-  onImageStyleChange,
-  onEnhancePrompt,
+  selectedWebsiteStyle = '',
+  onWebsiteStyleChange = () => {},
+  selectedColor = null,
+  onColorChange = () => {},
+  imageStyleTabs = [],
+  selectedTabId = 0,
+  selectedImageStyle = '',
+  onImageStyleTabChange = () => {},
+  onImageStyleChange = () => {},
+  onEnhancePrompt = () => {},
   onClose,
 }) => {
   const [activeOptionId, setActiveOptionId] = useState(null)
@@ -180,19 +180,6 @@ MobileOptionsPopover.propTypes = {
    * Handler for closing the popover (required)
    */
   onClose: PropTypes.func.isRequired
-}
-
-MobileOptionsPopover.defaultProps = {
-  selectedWebsiteStyle: '',
-  onWebsiteStyleChange: () => {},
-  selectedColor: null,
-  onColorChange: () => {},
-  imageStyleTabs: [],
-  selectedTabId: 0,
-  selectedImageStyle: '',
-  onImageStyleTabChange: () => {},
-  onImageStyleChange: () => {},
-  onEnhancePrompt: () => {},
 }
 
 export default MobileOptionsPopover

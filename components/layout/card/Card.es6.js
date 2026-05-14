@@ -2,8 +2,8 @@ import React from 'react'
 import classnames from 'classnames'
 
 
-function Card ({ add, children, disabled, handleClick, icon, label, value, className,
-  selected, hasImage, hasColorPalette, onMouseEnter, onMouseLeave }) {
+function Card ({ add = false, children, disabled = false, handleClick = () => {}, icon = null, label = '', value = '', className = '',
+  selected = false, hasImage = false, hasColorPalette = false, onMouseEnter = () => {}, onMouseLeave = () => {} }) {
   return (
     <button
       className={classnames(className, {
@@ -26,21 +26,6 @@ function Card ({ add, children, disabled, handleClick, icon, label, value, class
       {children}
     </button>
   )
-}
-
-Card.defaultProps = {
-  add: false,
-  disabled: false,
-  selected: false,
-  hasImage: false,
-  hasColorPalette: false,
-  handleClick: () => {},
-  icon: null,
-  label: '',
-  value: '',
-  className: '',
-  onMouseEnter: () => {},
-  onMouseLeave: () => {}
 }
 
 export default Card

@@ -6,9 +6,9 @@ function Table ({
   className,
   cardLike,
   padding,
-  verticalAlign,
+  verticalAlign = 'top',
   children,
-  background,
+  background = 'transparent',
   responsive = false,
   ...otherProps
 }) {
@@ -39,11 +39,6 @@ function Table ({
       </table>
     </div>
   )
-}
-
-Table.defaultProps = {
-  background: 'transparent',
-  verticalAlign: 'top'
 }
 
 export default Table

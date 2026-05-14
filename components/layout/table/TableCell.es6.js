@@ -2,7 +2,7 @@ import * as React from 'react'
 import classnames from 'classnames'
 
 
-function TableCell ({ children, nowrap, isInTableHeader, align, ...otherProps }, context) {
+function TableCell ({ children, nowrap, isInTableHeader, align = 'left', ...otherProps }, context) {
   const Component = isInTableHeader ? 'th' : 'td'
   const cellClassnames = classnames({
     'ds-table__cell--nowrap': nowrap,
@@ -15,10 +15,6 @@ function TableCell ({ children, nowrap, isInTableHeader, align, ...otherProps },
       {children}
     </Component>
   )
-}
-
-TableCell.defaultProps = {
-  align: 'left'
 }
 
 export default TableCell

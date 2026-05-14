@@ -6,7 +6,7 @@ import classnames from 'classnames'
 /**
  * Grid.
  */
-function Grid ({ className, children, justify, align, direction, nowrap }) {
+function Grid ({ className, children, justify = 'between', align = 'center', direction = 'row', nowrap }) {
   const classes = classnames(
     'ds-grid',
     `ds-grid--justify-${justify}`,
@@ -21,12 +21,6 @@ function Grid ({ className, children, justify, align, direction, nowrap }) {
       {children}
     </div>
   )
-}
-
-Grid.defaultProps = {
-  justify: 'between', // start | center | end | around
-  align: 'center', // start | end | stretch
-  direction: 'row' // column
 }
 
 export default Grid

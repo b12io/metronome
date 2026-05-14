@@ -3,17 +3,17 @@ import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import ListItemContent from './ListItemContent.es6.js'
 
-const ListItem = props => {
-  const {
-    className,
-    cardListItem,
-    collectionListItem,
-    listItemRef,
-    dragStyles,
-    onClick,
-    md,
-    clickable,
-    ...otherProps} = props
+const ListItem = ({
+  className,
+  cardListItem,
+  collectionListItem,
+  listItemRef,
+  dragStyles,
+  onClick,
+  md = false,
+  clickable,
+  children: childrenProp,
+  ...otherProps}) => {
 
   const classes = classnames({
     'card-list-item': cardListItem,
@@ -24,7 +24,7 @@ const ListItem = props => {
     'collection-item--draggable': collectionListItem && dragStyles
   }, className)
 
-  const children = Children.map(otherProps.children, child => {
+  const children = Children.map(childrenProp, child => {
     if (typeof child === 'string') {
       return <ListItemContent>{child}</ListItemContent>
     }
@@ -33,6 +33,7 @@ const ListItem = props => {
 
   return (
     <div
+      {...otherProps}
       className={classes}
       ref={listItemRef}
       onClick={onClick}
@@ -41,10 +42,6 @@ const ListItem = props => {
       {children}
     </div>
   )
-}
-
-ListItem.defaultProps = {
-  md: false
 }
 
 ListItem.propTypes = {

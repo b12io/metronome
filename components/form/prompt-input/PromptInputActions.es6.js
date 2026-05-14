@@ -2,17 +2,12 @@ import React from 'react'
 import classnames from 'classnames'
 import PropTypes from 'prop-types'
 
-function PromptInputActions ({ children, className }) {
+function PromptInputActions ({ children = null, className = '' }) {
   return (
     <div className={classnames('ds-prompt-input__actions', className)}>
       {children}
     </div>
   )
-}
-
-PromptInputActions.defaultProps = {
-  className: '',
-  children: null
 }
 
 PromptInputActions.propTypes = {

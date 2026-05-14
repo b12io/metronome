@@ -4,12 +4,8 @@ import React from 'react'
 /**
  * Column.
  */
-function Column ({ children }) {
+function Column ({ children = null }) {
   return (<div className="col-md-6">{children}</div>)
-}
-
-Column.defaultProps = {
-  children: null
 }
 
 export default Column

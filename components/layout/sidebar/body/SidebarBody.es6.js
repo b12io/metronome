@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 
-function SidebarBody ({ children, handleScroll }) {
+function SidebarBody ({ children = [], handleScroll }) {
   return (
     <div
       className="ds-sidebar__body"
@@ -10,10 +10,6 @@ function SidebarBody ({ children, handleScroll }) {
       {children}
     </div>
   )
-}
-
-SidebarBody.defaultProps = {
-  children: []
 }
 
 export default SidebarBody

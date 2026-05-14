@@ -3,7 +3,7 @@ import React, { Children, isValidElement, cloneElement } from 'react'
 import classnames from 'classnames'
 
 
-const TabbedNavigation = ({ progress, spread, block, progressType, className, children }) => {
+const TabbedNavigation = ({ progress = 0, spread = false, block = false, progressType = 'percent', className, children }) => {
   const componentChildren = Children.toArray(children)
   const items = componentChildren
     .filter(child => isValidElement(child))
@@ -36,13 +36,6 @@ const TabbedNavigation = ({ progress, spread, block, progressType, className, ch
       </div>
     </div>
   )
-}
-
-TabbedNavigation.defaultProps = {
-  spread: false,
-  block: false,
-  progress: 0,
-  progressType: 'percent',
 }
 
 export default TabbedNavigation

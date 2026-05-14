@@ -5,8 +5,8 @@ import Switch from '../switch/Switch.es6'
 import Button from '../button/Button.es6'
 
 function SwitchTabPicker({
-    tabs, options, selectedTabId, selectedOptionId,
-    onTabChange, onOptionChange, className
+    tabs = [], options = [], selectedTabId = 0, selectedOptionId = '',
+    onTabChange = () => {}, onOptionChange = () => {}, className = ''
   }) {
 
   const renderTabContent = (selectedTabId) => {
@@ -112,16 +112,6 @@ SwitchTabPicker.propTypes = {
    * Additional CSS classes
    */
   className: PropTypes.string
-}
-
-SwitchTabPicker.defaultProps = {
-  tabs: [],
-  options: [],
-  selectedTabId: 0,
-  selectedOptionId: '',
-  onTabChange: () => {},
-  onOptionChange: () => {},
-  className: ''
 }
 
 export default SwitchTabPicker

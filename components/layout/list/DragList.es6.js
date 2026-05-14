@@ -29,7 +29,7 @@ class DragList extends React.Component {
 
   render () {
     const {children, droppableId, collectionList, cardList, isDragAndDropDisabled, ...otherProps} = this.props
-    const contentChildren = Children.map(children, child => {
+    const contentChildren = Children.map(children, (child, index) => {
       if (child.type.name === 'ListItemEmpty') {
         return <ListItemContent>{child}</ListItemContent>
       }
@@ -38,22 +38,26 @@ class DragList extends React.Component {
       return (
         <Draggable
           key={draggableId}
+          index={index}
           isDragDisabled={isDragAndDropDisabled}
           draggableId={draggableId}
         >
-          {(provided, snapshot) => [
-            <ListItem
-              key={draggableId}
-              {...otherChildProps}
-              listItemRef={provided.innerRef}
-              dragStyles={provided.draggableStyle}
-              className={getItemClassNames(snapshot.isDragging, collectionList, cardList)}
-            >
-              {!isDragAndDropDisabled && <ListItemIcon draggableIcon {...provided.dragHandleProps} />}
-              {content}
-            </ListItem>,
-            <div key={`key-${draggableId}`}>{provided.placeholder}</div>
-          ]}
+          {(provided, snapshot) => {
+            const {style: dragStyle, ...restDraggableProps} = provided.draggableProps
+            return (
+              <ListItem
+                key={draggableId}
+                {...otherChildProps}
+                listItemRef={provided.innerRef}
+                dragStyles={dragStyle}
+                {...restDraggableProps}
+                className={getItemClassNames(snapshot.isDragging, collectionList, cardList)}
+              >
+                {!isDragAndDropDisabled && <ListItemIcon draggableIcon {...provided.dragHandleProps} />}
+                {content}
+              </ListItem>
+            )
+          }}
         </Draggable>
       )
     })
@@ -67,6 +71,7 @@ class DragList extends React.Component {
             <List
               {...otherProps}
               listRef={provided.innerRef}
+              {...provided.droppableProps}
             >
               {contentChildren}
               {provided.placeholder}

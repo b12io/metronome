@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
-function QuickDialog ({ title, body, buttons, onButtonClicked }) {
+function QuickDialog ({ title = '', body = null, buttons = [], onButtonClicked = () => {} }) {
   return (<div className="ds-quick-actions ds-quick-actions--controls">
     <div className="ds-quick-actions__header">{title}</div>
     {body}
@@ -21,13 +21,6 @@ function QuickDialog ({ title, body, buttons, onButtonClicked }) {
       >{button.label}</button>)}
     </div>}
   </div>)
-}
-
-QuickDialog.defaultProps = {
-  title: '',
-  body: null,
-  buttons: [],
-  onButtonClicked: () => {}
 }
 
 QuickDialog.propTypes = {

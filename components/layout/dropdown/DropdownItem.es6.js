@@ -1,9 +1,9 @@
 
-import React, { } from 'react'
+import React from 'react'
 import classnames from 'classnames'
 
 
-function DropdownItem ({ className, label, icon, disabled, onClick, onCloseMenu }) {
+function DropdownItem ({ className, label, icon, disabled, onClick, onCloseMenu = () => {} }) {
   return (
     <div
       className={classnames({
@@ -23,10 +23,6 @@ function DropdownItem ({ className, label, icon, disabled, onClick, onCloseMenu 
       <span>{icon}{label}</span>
     </div>
   )
-}
-
-DropdownItem.defaultProps = {
-  onCloseMenu: () => {}
 }
 
 export default DropdownItem

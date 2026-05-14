@@ -7,9 +7,9 @@ import useClickOutside from '../../../lib/useClickOutside.es6.js'
 
 
 
-function SidebarBodyHeader ({
+function SidebarBodyHeader({
   className,
-  hideOverflow,
+  hideOverflow = false,
   text,
   actionIcon,
   onAction,
@@ -37,7 +37,7 @@ function SidebarBodyHeader ({
 
       {quickDialog}
 
-      <div className="ds-sidebar__title-icon">
+      <div ref={actionsRef} className="ds-sidebar__title-icon">
         <span onClick={() => {
           if (typeof onAction === 'function') {
             onAction()
@@ -52,7 +52,6 @@ function SidebarBodyHeader ({
 
         {actionsAvailable && (
           <div
-            ref={actionsRef}
             className={classnames('ds-dropdown ds-dropdown--right', {
               'ds-dropdown--menu-visible': actionsVisible
             })}
@@ -72,10 +71,6 @@ function SidebarBodyHeader ({
       </div>
     </div>
   )
-}
-
-SidebarBodyHeader.defaultProps = {
-  hideOverflow: false
 }
 
 export default SidebarBodyHeader

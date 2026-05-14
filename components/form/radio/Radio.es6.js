@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
-function Radio ({ className, disabled, label, description, name, value, checked, onChange, tabIndex, color }) {
+function Radio ({ className = '', disabled = false, label = '', description = '', name = '', value = '', checked = false, onChange = () => {}, tabIndex = 0, color = null }) {
   return (
     <div className={classnames('ds-form-group', className)}>
       <label className="ds-form-control-radio">
@@ -32,19 +32,6 @@ function Radio ({ className, disabled, label, description, name, value, checked,
   )
 }
 
-Radio.defaultProps = {
-  className: '',
-  label: '',
-  description: '',
-  value: '',
-  name: '',
-  tabIndex: 0,
-  checked: false,
-  disabled: false,
-  color: null,
-  onChange: () => {}
-}
-
 Radio.propTypes = {
   className: PropTypes.string,
   label: PropTypes.oneOfType([
@@ -54,7 +41,11 @@ Radio.propTypes = {
   description: PropTypes.string,
   name: PropTypes.string,
   tabIndex: PropTypes.number,
-  value: PropTypes.string,
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.bool
+  ]),
   checked: PropTypes.bool,
   disabled: PropTypes.bool,
   color: PropTypes.oneOfType([

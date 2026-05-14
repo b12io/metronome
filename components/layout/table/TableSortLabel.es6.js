@@ -3,7 +3,7 @@ import classnames from 'classnames'
 import { CaretDown } from '../../../components/Icons.es6.js'
 
 
-function TableSortLabel ({ className, active, direction, icon, label, ...otherProps }) {
+function TableSortLabel ({ className, active = false, direction = 'desc', icon = <CaretDown color="#84839C"/>, label, ...otherProps }) {
   const classNames = classnames(
     'ds-table__sort-label',
     {'ds-table__sort-label--active': active},
@@ -19,12 +19,6 @@ function TableSortLabel ({ className, active, direction, icon, label, ...otherPr
       {icon}
     </div>
   )
-}
-
-TableSortLabel.defaultProps = {
-  active: false,
-  direction: 'desc',
-  icon: <CaretDown color="#84839C"/>
 }
 
 export default TableSortLabel

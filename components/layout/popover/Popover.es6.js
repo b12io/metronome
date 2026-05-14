@@ -5,10 +5,10 @@ import classnames from 'classnames' // Make sure to add this import
 function Popover({
   trigger,
   children,
-  isOpen: controlledIsOpen,
-  onToggle,
-  className,
-  isSelected,
+  isOpen: controlledIsOpen = undefined,
+  onToggle = () => {},
+  className = '',
+  isSelected = false,
 }) {
   const [internalIsOpen, setInternalIsOpen] = useState(false)
   const isControlled = controlledIsOpen !== undefined
@@ -94,13 +94,6 @@ Popover.propTypes = {
    * Whether the trigger should display in a selected state
    */
   isSelected: PropTypes.bool,
-}
-
-Popover.defaultProps = {
-  isOpen: undefined,
-  onToggle: () => {},
-  className: '',
-  isSelected: false,
 }
 
 export default Popover

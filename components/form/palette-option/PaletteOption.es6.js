@@ -6,8 +6,8 @@ import {
 } from '../../Icons.es6.js'
 
 
-function PaletteOption ({ block, colors, onOptionClick, selected,
-  value, border }) {
+function PaletteOption ({ block = false, colors = [], onOptionClick = () => {}, selected = false,
+  value = '', border = false }) {
   const swatches = colors.map((color, index) => {
     return (
       <div key={`${color}-${index}`}
@@ -34,15 +34,6 @@ function PaletteOption ({ block, colors, onOptionClick, selected,
       />}
     </div>
   )
-}
-
-PaletteOption.defaultProps = {
-  block: false,
-  border: false,
-  colors: [],
-  onOptionClick: () => {},
-  selected: false,
-  value: ''
 }
 
 export default PaletteOption
