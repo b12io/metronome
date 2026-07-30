@@ -24,6 +24,32 @@ jobs:
           yarn
           make lint
 
+  # Exercises the release path on every PR, so toolchain drift surfaces here
+  # instead of during a tagged release — where a failure means re-tagging.
+  # Keep the node-version and steps in sync with publish.yml.
+  publish-dry-run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+
+      - name: Setup Node 🔧
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Verify npm supports trusted publishing
+        run: |
+          min=$(node -p "require('./package.json').engines.npm.replace(/[^0-9.]/g, '')")
+          cur=$(npm -v)
+          echo "node $(node -v) / npm $cur (need npm >= $min)"
+          [ "$(printf '%s\n%s\n' "$min" "$cur" | sort -V | head -1)" = "$min" ] \
+            || { echo "::error::npm $cur is below the $min required for OIDC trusted publishing"; exit 1; }
+
+      - name: Pack 📦
+        run: npm publish --dry-run
+
   build:
     runs-on: ubuntu-latest
 
