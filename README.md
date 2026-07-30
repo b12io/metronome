@@ -38,6 +38,40 @@ If you are developing on a remote machine and want to view the demo in your brow
 * You might also need to edit `module.exports.devServer.allowedHosts` to include your hostname. The default supports `b12.io` or any subdomain (see the [documentation of host formats](https://webpack.js.org/configuration/dev-server/#devserverallowedhosts)).
 * Then you can access the demo interface at `http://your-remote-server.com:{port}`.
 
+## How to publish a new version to npm
+Releases of [`@b12/metronome`](https://www.npmjs.com/package/@b12/metronome) are published by the `Publish Package` workflow (`.github/workflows/publish.yml`), which authenticates to the registry through npm [trusted publishing](https://docs.npmjs.com/trusted-publishers). There is no npm token to pass around, and publishing from a laptop is not part of the process.
+
+Keep in mind that the package ships source rather than a bundle: nothing is built during publish, and `.npmignore` decides what ends up in the tarball. Whatever is committed to `main` is what consumers get.
+
+#### Releasing
+1. Bump `version` in `package.json` and merge it to `main`;
+2. Optionally preview the tarball — this only packs and prints the file list, it never uploads:
+
+```bash
+$ npm publish --dry-run
+```
+
+3. Trigger the release, either by tagging the commit on `main`:
+
+```bash
+$ git tag v1.1.36
+$ git push origin v1.1.36
+```
+
+or by starting the workflow by hand: **Actions → Publish Package → Run workflow → `main`**. Both paths publish the version found in `package.json`, so the tag and that field must agree;
+
+4. Watch the run in the Actions tab, then confirm the version landed with `npm view @b12/metronome version`.
+
+::**Warning!** Merging to `main` does not publish anything on its own. The `push` trigger is filtered to `v*` tags, so only a tag push or a manual run releases.::
+
+#### If a release fails
+Re-running the failed job of a tag-triggered run will not pick up a fix. For tag events GitHub reads the workflow file as of the tag, so the re-run keeps using the same file that just failed. Fix the problem on `main` and use **Run workflow** on `main` instead — that leaves the tag untouched. Moving the tag with `git tag -f` and a force push also works, but it is the blunter option.
+
+The registry rejects re-publishing a version that already exists with a `403`, so retrying a release cannot overwrite what is already out there.
+
+#### Toolchain requirements
+Trusted publishing needs npm `>=11.5.1`, which is what `engines.npm` pins and why the workflow runs on Node 24 — that line bundles npm 11.16.0. Node 20 and Node 22 never shipped an npm past 10.9.x, so do not move the release to an older LTS; it would break registry authentication. Both the workflow and the `publish-dry-run` job assert this floor before publishing, so an inadequate npm fails with a clear message instead of an opaque OIDC error. That dry-run job runs on every pull request, which is where toolchain drift should surface — not mid-release.
+
 ## How can I test my changes in an internal repository without publishing?
 #### Note: If you're using docker, then you should do this outside of docker.
 You can do it in five steps:
