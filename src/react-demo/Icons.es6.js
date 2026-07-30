@@ -22,7 +22,7 @@ import {
   Flash, Dashboard, Guides, Article, Pulse, Edit, ContentApproved, Dragger, PaperClip, Invoicing, Banking, Checkbox, Circle, Bank, Card, Contract,
   MinusCircle, RepeatCircle, BadgeCard, HeadphonesMic, CheckmarkLarge, NoticeOutlined, Archive, Questionnaire, Upload, ShareFeedback, Spaceship, Zap, Tip, Webpage, LayoutAlternative, GlobeAlternative,
   AiAssist, Flows, Highlight, ArrowCircleUp, ArrowUp, EditColor, AiImage, AiLogo, Microphone, ThreeDots, PencilFilled,
-  Stop, Revert, ThumbUp, ThumbDown, Forward, Bell, Plug, Blockquote, BlogPostSection, Cup, Case, Receipt, Feed, Introduction, Press, History, Hand, Undo, Redo, ZoomIn, ZoomOut, RotateLeft, RotateRight, Crop, IconFlipX, IconFlipY
+  Stop, Revert, ThumbUp, ThumbDown, Forward, Bell, Plug, Blockquote, BlogPostSection, Cup, Case, Receipt, Feed, Introduction, Press, History, Hand, Undo, Redo, ZoomIn, ZoomOut, RotateLeft, RotateRight, Crop, FlipX, FlipY
 } from '../../components/Icons.es6.js'
 
 const ICONS = [
@@ -874,12 +874,12 @@ const ICONS = [
     component: Crop
   },
   {
-    name: 'IconFlipX',
-    component: IconFlipX
+    name: 'FlipX',
+    component: FlipX
   },
   {
-    name: 'IconFlipY',
-    component: IconFlipY
+    name: 'FlipY',
+    component: FlipY
   }
 ]
 
