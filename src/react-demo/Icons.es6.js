@@ -22,7 +22,7 @@ import {
   Flash, Dashboard, Guides, Article, Pulse, Edit, ContentApproved, Dragger, PaperClip, Invoicing, Banking, Checkbox, Circle, Bank, Card, Contract,
   MinusCircle, RepeatCircle, BadgeCard, HeadphonesMic, CheckmarkLarge, NoticeOutlined, Archive, Questionnaire, Upload, ShareFeedback, Spaceship, Zap, Tip, Webpage, LayoutAlternative, GlobeAlternative,
   AiAssist, Flows, Highlight, ArrowCircleUp, ArrowUp, EditColor, AiImage, AiLogo, Microphone, ThreeDots, PencilFilled,
-  Stop, Revert, ThumbUp, ThumbDown, Forward, Bell, Plug, Blockquote, BlogPostSection, Cup, Case, Receipt, Feed, Introduction, Press,
+  Stop, Revert, ThumbUp, ThumbDown, Forward, Bell, Plug, Blockquote, BlogPostSection, Cup, Case, Receipt, Feed, Introduction, Press, History, Hand, Undo, Redo, ZoomIn, ZoomOut, RotateLeft, RotateRight, Crop, FlipX, FlipY
 } from '../../components/Icons.es6.js'
 
 const ICONS = [
@@ -837,6 +837,50 @@ const ICONS = [
     name: 'Press',
     component: Press
   },
+  {
+    name: 'History',
+    component: History
+  },
+  {
+    name: 'Hand',
+    component: Hand
+  },
+  {
+    name: 'Undo',
+    component: Undo
+  },
+  {
+    name: 'Redo',
+    component: Redo
+  },
+  {
+    name: 'ZoomIn',
+    component: ZoomIn
+  },
+  {
+    name: 'ZoomOut',
+    component: ZoomOut
+  },
+  {
+    name: 'RotateLeft',
+    component: RotateLeft
+  },
+  {
+    name: 'RotateRight',
+    component: RotateRight
+  },
+  {
+    name: 'Crop',
+    component: Crop
+  },
+  {
+    name: 'FlipX',
+    component: FlipX
+  },
+  {
+    name: 'FlipY',
+    component: FlipY
+  }
 ]
 
 function Icons () {
