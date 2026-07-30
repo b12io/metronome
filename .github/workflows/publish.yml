@@ -5,10 +5,17 @@ on:
   push:
     tags:
       - 'v*'
+  # Allows retrying a failed release without deleting and re-pushing the tag.
+  workflow_dispatch:
 
 permissions:
   id-token: write # Required for OIDC
   contents: read
+
+# Never cancel a publish that is already talking to the registry.
+concurrency:
+  group: publish-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   publish:
@@ -16,11 +23,22 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Node 24 (LTS) bundles npm 11.16.0, which already satisfies the
+      # engines.npm >= 11.5.1 that OIDC trusted publishing needs. Nothing in
+      # the release path resolves a floating version over the network, so this
+      # job behaves the same today and a year from now. Do not "upgrade" this
+      # to Node 22: that line never shipped an npm past 10.9.x.
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '24'
           registry-url: 'https://registry.npmjs.org'
 
-      - name: Update npm
-        run: npm install -g npm@latest
+      - name: Verify npm supports trusted publishing
+        run: |
+          min=$(node -p "require('./package.json').engines.npm.replace(/[^0-9.]/g, '')")
+          cur=$(npm -v)
+          echo "node $(node -v) / npm $cur (need npm >= $min)"
+          [ "$(printf '%s\n%s\n' "$min" "$cur" | sort -V | head -1)" = "$min" ] \
+            || { echo "::error::npm $cur is below the $min required for OIDC trusted publishing"; exit 1; }
+
       - run: npm publish
