@@ -7,17 +7,17 @@ import NavItem from './NavItem.es6.js'
 import { Visible } from '../../Icons.es6.js'
 
 it('shows arrow icon', () => {
-  const component = shallow(<NavItem showArrow />)
+  const component = shallow(<NavItem showArrow />).dive()
   expect(component.find('.ds-nav__item-arrow').exists()).toBe(true)
 })
 
 it('shows icon', () => {
-  const component = shallow(<NavItem icon={<Visible />} />)
+  const component = shallow(<NavItem icon={<Visible />} />).dive()
   expect(component.find('.ds-nav__item-icon').exists()).toBe(true)
 })
 
 it('shows badge', () => {
-  const component = shallow(<NavItem badge="5" />)
+  const component = shallow(<NavItem badge="5" />).dive()
   expect(component.find('.ds-nav__item-badge').exists()).toBe(true)
 })
 
@@ -34,14 +34,14 @@ it('should add `ds-nav__item--active` classname once it is active', () => {
 
 it('calls nav item click event', () => {
   const onClick = jest.fn()
-  const component = shallow(<NavItem onClick={onClick} />)
+  const component = shallow(<NavItem onClick={onClick} />).dive()
   component.find('.ds-nav__item').at(0).simulate('click')
   expect(onClick.mock.calls.length).toBe(1)
 })
 
 it('calls nav item action click event', () => {
   const onActionClick = jest.fn()
-  const component = shallow(<NavItem onActionClick={onActionClick} />)
+  const component = shallow(<NavItem onActionClick={onActionClick} actionIcon={<Visible />} />).dive()
   component.find('.ds-nav__item-action').at(0).simulate('click', {
     stopPropagation: () => {}
   })
@@ -49,6 +49,6 @@ it('calls nav item action click event', () => {
 })
 
 it('is disabled', () => {
-  const component = shallow(<NavItem disabled />)
+  const component = shallow(<NavItem disabled />).dive()
   expect(component.hasClass('ds-nav__item--disabled')).toBe(true)
 })

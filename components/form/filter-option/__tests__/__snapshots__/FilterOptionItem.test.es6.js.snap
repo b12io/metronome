@@ -92,6 +92,8 @@ exports[`FilterOptionItem component should display content 1`] = `
         className="button button--danger button--sm button--block"
         disabled={false}
         onClick={[Function]}
+        tabIndex={0}
+        title=""
         type="button"
       >
         Remove filter
