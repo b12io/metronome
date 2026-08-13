@@ -25,6 +25,8 @@ exports[`should display dropdown 1`] = `
       className="button button--sm"
       disabled={false}
       onClick={[Function]}
+      tabIndex={0}
+      title=""
       type="button"
     >
       Add filters
@@ -48,6 +50,8 @@ exports[`should not display dropdown by default 1`] = `
       className="button button--sm"
       disabled={false}
       onClick={[Function]}
+      tabIndex={0}
+      title=""
       type="button"
     >
       Add filters

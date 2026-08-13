@@ -114,5 +114,8 @@
   },
   "peerDependencies": {
     "react": "16.8.0"
+  },
+  "resolutions": {
+    "cheerio": "1.0.0-rc.12"
   }
 }
